@@ -1,13 +1,6 @@
 package oceanusproject.demov1.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,4 +16,8 @@ public class Quiz {
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<QuizOption> quizOptions = new ArrayList<>();
+
+    @ManyToOne // what is fetch type
+    @JoinColumn(name ="section_id") // can be null, because there may be some individual quizzes
+    private Section section;
 }
