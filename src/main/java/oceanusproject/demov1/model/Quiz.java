@@ -18,6 +18,22 @@ public class Quiz {
     private List<QuizOption> quizOptions = new ArrayList<>();
 
     @ManyToOne // what is fetch type
-    @JoinColumn(name ="section_id") // can be null, because there may be some individual quizzes
+    @JoinColumn(name = "section_id") // can be null, because there may be some individual quizzes
     private Section section;
+
+    public long getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(long quizId) {
+        this.quizId = quizId;
+    }
+
+    public String getQuizQuestion() {
+        return quizQuestion;
+    }
+
+    public void setQuizQuestion(String quizQuestion) {
+        this.quizQuestion = quizQuestion;
+    }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "articles")
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private long articleId;
 
     @Column(name = "article_title", nullable = false)
@@ -23,4 +23,21 @@ public class Article {
 
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<Section> sections = new ArrayList<>();
+
+    public long getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(long articleId) {
+        this.articleId = articleId;
+    }
+
+    public String getArticleTitle() {
+        return articleTitle;
+    }
+
+    public void setArticleTitle(String articleTitle) {
+        this.articleTitle = articleTitle;
+    }
+
 }
