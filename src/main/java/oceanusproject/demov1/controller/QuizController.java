@@ -1,7 +1,7 @@
 package oceanusproject.demov1.controller;
 
-
 import oceanusproject.demov1.dto.QuizDTO;
+import oceanusproject.demov1.dto.SectionQuizDTO;
 import oceanusproject.demov1.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +17,14 @@ public class QuizController {
     @Autowired
     QuizService quizService;
 
+    @GetMapping("/getsectionquiz")
+    public SectionQuizDTO getSectionQuiz(@Valid @RequestParam(value = "sectionId") long sectionId) {
+        return quizService.getSectionQuiz(sectionId);
+    }
+
+    // this method will just return a single quiz, in case we need to get quizzes that don't belong to any section.
     @GetMapping("/getquiz")
-    public QuizDTO getQuiz(@Valid @RequestParam(value = "quizId") long sectionId) {
-        return quizService.getQuiz(sectionId);
+    public QuizDTO getQuiz(@Valid @RequestParam(value = "quizId") long quizId) {
+        return quizService.getQuiz(quizId);
     }
 }

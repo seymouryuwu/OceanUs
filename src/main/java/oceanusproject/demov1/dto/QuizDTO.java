@@ -1,7 +1,5 @@
 package oceanusproject.demov1.dto;
 
-import oceanusproject.demov1.model.QuizOption;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,13 +1,15 @@
 package oceanusproject.demov1.repository;
 
 import oceanusproject.demov1.model.Quiz;
-import oceanusproject.demov1.model.QuizOption;
+import oceanusproject.demov1.model.Section;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface QuizOptionRepository extends JpaRepository<QuizOption, Long> {
-    List<QuizOption> findByQuiz(Quiz quiz);
+public interface QuizRepository extends JpaRepository<Quiz, Long> {
+    List<Quiz> findBySection(Section section);
+
+    Quiz findByQuizId(long quizId);
 }

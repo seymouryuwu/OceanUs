@@ -22,7 +22,6 @@ public class ArticleController {
     public Article postArticle(@Valid @RequestBody Article article) {
         return articleRepository.save(article);
     }
-
      */
 
     @GetMapping("/getarticle")

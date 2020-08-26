@@ -25,4 +25,28 @@ public class QuizOption {
     @ManyToOne // what is fetch type
     @JoinColumn(name ="quiz_id", nullable = false)
     private Quiz quiz;
+
+    public long getQuizOptionId() {
+        return quizOptionId;
+    }
+
+    public void setQuizOptionId(long quizOptionId) {
+        this.quizOptionId = quizOptionId;
+    }
+
+    public String getQuizOptionText() {
+        return quizOptionText;
+    }
+
+    public void setQuizOptionText(String quizOptionText) {
+        this.quizOptionText = quizOptionText;
+    }
+
+    public boolean isAnswer() {
+        return isAnswer;
+    }
+
+    public void setAnswer(boolean answer) {
+        isAnswer = answer;
+    }
 }

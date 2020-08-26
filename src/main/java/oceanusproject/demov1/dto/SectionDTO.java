@@ -5,6 +5,7 @@ public class SectionDTO {
     private int sectionSequenceNumber;
     private String sectionHeader;
     private String sectionText;
+    private boolean hasQuiz;
 
     public long getSectionId() {
         return sectionId;
@@ -36,5 +37,13 @@ public class SectionDTO {
 
     public void setSectionText(String sectionText) {
         this.sectionText = sectionText;
+    }
+
+    public boolean isHasQuiz() {
+        return hasQuiz;
+    }
+
+    public void setHasQuiz(boolean hasQuiz) {
+        this.hasQuiz = hasQuiz;
     }
 }

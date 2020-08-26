@@ -35,6 +35,7 @@ public class ArticleService {
             newSectionDTO.setSectionSequenceNumber(s.getSectionSequenceNumber());
             newSectionDTO.setSectionHeader(s.getSectionHeader());
             newSectionDTO.setSectionText(s.getSectionText());
+            newSectionDTO.setHasQuiz(s.isHasQuiz());
             sectionDTOList.add(newSectionDTO);
         }
 
@@ -50,6 +51,7 @@ public class ArticleService {
         sectionDTO.setSectionSequenceNumber(section.getSectionSequenceNumber());
         sectionDTO.setSectionHeader(section.getSectionHeader());
         sectionDTO.setSectionText(section.getSectionText());
+        sectionDTO.setHasQuiz(section.isHasQuiz());
 
         return sectionDTO;
     }

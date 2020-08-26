@@ -1,6 +1,13 @@
 package oceanusproject.demov1.model;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +26,9 @@ public class Section {
 
     @Column(name = "section_text", nullable = false)
     private String sectionText;
+
+    @Column(name = "has_quiz", nullable = false)
+    private boolean hasQuiz;
 
     @OneToMany(mappedBy = "section", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<Quiz> quizzes = new ArrayList<>();
@@ -59,4 +69,11 @@ public class Section {
         this.sectionText = sectionText;
     }
 
+    public boolean isHasQuiz() {
+        return hasQuiz;
+    }
+
+    public void setHasQuiz(boolean hasQuiz) {
+        this.hasQuiz = hasQuiz;
+    }
 }
