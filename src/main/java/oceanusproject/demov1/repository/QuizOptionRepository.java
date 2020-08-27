@@ -10,4 +10,8 @@ import java.util.List;
 @Repository
 public interface QuizOptionRepository extends JpaRepository<QuizOption, Long> {
     List<QuizOption> findByQuiz(Quiz quiz);
+
+    QuizOption findByQuizOptionId(long QuizOptionId);
+
+    QuizOption findByQuizAndIsAnswer(Quiz quiz, boolean isAnswer);
 }

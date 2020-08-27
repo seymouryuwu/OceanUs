@@ -1,5 +1,6 @@
 package oceanusproject.demov1.service;
 
+import oceanusproject.demov1.dto.AnswerDTO;
 import oceanusproject.demov1.dto.QuizDTO;
 import oceanusproject.demov1.dto.QuizOptionDTO;
 import oceanusproject.demov1.dto.SectionQuizDTO;
@@ -65,5 +66,18 @@ public class QuizService {
             quizOptionDTOList.add(newQuizOptionDTO);
         }
         return quizOptionDTOList;
+    }
+
+    public AnswerDTO examAnswer(long submittedQuizOptionId) {
+        AnswerDTO answerDTO = new AnswerDTO();
+        QuizOption submittedQuizOption =  quizOptionRepository.findByQuizOptionId(submittedQuizOptionId);
+        Quiz quiz = submittedQuizOption.getQuiz();
+        QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);
+
+        answerDTO.setSubmittedOptionId(submittedQuizOptionId);
+        answerDTO.setCorrectness(submittedQuizOption.isAnswer());
+        answerDTO.setCorrectOptionId(correctQuizOption.getQuizOptionId());
+        answerDTO.setCorrectOptionText(correctQuizOption.getQuizOptionText());
+        return answerDTO;
     }
 }

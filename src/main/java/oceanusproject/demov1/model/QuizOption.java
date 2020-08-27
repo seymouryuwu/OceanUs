@@ -49,4 +49,12 @@ public class QuizOption {
     public void setAnswer(boolean answer) {
         isAnswer = answer;
     }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
 }

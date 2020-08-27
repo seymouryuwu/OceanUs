@@ -1,5 +1,6 @@
 package oceanusproject.demov1.controller;
 
+import oceanusproject.demov1.dto.AnswerDTO;
 import oceanusproject.demov1.dto.QuizDTO;
 import oceanusproject.demov1.dto.SectionQuizDTO;
 import oceanusproject.demov1.service.QuizService;
@@ -26,5 +27,10 @@ public class QuizController {
     @GetMapping("/getquiz")
     public QuizDTO getQuiz(@Valid @RequestParam(value = "quizId") long quizId) {
         return quizService.getQuiz(quizId);
+    }
+
+    @GetMapping("/examanswer")
+    public AnswerDTO examAnswer(@Valid @RequestParam(value = "optionId") long optionId) {
+        return quizService.examAnswer(optionId);
     }
 }
