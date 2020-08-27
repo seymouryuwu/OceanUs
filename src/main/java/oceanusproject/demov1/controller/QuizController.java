@@ -5,32 +5,36 @@ import oceanusproject.demov1.dto.QuizDTO;
 import oceanusproject.demov1.dto.SectionQuizDTO;
 import oceanusproject.demov1.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @RestController
 @RequestMapping("/quiz")
+@Validated
 public class QuizController {
     @Autowired
     QuizService quizService;
 
     @GetMapping("/getsectionquiz")
-    public SectionQuizDTO getSectionQuiz(@Valid @RequestParam(value = "sectionId") long sectionId) {
+    public SectionQuizDTO getSectionQuiz(@RequestParam(value = "sectionId") @Min(1) @Max(100) long sectionId) {
         return quizService.getSectionQuiz(sectionId);
     }
 
     // this method will just return a single quiz, in case we need to get quizzes that don't belong to any section.
     @GetMapping("/getquiz")
-    public QuizDTO getQuiz(@Valid @RequestParam(value = "quizId") long quizId) {
+    public QuizDTO getQuiz(@RequestParam(value = "quizId") @Min(1) @Max(100) long quizId) {
         return quizService.getQuiz(quizId);
     }
 
     @GetMapping("/examanswer")
-    public AnswerDTO examAnswer(@Valid @RequestParam(value = "optionId") long optionId) {
+    public AnswerDTO examAnswer(@RequestParam(value = "optionId") @Min(1) @Max(100) long optionId) {
         return quizService.examAnswer(optionId);
     }
 }
