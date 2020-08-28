@@ -5,10 +5,7 @@ import oceanusproject.demov1.dto.SectionDTO;
 import oceanusproject.demov1.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
@@ -17,6 +14,7 @@ import javax.validation.constraints.Min;
 @RestController
 @RequestMapping("/article")
 @Validated
+@CrossOrigin
 public class ArticleController {
     @Autowired
     ArticleService articleService;

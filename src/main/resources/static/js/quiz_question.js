@@ -15,12 +15,12 @@ var question_answers = [2,3,3,3,3];
 $( document ).ready(function() {
   buildQuizQuestion(question_data);
 
-  let API_endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
+  let API_endpoint = "http://100.26.172.161:8080/quiz/getsectionquiz?sectionId=2"
 
   var myjson;
   $.getJSON(API_endpoint, function(json){
     myjson = json;
-    console.log(myjson.id);
+    console.log(myjson);
   });
 
 });

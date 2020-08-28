@@ -6,10 +6,7 @@ import oceanusproject.demov1.dto.SectionQuizDTO;
 import oceanusproject.demov1.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
@@ -18,6 +15,7 @@ import javax.validation.constraints.Min;
 @RestController
 @RequestMapping("/quiz")
 @Validated
+@CrossOrigin
 public class QuizController {
     @Autowired
     QuizService quizService;
