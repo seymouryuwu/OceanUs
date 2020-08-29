@@ -3,14 +3,14 @@ insert into articles (article_id, article_title) values (1, "How to be a good gu
 insert into articles (article_id, article_title) values (2, "How to be cool");
 
 -- initialize table sections
-insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz)
-values (1, "Be kind", 1, "Being kind is very important.", 1, false);
-insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz)
-values (2, "Be honest", 2, "Being honest is cool.", 1, true);
-insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz)
-values (3, "Be tough", 3, "Who is the tough guy!", 1, true);
-insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz)
-values (4, "Don't wear to much", 1, "Unless it is winter", 2, false);
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (1, "Be kind", 1, "Being kind is very important.", 1, false, "http://100.26.172.161:8080/image/getsectionimage/1", "left");
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (2, "Be honest", 2, "Being honest is cool.", 1, true, "http://100.26.172.161:8080/image/getsectionimage/2", "right");
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (3, "Be tough", 3, "Who is the tough guy!", 1, true, null, null);
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (4, "Don't wear to much", 1, "Unless it is winter", 2, false, null, null);
 
 -- initialize table quizzes
 insert into quizzes (quiz_id, quiz_question, section_id)

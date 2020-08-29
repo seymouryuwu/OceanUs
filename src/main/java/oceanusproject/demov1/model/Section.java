@@ -30,6 +30,12 @@ public class Section {
     @Column(name = "has_quiz", nullable = false)
     private boolean hasQuiz;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "image_alignment")
+    private String imageAlignment;
+
     @OneToMany(mappedBy = "section", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<Quiz> quizzes = new ArrayList<>();
 
@@ -75,5 +81,21 @@ public class Section {
 
     public void setHasQuiz(boolean hasQuiz) {
         this.hasQuiz = hasQuiz;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageAlignment() {
+        return imageAlignment;
+    }
+
+    public void setImageAlignment(String imageAlignment) {
+        this.imageAlignment = imageAlignment;
     }
 }

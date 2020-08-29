@@ -6,6 +6,8 @@ public class SectionDTO {
     private String sectionHeader;
     private String sectionText;
     private boolean hasQuiz;
+    private String imageUrl;
+    private String imageAlignment;
 
     public long getSectionId() {
         return sectionId;
@@ -45,5 +47,21 @@ public class SectionDTO {
 
     public void setHasQuiz(boolean hasQuiz) {
         this.hasQuiz = hasQuiz;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageAlignment() {
+        return imageAlignment;
+    }
+
+    public void setImageAlignment(String imageAlignment) {
+        this.imageAlignment = imageAlignment;
     }
 }

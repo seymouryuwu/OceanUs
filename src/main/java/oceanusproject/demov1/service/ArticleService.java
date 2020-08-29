@@ -36,6 +36,8 @@ public class ArticleService {
             newSectionDTO.setSectionHeader(s.getSectionHeader());
             newSectionDTO.setSectionText(s.getSectionText());
             newSectionDTO.setHasQuiz(s.isHasQuiz());
+            newSectionDTO.setImageUrl(s.getImageUrl());
+            newSectionDTO.setImageAlignment(s.getImageAlignment());
             sectionDTOList.add(newSectionDTO);
         }
 
@@ -52,6 +54,8 @@ public class ArticleService {
         sectionDTO.setSectionHeader(section.getSectionHeader());
         sectionDTO.setSectionText(section.getSectionText());
         sectionDTO.setHasQuiz(section.isHasQuiz());
+        sectionDTO.setImageUrl(section.getImageUrl());
+        sectionDTO.setImageAlignment(section.getImageAlignment());
 
         return sectionDTO;
     }
