@@ -81,8 +81,9 @@ input[type=radio]:not(old):checked + label{
 
 header {
   height: 170px;
-  background-image: url(../images/banner.png);
+  background-image: url('../images/banner.png');
   background-repeat: no-repeat;
+  background-position: 0px -166px;
   background-size: cover;
   padding: 0px 5%;
   display: flow-root;
