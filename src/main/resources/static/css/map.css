@@ -1,0 +1,44 @@
+main {
+  position: relative;
+}
+
+.map-background {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  user-select: none;
+  z-index: -1;
+}
+
+.top-left {
+  border-width: 200px 100px 0 100px;
+  border-color: #92aac7 transparent transparent transparent;
+  top: 0px;
+  left: 160px;
+}
+
+.bottom-left {
+  border-width: 0 75px 120px 75px;
+  border-color: transparent transparent #111111 transparent;
+  bottom: 0px;
+  left: 20px;
+  opacity: 0.3;
+}
+
+.bottom-right {
+  border-width: 0 0 300px 100px;
+  border-color: transparent transparent #92aac7 transparent;
+  bottom: 0px;
+  right: 0px;
+}
+
+#map-1 .right-block {
+  padding-left: 0px;
+}
+
+@media (max-width:768px){
+  #map-1 .right-block {
+    padding-left: 100px;
+  }
+}

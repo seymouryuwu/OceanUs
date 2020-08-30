@@ -3,22 +3,6 @@
 /* CONTENT SECTIONS */
 /* ----------------------- */
 
-.full-block {
-  padding: 50px 80px 0px 80px;
-}
-
-.left-block {
-  padding: 50px 50px 50px 100px;
-}
-
-.right-block {
-  padding: 50px 100px 50px 100px;
-}
-
-/* ----------------------- */
-/* CONTENT SECTIONS */
-/* ----------------------- */
-
 .content-section {
   min-height: 300px;
   position: relative;
@@ -90,4 +74,20 @@
 
 .quiz-submit  img {
   width: 85px;
+}
+
+.quiz-next {
+    width: 100%;
+    border: 0px;
+    outline: none !important;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    margin: 0px auto 50px auto;
+}
+
+.quiz-section .left-block {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }

@@ -1,21 +1,31 @@
-let API_getarticle = 'https://oceanus.me/article/getarticle?articleId=1'
-let API_getsectionquiz = 'https://oceanus.me/quiz/getsectionquiz?sectionId='
+let API_getarticle = 'https://oceanus.me/article/getarticle?articleId=';
+let API_getsectionquiz = 'https://oceanus.me/quiz/getsectionquiz?sectionId=';
+let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
+var this_URL = window.location.pathname;
+var articleID =  this_URL.split('/').pop()
+
+var currentQuizIds = [];
+var currentQuizAnswers = [];
 
 //RUNS ON PAGE LOAD
 $( document ).ready(function() {
 
+  console.log(articleID);
+  if ($.isNumeric(articleID)) {
+    articleID = parseInt(articleID);
+  } else {
+    console.log("not a number!");
+  }
 
+  // articleID = 1;
 
-  $.ajax({url: API_getarticle, success: function(articleData, textStatus) {
+  $.ajax({url: (API_getarticle + articleID), success: function(articleData, textStatus) {
       $('.content-section').css('display', 'inherit');
       buildSection(articleData.sectionDTOList);
     }, error: function(jqXHR, textStatus, errorThrown) {
       console.log("Error loading content!");
     }
   });
-
-  //FOR TESTING REMOVE!!!!!
-  checkQuizAnswer();
 
 });
 
@@ -38,9 +48,6 @@ function buildSection(sectionDTOList) {
       imageUrl = (sectionDTOList[x]['imageUrl']);
       imageAlignment = (sectionDTOList[x]['imageAlignment']);
 
-      console.log(imageUrl);
-      console.log(imageAlignment);
-
       if (hasQuiz) {
         quizId.push(id);
       }
@@ -57,13 +64,22 @@ function buildSection(sectionDTOList) {
             </div>
           </div>
         `;
-      } else {
+      } else if (imageAlignment == 'left') {
         var contentSections = `
           <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
-            <div class="col-md-6 left-block content-left-` + id + `">                      
+            <div class="col-md-6 left-block content-left-` + id + `">
               <img src="` + imageUrl + `" class="content-image">
             </div>
             <div class="col-md-6 right-block content-right-` + id + `">
+              <h3>` + sectionHeader + `</h3>
+              <p>` + sectionText + `</p>
+            </div>
+          </div>
+        `;
+      } else {
+        var contentSections = `
+          <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
+            <div class="col-md-12 full-block">
               <h3>` + sectionHeader + `</h3>
               <p>` + sectionText + `</p>
             </div>
@@ -106,6 +122,8 @@ function buildQuizQuestion(quizId) {
         quizId = quizData.sectionQuizDTOList[i]['quizId'];
         questionData = quizData.sectionQuizDTOList[i]['quizOptionDTOList'];
         quizQuestion = quizData.sectionQuizDTOList[i]['quizQuestion'];
+
+        currentQuizIds.push(quizId);
 
         $('.quiz-section').css('display', 'inherit');
 
@@ -150,7 +168,7 @@ function buildQuizAnswers(quizId, questionData) {
     answers.push(`
     <div>
       <input id="` + quizOptionId + `" type="radio" name="quiz-answer-` + quizId + `" value="` + quizOptionId +`">
-      <label for="` + x +`"><span><span></span></span>` + quizOptionText + `</label>
+      <label for="` + quizId +`"><span><span></span></span>` + quizOptionText + `</label>
     </div>
     `);
   }
@@ -164,28 +182,78 @@ function buildQuizAnswers(quizId, questionData) {
 
 //CHECK QUIZ QUESTION ANSWERS
 function checkQuizAnswer() {
-  console.log("checkQuizAnswer();");
-  console.log($('div[class^="quiz-question-"]'));
+
+  var answered = true;
+  currentQuizAnswers = [];
 
 
-  // for(x = 0; x < $('div[class^="quiz-answer-"]').length; x++) {
-  //
-  //   console.log($('input[name="quiz-answer-' + x + '"]').val());
-  //
-  // }
+  //NOTE: ask Seymour to start API ids at 0 then change 1 to to 0
+  for(x = 1; x <= currentQuizIds.length; x++) {
+
+    if(typeof $('input[name="quiz-answer-' + x + '"]:checked').val() === "undefined") {
+      answered = false;
+      $('#quiz_feedback_' + x).text("*Please select an answer!");
+      $('#quiz_feedback_' + x).css("color", "#ff0000");
+    } else {
+      $('#quiz_feedback_' + x).text("");
+      $('#quiz_feedback_' + x).css("color", "#ffffff");
+    }
+
+  }
+
+  // IF ALL QUESTIONS ARE ANSWERED SEND THE MARKS TO BE GRADED
+  if (answered) {
+
+    //SWITCH BUTTONS
+    $('.quiz-submit').hide();
+    $('.quiz-section').append(`
+    <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
+      <image src="../static/images/next_page_button.png">
+    </button>
+    `);
+
+    //POPULATE currentQuizAnswers array
+    for(x = 0; x < currentQuizIds.length; x++) {
+      userAnswer = parseInt($('input[name="quiz-answer-' + currentQuizIds[x] + '"]:checked').val());
+      currentQuizAnswers.push(userAnswer);
+    }
+
+    for(x = 0; x < currentQuizIds.length; x++) {
+
+      var quizId = currentQuizIds[x];
+      var correctness = "";
+      var correctOptionId = "";
+      var correctOptionText = "";
+
+      $.ajax({
+       url: (API_examanswer + currentQuizAnswers[x]),
+       async: false,
+       success: function(answerData, textStatus) {
+         correctness = answerData.correctness;
+         correctOptionId = answerData.correctOptionId;
+         correctOptionText = answerData.correctOptionText;
+
+       }, error: function(jqXHR, textStatus, errorThrown) {
+          console.log("Error loading quiz answer!");
+        }
+      });
+
+      if(correctness){
+         $('#quiz_feedback_' + quizId).text("CORRECT!");
+         $('#quiz_feedback_' + quizId).css("color", "#00ff00");
+         // next_page_button.png
+       } else {
+         $('#quiz_feedback_' + quizId).text("INCORRECT! the correct answer is " + correctOptionText);
+         $('#quiz_feedback_' + quizId).css("color", "#ff0000");
+       }
+
+    }
+
+  }
 
 
 }
 
-
-// {
-//   "articleId":1,
-//   "articleTitle":"How to be a good guy",
-//   "sectionDTOList":[{"sectionId":1,
-//   "sectionSequenceNumber":1,
-//   "sectionHeader":"Be kind",
-//   "sectionText":"Being kind is very important.",
-//   "hasQuiz":false,
-//   "imageUrl":"http://100.26.172.161:8080/image/getsectionimage/1",
-//   "imageAlignment":"left"},
-//   {"sectionId":2,"sectionSequenceNumber":2,"sectionHeader":"Be honest","sectionText":"Being honest is cool.","hasQuiz":true,"imageUrl":"http://100.26.172.161:8080/image/getsectionimage/2","imageAlignment":"right"},{"sectionId":3,"sectionSequenceNumber":3,"sectionHeader":"Be tough","sectionText":"Who is the tough guy!","hasQuiz":true,"imageUrl":null,"imageAlignment":null}]}
+function nextQuiz(quizId) {
+  window.location.replace('https://oceanus.me/content/' + quizId);
+}

@@ -7,9 +7,9 @@ function buildHeader() {
 
     <div class="nav-option-group">
       <ul>
-        <li class="nav-option"><a href="">Home</a></li>
-        <li class="nav-option"><a href="http://100.26.172.161:8080/content">Quiz's &amp; Games</a></li>
-        <li class="nav-option"><a href="http://100.26.172.161:8080/map">Map</a></li>
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="content.html">Quiz</a></li>
+        <li class="nav-option"><a href="map.html">Map</a></li>
       </ul>
     </div>
 

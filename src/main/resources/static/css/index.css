@@ -1,0 +1,44 @@
+.header {
+  min-height: 400px;
+}
+
+#introduction img {
+  width: inherit;
+}
+
+.introduction-background {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 190px 93.5px 0 93.5px;
+  border-color: #92aac7 transparent transparent transparent;
+  position: absolute;
+  right: 20px;
+  user-select: none;
+  opacity: 0.7;
+}
+
+#blue_divider {
+  color: #ffffff;
+  background-color: #92aac7;
+  text-align: center;
+}
+
+.about-us-text {
+  color: #ffffff;
+  position: absolute;
+  z-index: 2;
+  margin: 40px 60px;
+}
+
+#about_us .left-block img {
+  width: inherit;
+  height: 100%;
+  filter: brightness(60%);
+}
+
+#about_us .right-block img {
+  width: inherit;
+  margin: auto;
+  display: block;
+}
