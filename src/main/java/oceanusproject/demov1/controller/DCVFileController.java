@@ -24,7 +24,7 @@ public class DCVFileController {
 
     @GetMapping(value = "pki-validation/{DCVFile}")
     public ResponseEntity<byte[]> getDCVFile(@PathVariable("DCVFile") String DCVFile) throws IOException {
-        Resource resource = resourceLoader.getResource("classpath:static/DCVfile/" + DCVFile);
+        Resource resource = resourceLoader.getResource("classpath:static/DCVFile/" + DCVFile);
         InputStream input = resource.getInputStream();
         byte[] text = IOUtils.toByteArray(input);
         return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(text);

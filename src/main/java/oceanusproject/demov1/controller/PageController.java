@@ -15,8 +15,14 @@ public class PageController {
         return "index";
     }
 
+    @GetMapping("/content")
+    public String getContentPageDefault(Model model) {
+        model.addAttribute("articleId", 1);
+        return "content";
+    }
+
     @GetMapping("/content/{articleid}")
-    public String getContentPage(@PathVariable(name = "articleid", required = false) long articleId, Model model) {
+    public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
         model.addAttribute("articleId", articleId);
         return "content";
     }

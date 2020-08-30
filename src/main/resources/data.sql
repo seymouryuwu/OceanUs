@@ -165,16 +165,6 @@ insert into quizzes (quiz_id, quiz_question, section_id)
 values (8, "I can pour oil/grease in my kitchen sink. Is the statement correct?", 14);
 insert into quizzes (quiz_id, quiz_question, section_id)
 values (9, "I can flush wet wipes in the toilet and throw eggshells in the sink. Is the statement correct?", 14);
-insert into quizzes (quiz_id, quiz_question, section_id)
-values (5, "How many hair does Seymour have?", 3);
-insert into quizzes (quiz_id, quiz_question, section_id)
-values (5, "How many hair does Seymour have?", 3);
-insert into quizzes (quiz_id, quiz_question, section_id)
-values (5, "How many hair does Seymour have?", 3);
-insert into quizzes (quiz_id, quiz_question, section_id)
-values (5, "How many hair does Seymour have?", 3);
-insert into quizzes (quiz_id, quiz_question, section_id)
-values (5, "How many hair does Seymour have?", 3);
 
 -- initialize table quiz_options
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
