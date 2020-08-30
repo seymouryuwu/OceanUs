@@ -13,11 +13,12 @@ $( document ).ready(function() {
   console.log(articleID);
   if ($.isNumeric(articleID)) {
     articleID = parseInt(articleID);
+    console.log(articleID);
   } else {
     console.log("not a number!");
   }
 
-  // articleID = 1;
+  //articleID = 1;
 
   $.ajax({url: (API_getarticle + articleID), success: function(articleData, textStatus) {
       $('.content-section').css('display', 'inherit');
@@ -52,30 +53,41 @@ function buildSection(sectionDTOList) {
         quizId.push(id);
       }
 
-      if (imageAlignment == 'right') {
-        var contentSections = `
-          <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
-            <div class="col-md-6 left-block content-left-` + id + `">
-              <h3>` + sectionHeader + `</h3>
-              <p>` + sectionText + `</p>
+      if (imageUrl) {
+        if (imageAlignment == 'right') {
+          var contentSections = `
+            <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
+              <div class="col-md-6 left-block content-left-` + id + `">
+                <h3>` + sectionHeader + `</h3>
+                <p>` + sectionText + `</p>
+              </div>
+                <div class="col-md-6 right-block content-right-` + id + `">
+                <img src="` + imageUrl + `" class="content-image">
+              </div>
             </div>
+          `;
+        } else if (imageAlignment == 'left') {
+          var contentSections = `
+            <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
+              <div class="col-md-6 left-block content-left-` + id + `">
+                <img src="` + imageUrl + `" class="content-image">
+              </div>
               <div class="col-md-6 right-block content-right-` + id + `">
-              <img src="` + imageUrl + `" class="content-image">
+                <h3>` + sectionHeader + `</h3>
+                <p>` + sectionText + `</p>
+              </div>
             </div>
-          </div>
-        `;
-      } else if (imageAlignment == 'left') {
-        var contentSections = `
-          <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
-            <div class="col-md-6 left-block content-left-` + id + `">
-              <img src="` + imageUrl + `" class="content-image">
+          `;
+        } else {
+          var contentSections = `
+            <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
+              <div class="col-md-12 full-block">
+                <h3>` + sectionHeader + `</h3>
+                <p>` + sectionText + `</p>
+              </div>
             </div>
-            <div class="col-md-6 right-block content-right-` + id + `">
-              <h3>` + sectionHeader + `</h3>
-              <p>` + sectionText + `</p>
-            </div>
-          </div>
-        `;
+          `;
+        }
       } else {
         var contentSections = `
           <div class="row content-row-` + id + ` content-id-` + id + ` ssn-` + id + `">
@@ -86,6 +98,8 @@ function buildSection(sectionDTOList) {
           </div>
         `;
       }
+
+
 
 
       $('.content-section').append(contentSections);
@@ -152,7 +166,7 @@ function buildQuizQuestion(quizId) {
   }
   $('.quiz-section').append(`
   <button type="submit" class="quiz-submit" onClick="checkQuizAnswer()">
-    <image src="images/lock_button.png">
+    <image src="../images/lock_button.png">
   </button>
   `);
 }
@@ -188,9 +202,9 @@ function checkQuizAnswer() {
 
 
   //NOTE: ask Seymour to start API ids at 0 then change 1 to to 0
-  for(x = 1; x <= currentQuizIds.length; x++) {
-
-    if(typeof $('input[name="quiz-answer-' + x + '"]:checked').val() === "undefined") {
+  for(x = 0; x < currentQuizIds.length; x++) {
+    console.log(currentQuizIds[x]);
+    if(typeof $('input[name="quiz-answer-' + currentQuizIds[x] + '"]:checked').val() === "undefined") {
       answered = false;
       $('#quiz_feedback_' + x).text("*Please select an answer!");
       $('#quiz_feedback_' + x).css("color", "#ff0000");
@@ -208,7 +222,7 @@ function checkQuizAnswer() {
     $('.quiz-submit').hide();
     $('.quiz-section').append(`
     <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
-      <image src="images/next_page_button.png">
+      <image src="../images/next_page_button.png">
     </button>
     `);
 

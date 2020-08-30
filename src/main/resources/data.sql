@@ -123,7 +123,7 @@ values (12,
 "The New York Times reports that numerous brands of flushable wipes don\'t break down even following 10 minutes in water. In examination, it just takes a couple of moments for a bit of bathroom tissue i.e. toilet paper to break separated. Flushable wipes add to the fatbergs that can cause enormous issues in the sewer frameworks. Throw them in the right trash can when you are done.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/paper-towel.png",
+"https://oceanus.me/image/getsectionimage/paper-towel.jpg",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
