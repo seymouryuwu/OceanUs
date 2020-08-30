@@ -63,7 +63,7 @@ values (6,
 "Agreed that \"flushable\" is mentioned in the title, but unfortunately, that is not a precise depiction of this item. Indeed \"flushable\" feline litter has been known to stop up channels and make immense issues for septic frameworks. Other than that, feline litter can get microscopic organisms from your feline\'s excrement. This microbe is impervious to the synthetic substances ordinarily used to treat water, which implies it can in the end discover its way into the water flexibly where it tends to be a danger to numerous creatures, particularly ocean otters.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/catLitter.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -73,7 +73,7 @@ values (7,
 "The vast majority expect that coffee grounds are so small that they won\'t stay in your funnels, however that is not the situation. Indeed, these grounds are one of the most probable wellsprings of a stop up in your kitchen pipes. At the point when tossed down the sink, these grounds can cause an accumulation in your funnels.\nDid you know \"Coffee grinds mixed with the oil in your pipes is a sure-fire drain destroyer.\"",
 5,
 true,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/coffee.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -83,7 +83,7 @@ values (8,
 "Eggshells themselves may appear to be innocuous, however when you send them down the channel, the waste disposal crushes them into little pieces and afterward they stall out in oil and fat and other slick substances to make a thick wreck that can without much of a stretch obstruct your funnels. You\'re in an ideal situation discarding your eggshells by placing them in the garbage bin.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/eggshell.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -93,7 +93,7 @@ values (9,
 "These apparently innocuous little stickers can really cause huge issues within your funnels. Even the tad of glue that is on them can be sufficient to make them adhere to the internal parts of the channels. On the off chance that they make it past your channels, they can likewise get trapped in wastewater treatment funnels and channels, causing issues with the gear intended to treat your water. In the event that some way or another they make it past both of these obstructions, they can wind up in the water gracefully. Either way you look at it, you just see trouble/issues.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/produce-label.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -103,7 +103,7 @@ values (10,
 "It sure is enticing to pour utilized cooking oil down your sink channel. STOP! That oil backs up your channels as well as those in your vicinity as well. That is on the grounds that when oil solidifies, it can undoubtedly obstruct sewage pipes and can really compel crude sewage again into your home or into the homes of others on your road.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/oil.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -113,7 +113,7 @@ values (11,
 "Overabundance of these fertilizers/pesticides are another significant wellspring of pollution. At the point when we utilize a lot of manure on our yard, the overabundance is gotten by stormwater spill over and dumped directly into our streams. This supplement over-burden makes green growth sprout, which eliminates oxygen from the water. That actually stifles the life from essential water animals that help improve the water\'s quality. To evade all that, ensure that you utilize just the measure of yard synthetic substances you really need and just when and where you need it.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/fertilizer.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -123,7 +123,7 @@ values (12,
 "The New York Times reports that numerous brands of flushable wipes don\'t break down even following 10 minutes in water. In examination, it just takes a couple of moments for a bit of bathroom tissue i.e. toilet paper to break separated. Flushable wipes add to the fatbergs that can cause enormous issues in the sewer frameworks. Throw them in the right trash can when you are done.",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/paper-towel.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -133,7 +133,7 @@ values (13,
 "Flushing expired medicines down the latrine used to be okay in the earlier times. In fact, the medical  practitioners used to prescribe doing this to keep expired medicines out of your home and away from kids. However, on the contrary, specialists presently state that disposing of prescription into sinks and latrines is perilous for the earth. As indicated by No Drugs Down the Drain, wastewater treatment plants are not intended to eliminate man-made synthetic concoctions from the water flexibly.",
 5,
 true,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/medicine.png",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -143,7 +143,7 @@ values (14,
 "The table below summarizes what items can and cannot be poured down the drains.\n\nOld/expired medicines ---> No\nCleaning chemicals ---> Yes, but it is better to avoid anything apart from toilet/drain cleaner\nToilet paper ---> Yes\nFace Tissues ---> No\nWet wipes ---> No\nBaking Soda ---> Yes\nDiapers ---> No\nOil/Grease ---> No\nSanitary Napkins ---> No\nEgg Shells ---> No\nVegetable and Fruit Peels ---> No\nMilk ---> Better to Avoid\nSolid food ---> No\nFlour ---> No\nFertilizers/Pesticides ---> Yes, but not in excess amount\nKerosene/Gasoline/Nail Polish Remover/Lighter Fluid ---> No\nPaint ---> No\nCotton Balls/Swabs ---> No\nDental Floss ---> No\nCoffee grounds ---> No\nFlushable Kitty Litter ---> No\nProduce stickers on fruits/veggies ---> No\n\nOne rule that can enable you to figure out what\'s alright to dump down the sink is to inquire as to whether you can eat the substance. Most fluids that are ok for human utilization, aside from oils and prescriptions, can be dumped. On the off chance that you wouldn\'t drink it, you most likely don\'t need a concoction hanging out in your sink at any rate. It could interact with food or with the utensils used for cooking and make you wiped out. \nThings that are hazardous to pour down a sink shouldn\'t be flushed down the latrine, dumped in a tempest channel or covered in your yard, either. On the off chance that they are, the hazardous substances can even now advance into the groundwater.\n",
 5,
 true,
-"https://oceanus.me/image/getsectionimage/1",
+null,
 "right");
 
 -- initialize table quizzes

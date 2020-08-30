@@ -24,7 +24,7 @@ public class Section {
     @Column(name = "section_header", nullable = false)
     private String sectionHeader;
 
-    @Column(name = "section_text", nullable = false)
+    @Column(name = "section_text", nullable = false, columnDefinition = "TEXT")
     private String sectionText;
 
     @Column(name = "has_quiz", nullable = false)
