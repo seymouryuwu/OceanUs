@@ -22,8 +22,9 @@ public class PageController {
     }
 
     @GetMapping("/content/{articleid}")
-    public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
-        model.addAttribute("articleId", articleId);
+    public String getContentPage(@PathVariable(name = "articleid") long articleId) {
+    //public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
+        //model.addAttribute("articleId", articleId);
         return "content";
     }
 

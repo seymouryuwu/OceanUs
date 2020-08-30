@@ -34,7 +34,7 @@ values (3,
 3,
 false,
 null,
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (4,
@@ -54,7 +54,7 @@ values (5,
 5,
 false,
 "https://oceanus.me/image/getsectionimage/matty-sievers-z9W8c3I1rEU-unsplash.jpg",
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (6,
@@ -74,7 +74,7 @@ values (7,
 5,
 true,
 "https://oceanus.me/image/getsectionimage/coffee.png",
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (8,
@@ -94,7 +94,7 @@ values (9,
 5,
 false,
 "https://oceanus.me/image/getsectionimage/produce-label.png",
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (10,
@@ -114,7 +114,7 @@ values (11,
 5,
 false,
 "https://oceanus.me/image/getsectionimage/fertilizer.png",
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (12,
@@ -134,7 +134,7 @@ values (13,
 5,
 true,
 "https://oceanus.me/image/getsectionimage/medicine.png",
-"right");
+"left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (14,
