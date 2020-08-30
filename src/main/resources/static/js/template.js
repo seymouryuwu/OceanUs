@@ -7,9 +7,9 @@ function buildHeader() {
 
     <div class="nav-option-group">
       <ul>
-        <li class="nav-option"><a href="index.html">Home</a></li>
-        <li class="nav-option"><a href="content.html">Quiz</a></li>
-        <li class="nav-option"><a href="map.html">Map</a></li>
+        <li class="nav-option"><a href="https://oceanus.me">Home</a></li>
+        <li class="nav-option"><a href="https://oceanus.me/content/1">Quiz</a></li>
+        <li class="nav-option"><a href="https://oceanus.me/map">Map</a></li>
       </ul>
     </div>
 
