@@ -9,8 +9,11 @@
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script> -->
+  <script src="../static/js/template.js"></script>
   <script src="../static/js/map.js"></script>
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+  <script src="../static/js/2019.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -20,25 +23,12 @@
 
 </head>
 
-<body>
+<body onload="viz2019();">
   <div class="container-fluid">
+
     <!-- HEADER -->
-    <header>
-
-
-      <div id="nav_container" class="nav-container">
-
-        <img src="../static/images/oceanusLogo.png" class="logo">
-
-        <div class="nav-option-group">
-          <ul>
-            <li class="nav-option"><a href="">HOME</a></li>
-            <li class="nav-option"><a href="http://100.26.172.161:8080/content">Quiz's &amp; Games</a></li>
-            <li class="nav-option"><a href="http://100.26.172.161:8080/map">MAP</a></li>
-          </ul>
-        </div>
-
-      </div>
+    <header class="header">
+      <script>buildHeader();</script>
     </header>
 
     <!-- DATA : https://discover.data.vic.gov.au/dataset/postcode-boundaries-polygon-1-250-000-to-1-5-million-vicmap-lite -->
@@ -46,7 +36,7 @@
     <!-- https://discover.data.vic.gov.au/dataset/victorian-electors-by-locality-postcode-and-electorates -->
     <!-- Converted to JSON by mapshaper.org -->
 
-    <div id='map' style='width: 800px; height: 600px;'></div>
+    <!-- <div id='map' style='width: 800px; height: 600px;'></div>
     <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWFsY29sbW1hbGxveSIsImEiOiJjazF4NGVoOWIwNWprM2NvNDlrb2U0c2xwIn0.kwskG-fOsxlDG7R1ITSQvg';
     var map = new mapboxgl.Map({
@@ -55,13 +45,14 @@
     center: [145.099849, -36.564570], // starting position [lng, lat]
     zoom: 5.5 // starting zoom
     });
-    </script>
+    </script> -->
 
+    <div id="tableauViz_2019"></div>
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <p class="footer-text">Oceanus Project &copy; 2020</p>
+  <footer class="footer">
+    <script>buildFooter();</script>
   </footer>
 
 </body>
