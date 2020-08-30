@@ -3,23 +3,6 @@
 /* GENERAL */
 /* ----------------------- */
 
-@font-face {
-  font-family: Kiddo_Handwriting;
-  src: url("../fonts/Kiddo_Handwriting.ttf");
-}
-
-@font-face {
-  font-family: HETIKA;
-  src: url("../fonts/HETIKADemo.otf");
-}
-
-@font-face {
-  font-family: LondrinaSolid-Light;
-  src: url("../fonts/LondrinaSolid-Light.ttf");
-}
-
-
-
 body {
   margin: 0px;
 
@@ -47,6 +30,30 @@ h3 {
   font-family: LondrinaSolid-Light;
 }
 
+/* REMOVE WHITE BORDER */
+.container-fluid {
+  padding: 0px !important;
+}
+
+/* ----------------------- */
+/* CHECKBOX / RADIO BUTTONS */
+/* ----------------------- */
+
+@font-face {
+  font-family: Kiddo_Handwriting;
+  src: url("../fonts/Kiddo_Handwriting.ttf");
+}
+
+@font-face {
+  font-family: HETIKA;
+  src: url("../fonts/HETIKADemo.otf");
+}
+
+@font-face {
+  font-family: LondrinaSolid-Light;
+  src: url("../fonts/LondrinaSolid-Light.ttf");
+}
+
 label {
   letter-spacing: 3px;
   margin: 3px 0px 3px 20px;
@@ -54,25 +61,79 @@ label {
   font-family: Kiddo_Handwriting;
 }
 
-input[type=radio   ] {
-  display      : none;
+/* ----------------------- */
+/* FONTS */
+/* ----------------------- */
+
+input[type=checkbox]:not(old),
+input[type=radio]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
 }
 
+input[type=checkbox]:not(old) + label,
 input[type=radio   ]:not(old) + label{
   display      : inline-block;
-  margin-left  : -28px;
-  padding-left : 28px;
-  background   : url('../images/checks.png') no-repeat 0 0;
-  line-height  : 24px;
+  margin-left  : -2em;
+  line-height  : 1.5em;
 }
 
-input[type=radio]:not(old):checked + label{
-  background-position : 0 -48px;
+/* RADIO BUTTON STYLE */
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 1em;
+  height           : 1em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  border-radius    : 0.5em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
 }
 
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
 
-.container-fluid {
-  padding: 0px !important;
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : rgb(153,204,102);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
+}
+
+/* RADIO BUTTON STYLE CHECKED */
+input[type=radio]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.2em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.5em;
+  background       : rgb(153,204,102);
+  background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
 }
 
 /* ----------------------- */
@@ -80,10 +141,10 @@ input[type=radio]:not(old):checked + label{
 /* ----------------------- */
 
 header {
-  height: 170px;
+  height: 225px;
   background-image: url('../images/banner.png');
   background-repeat: no-repeat;
-  background-position: 0px -166px;
+  background-size: 100% auto;
   background-size: cover;
   padding: 0px 5%;
   display: flow-root;
@@ -93,10 +154,16 @@ header {
 /* NAV BAR */
 /* ----------------------- */
 
+.logo {
+  height: 55px;
+  padding: 10px 20px;
+  position: absolute;
+}
+
 .nav-container {
   height: 55px;
   max-height: 55px;
-  margin-top: 55px;
+  margin-top: 70px;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 2.5px 5px 4px rgba(0, 0, 0, 0.5);
@@ -118,43 +185,8 @@ header {
   text-decoration: none;
   color: #000000;
   cursor: pointer;
-  font-family: Kiddo_Handwriting;
+  font-family: LondrinaSolid-Light;
   font-size: 20px;
-}
-
-.logo {
-  height: 55px;
-  padding: 10px 20px;
-  position: absolute;
-}
-
-/* ----------------------- */
-/* CONTENT SECTIONS */
-/* ----------------------- */
-
-.content-section {
-  min-height: 300px;
-}
-
-.content-image {
-  width: inherit;
-}
-
-/* ----------------------- */
-/* QUIZ SECTION */
-/* ----------------------- */
-
-.quiz-section {
-  background-color: #466fa0;
-  color: #FFFFFF;
-}
-
-.left-block {
-  padding: 50px 5% 50px 10%;
-}
-
-.right-block {
-  padding: 50px 10% 50px 5%;
 }
 
 /* ----------------------- */
@@ -162,16 +194,20 @@ header {
 /* ----------------------- */
 
 footer {
-  min-height: 120px;
-  max-height: 120px;
   background-color: #5C5C5C;
   color: #FFFFFF;
   text-align: center;
 }
 
 .footer-text {
-  margin-top: 55px;
-  display: inline-flex;
+  display: inline-block;
+  margin: 40px 0px;
+}
+
+.footer-text p{
+  font-size: 16px;
+  line-height: 20px 0px;
+  margin: 12px;
 }
 
 /* ----------------------- */
