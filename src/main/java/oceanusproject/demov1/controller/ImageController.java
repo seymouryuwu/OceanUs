@@ -30,15 +30,14 @@ public class ImageController {
     ResourceLoader resourceLoader;
 
     @GetMapping(value = "getsectionimage/{imageid}")
-    public ResponseEntity<byte[]> getImage(@PathVariable("imageid") @Min(1) @Max(100) long imageId) throws IOException {
+    public ResponseEntity<byte[]> getImage(@PathVariable("imageid") String imageId) throws IOException {
         MediaType mediaType;
-        Resource resource = resourceLoader.getResource("classpath:static/images/image" + imageId + ".jpg");
-        if (resource.exists()) {
+        if (imageId.substring(imageId.length() - 3).equals("jpg")) {
             mediaType = MediaType.IMAGE_JPEG;
         } else {
-            resource = resourceLoader.getResource("classpath:static/images/image" + imageId + ".png");
             mediaType = MediaType.IMAGE_PNG;
         }
+        Resource resource = resourceLoader.getResource("classpath:static/images/" + imageId);
         InputStream input = resource.getInputStream();
 
         byte[] image = IOUtils.toByteArray(input);

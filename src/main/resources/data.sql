@@ -13,7 +13,7 @@ values (1,
 "A catchment, or watershed can be termed as the region of land from where a stream or lake catches or traps water from downpour, ice or snow fall. The water may hang around the ground as surface water, in streams, pools and different wetlands, or it might pass underground to become groundwater, inside layers of permeable soil or rock called aquifers. \nDid you know \"Nitrate from agriculture is the most common chemical contaminant in the world\'s groundwater aquifers.\"\nThe water from these areas for instance from mountains or hills will then flow to a low point which is dam a location on a river, or the mouth of a river where the water enters a bay or the ocean. For example, it\'s just like water in a bathtub flowing to the plughole, or water that falls on a roof flowing to a downpipe or the water from the sinks flowing to the drains. \nDid you know \"Only around 30% to 50% of the rain that falls on Melbourne Water catchments each year ends up in waterways.\"",
 1,
 true,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/deleece-cook-JnfFsMBwe2A-unsplash-min.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -23,7 +23,7 @@ values (2,
 "Catchments supply with drinking water to the individuals, stock and greenery i.e. flora and fauna. They give individuals with water for residential and mechanical use, irrigation as well as for leisure and the travel industry. They may likewise incorporate significant social destinations. Untamed life relies upon catchments for breeding sites, food and asylum. Catchments are significant in ecological, financial, social and social terms. \nDid you know \"Every year, more people die from unsafe water than from all forms of violence, including war.\"\nWhat occurs in one some portion of a catchment is probably going to influence the prosperity of the remainder of the catchment territory, so there are numerous things you can do to limit your effect on the framework.\nFor instance, since stormwater channels run straight into our streams, substantial precipitation can wash residue, trash and toxins into the waterways and in the long run into the sea.\nAny negative change in the state of a catchment is probably going to be reflected in neighbourhood streams and lakes, and in the groundwater which might in turn impact the aquatic life, coral reefs and seagrass bed. For instance, contamination by synthetics/chemicals, soil disintegration because of land clearance, or inordinate water use may bring about a decrease in the soundness of nearby streams and lakes.\nDid you know \"Possible threats to our catchments are Bushfire and Pollution, Human and Animal contamination and  Erosion.\"\nHere are some more facts which you weren\'t aware of.\nDid you know \"Every day, 2 million tons of sewage and industrial and agricultural waste are discharged into the world\'s water (UN WWAP 2003), the equivalent of the weight of the entire human population of 6.8 billion people.\"\nDid you know \"Industry dumps an estimated 300-400 MT of polluted waste in waters every year.\"",
 2,
 true,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/pexels-ciboulette-574024-min.jpg",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -33,7 +33,7 @@ values (3,
 "You can do numerous easily overlooked details, for example, diminishing water contamination and safeguarding water to lessen your effect on your catchment. Limiting disintegration around your home and business will likewise decrease issues downstream; tree planting and mulching forestalls abundance soil and supplements getting into channels and brooks.\nHave you ever thought why does the water you drink taste so great? No, right. The reason behind this is most of the Melbourne water comes from the forest that is high up in the Yarra ranges and the interesting thing is it is naturally filtered. It is for this reason the water that you have from the taps tastes great.\nDid you know \"Melbourne Water built the underground sewerage system in the 1890s?\"\nSewerage is a network of over 3,000 km of pipes and pumps that safely transfers sewage from homes and businesses to treatment plans for processing.",
 3,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+null,
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -43,7 +43,7 @@ values (4,
 "First its disposed where nearly 320,000 million litres of sewage from our houses, businesses and factories, enters Greater Melbourne\'s sewerage through a network of underground pipes, Secondly, it\'s transferred where it enters the one of the bigger trunk sewers which slopes downwards so the gravity enables the sewage flow. Inevitably, pumping stations push it up to ground level to be handled at a treatment plant or to proceed with its excursion through the sewerage, which can take as long as 12 hours and then finally its treated.\nDid you know \"The treatment plants process sewage in different ways, removing rubbish, organic matter and chemicals?\"",
 4,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/jacek-dylag-Vve7XkiUq_Y-unsplash-min.jpg",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -53,7 +53,7 @@ values (5,
 "Consider a scenario where your parents prepared supper and threw the pieces down the kitchen sink to let the waste disposal do something amazing. You painted a cabinet and washed the paintbrush in your restroom sink. Or then again perhaps you discharged your kitty litter into the latrine and flushed it. \nWe\'ve all done things like this many, ordinarily — normally without the slightest hesitation. In any case, did you realize that those little failures to understand the situation could in the long run cost you large? \nDid you know “Sewers are Still the Favourite Dumping Ground For all Kinds of Stuff? ”\nAt the present time you may be thinking, \"Yet it\'s a channel. Isn\'t it there for me to wash things into it?\" No, it\'s definitely not. \nYour channel and the sewage framework going through your home/business/industrial facilities are intended to handle fluids. Yet, in case you\'re similar to a great many people, you\'ve gotten into the propensity for utilizing channels to discard quite a few family unit things. The undeniable arrangement is to change your propensities and be cautious about what does — and doesn\'t — go down your drain. In case you will do that, it\'s essential to learn more about your sewage and afterwards move your garbage bin somewhat nearer to your sink — you will utilize it much more. \nNow if you want your water to taste great then you should watch what you flush or throw into the sink. Let’s learn few of the items in detail which is harmful when disposed in the sink or when it is flushed.\n",
 5,
 false,
-"https://oceanus.me/image/getsectionimage/1",
+"https://oceanus.me/image/getsectionimage/matty-sievers-z9W8c3I1rEU-unsplash.jpg",
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
