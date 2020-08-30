@@ -152,7 +152,7 @@ function buildQuizQuestion(quizId) {
   }
   $('.quiz-section').append(`
   <button type="submit" class="quiz-submit" onClick="checkQuizAnswer()">
-    <image src="../static/images/lock_button.png">
+    <image src="images/lock_button.png">
   </button>
   `);
 }
@@ -208,7 +208,7 @@ function checkQuizAnswer() {
     $('.quiz-submit').hide();
     $('.quiz-section').append(`
     <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
-      <image src="../static/images/next_page_button.png">
+      <image src="images/next_page_button.png">
     </button>
     `);
 

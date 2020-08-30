@@ -10,20 +10,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-  <script src="../static/js/template.js"></script>
-  <script src="../static/js/map.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/map.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="../static/css/normalize.css">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/map.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/map.css">
 
 </head>
 
-<body onload="viz2019();">
+<body onload="map2018(); map2019(); waste_water_mel(); reuse_viz();">
   <div class="container-fluid">
 
 
@@ -36,25 +36,47 @@
 
       <section id="map-1" class="no-padding">
         <div class="row">
-          <div class="col-md-8 left-block">
-            <!-- MAP -->
+          <div class="col-md-6 left-block">
+            <!-- 2019 MAP -->
             <div id="tableauViz_2019"></div>
           </div>
-          <div class="col-md-4 right-block">
-            <p>From these two pictures, we can know the water use situation of each suburb in Melbourne. Put your pointer on the circle to find out more about the water consumption volume.</p>
+          <div class="col-md-6 right-block">
+            <!-- 2018 MAP -->
+            <div id="tableauViz_2018"></div>
           </div>
         </div>
       </section>
 
       <section id="map-2" class="no-padding">
         <div class="row">
-          <div class="col-md-8 left-block">
-
-          </div>
-          <div class="col-md-4 right-block">
+          <div class="col-md-12 full-block">
+            <p>From these two pictures, we can know the water use situation of each suburb in Melbourne. Put your pointer on the circle to find out more about the water consumption volume.</p>
           </div>
         </div>
+      </section>
 
+      <section id="map-3" class="no-padding">
+        <div class="row">
+          <div class="col-md-8 left-block">
+            <!-- WASTE WATER MAP -->
+            <div id="tableauViz_waste"></div>
+          </div>
+          <div class="col-md-4 right-block">
+            <p>This graph shows the flow information of two major sewage collection stations (Eastern Treatment Plant and Western Treatment Plant) in Melbourne from 1996 to 2019. Overall, capacity has not changed much over the past 15 years.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="map-4" class="no-padding">
+        <div class="row">
+          <div class="col-md-4 left-block">
+            <p>This graph shows the situation of sewage recycling and reuse in two Melbourne sewage stations, which are generally used in three directions: Onsite, Supply to Southern Rural Water and Supply to South East Water. We can see that most of the secondary water resources are used in the field of "Onsite". By comparing the two sets of data, it is obvious that the secondary utilization rate of sewage is very high.</p>
+          </div>
+          <div class="col-md-8 right-block">
+            <!-- REUSE MAP -->
+            <div id="tableauViz_reuse"></div>
+          </div>
+        </div>
       </section>
 
       <div class="map-background top-left"></div>

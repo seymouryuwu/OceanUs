@@ -3,7 +3,7 @@ function buildHeader() {
   var header = `
   <div id="nav_container" class="nav-container">
 
-    <img src="../static/images/oceanusLogo.png" class="logo">
+    <img src="images/oceanusLogo.png" class="logo">
 
     <div class="nav-option-group">
       <ul>
