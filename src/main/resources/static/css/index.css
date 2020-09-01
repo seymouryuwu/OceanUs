@@ -1,6 +1,23 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET :  Index Page */
+/* DESCRIPTION : Styles only applicable to the home page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/index.html */
+
+/* ---------------------- */
+/* INDEX : HEADER SECTION */
+/* ---------------------- */
+
 .header {
   min-height: 400px;
 }
+
+/* ---------------------------- */
+/* INDEX : INTRODUCTION SECTION */
+/* ---------------------------- */
 
 #introduction img {
   width: inherit;
@@ -18,11 +35,19 @@
   opacity: 0.7;
 }
 
+/* ---------------------------- */
+/* INDEX : BLUE DIVIDER SECTION */
+/* ---------------------------- */
+
 #blue_divider {
   color: #ffffff;
   background-color: #92aac7;
   text-align: center;
 }
+
+/* ------------------------ */
+/* INDEX : ABOUT US SECTION */
+/* ------------------------ */
 
 .about-us-text {
   color: #ffffff;

@@ -1,7 +1,15 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
 
-/* ----------------------- */
-/* CONTENT SECTIONS */
-/* ----------------------- */
+/* STYLESHEET :  Quiz's & Games (Content) Page */
+/* DESCRIPTION : Styles only applicable to the content page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/content.html */
+
+/* -------------------------- */
+/* CONTENT : CONTENT SECTIONS */
+/* -------------------------- */
 
 .content-section {
   min-height: 300px;
@@ -30,7 +38,7 @@
 }
 
 /* ----------------------- */
-/* QUIZ SECTION */
+/* CONTENT : QUIZ SECTION */
 /* ----------------------- */
 
 .quiz-section {
@@ -49,16 +57,6 @@
   position: absolute;
   left: 20px;
   user-select: none;
-}
-
-.quiz-submit {
-  width: 100%;
-  border: 0px;
-  background: transparent;
-  box-shadow: 0px 0px 0px transparent;
-  border: 0px solid transparent;
-  text-shadow: 0px 0px 0px transparent;
-  margin: 0px auto 50px auto;
 }
 
 .quiz-submit {

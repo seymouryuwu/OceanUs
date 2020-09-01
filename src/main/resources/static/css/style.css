@@ -1,7 +1,14 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
 
-/* ----------------------- */
-/* GENERAL */
-/* ----------------------- */
+/* STYLESHEET :  Global Styles */
+/* DESCRIPTION : A global stylesheet used by all pages */
+/* AUTHOR:     : Malcolm Malloy */
+
+/* -------------------- */
+/* MAP : GENERAL STYLES */
+/* -------------------- */
 
 body {
   margin: 0px;
@@ -30,31 +37,35 @@ h3 {
   font-family: LondrinaSolid-Light;
 }
 
-/* REMOVE WHITE BORDER */
+/* Removes white border */
 .container-fluid {
   padding: 0px !important;
 }
 
+/* Spans whole page width */
 .full-block {
   padding: 50px 100px 50px 100px;
 }
 
+/* Spans left 50% width of page */
 .left-block {
   padding: 50px 100px 50px 100px;
 }
 
+/* Spans right 50% width of page */
 .right-block {
   padding: 50px 100px 50px 100px;
 }
 
+/* Removes padding and margins */
 .no-padding {
   padding: 0px !important;
   margin: 0px !important;
 }
 
-/* ----------------------- */
-/* CHECKBOX / RADIO BUTTONS */
-/* ----------------------- */
+/* ----------- */
+/* MAP : FONTS */
+/* ----------- */
 
 @font-face {
   font-family: Kiddo_Handwriting;
@@ -71,16 +82,17 @@ h3 {
   src: url("../fonts/LondrinaSolid-Light.ttf");
 }
 
+/* ------------------------------ */
+/* MAP : CHECKBOX / RADIO BUTTONS */
+/* ------------------------------ */
+
+
 label {
   letter-spacing: 3px;
   margin: 3px 0px 3px 20px;
   font-size: 20px;
   font-family: Kiddo_Handwriting;
 }
-
-/* ----------------------- */
-/* FONTS */
-/* ----------------------- */
 
 input[type=checkbox]:not(old),
 input[type=radio]:not(old){
@@ -98,7 +110,7 @@ input[type=radio   ]:not(old) + label{
   line-height  : 1.5em;
 }
 
-/* RADIO BUTTON STYLE */
+/* Radio button style */
 input[type=checkbox]:not(old) + label > span,
 input[type=radio   ]:not(old) + label > span{
   display          : inline-block;
@@ -125,6 +137,7 @@ input[type=radio   ]:not(old):checked + label > span{
   background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
 }
 
+/* Checkbox style when checked */
 input[type=checkbox]:not(old):checked + label > span:before{
   content     : '✓';
   display     : block;
@@ -137,7 +150,7 @@ input[type=checkbox]:not(old):checked + label > span:before{
   font-weight : bold;
 }
 
-/* RADIO BUTTON STYLE CHECKED */
+/* Radio button style when checked */
 input[type=radio]:not(old):checked + label > span > span{
   display          : block;
   width            : 0.5em;
@@ -153,9 +166,9 @@ input[type=radio]:not(old):checked + label > span > span{
   background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
 }
 
-/* ----------------------- */
-/* HEADER */
-/* ----------------------- */
+/* ------------ */
+/* MAP : HEADER */
+/* ------------ */
 
 header {
   height: 225px;
@@ -167,9 +180,9 @@ header {
   display: flow-root;
 }
 
-/* ----------------------- */
-/* NAV BAR */
-/* ----------------------- */
+/* ------------- */
+/* MAP : NAV BAR */
+/* ------------- */
 
 .logo {
   height: 55px;
@@ -206,9 +219,9 @@ header {
   font-size: 20px;
 }
 
-/* ----------------------- */
-/* FOOTER */
-/* ----------------------- */
+/* ------------ */
+/* MAP : FOOTER */
+/* ------------ */
 
 footer {
   background-color: #5C5C5C;
@@ -226,7 +239,3 @@ footer {
   line-height: 20px 0px;
   margin: 12px 0px;
 }
-
-/* ----------------------- */
-
-/* ----------------------- */

@@ -1,15 +1,56 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* JAVASCRIPT :  Template */
+/* DESCRIPTION : JavaScript functions accessable by all pages */
+/* AUTHOR:     : Malcolm Malloy */
+
+/* -------------------------------------- */
+/* URLS */
+/* -------------------------------------- */
+
+var staticAssetsURL = "../";
+var contentURL      = "https://oceanus.me/content/";
+var navHomeURL      = "https://oceanus.me";
+var navContentURL   = "https://oceanus.me/content/1";
+var navMapURL       = "https://oceanus.me/map";
+
+/********** DEV MODE **********/
+/* IMPORTANT NOTE : Remove before deployment!!! */
+var devmode = false;
+
+if (devmode) {
+  console.log("!! ----- DEV MODE ACTIVATED! -----!!");
+  console.log("!! -- Remove before deployment! --!!");
+  console.log("!! -------------------------------!!");
+
+  staticAssetsURL = "../static/";
+  contentURL      = "content.html";
+  navHomeURL      = "index.html";
+  navContentURL   = "content.html";
+  navMapURL       = "map.html";
+
+  console.log("DEV MODE : URLs modified for local development!");
+
+};
+/********** DEV MODE **********/
+
+/* ------------------------------------ */
+/* TEMPLATE : BUILD HEADER (HTML BLOCK) */
+/* ------------------------------------ */
 
 function buildHeader() {
   var header = `
   <div id="nav_container" class="nav-container">
 
-    <img src="../images/oceanusLogo.png" class="logo">
+    <img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo">
 
     <div class="nav-option-group">
       <ul>
-        <li class="nav-option"><a href="https://oceanus.me">Home</a></li>
-        <li class="nav-option"><a href="https://oceanus.me/content/1">Quiz</a></li>
-        <li class="nav-option"><a href="https://oceanus.me/map">Map</a></li>
+        <li class="nav-option"><a href="` + navHomeURL + `">Home</a></li>
+        <li class="nav-option"><a href="` + navContentURL + `">Quiz</a></li>
+        <li class="nav-option"><a href="` + navMapURL + `">Map</a></li>
       </ul>
     </div>
 
@@ -19,6 +60,10 @@ function buildHeader() {
   $('.header').append(header);
 
 }
+
+/* ------------------------------------ */
+/* TEMPLATE : BUILD FOOTER (HTML BLOCK) */
+/* ------------------------------------ */
 
 function buildFooter() {
 

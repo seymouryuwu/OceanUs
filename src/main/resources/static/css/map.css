@@ -1,7 +1,25 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET :  Map Page */
+/* DESCRIPTION : Styles only applicable to the map page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/map.html */
+
+/* -------------------- */
+/* MAP : GENERAL STYLES */
+/* -------------------- */
+
 main {
   position: relative;
 }
 
+/* ----------------------- */
+/* MAP : BACKGROUND STYLES */
+/* ----------------------- */
+
+/* DIV : Background triangles common */
 .map-background {
   width: 0;
   height: 0;
@@ -11,6 +29,7 @@ main {
   z-index: -1;
 }
 
+/* DIV : Top-left background triangle */
 .top-left {
   border-width: 200px 100px 0 100px;
   border-color: #92aac7 transparent transparent transparent;
@@ -18,6 +37,7 @@ main {
   left: 160px;
 }
 
+/* DIV : Bottom-left background triangle */
 .bottom-left {
   border-width: 0 75px 120px 75px;
   border-color: transparent transparent #111111 transparent;
@@ -26,6 +46,7 @@ main {
   opacity: 0.3;
 }
 
+/* DIV : Bottom-right background triangle */
 .bottom-right {
   border-width: 0 0 300px 100px;
   border-color: transparent transparent #92aac7 transparent;
@@ -33,9 +54,17 @@ main {
   right: 0px;
 }
 
+/* ---------------------- */
+/* MAP : 2019 TABLEAU MAP */
+/* ---------------------- */
+
 #map-1 .right-block {
   padding-left: 0px;
 }
+
+/* ----------------------- */
+/* MAP : RESPONSIVE LAYOUT */
+/* ----------------------- */
 
 @media (max-width:768px){
   #map-1 .right-block {
