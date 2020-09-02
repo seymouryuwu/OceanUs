@@ -52,6 +52,7 @@ function buildHeader() {
     <div class="nav-option-group">
       <ul>
         <li class="nav-option"><a href="` + navHomeURL + `">Home</a></li>
+        <li class="nav-option"><a href="` + navAboutURL + `">About</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navContentURL + `">Quiz</a></li>
       </ul>
