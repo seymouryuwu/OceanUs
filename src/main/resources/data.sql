@@ -143,7 +143,7 @@ values (14,
 "The table beside summarizes what items can and cannot be poured down the drains.\\nOne rule that can enable you to figure out what\'s alright to dump down the sink is to inquire as to whether you can eat the substance. Most fluids that are ok for human utilization, aside from oils and prescriptions, can be dumped. On the off chance that you wouldn\'t drink it, you most likely don\'t need a concoction hanging out in your sink at any rate. It could interact with food or with the utensils used for cooking and make you wiped out. \\nThings that are hazardous to pour down a sink shouldn\'t be flushed down the latrine, dumped in a tempest channel or covered in your yard, either. On the off chance that they are, the hazardous substances can even now advance into the groundwater.",
 5,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/flushchecklist.png",
 "right");
 
 -- initialize table quizzes
