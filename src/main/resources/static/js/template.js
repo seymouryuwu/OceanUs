@@ -20,7 +20,7 @@ var navContentURL   = "https://oceanus.me/content/1";
 
 /********** DEV MODE **********/
 /* IMPORTANT NOTE : Remove before deployment!!! */
-var devmode = true;
+var devmode = false;
 
 if (devmode) {
   console.log("!! ----- DEV MODE ACTIVATED! -----!!");
@@ -52,7 +52,6 @@ function buildHeader() {
     <div class="nav-option-group">
       <ul>
         <li class="nav-option"><a href="` + navHomeURL + `">Home</a></li>
-        <li class="nav-option"><a href="` + navAboutURL + `">About</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navContentURL + `">Quiz</a></li>
       </ul>

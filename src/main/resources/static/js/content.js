@@ -37,15 +37,19 @@ $( document ).ready(function() {
   //Get last segment of URL
   articleID =  parseInt(this_URL.split('/').pop());
 
+  var devmode = false;
 
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
     articleID = 5;
-    console.log("DEV MODE : The content pages articleID variable has been set to " + articleID);
   }
   /********** DEV MODE **********/
 
+  console.log(articleID);
+  if (articleID < 5) {
+    available = true;
+  }
 
   //Check if last URL segment is numeric
   if ($.isNumeric(articleID)) {
@@ -66,14 +70,15 @@ $( document ).ready(function() {
   }
 
   //API Request : VALIDATION : Check if the next article is available to load
-  $.ajax({url: (API_getarticle + (articleID + 1)), success: function(articleData, textStatus) {
-      available = true;
-      console.log("article found");
-      console.log(available);
-    }, error: function(jqXHR, textStatus, errorThrown) {
-      console.log("Error loading content!");
-    }
-  });
+  // $.ajax({url: (API_getarticle + (articleID + 1)), success: function(articleData, textStatus) {
+  //     available = true;
+  //     console.log("article found");
+  //     console.log(available);
+  //   }, error: function(jqXHR, textStatus, errorThrown) {
+  //     console.log("Error loading content!");
+  //   }
+  // });
+
 
 });
 
@@ -173,7 +178,6 @@ function buildSection(sectionDTOList) {
 
     }
 
-    //If the quizID global array is populated build quiz else add next button
     console.log(quizId);
     if (quizId.length > 0) {
       buildQuizQuestion(quizId);
@@ -307,6 +311,7 @@ function buildQuizAnswers(quizId, questionData) {
 
 function checkQuizAnswer() {
 
+  console.log(available);
   var answered = true;
 
   //Clear currentQuizAnswers global array
