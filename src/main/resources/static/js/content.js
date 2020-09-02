@@ -21,6 +21,7 @@ let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 
 var this_URL = "";
 var articleID =  "";
+var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
 
@@ -40,7 +41,7 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 2;
+    articleID = 5;
     console.log("DEV MODE : The content pages articleID variable has been set to " + articleID);
   }
   /********** DEV MODE **********/
@@ -63,6 +64,16 @@ $( document ).ready(function() {
     //TODO: Redirect to something went wrong page
     console.log("Last section in URL is not numeric");
   }
+
+  //API Request : VALIDATION : Check if the next article is available to load
+  $.ajax({url: (API_getarticle + (articleID + 1)), success: function(articleData, textStatus) {
+      available = true;
+      console.log("article found");
+      console.log(available);
+    }, error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Error loading content!");
+    }
+  });
 
 });
 
@@ -94,6 +105,13 @@ function buildSection(sectionDTOList) {
       imageUrl = (sectionDTOList[x]['imageUrl']);
       imageAlignment = (sectionDTOList[x]['imageAlignment']);
 
+      //Check for tags in the content and format accordingly
+      sectionText = sectionText.replace(/<fun>/g, "<span class='content-fun-fact'>");
+      sectionText = sectionText.replace(/<\/fun>/g, "</span>");
+      sectionText = sectionText.replace(/\\n/g, "</br></br>");
+      sectionText = sectionText.replace(/\n/g, "</br></br>");
+
+      console.log(sectionText);
       //Populate global array quizId with the current quiz id if hasQuiz = TRUE
       if (hasQuiz) {
         quizId.push(id);
@@ -155,9 +173,19 @@ function buildSection(sectionDTOList) {
 
     }
 
-    //If the quizID global array is populated build quiz
+    //If the quizID global array is populated build quiz else add next button
+    console.log(quizId);
     if (quizId.length > 0) {
       buildQuizQuestion(quizId);
+    } else {
+      if (available) {
+        //Append next quiz button
+        $('.content-section').append(`
+        <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
+          <image src="` + staticAssetsURL + `images/next_page_button.png">
+        </button>
+        `);
+      }
     }
   }
 
@@ -304,11 +332,13 @@ function checkQuizAnswer() {
     $('.quiz-submit').hide();
 
     //Append next quiz button
-    $('.quiz-section').append(`
-    <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
-      <image src="` + staticAssetsURL + `images/next_page_button.png">
-    </button>
-    `);
+    if (available) {
+      $('.quiz-section').append(`
+      <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
+        <image src="` + staticAssetsURL + `images/next_page_button.png">
+      </button>
+      `);
+    }
 
     //Populate currentQuizAnswers array with users answers
     for(x = 0; x < currentQuizIds.length; x++) {

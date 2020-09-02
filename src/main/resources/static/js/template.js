@@ -13,8 +13,10 @@
 var staticAssetsURL = "../";
 var contentURL      = "https://oceanus.me/content/";
 var navHomeURL      = "https://oceanus.me";
-var navContentURL   = "https://oceanus.me/content/1";
+var navAboutURL     = "https://oceanus.me/about";
 var navMapURL       = "https://oceanus.me/map";
+var navContentURL   = "https://oceanus.me/content/1";
+
 
 /********** DEV MODE **********/
 /* IMPORTANT NOTE : Remove before deployment!!! */
@@ -28,8 +30,9 @@ if (devmode) {
   staticAssetsURL = "../static/";
   contentURL      = "content.html";
   navHomeURL      = "index.html";
-  navContentURL   = "content.html";
+  navAboutURL     = "about.html";
   navMapURL       = "map.html";
+  navContentURL   = "content.html";
 
   console.log("DEV MODE : URLs modified for local development!");
 
@@ -49,8 +52,9 @@ function buildHeader() {
     <div class="nav-option-group">
       <ul>
         <li class="nav-option"><a href="` + navHomeURL + `">Home</a></li>
+        <li class="nav-option"><a href="` + navAboutURL + `">About</a></li>
+        <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navContentURL + `">Quiz</a></li>
-        <li class="nav-option"><a href="` + navMapURL + `">Map</a></li>
       </ul>
     </div>
 

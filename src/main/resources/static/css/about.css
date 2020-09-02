@@ -1,0 +1,41 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET :  About Us Page */
+/* DESCRIPTION : Styles only applicable to the about page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/about.html */
+
+/* ------------------------ */
+/* ABOUT : ABOUT US SECTION */
+/* ------------------------ */
+
+.about-us-text {
+  color: #ffffff;
+  position: absolute;
+  z-index: 2;
+  margin: 40px 60px;
+  font-size: 20px;
+}
+
+.about-us-text p {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.about-us-text li {
+  margin-bottom: 10px;
+}
+
+#about_us .left-block img {
+  width: inherit;
+  height: 100%;
+  filter: brightness(60%);
+}
+
+#about_us .right-block img {
+  width: inherit;
+  margin: auto;
+  display: block;
+}

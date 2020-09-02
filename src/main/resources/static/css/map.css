@@ -35,6 +35,8 @@ main {
   border-color: #92aac7 transparent transparent transparent;
   top: 0px;
   left: 160px;
+  z-index: 1;
+  opacity: 0.6;
 }
 
 /* DIV : Bottom-left background triangle */
@@ -54,20 +56,57 @@ main {
   right: 0px;
 }
 
-/* ---------------------- */
-/* MAP : 2019 TABLEAU MAP */
-/* ---------------------- */
 
-#map-1 .right-block {
-  padding-left: 0px;
+.z-index-2 {
+  z-index:2;
+  position: relative;
 }
 
-/* ----------------------- */
-/* MAP : RESPONSIVE LAYOUT */
-/* ----------------------- */
+/* ---------------------- */
+/* MAP : TABLEAU MAP */
+/* ---------------------- */
 
-@media (max-width:768px){
-  #map-1 .right-block {
-    padding-left: 100px;
-  }
+.map-section {
+  padding-top: 86px;
+}
+
+.map-desc {
+  margin-top: 59px;
+}
+
+#tableauViz_2019 iframe {
+  height: 300px !important;
+  z-index:0;
+}
+
+/* ------------------------- */
+/* MAP : TABLEAU WASTE GRAPH */
+/* ------------------------- */
+
+.waste-section {
+  background-color: #466fa0;
+  color:#ffffff;
+}
+
+#tableauViz_waste iframe {
+  height: 400px !important;
+}
+
+/* ------------------------- */
+/* MAP : TABLEAU REUSE GRAPH */
+/* ------------------------- */
+
+.reuse-section {
+}
+
+.margin-reuse-top {
+  padding-top: 76px;
+}
+
+.margin-reuse-bottom {
+  padding-bottom: 76px;
+}
+
+#tableauViz_reuse iframe {
+  height: 400px !important;
 }

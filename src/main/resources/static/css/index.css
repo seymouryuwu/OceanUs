@@ -44,26 +44,3 @@
   background-color: #92aac7;
   text-align: center;
 }
-
-/* ------------------------ */
-/* INDEX : ABOUT US SECTION */
-/* ------------------------ */
-
-.about-us-text {
-  color: #ffffff;
-  position: absolute;
-  z-index: 2;
-  margin: 40px 60px;
-}
-
-#about_us .left-block img {
-  width: inherit;
-  height: 100%;
-  filter: brightness(60%);
-}
-
-#about_us .right-block img {
-  width: inherit;
-  margin: auto;
-  display: block;
-}

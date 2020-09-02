@@ -12,30 +12,19 @@
 /* --------------- */
 
 $( document ).ready(function() {
-  map2018();
-  map2019();
+  tableauMap();
   waste_water_mel();
   reuse_viz();
 });
 
 /* ---------------------- */
-/* MAP : 2019 TABLEAU MAP */
+/* MAP : TABLEAU MAP */
 /* ---------------------- */
 
-function map2019() {
+function tableauMap() {
     var containerDiv = document.getElementById("tableauViz_2019"),
-    url = "https://public.tableau.com/shared/HYKJXYQ3H?:display_count=y&:origin=viz_share_link";
+    url = "https://public.tableau.com/views/WaterConsumptionineachdistrictofMelbournein2019/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
 
-    var viz = new tableau.Viz(containerDiv, url);
-}
-
-/* ---------------------- */
-/* MAP : 2018 TABLEAU MAP */
-/* ---------------------- */
-
-function map2018() {
-    var containerDiv = document.getElementById("tableauViz_2018"),
-    url = "https://public.tableau.com/views/WaterConsumptionineachdistrictofMelbournein2018/Sheet1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
     var viz = new tableau.Viz(containerDiv, url);
 }
 
@@ -45,7 +34,7 @@ function map2018() {
 
 function waste_water_mel() {
     var containerDiv = document.getElementById("tableauViz_waste"),
-    url = "https://public.tableau.com/views/wastewateravevolume/Sheet1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
+    url = "https://public.tableau.com/views/Wastewatervolume/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
     var viz = new tableau.Viz(containerDiv, url);
 }
 
@@ -55,6 +44,6 @@ function waste_water_mel() {
 
 function reuse_viz() {
     var containerDiv = document.getElementById("tableauViz_reuse"),
-    url = "https://public.tableau.com/views/reuseofreclaimedwater/Sheet1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
+    url = "https://public.tableau.com/views/reuseofreclaimedwater/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link";
     var viz = new tableau.Viz(containerDiv, url);
 }
