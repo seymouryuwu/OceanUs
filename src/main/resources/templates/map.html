@@ -3,27 +3,29 @@
 
 <head>
 
-  <!-- PAGE TITLE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE : MAP -->
   <title>OceanUs Project | Map</title>
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/map.js"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/map.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/map.css">
 
 </head>
 
-<body onload="map2018(); map2019(); waste_water_mel(); reuse_viz();">
+<body>
   <div class="container-fluid">
 
 
@@ -32,58 +34,69 @@
       <script>buildHeader();</script>
     </header>
 
+    <!-- MAIN -->
     <main>
 
-      <section id="map-1" class="no-padding">
+      <!-- SECTION : 2018/2019 TABLEAU MAPS -->
+      <section class="map-section">
         <div class="row">
-          <div class="col-md-6 left-block">
-            <!-- 2019 MAP -->
+          <div class="col-md-7 left-block">
+            <h2 class="z-index-2">How much water do we use everyday?<h2>
+            <!-- 2019 Map -->
             <div id="tableauViz_2019"></div>
           </div>
+          <div class="col-md-5 right-block map-desc">
+            <h2>Water Consumption in Melbourne<h2>
+            </br>
+            <p>How many water do one household need in each day?</p>
+            <p>The amount of water consumed by each household does not vary much from year to year, but the value varies from region to region. On the one hand, it is because of the difference in population size; on the other hand, it is also because of the different distribution of water enterprises.</p>
+            <p>See the plot here to find your suburb water consumption</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : TABLEAU WASTE WATER GRAPH -->
+      <section class="waste-section">
+        <div class="row">
+          <div class="col-md-6 left-block">
+            <h2>How much sewage do people in Melbourne produce every day?</h2>
+            </br>
+            <!-- Description -->
+            <p>After having a general understanding of our daily water consumption, let’s take a look at the average daily sewage volume in the two major sewage recycling stations(ETP & WTP*) in Melbourne.</p>
+            <p>When the sewage volume is highest, the two stations will collect nearly 900 million liters of sewage per day on average!</p>
+            <p>*ETP: Eastern Treatment Plant</br>WTP: Western Treatment Plant</p>
+          </div>
           <div class="col-md-6 right-block">
-            <!-- 2018 MAP -->
-            <div id="tableauViz_2018"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="map-2" class="no-padding">
-        <div class="row">
-          <div class="col-md-12 full-block">
-            <p>From these two pictures, we can know the water use situation of each suburb in Melbourne. Put your pointer on the circle to find out more about the water consumption volume.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="map-3" class="no-padding">
-        <div class="row">
-          <div class="col-md-8 left-block">
-            <!-- WASTE WATER MAP -->
+            <!-- Waste water graph -->
             <div id="tableauViz_waste"></div>
           </div>
-          <div class="col-md-4 right-block">
-            <p>This graph shows the flow information of two major sewage collection stations (Eastern Treatment Plant and Western Treatment Plant) in Melbourne from 1996 to 2019. Overall, capacity has not changed much over the past 15 years.</p>
-          </div>
         </div>
       </section>
 
-      <section id="map-4" class="no-padding">
-        <div class="row">
-          <div class="col-md-4 left-block">
-            <p>This graph shows the situation of sewage recycling and reuse in two Melbourne sewage stations, which are generally used in three directions: Onsite, Supply to Southern Rural Water and Supply to South East Water. We can see that most of the secondary water resources are used in the field of "Onsite". By comparing the two sets of data, it is obvious that the secondary utilization rate of sewage is very high.</p>
-          </div>
-          <div class="col-md-8 right-block">
-            <!-- REUSE MAP -->
+      <!-- SECTION : TABLEAU REUSE AND RECYCLE GRAPH -->
+      <section class="reuse-section">
+        <div class="row reuse-row-margin margin-reuse-bottom">
+          <div class="col-md-6 left-block ">
+            <!-- Re-use and recycled water graph -->
             <div id="tableauViz_reuse"></div>
           </div>
+          <div class="col-md-6 right-block margin-reuse-top">
+            <h2>Know more about reclaimed water</h2>
+            </br>
+            <!-- Description -->
+            <p>Reclaimed water is water resources that can be reused after the sewage has been treated layer by layer. They can be used in garden watering and toilet flushing.</p>
+            <p>There are three places which two major sewage collecting stations transfer the reclaimed water to: Onsite, Southern Rural Water and City West Water.</p>
+          </div>
         </div>
       </section>
 
-      <div class="map-background top-left"></div>
+      <!-- Background triangles -->
+      <div class="map-background top-left" style="z-index:1;"></div>
       <div class="map-background bottom-left"></div>
       <div class="map-background bottom-right"></div>
 
     </main>
+
     <!-- FOOTER -->
     <footer class="footer">
       <script>buildFooter();</script>
