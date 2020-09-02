@@ -20,7 +20,7 @@ var navContentURL   = "https://oceanus.me/content/1";
 
 /********** DEV MODE **********/
 /* IMPORTANT NOTE : Remove before deployment!!! */
-var devmode = false;
+var devmode = true;
 
 if (devmode) {
   console.log("!! ----- DEV MODE ACTIVATED! -----!!");
