@@ -32,6 +32,11 @@ public class PageController {
     public String getMapPage() {
         return "map";
     }
+
+    @GetMapping("/aboutus")
+    public  String getAboutUsPage() {
+        return "about";
+    }
 }
 
 
