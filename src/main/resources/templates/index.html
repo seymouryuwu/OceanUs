@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/index.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -36,16 +37,16 @@
       <section id="introduction">
         <!-- <div class="introduction-background"></div> -->
         <div class="row">
-          <div class="col-md-6 left-block">
+          <div class="col-md-8 left-block">
 
             <!-- Overview -->
-            <h2>OVERVIEW</h2>
+            <h2>THe OceanUs Project</h2>
             <p>This platform is aimed for you to learn and explore more about the correct disposal of waste. What are the drawbacks if the waste is not disposed correctly and how will it impact our environment and the catchments? In order to make your learning experience more interesting and to be able to have fun at the same time while you are learning we have introduced quizzes and games. So, what are you waiting for? Are you ready to explore??? Have fun while wracking your brains!!!</p>
 
           </div>
-          <div class="col-md-6 right-block">
+          <div class="col-md-4 right-block world-image">
 
-            <img src="../images/overview_image.png">
+            <!-- <img src="../images/world.png"> -->
 
           </div>
         </div>
@@ -57,21 +58,20 @@
       </section>
 
       <!-- SECTION : CALL TO ACTION -->
-      <section id="cta">
-        <div class="cta-background"></div>
+      <section class="cta">
+        <!-- <div class="cta-background"></div> -->
         <div class="row">
-          <div class="col-4 cta-block">
 
+          <div onClick="goToGames();" class="col-4 cta-block">
             <div class="cta-games cta-image">
             </div>
 
             <div class="cta-games-text cta-text">
               <h2>GAMES</h2>
             </div>
-
           </div>
 
-          <div class="col-4 cta-block">
+          <div onClick="goToAdventure();" class="col-4 cta-block">
 
             <div class="cta-adventure cta-image">
             </div>
@@ -85,7 +85,7 @@
 
           </div>
 
-          <div class="col-4 cta-block">
+          <div onClick="goToExplore();" class="col-4 cta-block">
 
             <div class="cta-explore cta-image">
             </div>
@@ -95,9 +95,19 @@
             </div>
 
           </div>
+
         </div>
       </section>
 
+      <!-- SECTION : VIDEO -->
+      <section class="video">
+        <!-- <div class="cta-background"></div> -->
+        <div class="row">
+          <div class="col-12">
+            <iframe width="784" height="441" src="https://www.youtube.com/embed/wAcZrC1wnss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
 
     </main>
 

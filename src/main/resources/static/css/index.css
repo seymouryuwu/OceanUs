@@ -19,19 +19,29 @@
 /* INDEX : CTA */
 /* ---------------------------- */
 
-#cta .row {
-  padding: 0px 100px;
+.cta {
+  height: 75vh;
+}
+
+.cta .row {
+  padding: 15vh 100px;
   z-index: 20;
-  margin: 15vh 0px;
 }
 
 .cta-block {
   padding: 0px 2vw;
   text-align: center;
+  -webkit-filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7));
+   drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7))
+}
+
+.cta-block:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
 }
 
 .cta-text {
-  height: 20vh;
+  height: 15vh;
   width: 100%;
   background-color: #ffffff;
 }
@@ -43,14 +53,14 @@
 }
 
 .cta-games {
-  background-image: url('../images/games_banner_3.png');
-  background-repeat: repeat-x;
+  background-image: url('../images/logos/logo-game.png');
+  background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
 }
 
 .cta-games-text {
-  background-color: #466fa0;
+  background-color: #3f83c2;
 }
 
 .cta-games-text h2 {
@@ -60,19 +70,19 @@
   font-family: COPILME_L;
   color: #ffffff;
   margin-bottom: 0px;
-  line-height: 20vh;
-  background-color: #466FA0;
+  line-height: 15vh;
+  background-color: #3f83c2;
 }
 
 .cta-adventure {
-  background-image: url('../images/games_banner.png');
-  background-repeat: repeat-x;
+  background-image: url('../images/logos/logo-context.png');
+  background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
 }
 
 .cta-adventure-text {
-  background-color: #FCBF49;
+  background-color: #b63e2e;
 }
 
 .cta-adventure-text h2 {
@@ -82,7 +92,7 @@
   font-family: COPILME_L;
   color: #ffffff;
   margin-bottom: 0px;
-  line-height: 6vh;
+  line-height: 4.5vh;
 }
 
 .cta-adventure-text br {
@@ -91,14 +101,14 @@
 
 
 .cta-explore {
-  background-image: url('../images/games_banner.png');
-  background-repeat: repeat-x;
+  background-image: url('../images/logos/logo-explore.png');
+  background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
 }
 
 .cta-explore-text {
-  background-color: #6BF178;
+  background-color: #4a9d2c;
 }
 
 .cta-explore-text h2 {
@@ -108,9 +118,15 @@
   font-family: COPILME_L;
   color: #ffffff;
   margin-bottom: 0px;
-  line-height: 20vh;
+  line-height: 15vh;
 }
 
+.world-image {
+  background-image: url('../images/logos/logo-explore.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 /* ---------------------------- */
 /* INDEX : INTRODUCTION SECTION */
@@ -136,16 +152,7 @@
   opacity: 0.7;
 }
 
-/* ---------------------------- */
-/* INDEX : BLUE DIVIDER SECTION */
-/* ---------------------------- */
-
-#blue_divider {
-  color: #ffffff;
-  background-color: #92aac7;
-  text-align: center;
-}
-
-#blue_divider p {
-  color: #ffffff;
+.iframe {
+  width: 100vw;
+  height: 56.25vw;
 }

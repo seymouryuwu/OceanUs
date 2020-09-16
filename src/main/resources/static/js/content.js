@@ -42,7 +42,7 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 2;
+    articleID = 6;
   }
   /********** DEV MODE **********/
 
@@ -189,7 +189,6 @@ function buildQuizQuestion(quizId) {
 
   //Generate outer HTML block for the quiz section
   var quizSection = `
-  <div class="quiz-background"></div>
   <div class="full-block col-md-12">
     <div class="quiz-title"><h3>QUIZ</h3></div>
   </div>
@@ -320,19 +319,23 @@ function checkQuizAnswer() {
     //Hide lock 'submit' button
     $('.quiz-submit').hide();
 
-    //Append next quiz button
+    //Append next quiz button if another article is available
     if (available) {
-      // $('.quiz-section').append(`
-      // <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
-      //   <image src="` + staticAssetsURL + `images/next_page_button.png">
-      // </button>
-      // `);
-      //TODO: START GAME HERE!!!!
+
       $('.quiz-section').append(`
       <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
         <image src="` + staticAssetsURL + `images/start.png">
       </button>
       `);
+
+    } else {
+      //TODO: Check if there is a game attached before appending this
+      $('.quiz-section').append(`
+      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+        <image src="` + staticAssetsURL + `images/start.png">
+      </button>
+      `);
+
     }
 
     //Populate currentQuizAnswers array with users answers
@@ -386,12 +389,14 @@ function startReward(articleID) {
 
   console.log(articleID);
 
+
   switch (articleID) {
     case 0:
       console.log("No 0 id article!");
       break;
     case 1:
       $('#shark_section').show();
+
       break;
     case 2:
       $('#pipe_game_section').show();
@@ -412,9 +417,19 @@ function startReward(articleID) {
 
   }
 
-  var next = articleID + 1;
-  //Add next quiz buttons onClick event
-  $('#next_quiz').on("click", 'nextQuiz(' + parseInt(next) + ')');
+  var next = parseInt(articleID + 1);
+
+  //Disable Scroll
+  $('body').css('position', 'fixed');
+
+  //TODO: Check if there is an article after this
+  if (available) {
+    //Add next quiz buttons onClick event
+    $('#next_quiz').on("click", 'nextQuiz(' + next + ')');
+  } else {
+    $('#next_quiz').attr('href',navGamesURL).text('Games');
+  }
+
 }
 
 
@@ -423,7 +438,9 @@ function startReward(articleID) {
 /* -------------------------- */
 
 function nextQuiz(quizId) {
-  var nextArticle = (contentURL + quizId);
+
+  console.log(quizId);
+  var nextArticle = (parseInt(contentURL) + parseInt(quizId));
 
 
   /********** DEV MODE **********/

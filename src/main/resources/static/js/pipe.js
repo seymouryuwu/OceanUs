@@ -244,10 +244,8 @@ var pipeTimeRemaining = 0;
 /* -------------------------------------- */
 
 $( document ).ready(function() {
-  console.log("loaded!!!")
   buildPipeGame();
   dealtiles();
-  // pipeStartLevel();
 });
 
 /* -------------------------------------- */
@@ -268,7 +266,15 @@ function buildPipeGame() {
 
     <div id="pipe_game" class="pipe-game">
     </div>
-    <img src="../images/pipe-game/Factory.png" class="girl-image">
+
+    <div class="girl-image">
+      <img src="../images/pipe-game/Girl.png">
+    </div>
+
+    <div class="factory-image">
+      <img src="../images/pipe-game/Factory.png">
+    </div>
+
     <div id="game_over_modal" >
     </div>
 
@@ -311,7 +317,6 @@ function buildPipeGame() {
 
       $('.pipe-row-' + x).append(`
         <div class="col-2">
-          <img src="../images/pipe-game/Girl.png" class="girl-image">          
           <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
           <a class="start-game" onClick="pipeStartLevel();">START</a>
         </div>
@@ -410,6 +415,9 @@ function dealtiles() {
 /* -------------------------------------- */
 
 function pipeStartLevel() {
+
+  //Hide start button
+  $('.start-game').hide();
 
   //Enable tile blocks
   $('.tile-block').css('pointer-events', 'auto').css('filter', 'brightness(100%)');

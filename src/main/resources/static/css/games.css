@@ -1,0 +1,78 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET :  Games Page */
+/* DESCRIPTION : Styles only applicable to the games page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/games.html */
+
+/* ------------------------ */
+/* GAMES :  */
+/* ------------------------ */
+
+
+.gameCircles {
+  height: 45vh;
+  margin: 0px 100px;
+  text-align: center;
+}
+
+.gamesSpacer {
+  height: 30vh;
+  margin: 0px 100px;
+}
+
+.shark-logo {
+  background-image: url('../images/logos/logo-shark.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer
+}
+
+.pipe-logo {
+  background-image: url('../images/logos/logo-pipe.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer
+}
+
+.card-logo {
+  background-image: url('../images/logos/logo-card.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer
+}
+
+.heading h1 {
+  letter-spacing: 3px;
+  font-family: Be-Honest;
+  color: #b63e2e;
+  /* margin-bottom: 22px; */
+  padding: 50px 100px 0px 100px;
+}
+
+.heading h3 {
+  line-height: 44px;
+}
+
+
+.shark-background {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  background-color: rgb(0,0,0,0.9);
+  color: white;
+}
+
+#shark_section canvas {
+  display: block;
+  /* margin: 5vh auto; */
+}

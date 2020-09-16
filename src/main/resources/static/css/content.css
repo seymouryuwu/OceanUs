@@ -39,7 +39,7 @@
 
 .content-fun-fact {
   font-style: italic;
-  color: #346099;
+  color: #3f83c2;
   font-size: x-large;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .red-text {
-  color: #752525;
+  color: #b63e2e;
   font-size: 24px;
 }
 
@@ -62,7 +62,7 @@
 /* ----------------------- */
 
 .quiz-section {
-  background-color: #466fa0;
+  background-color: #3f83c2;
   color: #FFFFFF;
   position: relative;
   /* padding: 50px 0px; */
@@ -121,7 +121,7 @@
 
 #shark_section canvas {
   display: block;
-  margin: 10vh auto;
+  /* margin: 5vh auto; */
 }
 
 .shark-background {

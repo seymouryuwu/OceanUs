@@ -327,6 +327,9 @@ function dealCards() {
 
 function startLevel() {
 
+  //Hide start button
+  $('.start-game').hide();
+
   //Enable tile blocks
   $('.card-block').css('pointer-events', 'auto').css('filter', 'brightness(100%)');
 

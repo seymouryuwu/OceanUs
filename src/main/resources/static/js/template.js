@@ -56,6 +56,7 @@ function buildHeader() {
         <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
         <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
+        <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
       </ul>
     </div>
 
