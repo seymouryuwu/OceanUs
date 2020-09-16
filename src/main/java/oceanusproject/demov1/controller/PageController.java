@@ -34,8 +34,13 @@ public class PageController {
     }
 
     @GetMapping("/aboutus")
-    public  String getAboutUsPage() {
+    public String getAboutUsPage() {
         return "about";
+    }
+
+    @GetMapping("/game")
+    public String getGamePage() {
+        return "game";
     }
 }
 
