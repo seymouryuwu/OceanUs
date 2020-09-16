@@ -13,9 +13,10 @@
 var staticAssetsURL = "../";
 var contentURL      = "https://oceanus.me/content/";
 var navHomeURL      = "https://oceanus.me";
-var navAboutURL     = "https://oceanus.me/about";
+var navGamesURL     = "https://oceanus.me/games";
 var navMapURL       = "https://oceanus.me/map";
 var navContentURL   = "https://oceanus.me/content/1";
+var navAboutURL     = "https://oceanus.me/about";
 
 
 /********** DEV MODE **********/
@@ -27,12 +28,13 @@ if (devmode) {
   console.log("!! -- Remove before deployment! --!!");
   console.log("!! -------------------------------!!");
 
-  staticAssetsURL = "../static/";
+  staticAssetsURL = "../";
   contentURL      = "content.html";
   navHomeURL      = "index.html";
-  navAboutURL     = "about.html";
+  navGamesURL     = "games.html";
   navMapURL       = "map.html";
   navContentURL   = "content.html";
+  navAboutURL     = "about.html";
 
   console.log("DEV MODE : URLs modified for local development!");
 
@@ -47,13 +49,13 @@ function buildHeader() {
   var header = `
   <div id="nav_container" class="nav-container">
 
-    <img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo">
+    <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo"></a>
 
     <div class="nav-option-group">
       <ul>
-        <li class="nav-option"><a href="` + navHomeURL + `">Home</a></li>
+        <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
+        <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
-        <li class="nav-option"><a href="` + navContentURL + `">Quiz</a></li>
       </ul>
     </div>
 

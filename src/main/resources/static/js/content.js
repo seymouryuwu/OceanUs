@@ -42,12 +42,11 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 5;
+    articleID = 2;
   }
   /********** DEV MODE **********/
 
-  console.log(articleID);
-  if (articleID < 5) {
+  if (articleID < 6) {
     available = true;
   }
 
@@ -68,17 +67,6 @@ $( document ).ready(function() {
     //TODO: Redirect to something went wrong page
     console.log("Last section in URL is not numeric");
   }
-
-  //API Request : VALIDATION : Check if the next article is available to load
-  // $.ajax({url: (API_getarticle + (articleID + 1)), success: function(articleData, textStatus) {
-  //     available = true;
-  //     console.log("article found");
-  //     console.log(available);
-  //   }, error: function(jqXHR, textStatus, errorThrown) {
-  //     console.log("Error loading content!");
-  //   }
-  // });
-
 
 });
 
@@ -116,7 +104,6 @@ function buildSection(sectionDTOList) {
       sectionText = sectionText.replace(/\\n/g, "</br></br>");
       sectionText = sectionText.replace(/\n/g, "</br></br>");
 
-      console.log(sectionText);
       //Populate global array quizId with the current quiz id if hasQuiz = TRUE
       if (hasQuiz) {
         quizId.push(id);
@@ -178,14 +165,13 @@ function buildSection(sectionDTOList) {
 
     }
 
-    console.log(quizId);
     if (quizId.length > 0) {
       buildQuizQuestion(quizId);
     } else {
       if (available) {
         //Append next quiz button
         $('.content-section').append(`
-        <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
+        <button type="submit" class="quiz-next" onClick="nextQuiz(` + parseInt(articleID + 1) + `)">
           <image src="` + staticAssetsURL + `images/next_page_button.png">
         </button>
         `);
@@ -311,7 +297,6 @@ function buildQuizAnswers(quizId, questionData) {
 
 function checkQuizAnswer() {
 
-  console.log(available);
   var answered = true;
 
   //Clear currentQuizAnswers global array
@@ -320,12 +305,11 @@ function checkQuizAnswer() {
   //VALIDATION : Check and display feedback if the user has not selected an option for each question
   for(x = 0; x < currentQuizIds.length; x++) {
     if(typeof $('input[name="quiz-answer-' + currentQuizIds[x] + '"]:checked').val() === "undefined") {
+      console.log('Hello!');
       answered = false;
-      $('#quiz_feedback_' + x).text("*Please select an answer!");
-      $('#quiz_feedback_' + x).css("color", "#ff0000");
+      $('#quiz_feedback_' + currentQuizIds[x]).html("<span class='red-text'>*Please select an answer!</span>");
     } else {
-      $('#quiz_feedback_' + x).text("");
-      $('#quiz_feedback_' + x).css("color", "#ffffff");
+      $('#quiz_feedback_' + currentQuizIds[x]).html("");
     }
 
   }
@@ -338,9 +322,15 @@ function checkQuizAnswer() {
 
     //Append next quiz button
     if (available) {
+      // $('.quiz-section').append(`
+      // <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
+      //   <image src="` + staticAssetsURL + `images/next_page_button.png">
+      // </button>
+      // `);
+      //TODO: START GAME HERE!!!!
       $('.quiz-section').append(`
-      <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleID + 1) + `)">
-        <image src="` + staticAssetsURL + `images/next_page_button.png">
+      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+        <image src="` + staticAssetsURL + `images/start.png">
       </button>
       `);
     }
@@ -376,11 +366,9 @@ function checkQuizAnswer() {
 
       //FEEDBACK : Check if question is true and display relevant response text
       if(correctness){
-         $('#quiz_feedback_' + quizId).text("CORRECT!");
-         $('#quiz_feedback_' + quizId).css("color", "#00ff00");
+         $('#quiz_feedback_' + quizId).html("<span class='green-text'>CORRECT!</span> ");
        } else {
-         $('#quiz_feedback_' + quizId).text("INCORRECT! the correct answer is " + correctOptionText);
-         $('#quiz_feedback_' + quizId).css("color", "#ff0000");
+         $('#quiz_feedback_' + quizId).html("<span class='red-text'>INCORRECT!</span></br>The correct answer is " + correctOptionText);
        }
 
     }
@@ -388,6 +376,47 @@ function checkQuizAnswer() {
   }
 
 }
+
+
+/* -------------------------- */
+/* CONTENT : START REWARD GAME */
+/* -------------------------- */
+
+function startReward(articleID) {
+
+  console.log(articleID);
+
+  switch (articleID) {
+    case 0:
+      console.log("No 0 id article!")
+      break;
+    case 1:
+
+      break;
+    case 2:
+      $('#shark_section').show();
+      break;
+    case 3:
+
+      break;
+    case 4:
+      $('#pipe_game_section').show();
+      break;
+    case 5:
+
+      break;
+    case 6:
+      $('#memory_game_section').show();
+      break;
+    default:
+
+  }
+
+  var next = articleID + 1;
+  //Add next quiz buttons onClick event
+  $('#next_quiz').on("click", 'nextQuiz(' + parseInt(next) + ')');
+}
+
 
 /* -------------------------- */
 /* CONTENT : NEXT QUIZ BUTTON */
@@ -408,4 +437,14 @@ function nextQuiz(quizId) {
 
   //Redirect to next content page
   window.location.replace(nextArticle);
+}
+
+
+/* -------------------------- */
+/* CONTENT : FIRES WHEN SHARK GAME CLOSES */
+/* -------------------------- */
+
+function closeSharkGame() {
+  console.log('next quiz!');
+  nextQuiz(parseInt(articleID + 1));
 }

@@ -6,8 +6,27 @@
 /* DESCRIPTION : A global stylesheet used by all pages */
 /* AUTHOR:     : Malcolm Malloy */
 
+/* ----------- */
+/* STYLES : FONTS */
+/* ----------- */
+
+@font-face {
+  font-family: Kiddo_Handwriting;
+  src: url("../fonts/Kiddo_Handwriting.ttf");
+}
+
+@font-face {
+  font-family: Be-Honest;
+  src: url("../fonts/Be Honest.ttf");
+}
+
+@font-face {
+  font-family: COPILME_L;
+  src: url("../fonts/COPILME_L.ttf");
+}
+
 /* -------------------- */
-/* MAP : GENERAL STYLES */
+/* STYLES : GENERAL STYLES */
 /* -------------------- */
 
 body {
@@ -16,17 +35,20 @@ body {
 }
 
 body p {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  /* font-family: Kiddo_Handwriting; */
+  font-size: 22px;
+  font-family: COPILME_L;
+  color: #444444;
+  letter-spacing: 2px;
+  font-kerning: none;
 }
 
 h2 {
   font-size: 26px;
   font-weight: 300;
   letter-spacing: 3px;
-  font-family: LondrinaSolid-Light;
+  font-family: Be-Honest;
+  color: #752525;
+  margin-bottom: 22px;
 }
 
 h3 {
@@ -34,7 +56,8 @@ h3 {
   font-weight: 300;
   letter-spacing: 3px;
   margin-bottom: 30px;
-  font-family: LondrinaSolid-Light;
+  font-family: Be-Honest;
+  color: #752525;
 }
 
 /* Removes white border */
@@ -63,27 +86,9 @@ h3 {
   margin: 0px !important;
 }
 
-/* ----------- */
-/* MAP : FONTS */
-/* ----------- */
-
-@font-face {
-  font-family: Kiddo_Handwriting;
-  src: url("../fonts/Kiddo_Handwriting.ttf");
-}
-
-@font-face {
-  font-family: HETIKA;
-  src: url("../fonts/HETIKADemo.otf");
-}
-
-@font-face {
-  font-family: LondrinaSolid-Light;
-  src: url("../fonts/LondrinaSolid-Light.ttf");
-}
 
 /* ------------------------------ */
-/* MAP : CHECKBOX / RADIO BUTTONS */
+/* STYLES : CHECKBOX / RADIO BUTTONS */
 /* ------------------------------ */
 
 
@@ -167,7 +172,7 @@ input[type=radio]:not(old):checked + label > span > span{
 }
 
 /* ------------ */
-/* MAP : HEADER */
+/* STYLES : HEADER */
 /* ------------ */
 
 header {
@@ -181,7 +186,7 @@ header {
 }
 
 /* ------------- */
-/* MAP : NAV BAR */
+/* STYLES : NAV BAR */
 /* ------------- */
 
 .logo {
@@ -213,14 +218,14 @@ header {
 
 .nav-option a {
   text-decoration: none;
-  color: #000000;
+  color: #346099;
   cursor: pointer;
-  font-family: LondrinaSolid-Light;
-  font-size: 20px;
+  font-family: Be-Honest;
+  font-size: 28px;
 }
 
 /* ------------ */
-/* MAP : FOOTER */
+/* STYLES : FOOTER */
 /* ------------ */
 
 footer {
@@ -238,4 +243,7 @@ footer {
   font-size: 16px;
   line-height: 20px 0px;
   margin: 12px 0px;
+  color: #ffffff;
+  font-family: Kiddo_Handwriting;
+  letter-spacing: 2.5px;
 }

@@ -13,12 +13,30 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="../js/template.js"></script>
   <script src="../js/content.js"></script>
+  <script src="../js/pipe.js"></script>
+  <script src="../js/memory.js"></script>
+
+  <script type="text/javascript" src="../js/phaser.min.js"></script>
+  <script type="text/javascript" src="../js/SceneBootGame.js"></script>
+  <script type="text/javascript" src="../js/SceneMain.js"></script>
+  <script type="text/javascript" src="../js/SceneInstruction.js"></script>
+  <script type="text/javascript" src="../js/ScenePlayGame.js"></script>
+  <script type="text/javascript" src="../js/SceneGameOver.js"></script>
+  <script type="text/javascript" src="../js/SharkGame.js"></script>
+  <script type="text/javascript" src="../js/EggShell.js"></script>
+  <script type="text/javascript" src="../js/MilkBox.js"></script>
+  <script type="text/javascript" src="../js/OilBottle.js"></script>
+  <script type="text/javascript" src="../js/Medicine.js"></script>
+  <script type="text/javascript" src="../js/Fish.js"></script>
+  <script type="text/javascript" src="../js/ToiletPaper.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/content.css">
+  <link rel="stylesheet" href="../css/memory.css">
+  <link rel="stylesheet" href="../css/pipe.css">
 
 </head>
 
@@ -42,6 +60,42 @@
       <!-- SECTION : QUIZ -->
       <section id="quiz_section" class="quiz-section" style="display: none;">
       </section>
+
+      <!-- SECTION : MEMORY GAME -->
+      <section id="memory_game_section" class="memory-background" style="display: none;">
+      </section>
+
+      <!-- SECTION : PIPE GAME -->
+      <section id="pipe_game_section" class="pipe-background" style="display: none;">
+      </section>
+
+      <!-- SECTION : SHARK GAME -->
+      <section id="shark_section" class="shark-background" style="display: none;">
+      </section>
+
+      <!-- SECTION : MEMORY GAME OVER -->
+      <section id="memory_over_section" class="game-over game-over-background" style="display:none;">
+        <div id="user_feedback" class="user-feedback">
+          <h1 id="user_matches"></h1>
+          <h1 id="user_message_1"></h1>
+          <h2 id="user_message_2"></h2>
+          <p id="user_remaining"></p>
+          <p id="user_attempts"></p>
+          </br>
+          <a id="next_quiz" href="">Next quiz</a>
+        </div>
+      </section>
+
+      <!-- SECTION : PIPE GAME OVER -->
+      <section id="pipe_over_section" class="game-over game-over-background" style="display:none;">
+        <div id="pipe_user_feedback" class="pipe-user-feedback">
+          <h1 id="">FEEDBACK!</h1>
+
+          </br>
+          <a id="next_quiz" href="">Next quiz</a>
+        </div>
+      </section>
+
 
     </main>
 

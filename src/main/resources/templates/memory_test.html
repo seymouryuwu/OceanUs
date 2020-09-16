@@ -5,25 +5,25 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- PAGE TITLE : ABOUT US -->
-  <title>OceanUs Project | About Us</title>
+  <!-- PAGE TITLE : TEST -->
+  <title>OceanUs Project | Test Page </title>
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="../js/template.js"></script>
-  <!-- <script src="../js/about.js"></script> -->
+  <script src="../js/memory.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/memory.css">
 
 </head>
 
 <body>
-  <div class="content-div container-fluid">
+  <div class="content-div container">
 
     <!-- HEADER -->
     <header class="header">
@@ -33,27 +33,21 @@
     <!-- MAIN -->
     <main>
 
-      <!-- SECTION : ABOUT US -->
-      <section id="about_us" class="no-padding">
-        <div class="row no-padding">
-          <div class="col-md-6 left-block no-padding">
-            <div class="about-us-text">
+      <!-- SECTION : MEMORY GAME -->
+      <section id="memory_game_section" class="memory-background">
+      </section>
 
-              <!-- About us -->
-              <p>“Sharks in Suits”</p>
-              <ul>
-                <li>Made in Monash with MIT/MBIS/MNS</li>
-                <li>An international cross cultural team</li>
-                <li>Creative, Energetic, Compatible</li>
-                <li>Enjoy the whole process</li>
-              </ul>
-
-            </div>
-            <img src="../images/about_us_image.png">
-          </div>
-          <div class="col-md-6 right-block no-padding">
-            <img src="../images/profile-images.jpeg">
-          </div>
+      <!-- SECTION : GAME OVER -->
+      <section id="game_over_section" class="game-over game-over-background" style="display:none;">
+        <div id="user_feedback" class="user-feedback">
+          <h1 id="user_matches"></h1>
+          <h1 id="user_message_1"></h1>
+          <h2 id="user_message_2"></h2>
+          <p id="user_remaining"></p>
+          <p id="user_attempts"></p>
+          <a href="" onCLick="startLevel()">Play again?</a>
+          </br>
+          <a href="">Next quiz</a>
         </div>
       </section>
 

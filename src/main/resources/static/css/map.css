@@ -70,6 +70,10 @@ main {
   padding-top: 86px;
 }
 
+.map-section p {
+  margin-left: 12px;
+}
+
 .map-desc {
   margin-top: 59px;
 }
@@ -88,6 +92,17 @@ main {
   color:#ffffff;
 }
 
+.waste-section p {
+  margin-left: 12px;
+}
+.waste-section h1, .waste-section h2, .waste-section h3 {
+  color: #99cc66 !important;
+}
+
+.waste-section p, .waste-section h1, .waste-section h2, .waste-section h3 {
+  color:#ffffff;
+}
+
 #tableauViz_waste iframe {
   height: 400px !important;
 }
@@ -97,6 +112,10 @@ main {
 /* ------------------------- */
 
 .reuse-section {
+}
+
+.reuse-section p {
+  margin-left: 12px;
 }
 
 .margin-reuse-top {
