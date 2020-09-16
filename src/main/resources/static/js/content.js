@@ -388,19 +388,19 @@ function startReward(articleID) {
 
   switch (articleID) {
     case 0:
-      console.log("No 0 id article!")
+      console.log("No 0 id article!");
       break;
     case 1:
-
+      $('#shark_section').show();
       break;
     case 2:
-      $('#shark_section').show();
+      $('#pipe_game_section').show();
       break;
     case 3:
 
       break;
     case 4:
-      $('#pipe_game_section').show();
+
       break;
     case 5:
 

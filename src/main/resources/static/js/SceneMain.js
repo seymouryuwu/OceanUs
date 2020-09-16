@@ -13,9 +13,9 @@ class SceneMain extends Phaser.Scene {
 
         this.start.setInteractive();
         this.exit.setInteractive();
-        this.instruction.setInteractive();
+        this.help.setInteractive();
         this.start.on('pointerup', () => { this.scene.start("playGame"); });
-        this.instruction.on('pointerup', () => { this.scene.start("instruction"); });
+        this.help.on('pointerup', () => { this.scene.start("instruction"); });
         // this.exit.on('pointerup', () => { this.sys.game.destroy(true); });
         this.exit.on('pointerup', () => { closeSharkGame(); });      
     }
