@@ -1,12 +1,12 @@
 
 function goToGames() {
-  window.location.href = "games.html";
+  window.location.href = "games";
 };
 
 function goToAdventure() {
-  window.location.href = "content.html";
+  window.location.href = "content/1";
 };
 
 function goToExplore() {
-  window.location.href = "map.html";
+  window.location.href = "map";
 };

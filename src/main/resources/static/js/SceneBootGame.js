@@ -8,6 +8,7 @@ class SceneBootGame extends Phaser.Scene {
 
     this.load.image("start", "../images/shark-game/start.png");
     this.load.image("exit", "../images/shark-game/exit.png");
+    this.load.image("help", "../images/shark-game/help.png");
 
     this.load.image("background_instruction", "../images/shark-game/instruction.png")
 

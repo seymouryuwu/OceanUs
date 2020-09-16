@@ -425,9 +425,11 @@ function startReward(articleID) {
   //TODO: Check if there is an article after this
   if (available) {
     //Add next quiz buttons onClick event
-    $('#next_quiz').on("click", 'nextQuiz(' + next + ')');
+    $('#next_quiz1').on("click", 'nextQuiz(' + next + ')');
+    $('#next_quiz2').on("click", 'nextQuiz(' + next + ')');
   } else {
-    $('#next_quiz').attr('href',navGamesURL).text('Games');
+    $('#next_quiz1').attr('href',navGamesURL).text('Games');
+    $('#next_quiz2').attr('href',navGamesURL).text('Games');
   }
 
 }

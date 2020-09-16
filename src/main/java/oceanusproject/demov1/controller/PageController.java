@@ -33,7 +33,7 @@ public class PageController {
         return "map";
     }
 
-    @GetMapping("/aboutus")
+    @GetMapping("/about")
     public String getAboutUsPage() {
         return "about";
     }
