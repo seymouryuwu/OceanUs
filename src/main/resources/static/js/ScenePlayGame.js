@@ -57,7 +57,7 @@ class ScenePlayGame extends Phaser.Scene {
         var scoreFormated = this.zeroPad(this.score, 6);
         this.scoreLabel = this.add.bitmapText(10, 545, "kiddoFont", "SCORE " + scoreFormated, 40);
 
-        this.lifeIcon = this.physics.add.image(300, 563, "toilet_paper").setScale(0.05);
+        this.lifeIcon = this.physics.add.image(300, 563, "toilet_paper_origin").setScale(0.05);
         this.lifeLabel = this.add.bitmapText(340, 545, "kiddoFont", "X " + this.lives, 40);
 
         this.timeLabel = this.add.bitmapText(500, 545, "kiddoFont", this.formatTime(this.initialTime), 40);

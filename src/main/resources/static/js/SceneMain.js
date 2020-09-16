@@ -9,7 +9,7 @@ class SceneMain extends Phaser.Scene {
 
         this.start = this.add.image(350, 450, "start").setScale(0.4);
         this.exit = this.add.image(500, 450, "exit").setScale(0.4);
-        this.instruction = this.add.image(435, 400, "play_again").setScale(0.4);
+        this.help = this.add.image(425, 400, "help").setScale(0.4);
 
         this.start.setInteractive();
         this.exit.setInteractive();

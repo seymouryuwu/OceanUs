@@ -8,12 +8,15 @@ class SceneBootGame extends Phaser.Scene {
 
     this.load.image("start", "../images/shark-game/start.png");
     this.load.image("exit", "../images/shark-game/exit.png");
+    this.load.image("help", "../images/shark-game/help.png");
 
     this.load.image("background_instruction", "../images/shark-game/instruction.png")
 
     this.load.image("background_up", "../images/shark-game/background_up.png");
     this.load.image("background_down", "../images/shark-game/background_down.png");
     this.load.image("bar", "../images/shark-game/bar.png");
+
+    this.load.image("toilet_paper_origin", "../images/shark-game/toilet_paper_origin.png");
 
     this.load.spritesheet("shark", "../images/shark-game/shark_cropped.png", { frameWidth: 1000, frameHeight: 790 });
     this.load.image("eggshell", "../images/shark-game/eggshell.png");
