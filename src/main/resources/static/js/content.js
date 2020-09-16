@@ -442,7 +442,7 @@ function startReward(articleID) {
 function nextQuiz(quizId) {
 
   console.log(quizId);
-  var nextArticle = (parseInt(contentURL) + parseInt(quizId));
+  var nextArticle = (contentURL + parseInt(quizId));
 
 
   /********** DEV MODE **********/
@@ -465,5 +465,5 @@ function nextQuiz(quizId) {
 
 function closeSharkGame() {
   console.log('next quiz!');
-  nextQuiz(parseInt(articleID + 1));
+  nextQuiz(parseInt(articleID) + 1);
 }
