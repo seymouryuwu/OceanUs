@@ -12,12 +12,113 @@
 /* ---------------------- */
 
 .header {
-  min-height: 400px;
+  min-height: 40vh;
 }
+
+/* ---------------------------- */
+/* INDEX : CTA */
+/* ---------------------------- */
+
+#cta .row {
+  padding: 0px 100px;
+  z-index: 20;
+  margin: 15vh 0px;
+}
+
+.cta-block {
+  padding: 0px 2vw;
+  text-align: center;
+}
+
+.cta-text {
+  height: 20vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.cta-image {
+  height: 35vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.cta-games {
+  background-image: url('../images/games_banner_3.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.cta-games-text {
+  background-color: #466fa0;
+}
+
+.cta-games-text h2 {
+  font-size: 3em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-family: COPILME_L;
+  color: #ffffff;
+  margin-bottom: 0px;
+  line-height: 20vh;
+  background-color: #466FA0;
+}
+
+.cta-adventure {
+  background-image: url('../images/games_banner.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.cta-adventure-text {
+  background-color: #FCBF49;
+}
+
+.cta-adventure-text h2 {
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-family: COPILME_L;
+  color: #ffffff;
+  margin-bottom: 0px;
+  line-height: 6vh;
+}
+
+.cta-adventure-text br {
+  line-height: 5vh;
+}
+
+
+.cta-explore {
+  background-image: url('../images/games_banner.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.cta-explore-text {
+  background-color: #6BF178;
+}
+
+.cta-explore-text h2 {
+  font-size: 3em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-family: COPILME_L;
+  color: #ffffff;
+  margin-bottom: 0px;
+  line-height: 20vh;
+}
+
 
 /* ---------------------------- */
 /* INDEX : INTRODUCTION SECTION */
 /* ---------------------------- */
+
+#introduction p {
+  margin-left: 12px;
+}
 
 #introduction img {
   width: inherit;
@@ -43,4 +144,8 @@
   color: #ffffff;
   background-color: #92aac7;
   text-align: center;
+}
+
+#blue_divider p {
+  color: #ffffff;
 }
