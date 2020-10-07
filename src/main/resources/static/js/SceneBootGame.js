@@ -16,7 +16,6 @@ class SceneBootGame extends Phaser.Scene {
     this.load.image("background_down", "../images/shark-game/background_down.png");
     this.load.image("bar", "../images/shark-game/bar.png");
 
-<<<<<<< Updated upstream
     this.load.image("toilet_paper_origin", "../images/shark-game/toilet_paper_origin.png");
 
     this.load.spritesheet("shark", "../images/shark-game/shark_cropped.png", { frameWidth: 1000, frameHeight: 790 });
@@ -27,16 +26,6 @@ class SceneBootGame extends Phaser.Scene {
     this.load.image("oil_bottle", "../images/shark-game/oil_bottle.png");
     this.load.image("waterdrop", "../images/shark-game/waterdrop.png");
     this.load.image("toilet_paper", "../images/shark-game/toilet_paper.png");
-=======
-    this.load.spritesheet("shark", "../images/shark-game/shark_cropped.png", { frameWidth: 1000, frameHeight: 790 });
-    this.load.image("eggshell", "../images/shark-game/eggshell.png");
-    this.load.image("fish", "../images/shark-game/fish.png");
-    this.load.image("medicine", "../images/shark-game/medicine.png");
-    this.load.image("milk_box", "../images/shark-game/milk_box.png");
-    this.load.image("oil_bottle", "../images/shark-game/oil_bottle.png");
-    this.load.image("waterdrop", "../images/shark-game/waterdrop.png");
-    this.load.image("toilet_paper", "../images/shark-game/toilet_paper.png");
->>>>>>> Stashed changes
 
     this.load.bitmapFont("kiddoFont", "../fonts/font.png", "../fonts/font.xml");
 

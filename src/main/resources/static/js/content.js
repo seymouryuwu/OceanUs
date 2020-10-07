@@ -465,11 +465,6 @@ function startReward(articleID) {
 
 function nextQuiz(quizId) {
 
-<<<<<<< Updated upstream
-  console.log(quizId);
-=======
-  console.log(typeof quizId);
->>>>>>> Stashed changes
   var nextArticle = (contentURL + parseInt(quizId));
 
 
