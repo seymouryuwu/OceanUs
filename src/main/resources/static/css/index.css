@@ -152,7 +152,8 @@
   opacity: 0.7;
 }
 
-.iframe {
+iframe {
   width: 100vw;
   height: 56.25vw;
+  display: block;
 }

@@ -21,7 +21,7 @@
 
 .pipe-game {
   margin: 5% 0px;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .pipe-tile {
@@ -76,15 +76,27 @@
 }
 
 .girl-image img{
-  width: 80px;
-  right: 26vw;
+  width: 8vw;
   position: absolute;
-  top: 8vh;
+  bottom: 0px;
+  left: 0px;
 }
 
 .factory-image img{
-  width: 150px;
-  left: 3vw;
-  top: 50vh;
+  width: 16vw;
   position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.game-menu {
+  text-align: center;
+}
+
+.start-game img {
+  width: 10vw;
+}
+
+.exit-game img {
+  width: 10vw;
 }

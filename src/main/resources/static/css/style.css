@@ -205,8 +205,10 @@ header {
 /* ------------- */
 
 .logo {
-  height: 55px;
-  padding: 10px 20px;
+  height: 65px;
+  margin-left: -25px;
+  margin-top: -4px;
+  /* padding: 10px 20px; */
   position: absolute;
 }
 
@@ -215,7 +217,7 @@ header {
   max-height: 55px;
   margin-top: 70px;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 35px;
   box-shadow: 2.5px 5px 4px rgba(0, 0, 0, 0.5);
 }
 

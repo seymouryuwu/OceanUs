@@ -25,7 +25,7 @@
   max-height: 20vh;
 }
 
-.memory-card-image:hover {
+.memory-card-hover:hover {
   transform: scale(1.1, 1.1);
 }
 
@@ -75,4 +75,16 @@
 
 .start-game {
   cursor: pointer;
+}
+
+.exit-game {
+  cursor: pointer;
+}
+
+.start-game img {
+  width: 10vw;
+}
+
+.exit-game img {
+  width: 10vw;
 }

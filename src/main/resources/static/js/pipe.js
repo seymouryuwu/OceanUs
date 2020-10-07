@@ -202,28 +202,28 @@ var pipeData = {
       "tileType":"Tee",
       "tileName":"T Shaped Pipe",
       "tileDescription":"T Shaped Pipe",
-      "tileImageURL":"../images/pipe-game/t_pipe.png",
+      "tileImageURL":"../static/images/pipe-game/t_pipe.png",
     },
     {
       "tileID":2,
       "tileType":"Straight",
       "tileName":"Straight Pipe",
       "tileDescription":"Straight Pipe",
-      "tileImageURL":"../images/pipe-game/straight_pipe.png",
+      "tileImageURL":"../static/images/pipe-game/straight_pipe.png",
     },
     {
       "tileID":3,
       "tileType":"Corner",
       "tileName":"Corner Pipe",
       "tileDescription":"Corner Pipe",
-      "tileImageURL":"../images/pipe-game/corner_pipe.png",
+      "tileImageURL":"../static/images/pipe-game/corner_pipe.png",
     },
     {
       "tileID":4,
       "tileType":"Cross",
       "tileName":"Cross Pipe",
       "tileDescription":"Cross Pipe",
-      "tileImageURL":"../images/pipe-game/cross_pipe.png",
+      "tileImageURL":"../static/images/pipe-game/cross_pipe.png",
     }
   ]
 }
@@ -260,19 +260,9 @@ function buildPipeGame() {
   var pipeHeight = pipeData.level[0].levelheight;
   var pipeLevelDuration = pipeData.level[0].levelDuration;
 
-  var firstRow = true;
-
   $('#pipe_game_section').append(`
 
     <div id="pipe_game" class="pipe-game">
-    </div>
-
-    <div class="girl-image">
-      <img src="../images/pipe-game/Girl.png">
-    </div>
-
-    <div class="factory-image">
-      <img src="../images/pipe-game/Factory.png">
     </div>
 
     <div id="game_over_modal" >
@@ -290,11 +280,23 @@ function buildPipeGame() {
         </div>
     `);
 
-    //Spacer
-    $('.pipe-row-' + x).append(`
-      <div class="col-2">
-      </div>
-    `);
+    if (x == 3) {
+      //Left Spacer with factory
+      $('.pipe-row-' + x).append(`
+        <div class="col-3">
+          <div class="factory-image">
+            <img src="../static/images/pipe-game/Factory.png">
+          </div>
+        </div>
+      `);
+    } else {
+      //Left Spacer without factory
+      $('.pipe-row-' + x).append(`
+        <div class="col-3">
+        </div>
+      `);
+    }
+
 
     for(y = 0; y < pipeWidth; y++) {
 
@@ -313,33 +315,52 @@ function buildPipeGame() {
     }
 
     //Game information
-    if (firstRow) {
+    if (x == 0) {
 
+      //Display game controls
+      // $('.pipe-row-' + x).append(`
+      //   <div class="col-2">
+      //     <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
+      //     <a class="start-game" onClick="pipeStartLevel();">START</a>
+      //   </div>
+      // `);
+
+      //Right Spacer with girl image
       $('.pipe-row-' + x).append(`
-        <div class="col-2">
-          <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
-          <a class="start-game" onClick="pipeStartLevel();">START</a>
+        <div class="col-3">
+          <div class="girl-image">
+            <img src="../static/images/pipe-game/Girl.png">
+          </div>
         </div>
       `);
 
-      firstRow = false;
-
     } else {
 
+      //Right Spacer without girl image
       $('.pipe-row-' + x).append(`
-        <div class="col-2">
+        <div class="col-3">
         </div>
       `);
 
     }
 
-    $('.pipe-row-' + x).append(`
-      <div class="col-2">
-
-      </div>
-    `);
-
   }
+
+  //Add game menu
+  $('#pipe_game').append(`
+      <div class="row game-menu">
+        <div class="col-12">
+          <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
+          <a class="start-game" onClick="pipeStartLevel();">
+            <img src="../static/images/start.png">
+          </a>
+          <a class="exit-game" onClick="pipeExitGame();">
+            <img src="../static/images/exit.png">
+          </a>
+        </div>
+      </div>
+  `);
+
 }
 
 
@@ -639,6 +660,23 @@ function pipeEndGame() {
 
   //Show game over feedback
   $('#pipe_over_section').show();
+
+  //Hide pipe game section
+  $('#pipe_game_section').hide();
+
+}
+
+/* -------------------------------------- */
+/* EXIT GAME */
+/* -------------------------------------- */
+
+function pipeExitGame() {
+
+  //Stop Timer
+  clearInterval(pipeLevelTimer);
+
+  //Show game over feedback
+  // $('#pipe_over_section').show();
 
   //Hide pipe game section
   $('#pipe_game_section').hide();

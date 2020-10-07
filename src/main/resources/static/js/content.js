@@ -21,9 +21,11 @@ let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 
 var this_URL = "";
 var articleID =  "";
-var available = false;
+var available = true;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
+
+var distance = 0;
 
 /* ------------------- */
 /* CONTENT : PAGE LOAD */
@@ -42,7 +44,7 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 6;
+    articleID = 2;
   }
   /********** DEV MODE **********/
 
@@ -98,9 +100,29 @@ function buildSection(sectionDTOList) {
       imageUrl = (sectionDTOList[x]['imageUrl']);
       imageAlignment = (sectionDTOList[x]['imageAlignment']);
 
+      //Randomly choose image of animal with speach bubble
+      var randomNum = (Math.random() * 3);
+      var randomImage = "";
+      randomNum = Math.ceil(randomNum);
+      console.log(randomNum);
+
+      switch (randomNum) {
+        case 1:
+          randomImage = "../static/images/logos/bubble-puffer.png";
+          break;
+        case 2:
+          randomImage = "../static/images/logos/bubble-seal.png";
+          break;
+        case 3:
+          randomImage = "../static/images/logos/bubble-shark.png";
+          break;
+        default:
+
+      }
+
       //Check for tags in the content and format accordingly
-      sectionText = sectionText.replace(/<fun>/g, "<span class='content-fun-fact'>");
-      sectionText = sectionText.replace(/<\/fun>/g, "</span>");
+      sectionText = sectionText.replace(/<fun>/g, "<div class='content-fun-fact'>");
+      sectionText = sectionText.replace(/<\/fun>/g, "<div class='content-fun-fact-image'><img src='" + randomImage + "'></div></div>");
       sectionText = sectionText.replace(/\\n/g, "</br></br>");
       sectionText = sectionText.replace(/\n/g, "</br></br>");
 
@@ -419,6 +441,8 @@ function startReward(articleID) {
 
   var next = parseInt(articleID + 1);
 
+  console.log(next);
+
   //Disable Scroll
   $('body').css('position', 'fixed');
 
@@ -441,7 +465,11 @@ function startReward(articleID) {
 
 function nextQuiz(quizId) {
 
+<<<<<<< Updated upstream
   console.log(quizId);
+=======
+  console.log(typeof quizId);
+>>>>>>> Stashed changes
   var nextArticle = (contentURL + parseInt(quizId));
 
 
@@ -455,7 +483,7 @@ function nextQuiz(quizId) {
 
 
   //Redirect to next content page
-  window.location.replace(nextArticle);
+  // window.location.replace(nextArticle);
 }
 
 
@@ -467,3 +495,23 @@ function closeSharkGame() {
   console.log('next quiz!');
   nextQuiz(parseInt(articleID) + 1);
 }
+
+
+/* -------------------------- */
+/* CONTENT : SCROLL LOCK */
+/* -------------------------- */
+
+$(window).scroll(function() {
+
+  distance = $('#quiz_section').offset().top;
+  topPadding = -Math.abs(distance);
+  console.log(topPadding);
+
+  if ( $(this).scrollTop() >= distance ) {
+      console.log('is in top');
+      $('body').css('position', 'fixed').css('margin-top', parseInt(topPadding));
+      $('#quiz_section').addClass('scrollable');
+  } else {
+      console.log('is not in top');
+  }
+});
