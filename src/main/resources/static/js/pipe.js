@@ -202,28 +202,28 @@ var pipeData = {
       "tileType":"Tee",
       "tileName":"T Shaped Pipe",
       "tileDescription":"T Shaped Pipe",
-      "tileImageURL":"../static/images/pipe-game/t_pipe.png",
+      "tileImageURL":"../images/pipe-game/t_pipe.png",
     },
     {
       "tileID":2,
       "tileType":"Straight",
       "tileName":"Straight Pipe",
       "tileDescription":"Straight Pipe",
-      "tileImageURL":"../static/images/pipe-game/straight_pipe.png",
+      "tileImageURL":"../images/pipe-game/straight_pipe.png",
     },
     {
       "tileID":3,
       "tileType":"Corner",
       "tileName":"Corner Pipe",
       "tileDescription":"Corner Pipe",
-      "tileImageURL":"../static/images/pipe-game/corner_pipe.png",
+      "tileImageURL":"../images/pipe-game/corner_pipe.png",
     },
     {
       "tileID":4,
       "tileType":"Cross",
       "tileName":"Cross Pipe",
       "tileDescription":"Cross Pipe",
-      "tileImageURL":"../static/images/pipe-game/cross_pipe.png",
+      "tileImageURL":"../images/pipe-game/cross_pipe.png",
     }
   ]
 }
@@ -285,7 +285,7 @@ function buildPipeGame() {
       $('.pipe-row-' + x).append(`
         <div class="col-3">
           <div class="factory-image">
-            <img src="../static/images/pipe-game/Factory.png">
+            <img src="../images/pipe-game/Factory.png">
           </div>
         </div>
       `);
@@ -329,7 +329,7 @@ function buildPipeGame() {
       $('.pipe-row-' + x).append(`
         <div class="col-3">
           <div class="girl-image">
-            <img src="../static/images/pipe-game/Girl.png">
+            <img src="../images/pipe-game/Girl.png">
           </div>
         </div>
       `);
@@ -352,10 +352,10 @@ function buildPipeGame() {
         <div class="col-12">
           <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
           <a class="start-game" onClick="pipeStartLevel();">
-            <img src="../static/images/start.png">
+            <img src="../images/start.png">
           </a>
           <a class="exit-game" onClick="pipeExitGame();">
-            <img src="../static/images/exit.png">
+            <img src="../images/exit.png">
           </a>
         </div>
       </div>

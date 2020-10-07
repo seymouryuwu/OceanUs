@@ -32,119 +32,119 @@ var memoryData = {
 
 var deckData = {
   "cardBack":"Oceanus",
-  "cardBackURL":"../static/images/memory/deck01/Back.png",
+  "cardBackURL":"../images/memory/deck01/Back.png",
   "cards":[
     {
       "cardID":1,
       "cardMatchID":9,
       "cardName":"Baking Soda",
       "cardDescription":"Baking Soda",
-      "cardImageURL":"../static/images/memory/deck01/BakingSoda.png",
+      "cardImageURL":"../images/memory/deck01/BakingSoda.png",
     },
     {
       "cardID":2,
       "cardMatchID":10,
       "cardName":"Coffee",
       "cardDescription":"Coffee",
-      "cardImageURL":"../static/images/memory/deck01/CoffeeGround.png",
+      "cardImageURL":"../images/memory/deck01/CoffeeGround.png",
     },
     {
       "cardID":3,
       "cardMatchID":11,
       "cardName":"Eggshell",
       "cardDescription":"Eggshell",
-      "cardImageURL":"../static/images/memory/deck01/Eggshell.png",
+      "cardImageURL":"../images/memory/deck01/Eggshell.png",
     },
     {
       "cardID":4,
       "cardMatchID":12,
       "cardName":"Face Tissue",
       "cardDescription":"Face Tissue",
-      "cardImageURL":"../static/images/memory/deck01/Facetissue.png",
+      "cardImageURL":"../images/memory/deck01/Facetissue.png",
     },
     {
       "cardID":5,
       "cardMatchID":13,
       "cardName":"Fruit Peels",
       "cardDescription":"Fruit Peels",
-      "cardImageURL":"../static/images/memory/deck01/Fruitpeels.png",
+      "cardImageURL":"../images/memory/deck01/Fruitpeels.png",
     },
     {
       "cardID":6,
       "cardMatchID":14,
       "cardName":"Oil",
       "cardDescription":"Oil",
-      "cardImageURL":"../static/images/memory/deck01/Oil.png",
+      "cardImageURL":"../images/memory/deck01/Oil.png",
     },
     {
       "cardID":7,
       "cardMatchID":15,
       "cardName":"Soup",
       "cardDescription":"Soup",
-      "cardImageURL":"../static/images/memory/deck01/Soup.png",
+      "cardImageURL":"../images/memory/deck01/Soup.png",
     },
     {
       "cardID":8,
       "cardMatchID":16,
       "cardName":"Toilet Paper",
       "cardDescription":"Toilet Paper",
-      "cardImageURL":"../static/images/memory/deck01/Toiletpaper.png",
+      "cardImageURL":"../images/memory/deck01/Toiletpaper.png",
     },
     {
       "cardID":9,
       "cardMatchID":1,
       "cardName":"Baking Soda",
       "cardDescription":"Baking Soda",
-      "cardImageURL":"../static/images/memory/deck01/BakingSoda.png",
+      "cardImageURL":"../images/memory/deck01/BakingSoda.png",
     },
     {
       "cardID":10,
       "cardMatchID":2,
       "cardName":"Coffee",
       "cardDescription":"Coffee",
-      "cardImageURL":"../static/images/memory/deck01/CoffeeGround.png",
+      "cardImageURL":"../images/memory/deck01/CoffeeGround.png",
     },
     {
       "cardID":11,
       "cardMatchID":3,
       "cardName":"Eggshell",
       "cardDescription":"Eggshell",
-      "cardImageURL":"../static/images/memory/deck01/Eggshell.png",
+      "cardImageURL":"../images/memory/deck01/Eggshell.png",
     },
     {
       "cardID":12,
       "cardMatchID":4,
       "cardName":"Face Tissue",
       "cardDescription":"Face Tissue",
-      "cardImageURL":"../static/images/memory/deck01/Facetissue.png",
+      "cardImageURL":"../images/memory/deck01/Facetissue.png",
     },
     {
       "cardID":13,
       "cardMatchID":5,
       "cardName":"Fruit Peels",
       "cardDescription":"Fruit Peels",
-      "cardImageURL":"../static/images/memory/deck01/Fruitpeels.png",
+      "cardImageURL":"../images/memory/deck01/Fruitpeels.png",
     },
     {
       "cardID":14,
       "cardMatchID":6,
       "cardName":"Oil",
       "cardDescription":"Oil",
-      "cardImageURL":"../static/images/memory/deck01/Oil.png",
+      "cardImageURL":"../images/memory/deck01/Oil.png",
     },
     {
       "cardID":15,
       "cardMatchID":7,
       "cardName":"Soup",
       "cardDescription":"Soup",
-      "cardImageURL":"../static/images/memory/deck01/Soup.png",
+      "cardImageURL":"../images/memory/deck01/Soup.png",
     },
     {
       "cardID":16,
       "cardMatchID":8,
       "cardName":"Toilet Paper",
       "cardDescription":"Toilet Paper",
-      "cardImageURL":"../static/images/memory/deck01/Toiletpaper.png",
+      "cardImageURL":"../images/memory/deck01/Toiletpaper.png",
     }
   ]
 }
@@ -257,10 +257,10 @@ function buildMemoryGame() {
           <p id="memory_timer"> ` + levelDuration + `</p>
           <p id="memory_score"></p>
           <a class="start-game" onClick="dealCards();startLevel();">
-            <img src="../static/images/start.png">
+            <img src="../images/start.png">
           </a>
           <a class="exit-game" onClick="exitGame();">
-            <img src="../static/images/exit.png">
+            <img src="../images/exit.png">
           </a>
         </div>
       `);

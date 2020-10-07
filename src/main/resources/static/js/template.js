@@ -10,7 +10,7 @@
 /* URLS */
 /* -------------------------------------- */
 
-var staticAssetsURL = "../static/";
+var staticAssetsURL = "../";
 var contentURL      = "https://oceanus.me/content/";
 var navHomeURL      = "https://oceanus.me";
 var navGamesURL     = "https://oceanus.me/games";
@@ -28,7 +28,7 @@ if (devmode) {
   console.log("!! -- Remove before deployment! --!!");
   console.log("!! -------------------------------!!");
 
-  staticAssetsURL = "../static/";
+  staticAssetsURL = "../";
   contentURL      = "content.html";
   navHomeURL      = "index.html";
   navGamesURL     = "games.html";
