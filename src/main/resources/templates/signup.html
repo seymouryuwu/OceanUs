@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Registration Form</title>
+</head>
+
+<body>
+<form th:action="@{/signup}" th:object="${user}" method="post">
+    <div>
+        <label>email</label>
+        <input type="email" th:field="*{email}"/>
+        <p th:each="error : ${#fields.errors('email')}"
+           th:text="${error}">Validation error
+        </p>
+    </div>
+    <div>
+        <label>password</label>
+        <input type="password" th:field="*{password}"/>
+        <p th:each="error : ${#fields.errors('password')}"
+           th:text="${error}">Validation error
+        </p>
+    </div>
+    <button type="submit">submit</button>
+</form>
+<a th:href="@{/about}" ></a>
+</body>
+</html>
