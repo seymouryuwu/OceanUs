@@ -1,6 +1,9 @@
 package oceanusproject.demov1.controller;
 
 import oceanusproject.demov1.dto.UserDTO;
+import oceanusproject.demov1.error.UserAlreadyExistException;
+import oceanusproject.demov1.service.UserDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +16,9 @@ import javax.validation.Valid;
 @Controller
 @CrossOrigin
 public class PageController {
+    @Autowired
+    UserDetailsServiceImpl userService;
+
     @GetMapping
     public String getHomePage() {
         return "index";
@@ -21,6 +27,7 @@ public class PageController {
     @GetMapping("/content")
     public String getContentPageDefault(Model model) {
         model.addAttribute("articleId", 1);
+
         return "content";
     }
 
@@ -58,6 +65,13 @@ public class PageController {
         if (bindingResult.hasErrors()) {
             return "signup";
         }
+        try {
+            userService.registerNewUserAccount(user);
+        } catch (UserAlreadyExistException ex) {
+
+        }
+
+
         return "about";
     }
 }
