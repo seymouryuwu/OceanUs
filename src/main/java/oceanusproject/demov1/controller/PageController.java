@@ -2,13 +2,17 @@ package oceanusproject.demov1.controller;
 
 import oceanusproject.demov1.dto.UserDTO;
 import oceanusproject.demov1.error.UserAlreadyExistException;
-import oceanusproject.demov1.service.UserDetailsServiceImpl;
+import oceanusproject.demov1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -17,7 +21,7 @@ import javax.validation.Valid;
 @CrossOrigin
 public class PageController {
     @Autowired
-    UserDetailsServiceImpl userService;
+    UserService userService;
 
     @GetMapping
     public String getHomePage() {
@@ -32,7 +36,6 @@ public class PageController {
     }
 
     @GetMapping("/content/{articleid}")
-    //public String getContentPage(@PathVariable(name = "articleid") long articleId) {
     public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
         model.addAttribute("articleId", articleId);
         return "content";
@@ -61,19 +64,36 @@ public class PageController {
     }
 
     @PostMapping("/signup")
-    public String test(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult) {
+    public String signUp(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "signup";
         }
         try {
             userService.registerNewUserAccount(user);
         } catch (UserAlreadyExistException ex) {
-
+            model.addAttribute("message", ex.getMessage());
+            return "signup";
         }
-
-
-        return "about";
+        return "login";
     }
+
+    @GetMapping("/login")
+    public String getLoginPage(Model model) {
+        return "login";
+    }
+
+    @GetMapping("/login_success")
+    public String loginSuccess(@RequestParam(value = "email") String email, Model model) {
+        model.addAttribute("userEmail", email);
+        return "loginSuccessfully";
+    }
+
+    @PostMapping("/login_failure")
+    public String loginFailure(Model model) {
+        model.addAttribute("message", "Invalid user account or password");
+        return "login";
+    }
+
 }
 
 

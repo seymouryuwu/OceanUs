@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Registration Form</title>
+    <title>Signup Form</title>
 </head>
 
 <body>
@@ -19,13 +19,14 @@
            th:text="${error}">Validation error</p>
     </div>
     <div>
-        <label>repeat password</label>
+        <label>password confirm</label>
         <input type="password" th:field="*{matchingPassword}"/>
         <p th:each="error : ${#fields.errors('matchingPassword')}"
            th:text="${error}">Validation error</p>
     </div>
-    <button type="submit">submit</button>
+    <button type="submit">Signup</button>
 </form>
 <a th:href="@{/about}" ></a>
+<p th:text="${message}" ></p>
 </body>
 </html>
