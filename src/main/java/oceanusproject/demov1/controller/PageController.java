@@ -56,6 +56,8 @@ public class PageController {
         return "games";
     }
 
+    //@GetMapping("/")
+
     @GetMapping("/signup")
     public String getSignupPage(Model model) {
         UserDTO userDTO = new UserDTO();

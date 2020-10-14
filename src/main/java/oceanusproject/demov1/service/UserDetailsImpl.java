@@ -1,5 +1,6 @@
-package oceanusproject.demov1.model;
+package oceanusproject.demov1.service;
 
+import oceanusproject.demov1.model.GeneralUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,11 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
-public class MyUserDetails implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
     private GeneralUser generalUser;
 
-    public MyUserDetails(GeneralUser generalUser) {
+    public UserDetailsImpl(GeneralUser generalUser) {
         this.generalUser = generalUser;
     }
 

@@ -1,6 +1,5 @@
-package oceanusproject.demov1;
+package oceanusproject.demov1.security;
 
-import oceanusproject.demov1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,9 +23,6 @@ import java.io.IOException;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
-
-    @Autowired
-    private UserService userService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -44,28 +39,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                    .loginPage("/login")
-                    .successHandler(new AuthenticationSuccessHandler() {
-                        @Override
-                        public void onAuthenticationSuccess(HttpServletRequest request,
-                                                            HttpServletResponse response,
-                                                            Authentication authentication) throws IOException {
-                            System.out.println("1" + request.getContextPath());
-                            System.out.println(request.getPathInfo());
-                            System.out.println(request.getPathTranslated());
-                            System.out.println(request.getRequestURI());
-                            System.out.println(request.getRequestURL());
-                            System.out.println("6"+request.getServletPath());
-                            //System.out.println(request.ge);
-                            response.sendRedirect("/login_success?email=" + authentication.getName());
-                        }
-                    })
-                    .failureForwardUrl("/login_failure")
-                    .permitAll()
-                    .and()
-                    .logout()
-                    .permitAll();
-
+                .loginPage("/login")
+                .successHandler(new AuthenticationSuccessHandler() {
+                    @Override
+                    public void onAuthenticationSuccess(HttpServletRequest request,
+                                                        HttpServletResponse response,
+                                                        Authentication authentication) throws IOException {
+                        response.sendRedirect("/login_success?email=" + authentication.getName());
+                    }
+                })
+                .failureForwardUrl("/login_failure")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
 
     }
 
