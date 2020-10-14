@@ -1,0 +1,13 @@
+.login-container {
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 10% 0px;
+  display: table;
+}
+
+.login-container label {
+  width: 84px;
+  text-align: right;
+}

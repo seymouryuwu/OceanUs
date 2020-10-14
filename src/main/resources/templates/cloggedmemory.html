@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE : GAMES -->
+  <title>OceanUs Project | Games</title>
+
+  <!-- JAVASCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/cloggedmemory.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cloggedmemory.css">
+
+</head>
+
+<body>
+  <div class="content-div container-fluid">
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- SECTION : MEMORY GAME -->
+      <section id="memory_game_section" class="memory-background" style="display:none;">
+      </section>
+
+      <!-- SECTION : MEMORY GAME OVER -->
+      <section id="memory_over_section" class="game-over game-over-background" style="display:none;">
+        <div id="user_feedback" class="user-feedback">
+          <h1 id="user_matches"></h1>
+          <h1 id="user_message_1"></h1>
+          <h2 id="user_message_2"></h2>
+          <p id="user_remaining"></p>
+          <p id="user_attempts"></p>
+          </br>
+          <div class="close-button" onclick="exitGame()">Close</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SECTION : INSTRUCTIONS -->
+    <section id="instructions_section" class="game-over game-over-background">
+      <div id="user_feedback" class="user-feedback centered">
+        <h1>Clogged Memory</h1>
+        <p>This is a memory-based game. Hope you have done your readings well!!!!!!!
+        </br>
+        Now is the time to sharpen and test your memory. You only have 60 seconds to play the game.
+        </br>
+        For you to be able to play, click on START. After clicking the START, the timer will start ticking.
+        </br>
+        You must try flipping two cards matching in a row until all the cards are matched within 60 seconds. For example, the cards to match, both the flipped cards should have the same content on it such as Egg Shells - Egg Shells, Toilet Paper - Toilet Paper and so on.
+        </br>
+        If the flipped card is not a match i.e. Toilet Paper - Egg Shell, then the cards are automatically flipped back.
+        </br>
+        You need to remember which card is placed where so that in the next turn you can flip the correct cards to make a match.
+        </br>
+        If you match all the cards within 60 seconds, then you WIN.
+        </br>
+        If you are not able to make a match within 60 seconds, then you LOSE and the Game Ends.
+        </br>
+        All set to test your brain??????? Ready Get Set Gooooooooooooooo....................................
+        </p>
+
+        </br>
+        <div class="close-button" onclick="showGame()">Go to Game</div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

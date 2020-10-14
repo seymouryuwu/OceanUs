@@ -168,12 +168,17 @@ var timeRemaining = 0;
 //Delay before cards flip face down (seconds)
 var flipDelay = 1;
 
+var aid = '';
 
 /* -------------------------------------- */
 /* ON PAGE LOAD */
 /* -------------------------------------- */
 
 $( document ).ready(function() {
+
+  let searchParams = new URLSearchParams(window.location.search);
+  aid = searchParams.get('aid');
+
   buildMemoryGame();
   dealCards();
   // startLevel();
@@ -206,7 +211,7 @@ function buildMemoryGame() {
   var height = memoryData.level[0].levelheight;
   var levelDuration = memoryData.level[0].levelDuration;
 
-  var firstRow = true;
+  var firstRow = 0;
 
   $('#memory_game_section').append(`
 
@@ -251,11 +256,18 @@ function buildMemoryGame() {
 
     //Spacer
     //TODO : calculate spacers dynamically based on the width
-    if (firstRow) {
+    if (firstRow == 0) {
       $('.row-' + x).append(`
         <div class="col-2">
           <p id="memory_timer"> ` + levelDuration + `</p>
           <p id="memory_score"></p>
+        </div>
+      `);
+
+      firstRow++;
+    } else if  (firstRow == 1) {
+      $('.row-' + x).append(`
+        <div class="col-2">
           <a class="start-game" onClick="dealCards();startLevel();">
             <img src="../images/start.png">
           </a>
@@ -265,7 +277,7 @@ function buildMemoryGame() {
         </div>
       `);
 
-      firstRow = false;
+      firstRow++;
     } else {
       $('.row-' + x).append(`
         <div class="col-2">
@@ -551,19 +563,25 @@ function endGame() {
 /* -------------------------------------- */
 
 function exitGame() {
+  console.log(aid);
+  if (aid && aid != 0) {
+    window.open('content/' + aid, '_self');
+  } else {
+    window.history.back();
+  }
+}
 
-    //Stop Timer
-    clearInterval(levelTimer);
+
+/* -------------------------------------- */
+/* SHOW GAME */
+/* -------------------------------------- */
+
+function showGame() {
 
     //Show game over feedback
-    // $('#memory_over_section').show();
+    $('#memory_game_section').show();
 
-    //Hide memory game section
-    $('#memory_game_section').hide();
-
-    $('#user_matches').text(userMatches + " / " + maxMatches);
-    $('#user_message_1').text("Oh no!");
-    $('#user_message_2').text("You ran out of time!");
-    $('#user_attempts').text("You made " + userAttempts + " attempts to find a match");
+    //Hide pipe game section
+    $('#instructions_section').hide();
 
 }

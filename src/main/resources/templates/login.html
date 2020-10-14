@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Login Form</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE : GAMES -->
+  <title>OceanUs Project | Login</title>
+
+  <!-- JAVASCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="../js/template.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
+
 </head>
 
 <body>
-<form th:action="@{/login}" method="post">
-    <div>
-        <label>email</label>
-        <input type="email" name="username" required/>
-    </div>
-    <div>
-        <label>password</label>
-        <input type="password" name="password" required/>
-    </div>
-    <button type="submit">Login</button>
-</form>
-<p th:text="${message}" ></p>
+  <div class="content-div container-fluid">
+
+    <!-- HEADER -->
+    <header class="header">
+      <script>buildHeader();</script>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+      <div class="login-container">
+        <p>Login to your account</p>
+        <form th:action="@{/login}" method="post">
+            <div>
+                <label>email</label>
+                <input type="email" name="username" required/>
+            </div>
+            <div>
+                <label>password</label>
+                <input type="password" name="password" required/>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p th:text="${message}" ></p>
+      </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <script>buildFooter();</script>
+    </footer>
+
+  </div>
 </body>
 </html>

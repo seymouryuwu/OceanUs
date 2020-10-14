@@ -21,7 +21,7 @@ let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 
 var this_URL = "";
 var articleID =  "";
-var available = true;
+var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
 
@@ -104,7 +104,6 @@ function buildSection(sectionDTOList) {
       var randomNum = (Math.random() * 3);
       var randomImage = "";
       randomNum = Math.ceil(randomNum);
-      console.log(randomNum);
 
       switch (randomNum) {
         case 1:
@@ -409,19 +408,34 @@ function checkQuizAnswer() {
 
 function startReward(articleID) {
 
-  console.log(articleID);
-
+  var nextArticle = 0;
+  if (available) {
+    nextArticle = (articleID + 1);
+  }
 
   switch (articleID) {
     case 0:
       console.log("No 0 id article!");
       break;
     case 1:
-      $('#shark_section').show();
-
+      var win = window.open('sharkvsrubbish.html?aid=' + nextArticle, '_self');
+      if (win) {
+          //Browser has allowed it to be opened
+          win.focus();
+      } else {
+          //Browser has blocked it
+          alert('Please allow popups for this website');
+      }
       break;
     case 2:
-      $('#pipe_game_section').show();
+      var win = window.open('suziestoosies.html?aid=' + nextArticle, '_self');
+      if (win) {
+          //Browser has allowed it to be opened
+          win.focus();
+      } else {
+          //Browser has blocked it
+          alert('Please allow popups for this website');
+      }
       break;
     case 3:
 
@@ -433,7 +447,14 @@ function startReward(articleID) {
 
       break;
     case 6:
-      $('#memory_game_section').show();
+      var win = window.open('cloggedmemory.html?aid=' + nextArticle, '_self');
+      if (win) {
+          //Browser has allowed it to be opened
+          win.focus();
+      } else {
+          //Browser has blocked it
+          alert('Please allow popups for this website');
+      }
       break;
     default:
 
@@ -500,13 +521,9 @@ $(window).scroll(function() {
 
   distance = $('#quiz_section').offset().top;
   topPadding = -Math.abs(distance);
-  console.log(topPadding);
 
-  if ( $(this).scrollTop() >= distance ) {
-      console.log('is in top');
+  if ( $(this).scrollTop() >= distance && $('#quiz_section').children().length > 1) {
       $('body').css('position', 'fixed').css('margin-top', parseInt(topPadding));
       $('#quiz_section').addClass('scrollable');
-  } else {
-      console.log('is not in top');
   }
 });
