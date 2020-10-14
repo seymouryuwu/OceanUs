@@ -418,7 +418,7 @@ function startReward(articleID) {
       console.log("No 0 id article!");
       break;
     case 1:
-      var win = window.open('sharkvsrubbish.html?aid=' + nextArticle, '_self');
+      var win = window.open('/sharkvsrubbish?aid=' + nextArticle, '_self');
       if (win) {
           //Browser has allowed it to be opened
           win.focus();
@@ -428,7 +428,7 @@ function startReward(articleID) {
       }
       break;
     case 2:
-      var win = window.open('suziestoosies.html?aid=' + nextArticle, '_self');
+      var win = window.open('/suziestoosies?aid=' + nextArticle, '_self');
       if (win) {
           //Browser has allowed it to be opened
           win.focus();
@@ -447,7 +447,7 @@ function startReward(articleID) {
 
       break;
     case 6:
-      var win = window.open('cloggedmemory.html?aid=' + nextArticle, '_self');
+      var win = window.open('/cloggedmemory?aid=' + nextArticle, '_self');
       if (win) {
           //Browser has allowed it to be opened
           win.focus();
@@ -499,7 +499,7 @@ function nextQuiz(quizId) {
 
 
   //Redirect to next content page
-  // window.location.replace(nextArticle);
+   window.location.replace(nextArticle);
 }
 
 

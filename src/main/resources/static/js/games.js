@@ -1,5 +1,5 @@
 function openShark() {
-  var win = window.open('sharkvsrubbish.html', '_self');
+  var win = window.open('sharkvsrubbish', '_self');
   if (win) {
       //Browser has allowed it to be opened
       win.focus();
@@ -10,7 +10,7 @@ function openShark() {
 }
 
 function openPipe() {
-  var win = window.open('suziestoosies.html', '_self');
+  var win = window.open('suziestoosies', '_self');
   if (win) {
       //Browser has allowed it to be opened
       win.focus();
@@ -21,7 +21,7 @@ function openPipe() {
 }
 
 function openCard() {
-  var win = window.open('cloggedmemory.html', '_self');
+  var win = window.open('cloggedmemory', '_self');
   if (win) {
       //Browser has allowed it to be opened
       win.focus();

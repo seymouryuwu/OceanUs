@@ -56,7 +56,20 @@ public class PageController {
         return "games";
     }
 
-    //@GetMapping("/")
+    @GetMapping("/sharkvsrubbish")
+    public String getSharkGamePage() {
+        return "sharkvsrubbish";
+    }
+
+    @GetMapping("/suziestoosies")
+    public String getPipePage() {
+        return "suziestoosies";
+    }
+
+    @GetMapping("/cloggedmemory")
+    public String getMemoryPage() {
+        return "cloggedmemory";
+    }
 
     @GetMapping("/signup")
     public String getSignupPage(Model model) {
