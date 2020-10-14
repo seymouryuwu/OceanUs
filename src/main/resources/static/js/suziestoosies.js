@@ -239,13 +239,20 @@ var pipeLevelTimer = 0;
 var pipeTimePassed = 0;
 var pipeTimeRemaining = 0;
 
+var aid = '';
+
 /* -------------------------------------- */
 /* ON PAGE LOAD */
 /* -------------------------------------- */
 
 $( document ).ready(function() {
+
+  let searchParams = new URLSearchParams(window.location.search);
+  aid = searchParams.get('aid');
+
   buildPipeGame();
   dealtiles();
+
 });
 
 /* -------------------------------------- */
@@ -672,13 +679,25 @@ function pipeEndGame() {
 
 function pipeExitGame() {
 
-  //Stop Timer
-  clearInterval(pipeLevelTimer);
+  if (aid && aid != 0) {
+    window.open('content/' + aid, '_self');
+  } else {
+    window.history.back();
+  }
 
-  //Show game over feedback
-  // $('#pipe_over_section').show();
+}
 
-  //Hide pipe game section
-  $('#pipe_game_section').hide();
+
+/* -------------------------------------- */
+/* SHOW GAME */
+/* -------------------------------------- */
+
+function showPipeGame() {
+
+    //Show game over feedback
+    $('#pipe_game_section').show();
+
+    //Hide pipe game section
+    $('#pipe_instructions_section').hide();
 
 }

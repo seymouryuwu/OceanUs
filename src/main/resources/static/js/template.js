@@ -17,11 +17,13 @@ var navGamesURL     = "https://oceanus.me/games";
 var navMapURL       = "https://oceanus.me/map";
 var navContentURL   = "https://oceanus.me/content/1";
 var navAboutURL     = "https://oceanus.me/about";
+var navLoginURL     = "https://oceanus.me/login";
 
 
 /********** DEV MODE **********/
 /* IMPORTANT NOTE : Remove before deployment!!! */
 var devmode = false;
+;
 
 if (devmode) {
   console.log("!! ----- DEV MODE ACTIVATED! -----!!");
@@ -35,6 +37,7 @@ if (devmode) {
   navMapURL       = "map.html";
   navContentURL   = "content.html";
   navAboutURL     = "about.html";
+  navLoginURL     = "login.html";
 
   console.log("DEV MODE : URLs modified for local development!");
 
@@ -57,6 +60,27 @@ function buildHeader() {
         <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
+        <li class="nav-option"><a href="` + navLoginURL + `">Login</a></li>
+      </ul>
+      <div class="hamburger-bars-container" onclick="hamburgerToCross(this)" style="display:none;">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="hamburger_container" class="hamburger-container" style="display:none;">
+
+    <div class="hamburger-option-group centered">
+      <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="hamburger-logo"></a>
+      <ul>
+        <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
+        <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
+        <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
+        <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
+        <li class="hamburger-option"><a href="` + navLoginURL + `">Login</a></li>
       </ul>
     </div>
 
@@ -83,4 +107,10 @@ function buildFooter() {
 
   $('.footer').append(footer);
 
+}
+
+
+function hamburgerToCross(x) {
+  x.classList.toggle("change");
+  $('.hamburger-container').toggle();
 }

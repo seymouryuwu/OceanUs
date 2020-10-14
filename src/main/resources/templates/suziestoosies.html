@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE : GAMES -->
+  <title>OceanUs Project | Games</title>
+
+  <!-- JAVASCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="../js/template.js"></script>
+  <script src="../js/suziestoosies.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/suziestoosies.css">
+
+
+</head>
+
+<body>
+  <div class="content-div container-fluid">
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- SECTION : SUZIES TOOSIES -->
+      <section id="pipe_game_section" class="pipe-background" style="display:none;">
+      </section>
+
+
+      <!-- SECTION : SUZIES TOOSIES OVER -->
+      <section id="pipe_over_section" class="game-over game-over-background" style="display:none;">
+        <div id="pipe_user_feedback" class="pipe-user-feedback centered">
+          <h1 id="">You reached the end!</h1>
+
+          </br>
+          <div class="close-button" onclick="pipeExitGame()">Close</div>
+        </div>
+      </section>
+
+      <!-- SECTION : INSTRUCTIONS -->
+      <section id="pipe_instructions_section" class="game-over game-over-background">
+        <div id="pipe_user_feedback" class="pipe-user-feedback centered">
+          <h1>Suzie’s Toosies</h1>
+          <p>For the water to flow properly down the drain you need to connect the pipe from Suzies house and the sewage system in 60 seconds.
+          </br>
+          In order to play the game, click on START. After clicking the START, the timer will start ticking.
+          </br>
+          You need to connect the pipe of the right size and shape for the water to be able to flow.
+          </br>
+          In order to connect the right pipe, you can rotate the pipes.
+          </br>
+          When the right pipes are connected within 60 seconds then the path will glow, and you WIN the game.
+          </br>
+          If you are not able to connect the pipes within 60 seconds, then the water won’t flow from Suzies house, her washroom would be blocked, and the game will End.
+          </br>
+          All set to START the game????? Ready, Get Set Gooooooooooooo........................
+          </p>
+
+          </br>
+          <div class="close-button" onclick="showPipeGame()">Go to Game</div>
+        </div>
+      </section>
+
+
+    </main>
+
+  </div>
+</body>
+
+</html>

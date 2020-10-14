@@ -13,7 +13,7 @@
 
 
 .gameCircles {
-  height: 45vh;
+  min-height: 45vh;
   margin: 0px 100px;
   text-align: center;
 }

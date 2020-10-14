@@ -1,3 +1,11 @@
+
+var aid = '';
+
+$( document ).ready(function() {
+    let searchParams = new URLSearchParams(window.location.search);
+    aid = searchParams.get('aid');
+});
+
 var gameSettings = {
   sharkSpeed: 200,
   sharkHighSpeed: 400,
@@ -21,3 +29,13 @@ var config = {
 }
 
 var game = new Phaser.Game(config);
+
+function closeSharkGame() {
+
+  if (aid && aid != 0) {
+    window.open('content/' + aid, '_self');
+  } else {
+    window.history.back();
+  }
+
+}

@@ -222,14 +222,15 @@ header {
 }
 
 .nav-option-group {
-  padding-right: 100px;
+  padding-right: 20px;
   text-align: right;
   line-height: 55px;
+  z-index: 21;
 }
 
 .nav-option {
   list-style-type: none;
-  display: inline;
+  display: inline-flex;
   padding: 0px 2%;
 }
 
@@ -238,7 +239,92 @@ header {
   color: #346099;
   cursor: pointer;
   font-family: Be-Honest;
+  font-size: 18px;
+}
+
+.nav-option:hover, .logo:hover, .hamburger-option:hover, .hamburger-logo:hover, .hamburger-bars-container:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-container {
+  background-color: #ffffff;
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 20;
+}
+
+.hamburger-option-group {
+  width: 400px;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hamburger-option-group ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+
+.hamburger-logo {
+  height: 65px;
+  z-index: 21;
+  margin: auto;
+  display: block;
+}
+
+.hamburger-option a {
+  text-decoration: none;
   font-size: 28px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #3f83c2;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 2.5px;
+  z-index: 21;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media only screen and (max-width: 930px) {
+
+  .nav-option {
+    display: none !important;
+  }
+
+  .hamburger-bars-container {
+    display: inherit !important;
+    float: right;
+    padding: 8px 20px;
+    z-index: 30 !important;
+    position: relative;
+  }
+
 }
 
 /* ------------ */
@@ -250,7 +336,7 @@ footer {
   color: #FFFFFF;
   text-align: center;
   padding: 50px;
-  height: 25vh;
+  min-height: 25vh;
 }
 
 .footer-text {
