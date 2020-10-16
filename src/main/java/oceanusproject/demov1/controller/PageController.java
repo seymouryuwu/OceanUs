@@ -50,9 +50,6 @@ public class PageController {
 
     @GetMapping("/about")
     public String getAboutUsPage() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
-        System.out.println(currentPrincipalName);
         return "about";
     }
 
@@ -102,9 +99,11 @@ public class PageController {
         return "login";
     }
 
-    @GetMapping("/login_success")
-    public String loginSuccess(@RequestParam(value = "username") String username, Model model) {
-        model.addAttribute("username", username);
+    @PostMapping("/login_success")
+    public String loginSuccess(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        model.addAttribute("username", currentPrincipalName);
         return "loginSuccessfully";
     }
 

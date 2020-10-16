@@ -17,7 +17,10 @@ public class Achievement {
     @Column(name = "achievement_description")
     private String achievementDescription;
 
-    @OneToMany(mappedBy = "Achievement", cascade = CascadeType.ALL)
+    @Column(name = "badge_image_url")
+    private String badgeImageUrl;
+
+    @OneToMany(mappedBy = "achievement", cascade = CascadeType.ALL)
     private List<AchievementRecord> achievementRecordList = new ArrayList<>();
 
     public long getAchievementId() {
@@ -42,5 +45,13 @@ public class Achievement {
 
     public void setAchievementDescription(String achievementDescription) {
         this.achievementDescription = achievementDescription;
+    }
+
+    public String getBadgeImageUrl() {
+        return badgeImageUrl;
+    }
+
+    public void setBadgeImageUrl(String badgeImageUrl) {
+        this.badgeImageUrl = badgeImageUrl;
     }
 }

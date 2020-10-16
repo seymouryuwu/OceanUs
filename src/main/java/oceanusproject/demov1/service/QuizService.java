@@ -6,8 +6,8 @@ import oceanusproject.demov1.dto.QuizOptionDTO;
 import oceanusproject.demov1.dto.SectionQuizDTO;
 import oceanusproject.demov1.model.*;
 import oceanusproject.demov1.repository.*;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -31,6 +31,9 @@ public class QuizService {
 
     @Autowired
     private UserQuizRecordRepository userQuizRecordRepository;
+
+    @Autowired
+    private AchievementService achievementService;
 
     public SectionQuizDTO getSectionQuiz(long sectionId) {
         SectionQuizDTO sectionQuizDTO = new SectionQuizDTO();
@@ -79,22 +82,20 @@ public class QuizService {
         Quiz quiz = submittedQuizOption.getQuiz();
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication.isAuthenticated()) {
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentPrincipalName = authentication.getName();
             GeneralUser user = userRepository.findByUsername(currentPrincipalName);
 
             UserQuizRecord userQuizRecord = userQuizRecordRepository.findByGeneralUserAndQuiz(user, quiz);
-            System.out.println("1"+userQuizRecord);
             if (userQuizRecord == null) {
                 userQuizRecord = new UserQuizRecord();
             }
-            System.out.println("2"+userQuizRecord);
             userQuizRecord.setAnswerResult(submittedQuizOption.isAnswer());
             userQuizRecord.setGeneralUser(user);
             userQuizRecord.setQuiz(quiz);
-            System.out.println("3"+userQuizRecord);
             userQuizRecordRepository.save(userQuizRecord);
-            System.out.println("4"+userQuizRecord);
+
+            achievementService.updateQuizAchievement();
         }
 
         QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);

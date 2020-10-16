@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserQuizRecordRepository extends JpaRepository<UserQuizRecord, Long> {
     UserQuizRecord findByGeneralUserAndQuiz(GeneralUser generalUser, Quiz quiz);
+
+    long countByGeneralUserAndAnswerResult(GeneralUser generalUser, boolean answerResult);
 }
