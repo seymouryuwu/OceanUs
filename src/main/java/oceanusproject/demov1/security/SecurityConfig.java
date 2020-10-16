@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.requiresChannel().anyRequest().requiresSecure();
+        //http.requiresChannel().anyRequest().requiresSecure();
 
         http
                 .authorizeRequests()
@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     public void onAuthenticationSuccess(HttpServletRequest request,
                                                         HttpServletResponse response,
                                                         Authentication authentication) throws IOException {
-                        response.sendRedirect("/login_success?email=" + authentication.getName());
+                        response.sendRedirect("/login_success?username=" + authentication.getName());
                     }
                 })
                 .failureForwardUrl("/login_failure")

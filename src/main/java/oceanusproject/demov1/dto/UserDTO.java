@@ -1,18 +1,16 @@
 package oceanusproject.demov1.dto;
 
 import oceanusproject.demov1.validation.PasswordMatches;
-import oceanusproject.demov1.validation.ValidEmail;
+import oceanusproject.demov1.validation.ValidUsername;
 import oceanusproject.demov1.validation.ValidPassword;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @PasswordMatches
 public class UserDTO {
     @NotNull
-    @ValidEmail
-    private String email;
+    @ValidUsername
+    private String username;
 
     @ValidPassword
     private String password;
@@ -20,12 +18,12 @@ public class UserDTO {
     @NotNull
     private String matchingPassword;
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

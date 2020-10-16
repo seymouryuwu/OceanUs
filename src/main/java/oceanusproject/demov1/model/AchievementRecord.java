@@ -21,7 +21,7 @@ public class AchievementRecord {
     LocalDate unlockDate;
 
     @ManyToOne
-    @JoinColumn(name ="user_email")
+    @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
     @ManyToOne

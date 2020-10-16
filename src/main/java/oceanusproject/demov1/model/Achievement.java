@@ -9,7 +9,7 @@ import java.util.List;
 public class Achievement {
     @Id
     @Column(name = "achievement_id")
-    private long AchievementId;
+    private long achievementId;
 
     @Column(name = "achievement_title")
     private String achievementTitle;
@@ -21,11 +21,11 @@ public class Achievement {
     private List<AchievementRecord> achievementRecordList = new ArrayList<>();
 
     public long getAchievementId() {
-        return AchievementId;
+        return achievementId;
     }
 
     public void setAchievementId(long achievementId) {
-        AchievementId = achievementId;
+        this.achievementId = achievementId;
     }
 
     public String getAchievementTitle() {

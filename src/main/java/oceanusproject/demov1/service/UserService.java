@@ -20,19 +20,19 @@ public class UserService {
 
     @Transactional
     public void registerNewUserAccount(UserDTO userDTO) throws UserAlreadyExistException {
-        if (emailExist(userDTO.getEmail())) {
+        if (emailExist(userDTO.getUsername())) {
             throw new UserAlreadyExistException(
-                    "There is an account with that email address: " + userDTO.getEmail());
+                    "There is an account with that email address: " + userDTO.getUsername());
         }
 
         // the rest of the registration operation
         GeneralUser user = new GeneralUser();
-        user.setEmail(userDTO.getEmail());
+        user.setUsername(userDTO.getUsername());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(user);
     }
 
-    private boolean emailExist(String email) {
-        return userRepository.findByEmail(email) != null;
+    private boolean emailExist(String username) {
+        return userRepository.findByUsername(username) != null;
     }
 }
