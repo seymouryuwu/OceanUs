@@ -176,13 +176,13 @@ input[type=radio]:not(old):checked + label > span > span{
 /* STYLES : BLUE DIVIDER SECTION */
 /* ---------------------------- */
 
-#blue_divider {
+#green_divider {
   color: #ffffff;
-  background-color: #3f83c2;
+  background-color: #4a9d2c;
   text-align: center;
 }
 
-#blue_divider p {
+#green_divider p {
   color: #ffffff;
 }
 

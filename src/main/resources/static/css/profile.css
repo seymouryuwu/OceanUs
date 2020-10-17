@@ -1,0 +1,18 @@
+.high-score-block {
+  height: 100px;
+  text-align: center;
+}
+
+.high-score-border, .quiz-results-border, .badges-border {
+  min-height: 100px;
+  background-color: yellow;
+  border-radius: 5px;
+}
+
+.quiz-results-section {
+  text-align: center;
+}
+
+.badges-section {
+  text-align: center;
+}
