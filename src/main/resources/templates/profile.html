@@ -1,23 +1,24 @@
 <!doctype html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- PAGE TITLE : QUIZ'S & GAMES -->
+  <!-- PAGE TITLE : PROFILE -->
   <title>OceanUs Project | Profile</title>
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="../js/template.js"></script>
+  <script src="../js/profile.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/profile.css">
 
 </head>
 
@@ -31,18 +32,64 @@
 
     <!-- MAIN -->
     <main>
-      <!-- SECTION : THE STORY -->
-      <section class="the-story">
+      <!-- SECTION : PROFILE -->
+      <section class="welcome-section">
         <div class="row">
           <div class="col-md-12 full-block">
-            <h2>Your Profile</h2>
+            <h1 th:text="'Hi, ' + ${username} + '!'" /><h1>
 
           </div>
         </div>
       </section>
 
+      <!-- SECTION : QUIZ RESULTS -->
+      <section class="quiz-results-section">
+        <div class="row full-block">
+          <div class="col-md-12">
+            <div class="quiz-results-border">
+              <h2>Quiz Results<h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : GAME HIGH SCORES -->
+      <section class="high-scores-section">
+        <div class="row full-block">
+
+          <div class="col-4 high-score-block">
+            <div class="high-score-border">
+              <h2>Shark vs Rubbish</h2>
+            </div>
+          </div>
+
+          <div class="col-4 high-score-block">
+            <div class="high-score-border">
+              <h2>Suzies Toosies</h2>
+            </div>
+          </div>
+
+          <div class="col-4 high-score-block">
+            <div class="high-score-border">
+              <h2>Clogged Memory</h2>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
+    <!-- SECTION : BADGES -->
+    <section class="badges-section">
+      <div class="row full-block">
+        <div class="col-md-12">
+          <div class="badges-border">
+            <h2>Badges</h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">

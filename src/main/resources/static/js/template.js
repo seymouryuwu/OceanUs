@@ -11,13 +11,14 @@
 /* -------------------------------------- */
 
 var staticAssetsURL = "../";
-var contentURL      = "https://oceanus.me/content/";
-var navHomeURL      = "https://oceanus.me";
-var navGamesURL     = "https://oceanus.me/games";
-var navMapURL       = "https://oceanus.me/map";
-var navContentURL   = "https://oceanus.me/content/1";
-var navAboutURL     = "https://oceanus.me/about";
-var navLoginURL     = "https://oceanus.me/login";
+var contentURL      = "/content/";
+var navHomeURL      = "/";
+var navGamesURL     = "/games";
+var navMapURL       = "/map";
+var navContentURL   = "/content/1";
+var navAboutURL     = "/about";
+var navProfileURL   = "/profile";
+var navLoginURL     = "/login";
 
 
 /********** DEV MODE **********/
@@ -37,6 +38,7 @@ if (devmode) {
   navMapURL       = "map.html";
   navContentURL   = "content.html";
   navAboutURL     = "about.html";
+  navProfileURL   = "profile.html";
   navLoginURL     = "login.html";
 
   console.log("DEV MODE : URLs modified for local development!");
@@ -60,6 +62,7 @@ function buildHeader() {
         <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
+        <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
         <li class="nav-option"><a href="` + navLoginURL + `">Login</a></li>
       </ul>
       <div class="hamburger-bars-container" onclick="hamburgerToCross(this)" style="display:none;">
@@ -80,6 +83,7 @@ function buildHeader() {
         <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
         <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
+        <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
         <li class="hamburger-option"><a href="` + navLoginURL + `">Login</a></li>
       </ul>
     </div>
