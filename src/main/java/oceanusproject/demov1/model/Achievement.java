@@ -9,7 +9,7 @@ import java.util.List;
 public class Achievement {
     @Id
     @Column(name = "achievement_id")
-    private long AchievementId;
+    private long achievementId;
 
     @Column(name = "achievement_title")
     private String achievementTitle;
@@ -17,15 +17,18 @@ public class Achievement {
     @Column(name = "achievement_description")
     private String achievementDescription;
 
-    @OneToMany(mappedBy = "Achievement", cascade = CascadeType.ALL)
+    @Column(name = "badge_image_url")
+    private String badgeImageUrl;
+
+    @OneToMany(mappedBy = "achievement", cascade = CascadeType.ALL)
     private List<AchievementRecord> achievementRecordList = new ArrayList<>();
 
     public long getAchievementId() {
-        return AchievementId;
+        return achievementId;
     }
 
     public void setAchievementId(long achievementId) {
-        AchievementId = achievementId;
+        this.achievementId = achievementId;
     }
 
     public String getAchievementTitle() {
@@ -42,5 +45,13 @@ public class Achievement {
 
     public void setAchievementDescription(String achievementDescription) {
         this.achievementDescription = achievementDescription;
+    }
+
+    public String getBadgeImageUrl() {
+        return badgeImageUrl;
+    }
+
+    public void setBadgeImageUrl(String badgeImageUrl) {
+        this.badgeImageUrl = badgeImageUrl;
     }
 }

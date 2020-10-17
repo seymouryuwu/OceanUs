@@ -4,13 +4,12 @@ import oceanusproject.demov1.dto.AnswerDTO;
 import oceanusproject.demov1.dto.QuizDTO;
 import oceanusproject.demov1.dto.QuizOptionDTO;
 import oceanusproject.demov1.dto.SectionQuizDTO;
-import oceanusproject.demov1.model.Quiz;
-import oceanusproject.demov1.model.QuizOption;
-import oceanusproject.demov1.model.Section;
-import oceanusproject.demov1.repository.QuizOptionRepository;
-import oceanusproject.demov1.repository.QuizRepository;
-import oceanusproject.demov1.repository.SectionRepository;
+import oceanusproject.demov1.model.*;
+import oceanusproject.demov1.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,6 +25,15 @@ public class QuizService {
 
     @Autowired
     private QuizOptionRepository quizOptionRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private UserQuizRecordRepository userQuizRecordRepository;
+
+    @Autowired
+    private AchievementService achievementService;
 
     public SectionQuizDTO getSectionQuiz(long sectionId) {
         SectionQuizDTO sectionQuizDTO = new SectionQuizDTO();
@@ -72,6 +80,24 @@ public class QuizService {
         AnswerDTO answerDTO = new AnswerDTO();
         QuizOption submittedQuizOption =  quizOptionRepository.findByQuizOptionId(submittedQuizOptionId);
         Quiz quiz = submittedQuizOption.getQuiz();
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentPrincipalName = authentication.getName();
+            GeneralUser user = userRepository.findByUsername(currentPrincipalName);
+
+            UserQuizRecord userQuizRecord = userQuizRecordRepository.findByGeneralUserAndQuiz(user, quiz);
+            if (userQuizRecord == null) {
+                userQuizRecord = new UserQuizRecord();
+            }
+            userQuizRecord.setAnswerResult(submittedQuizOption.isAnswer());
+            userQuizRecord.setGeneralUser(user);
+            userQuizRecord.setQuiz(quiz);
+            userQuizRecordRepository.save(userQuizRecord);
+
+            achievementService.updateQuizAchievement();
+        }
+
         QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);
 
         answerDTO.setSubmittedOptionId(submittedQuizOptionId);

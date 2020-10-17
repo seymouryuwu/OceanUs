@@ -5,6 +5,9 @@
     <title>LoginSuccessfully</title>
 </head>
 <body>
-    <p th:text="'Hello, ' + ${userEmail} + '!'" />
+    <p th:text="'Hello, ' + ${username} + '!'" />
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 </body>
 </html>

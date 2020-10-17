@@ -35,9 +35,9 @@
 
         <form th:action="@{/signup}" th:object="${user}" method="post">
             <div>
-                <label>email</label>
-                <input type="email" th:field="*{email}"/>
-                <p th:each="error : ${#fields.errors('email')}"
+                <label>Username</label>
+                <input type="text" th:field="*{username}"/>
+                <p th:each="error : ${#fields.errors('username')}"
                    th:text="${error}">Validation error</p>
             </div>
             <div>

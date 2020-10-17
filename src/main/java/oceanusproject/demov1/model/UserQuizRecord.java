@@ -13,7 +13,7 @@ public class UserQuizRecord {
     private boolean answerResult;
 
     @ManyToOne
-    @JoinColumn(name ="user_email")
+    @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
     @ManyToOne
@@ -34,5 +34,21 @@ public class UserQuizRecord {
 
     public void setAnswerResult(boolean answerResult) {
         this.answerResult = answerResult;
+    }
+
+    public GeneralUser getGeneralUser() {
+        return generalUser;
+    }
+
+    public void setGeneralUser(GeneralUser generalUser) {
+        this.generalUser = generalUser;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
     }
 }

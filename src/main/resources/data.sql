@@ -270,3 +270,13 @@ insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (35, false, "Maybe", 9);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (36, false, "I have no idea", 9);
+
+-- initialize table achievements
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (1, "1 Correct", "Answer 1 quiz correctly", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (2, "5 Correct", "Answer 5 quizzes correctly", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (3, "10 Correct", "Answer 10 quizzes correctly", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (4, "15 Correct", "Answer 15 quizzes correctly", null);

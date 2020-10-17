@@ -15,25 +15,25 @@ import java.time.LocalDate;
 public class AchievementRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long AchievementRecordId;
+    private long achievementRecordId;
 
     @Column(name = "unlockDate")
     LocalDate unlockDate;
 
     @ManyToOne
-    @JoinColumn(name ="user_email")
+    @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
     @ManyToOne
     @JoinColumn(name ="achievement_id")
-    private Achievement Achievement;
+    private Achievement achievement;
 
     public long getAchievementRecordId() {
-        return AchievementRecordId;
+        return achievementRecordId;
     }
 
     public void setAchievementRecordId(long achievementRecordId) {
-        AchievementRecordId = achievementRecordId;
+        this.achievementRecordId = achievementRecordId;
     }
 
     public LocalDate getUnlockDate() {
@@ -42,5 +42,21 @@ public class AchievementRecord {
 
     public void setUnlockDate(LocalDate unlockDate) {
         this.unlockDate = unlockDate;
+    }
+
+    public GeneralUser getGeneralUser() {
+        return generalUser;
+    }
+
+    public void setGeneralUser(GeneralUser generalUser) {
+        this.generalUser = generalUser;
+    }
+
+    public Achievement getAchievement() {
+        return achievement;
+    }
+
+    public void setAchievement(Achievement achievement) {
+        this.achievement = achievement;
     }
 }

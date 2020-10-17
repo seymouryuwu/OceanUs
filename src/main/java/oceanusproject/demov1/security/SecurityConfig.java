@@ -35,23 +35,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .successHandler(new AuthenticationSuccessHandler() {
-                    @Override
-                    public void onAuthenticationSuccess(HttpServletRequest request,
-                                                        HttpServletResponse response,
-                                                        Authentication authentication) throws IOException {
-                        response.sendRedirect("/login_success?email=" + authentication.getName());
-                    }
-                })
+                .successForwardUrl("/login_success")
                 .failureForwardUrl("/login_failure")
                 .permitAll()
                 .and()
                 .logout()
+                .logoutUrl("/logout")
+                .invalidateHttpSession(true)
+                .logoutSuccessUrl("/login")
                 .permitAll();
 
     }
