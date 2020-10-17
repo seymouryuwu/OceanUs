@@ -28,14 +28,14 @@ public class PageController {
     @GetMapping
     public String getHomePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/index";
+        return "/index";
     }
 
     @GetMapping("/content")
     public String getContentPageDefault(Model model) {
         //model.addAttribute("articleId", 1);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/content";
+        return "/content";
     }
 
     @GetMapping("/content/{articleid}")
@@ -44,25 +44,25 @@ public class PageController {
 
         model.addAttribute("articleId", articleId);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/content";
+        return "/content";
     }
 
     @GetMapping("/map")
     public String getMapPage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/map";
+        return "/map";
     }
 
-    @GetMapping("/public/about")
+    @GetMapping("/about")
     public String getAboutUsPage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/about";
+        return "/about";
     }
 
     @GetMapping("/games")
     public String getGamePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "/public/games";
+        return "/games";
     }
 
     @GetMapping("/sharkvsrubbish")
@@ -84,13 +84,13 @@ public class PageController {
     public String getSignupPage(Model model) {
         UserDTO userDTO = new UserDTO();
         model.addAttribute("user", userDTO);
-        return "/public/signup";
+        return "/signup";
     }
 
     @PostMapping("/signup")
     public String signUp(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "/public/signup";
+            return "/signup";
         }
         try {
             userService.registerNewUserAccount(user);
@@ -99,7 +99,7 @@ public class PageController {
             return "signup";
         }
         SecurityContextHolder.clearContext();
-        return "redirect:/public/login";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
@@ -107,7 +107,7 @@ public class PageController {
         if (userService.checkIfLoggedIn()) {
             return "redirect:/profile";
         }
-        return "/public/login";
+        return "/login";
     }
 
     @PostMapping("/login_success")
@@ -121,7 +121,7 @@ public class PageController {
     @PostMapping("/login_failure")
     public String loginFailure(Model model) {
         model.addAttribute("message", "Invalid user account or password");
-        return "/public/login";
+        return "/login";
     }
 
 }

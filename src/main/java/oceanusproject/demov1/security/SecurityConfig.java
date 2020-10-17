@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        //http.requiresChannel().anyRequest().requiresSecure();
+        // Comment this line when you test on local
+        http.requiresChannel().anyRequest().requiresSecure();
 
         http
                 .authorizeRequests()
