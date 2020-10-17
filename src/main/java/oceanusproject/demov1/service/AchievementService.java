@@ -49,7 +49,7 @@ public class AchievementService {
             }
         }
 
-        if (numberOfCorrectAnswer >= 5) {
+        if (numberOfCorrectAnswer >= 7) {
             Achievement achievement = achievementRepository.findByAchievementId(2);
             AchievementRecord achievementRecord
                     = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
@@ -62,7 +62,7 @@ public class AchievementService {
             }
         }
 
-        if (numberOfCorrectAnswer >= 10) {
+        if (numberOfCorrectAnswer >= 14) {
             Achievement achievement = achievementRepository.findByAchievementId(3);
             AchievementRecord achievementRecord
                     = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
@@ -75,8 +75,21 @@ public class AchievementService {
             }
         }
 
-        if (numberOfCorrectAnswer >= 15) {
+        if (numberOfCorrectAnswer >= 21) {
             Achievement achievement = achievementRepository.findByAchievementId(4);
+            AchievementRecord achievementRecord
+                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
+            if (achievementRecord == null) {
+                achievementRecord = new AchievementRecord();
+                achievementRecord.setGeneralUser(user);
+                achievementRecord.setAchievement(achievement);
+                achievementRecord.setUnlockDate(LocalDate.now());
+                achievementRecordRepository.save(achievementRecord);
+            }
+        }
+
+        if (numberOfCorrectAnswer >= 28) {
+            Achievement achievement = achievementRepository.findByAchievementId(5);
             AchievementRecord achievementRecord
                     = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
             if (achievementRecord == null) {

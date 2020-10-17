@@ -26,15 +26,15 @@ public class PageController {
     UserService userService;
 
     @GetMapping
-    public String getHomePage() {
-        return "index";
+    public String getHomePage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "/public/index";
     }
 
     @GetMapping("/content")
-    public String getContentPageDefault(boolean isLoggedIn, Model model) {
-        model.addAttribute("articleId", 1);
-        //TO DO
-        model.addAttribute("isLoggedIn", isLoggedIn);
+    public String getContentPageDefault(Model model) {
+        //model.addAttribute("articleId", 1);
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "/public/content";
     }
 
@@ -43,37 +43,41 @@ public class PageController {
         //TO DO check article ID in db
 
         model.addAttribute("articleId", articleId);
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "/public/content";
     }
 
     @GetMapping("/map")
-    public String getMapPage() {
+    public String getMapPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "/public/map";
     }
 
-    @GetMapping("/about")
-    public String getAboutUsPage() {
+    @GetMapping("/public/about")
+    public String getAboutUsPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "/public/about";
     }
 
     @GetMapping("/games")
-    public String getGamePage() {
+    public String getGamePage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "/public/games";
     }
 
     @GetMapping("/sharkvsrubbish")
     public String getSharkGamePage() {
-        return "/public/sharkvsrubbish";
+        return "/sharkvsrubbish";
     }
 
     @GetMapping("/suziestoosies")
     public String getPipePage() {
-        return "/public/suziestoosies";
+        return "/suziestoosies";
     }
 
     @GetMapping("/cloggedmemory")
     public String getMemoryPage() {
-        return "/public/cloggedmemory";
+        return "/cloggedmemory";
     }
 
     @GetMapping("/signup")
@@ -94,11 +98,15 @@ public class PageController {
             model.addAttribute("message", ex.getMessage());
             return "signup";
         }
+        SecurityContextHolder.clearContext();
         return "redirect:/public/login";
     }
 
     @GetMapping("/login")
     public String getLoginPage(Model model) {
+        if (userService.checkIfLoggedIn()) {
+            return "redirect:/profile";
+        }
         return "/public/login";
     }
 

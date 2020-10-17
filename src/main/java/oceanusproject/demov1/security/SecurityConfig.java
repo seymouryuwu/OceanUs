@@ -31,11 +31,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.requiresChannel().anyRequest().requiresSecure();
+        //http.requiresChannel().anyRequest().requiresSecure();
 
         http
                 .authorizeRequests()
-                .antMatchers("/public/**").permitAll()
+                .antMatchers("/**").permitAll()
+                .antMatchers("/about").permitAll()
+                .antMatchers("/content").permitAll()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+                .antMatchers("/images/**").permitAll()
+                .antMatchers("/fonts/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
