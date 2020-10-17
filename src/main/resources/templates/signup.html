@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Signup Form</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PAGE TITLE : GAMES -->
+  <title>OceanUs Project | Signup</title>
+
+  <!-- JAVASCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="../js/template.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
+
 </head>
 
 <body>
-<form th:action="@{/signup}" th:object="${user}" method="post">
-    <div>
-        <label>email</label>
-        <input type="email" th:field="*{email}"/>
-        <p th:each="error : ${#fields.errors('email')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label>password</label>
-        <input type="password" th:field="*{password}"/>
-        <p th:each="error : ${#fields.errors('password')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <div>
-        <label>password confirm</label>
-        <input type="password" th:field="*{matchingPassword}"/>
-        <p th:each="error : ${#fields.errors('matchingPassword')}"
-           th:text="${error}">Validation error</p>
-    </div>
-    <button type="submit">Signup</button>
-</form>
-<a th:href="@{/about}" ></a>
-<p th:text="${message}" ></p>
+  <div class="content-div container-fluid">
+
+    <!-- HEADER -->
+    <header class="header">
+      <script>buildHeader();</script>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class="login-container">
+        <p>Signup</p>
+
+        <form th:action="@{/signup}" th:object="${user}" method="post">
+            <div>
+                <label>email</label>
+                <input type="email" th:field="*{email}"/>
+                <p th:each="error : ${#fields.errors('email')}"
+                   th:text="${error}">Validation error</p>
+            </div>
+            <div>
+                <label>password</label>
+                <input type="password" th:field="*{password}"/>
+                <p th:each="error : ${#fields.errors('password')}"
+                   th:text="${error}">Validation error</p>
+            </div>
+            <div>
+                <label>password confirm</label>
+                <input type="password" th:field="*{matchingPassword}"/>
+                <p th:each="error : ${#fields.errors('matchingPassword')}"
+                   th:text="${error}">Validation error</p>
+            </div>
+            <button type="submit">Signup</button>
+        </form>
+        <a th:href="@{/about}" ></a>
+        <p th:text="${message}" ></p>
+        <p>Already have an account? <a href="login">Login</a></p>
+
+      </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <script>buildFooter();</script>
+    </footer>
+
+  </div>
 </body>
 </html>

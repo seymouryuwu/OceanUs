@@ -44,7 +44,7 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 2;
+    articleID = 3;
   }
   /********** DEV MODE **********/
 
@@ -488,18 +488,18 @@ function nextQuiz(quizId) {
 
   var nextArticle = (contentURL + parseInt(quizId));
 
-
+  console.log(nextArticle);
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    nextArticle = contentURL;
-    console.log("DEV MODE : Next Article reloads same page");
+    // nextArticle = contentURL;
+    // console.log("DEV MODE : Next Article reloads same page");
   }
   /********** DEV MODE **********/
 
 
   //Redirect to next content page
-   window.location.replace(nextArticle);
+  window.location.replace(nextArticle);
 }
 
 
