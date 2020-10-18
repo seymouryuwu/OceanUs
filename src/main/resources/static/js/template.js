@@ -83,27 +83,27 @@ function buildHeader() {
     <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo"></a>
 
     <div class="nav-option-group">
-      <ul>
-        <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
-        <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
-        <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
-        <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
-        <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
-        <li class="nav-option"><a href="` + navLogURL + `">` + logText + `</a></li>
+      <form th:action="@{/` + logText + `}" method="post">
+        <ul>
+          <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
+          <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
+          <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
+          <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
+          <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
 
-        <li class="hamburger-option">
-          <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Logout" class="logout-button"/>
-          </form>
-        </li>
+          <li class="nav-option">
+              <input type="submit" value="` + logText + `" class="logout-button"/>
+          </li>
 
+        </ul>
+      </form>
 
-      </ul>
       <div class="hamburger-bars-container" onclick="hamburgerToCross(this)" style="display:none;">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+
     </div>
 
   </div>
@@ -111,22 +111,22 @@ function buildHeader() {
   <div id="hamburger_container" class="hamburger-container" style="display:none;">
 
     <div class="hamburger-option-group centered">
-      <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="hamburger-logo"></a>
-      <ul>
-        <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
-        <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
-        <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
-        <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
-        <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
-        <li class="hamburger-option"><a href="` + navLogURL + `">Login</a></li>
+      <form th:action="@{/` + logText + `}" method="post">
 
-        <li class="hamburger-option">
-           <form th:action="@{/logout}" method="post">
-             <input type="submit" value="Logout" class="logout-button"/>
-           </form>
-         </li>
+        <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="hamburger-logo"></a>
+        <ul>
+          <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
+          <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
+          <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
+          <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
+          <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
 
-      </ul>
+          <li class="hamburger-option">
+               <input type="submit" value="` + logText + `" class="logout-button"/>
+          </li>
+
+        </ul>
+      </form>
     </div>
 
   </div>
