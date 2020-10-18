@@ -49,7 +49,7 @@ $( document ).ready(function() {
       "totalCorrect":"5",
       "totalQuestion":"22",
 
-      "QuizResultDTO":[
+      "quizResultDTOList":[
         {
           "articleId":"1",
           "articleTitle":"Article Name 1",
@@ -83,6 +83,15 @@ $( document ).ready(function() {
   }
 
   loadProfileData();
+
+//   https://oceanus.me/profile/setnickname
+//   @PostMapping("/setnickname")
+//       public ResponseEntity setNickname(@RequestBody String nickname) {
+//           userService.setNickname(nickname);
+//           return ResponseEntity.ok(HttpStatus.OK);
+//       }
+
+
   /********** DEV MODE **********/
 
 
@@ -135,13 +144,13 @@ function loadWelcomeMessage() {
 
 function loadQuizResults() {
 
-  if (profileData.QuizResultDTO) {
+  if (profileData.quizResultDTOList) {
 
-    for (var i = 0; i < profileData.QuizResultDTO.length; i++) {
+    for (var i = 0; i < profileData.quizResultDTOList.length; i++) {
 
-      var articleTitle = profileData.QuizResultDTO[i].articleTitle;
-      var correctAnswer = profileData.QuizResultDTO[i].correctAnswer;
-      var questionNumber = profileData.QuizResultDTO[i].questionNumber;
+      var articleTitle = profileData.quizResultDTOList[i].articleTitle;
+      var correctAnswer = profileData.quizResultDTOList[i].correctAnswer;
+      var questionNumber = profileData.quizResultDTOList[i].questionNumber;
 
       $('.quiz-border').append(`
         <div class="col-3 high-score-block">

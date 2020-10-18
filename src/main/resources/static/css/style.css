@@ -226,6 +226,16 @@ header {
 /* STYLES : NAV BAR */
 /* ------------- */
 
+.logout-button {
+  text-decoration: none;
+  color: #346099;
+  cursor: pointer;
+  font-family: Be-Honest;
+  font-size: 18px;
+  border: none;
+  background-color: unset;
+}
+
 .logo {
   height: 65px;
   margin-left: -25px;
