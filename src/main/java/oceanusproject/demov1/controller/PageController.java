@@ -121,7 +121,7 @@ public class PageController {
         return "login";
     }
 
-    @PostMapping("/login_success")
+    @GetMapping("/login_success")
     public String loginSuccess(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
