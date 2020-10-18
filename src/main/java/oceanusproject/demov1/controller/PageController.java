@@ -2,6 +2,7 @@ package oceanusproject.demov1.controller;
 
 import oceanusproject.demov1.dto.UserDTO;
 import oceanusproject.demov1.error.UserAlreadyExistException;
+import oceanusproject.demov1.service.ArticleService;
 import oceanusproject.demov1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -25,17 +26,20 @@ public class PageController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    ArticleService articleService;
+
     @GetMapping
-    public String getHomePage() {
+    public String getHomePage(Model model) {
+        //model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "index";
     }
 
     @GetMapping("/content")
-    public String getContentPageDefault(boolean isLoggedIn, Model model) {
-        model.addAttribute("articleId", 1);
-        //TO DO
-        model.addAttribute("isLoggedIn", isLoggedIn);
-        return "/public/content";
+    public String getContentPageDefault(Model model) {
+        //model.addAttribute("articleId", 1);
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "content";
     }
 
     @GetMapping("/content/{articleid}")
@@ -43,50 +47,56 @@ public class PageController {
         //TO DO check article ID in db
 
         model.addAttribute("articleId", articleId);
-        return "/public/content";
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+
+        articleService.updateArticleReadingTimes(articleId);
+        return "content";
     }
 
     @GetMapping("/map")
-    public String getMapPage() {
-        return "/public/map";
+    public String getMapPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "map";
     }
 
     @GetMapping("/about")
-    public String getAboutUsPage() {
-        return "/public/about";
+    public String getAboutUsPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "about";
     }
 
     @GetMapping("/games")
-    public String getGamePage() {
-        return "/public/games";
+    public String getGamePage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "games";
     }
 
     @GetMapping("/sharkvsrubbish")
     public String getSharkGamePage() {
-        return "/public/sharkvsrubbish";
+        return "sharkvsrubbish";
     }
 
     @GetMapping("/suziestoosies")
     public String getPipePage() {
-        return "/public/suziestoosies";
+        return "suziestoosies";
     }
 
     @GetMapping("/cloggedmemory")
     public String getMemoryPage() {
-        return "/public/cloggedmemory";
+        return "cloggedmemory";
     }
 
     @GetMapping("/signup")
     public String getSignupPage(Model model) {
         UserDTO userDTO = new UserDTO();
         model.addAttribute("user", userDTO);
-        return "/public/signup";
+        return "signup";
     }
 
     @PostMapping("/signup")
     public String signUp(@Valid @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "/public/signup";
+            return "signup";
         }
         try {
             userService.registerNewUserAccount(user);
@@ -94,12 +104,16 @@ public class PageController {
             model.addAttribute("message", ex.getMessage());
             return "signup";
         }
-        return "redirect:/public/login";
+        SecurityContextHolder.clearContext();
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
     public String getLoginPage(Model model) {
-        return "/public/login";
+        if (userService.checkIfLoggedIn()) {
+            return "redirect:/profile";
+        }
+        return "login";
     }
 
     @PostMapping("/login_success")
@@ -107,15 +121,24 @@ public class PageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         model.addAttribute("username", currentPrincipalName);
-        return "/loginSuccessfully";
+        return "loginSuccessfully";
     }
 
     @PostMapping("/login_failure")
     public String loginFailure(Model model) {
         model.addAttribute("message", "Invalid user account or password");
-        return "/public/login";
+        return "login";
     }
 
+    @PostMapping("/profile")
+    public String profilePage(Model model) {
+        return "profile";
+    }
+
+    @GetMapping("/profile")
+    public String getProfilePage(Model model) {
+        return "profile";
+    }
 }
 
 

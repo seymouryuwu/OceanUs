@@ -1,29 +1,34 @@
 package oceanusproject.demov1.model;
 
-import javax.persistence.CascadeType;
+import org.hibernate.annotations.Immutable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "articles")
-public class Article {
+@Immutable
+@Table(name = "quiz_section_article")
+public class QuizSectionArticle {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "quiz_id")
+    private long quizId;
+
     @Column(name = "article_id")
     private long articleId;
 
-    @Column(name = "article_title", nullable = false)
+    // TO DO may delete
+    @Column(name = "article_title")
     private String articleTitle;
 
-    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL) // need to figure out the function of cascade
-    private List<Section> sections = new ArrayList<>();
+    public long getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(long quizId) {
+        this.quizId = quizId;
+    }
 
     public long getArticleId() {
         return articleId;
