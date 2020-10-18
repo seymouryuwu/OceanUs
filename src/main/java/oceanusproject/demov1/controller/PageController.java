@@ -31,7 +31,7 @@ public class PageController {
 
     @GetMapping
     public String getHomePage(Model model) {
-        //model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "index";
     }
 

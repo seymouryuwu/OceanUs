@@ -8,10 +8,13 @@
   <!-- PAGE TITLE : INDEX -->
   <title>OceanUs Project</title>
 
-
   <script th:inline="javascript">
-    var isLoggedIn = [[${isLoggedIn}]];
+  /*<![CDATA[*/
+
+    var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
     console.log(isLoggedIn);
+
+  /*]]>*/
   </script>
 
   <!-- JAVASCRIPT -->
