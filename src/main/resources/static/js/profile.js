@@ -30,32 +30,6 @@ $( document ).ready(function() {
   //API Request : Get achievement data  from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {
       profileData = achievementData;
-
-      /********** DEV MODE **********/
-      /* IMPORTANT NOTE : Remove before deployment!!! */
-      if (devmode) {
-        profileData = JSON.parse(
-        `{
-          "username":"Seymour",
-          "achievementDTOList":[
-            {
-              "achievementTitle":"1 Correct",
-              "achievementDescription":"Answer 1 quiz correctly",
-              "badgeImageUrl":null,
-              "unlockDate":"2020-10-16"
-            },
-            {
-              "achievementTitle":"5 Correct",
-              "achievementDescription":"Answer 5 quizzes correctly",
-              "badgeImageUrl":null,
-              "unlockDate":"2020-10-16"
-            }
-          ]
-        }`);
-
-      }
-      /********** DEV MODE **********/
-
       loadProfileData();
 
     }, error: function(jqXHR, textStatus, errorThrown) {
@@ -63,6 +37,35 @@ $( document ).ready(function() {
       console.log("Error loading content!");
     }
   });
+
+
+  /********** DEV MODE **********/
+  /* IMPORTANT NOTE : Remove before deployment!!! */
+  if (devmode) {
+    profileData = JSON.parse(
+    `{
+      "username":"Seymour",
+      "achievementDTOList":[
+        {
+          "achievementTitle":"1 Correct",
+          "achievementDescription":"Answer 1 quiz correctly",
+          "badgeImageUrl":"../images/badges/quiz-1.png",
+          "unlockDate":"2020-10-16"
+        },
+        {
+          "achievementTitle":"7 Correct",
+          "achievementDescription":"Answer 7 quizzes correctly",
+          "badgeImageUrl":"../images/badges/quiz-2.png",
+          "unlockDate":"2020-10-16"
+        }
+      ]
+    }`);
+
+  }
+
+  loadProfileData();
+  /********** DEV MODE **********/
+
 
 
 });
@@ -75,6 +78,30 @@ $( document ).ready(function() {
 
 function loadProfileData() {
 
+  loadWelcomeMessage();
+  loadBadges();
+
+}
+
+/* -------------------------------------------- */
+/* PROFILE : LOAD WELCOME MESSAGE */
+/* -------------------------------------------- */
+
+function loadWelcomeMessage() {
+
+  if (profileData.username) {
+    $('.welcome-message').html("Hey, " + profileData.username + "!");
+  }
+
+}
+
+
+/* -------------------------------------------- */
+/* PROFILE : LOAD BADGES */
+/* -------------------------------------------- */
+
+function loadBadges() {
+
   if (profileData.achievementDTOList) {
     console.log(profileData.achievementDTOList);
 
@@ -86,18 +113,22 @@ function loadProfileData() {
       var unlockDate = profileData.achievementDTOList[i].unlockDate;
 
       $('.badges-border').append(`
-        <p>` + achievementTitle + `</p>
-        <p>` + achievementDescription + `</p>
-        <img src="` + badgeImageUrl + `">
-        <p>` + unlockDate + `</p>
-
+        <div class="row badge-row">
+          <div class="col-md-5 badge-image">
+            <img src="` + badgeImageUrl + `">
+          </div>
+          <div class="col-md-7 badge-data">
+            <div class="badge-text vertical-center">
+              <h4>` + achievementTitle + `</h4>
+              <p>` + achievementDescription + `</p>
+              <p>` + unlockDate + `</p>
+            </div>
+          </div>
+        </div>
       `);
     }
 
 
   }
-
-
-
 
 }

@@ -32,46 +32,81 @@
 
     <!-- MAIN -->
     <main>
-      <!-- SECTION : PROFILE -->
-      <section class="welcome-section">
-        <div class="row">
-          <div class="col-md-12 full-block">
-            <h1 th:text="'Hi, ' + ${username} + '!'" /><h1>
-
-          </div>
-        </div>
-      </section>
 
       <!-- SECTION : QUIZ RESULTS -->
       <section class="quiz-results-section">
+
         <div class="row full-block">
-          <div class="col-md-12">
+          <div class="col-md-12 no-padding">
             <div class="quiz-results-border">
-              <h2>Quiz Results<h2>
+              <h2 class="welcome-message"></h2>
+              <p>This is where you can check you quiz results, high scores and achievement badges!</p>
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12 section-header">
+            <h2>Quiz Results</h2>
+          </div>
+        </div>
+
+        <div class="row full-block">
+
+          <div class="col-3 high-score-block">
+            <div class="high-score-border blue-border">
+              <h4>Quiz 1</h4>
+            </div>
+          </div>
+
+          <div class="col-3 high-score-block">
+            <div class="high-score-border green-border">
+              <h4>Quiz 2</h4>
+            </div>
+          </div>
+
+          <div class="col-3 high-score-block">
+            <div class="high-score-border red-border">
+              <h4>Quiz 3</h4>
+            </div>
+          </div>
+
+          <div class="col-3 high-score-block">
+            <div class="high-score-border green-border">
+              <h4>Quiz 4</h4>
+            </div>
+          </div>
+
+        </div>
+
       </section>
 
       <!-- SECTION : GAME HIGH SCORES -->
       <section class="high-scores-section">
+
+        <div class="row">
+          <div class="col-md-12 section-header">
+            <h2>High Scores</h2>
+          </div>
+        </div>
+
         <div class="row full-block">
 
           <div class="col-4 high-score-block">
-            <div class="high-score-border">
-              <h2>Shark vs Rubbish</h2>
+            <div class="high-score-border blue-border">
+              <h4>Shark vs Rubbish</h4>
             </div>
           </div>
 
           <div class="col-4 high-score-block">
-            <div class="high-score-border">
-              <h2>Suzies Toosies</h2>
+            <div class="high-score-border green-border">
+              <h4>Suzies Toosies</h4>
             </div>
           </div>
 
           <div class="col-4 high-score-block">
-            <div class="high-score-border">
-              <h2>Clogged Memory</h2>
+            <div class="high-score-border red-border">
+              <h4>Clogged Memory</h4>
             </div>
           </div>
 
@@ -82,11 +117,13 @@
 
     <!-- SECTION : BADGES -->
     <section class="badges-section">
-      <div class="row full-block">
-        <div class="col-md-12">
-          <div class="badges-border">
-            <h2>Badges</h2>
-          </div>
+      <div class="row">
+        <div class="col-md-12 section-header">
+          <h2>Achievements</h2>
+        </div>
+      </div>
+      <div class="row section-content">
+        <div class="badges-border">
         </div>
       </div>
     </section>

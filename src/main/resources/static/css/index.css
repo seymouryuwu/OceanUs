@@ -20,7 +20,7 @@
 /* ---------------------------- */
 
 .cta {
-  height: 75vh;
+  min-height: 75vh;
 }
 
 .cta .row {
@@ -30,6 +30,7 @@
 
 .cta-block {
   padding: 0px 2vw;
+  margin-bottom: 40px;
   text-align: center;
   -webkit-filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7));
    drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7))
@@ -156,4 +157,10 @@ iframe {
   width: 100vw;
   height: 56.25vw;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .introduction-text {
+    padding-right: 100px !important;
+  }
 }

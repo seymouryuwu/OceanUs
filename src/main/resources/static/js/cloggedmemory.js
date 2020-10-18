@@ -259,8 +259,8 @@ function buildMemoryGame() {
     if (firstRow == 0) {
       $('.row-' + x).append(`
         <div class="col-2">
-          <p id="memory_timer"> ` + levelDuration + `</p>
-          <p id="memory_score"></p>
+          <p id="memory_timer"><span class="span-red"> ` + levelDuration + `</span></p>
+          <p id="memory_score"><span class="span-blue"></span></p>
         </div>
       `);
 
@@ -317,7 +317,7 @@ function dealCards() {
   maxMatches = shuffledDeck.length / 2;
 
   //Display the max amout of matches to user
-  $('#memory_score').text('Score 0/' + maxMatches)
+  $('#memory_score .span-blue').text('Score 0/' + maxMatches)
 
   //Add a Card to each grid position
   for(i = 0; i < blockXY.length; i++) {
@@ -472,7 +472,7 @@ function checkSelection() {
   }
 
   //Update score
-  $('#memory_score').text('Score ' + userMatches + '/' + maxMatches)
+  $('#memory_score .span-blue').text('Score ' + userMatches + '/' + maxMatches)
 
   //Clear the global variables
   clearUserSelections();

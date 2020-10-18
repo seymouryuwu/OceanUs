@@ -1,3 +1,17 @@
+.close-button {
+  font-size: 22px;
+  font-family: COPILME_L;
+  color: #346099;
+  letter-spacing: 2px;
+  font-kerning: none;
+  line-height: 50px;
+}
+
+.close-button:hover {
+  display: inline-block;
+  transform: scale(1.1);
+  text-decoration: none;
+}
 
 .container {
   max-width: 100%;
@@ -71,13 +85,13 @@
 }
 
 .user-feedback {
-  width: 80vw;
+  position: relative;
   margin: auto;
 }
 
 .user-feedback p {
   font-size: 18px;
-  line-height: 30px;
+  line-height: 40px;
   color: #ffffff;
 }
 
@@ -108,4 +122,19 @@
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.span-green {
+  color: #99cc66;
+  font-size: 30px;
+}
+
+.span-red {
+  color: #b63e2e;
+  font-size: 30px;
+}
+
+.span-blue {
+  color: #346099;
+  font-size: 30px;
 }

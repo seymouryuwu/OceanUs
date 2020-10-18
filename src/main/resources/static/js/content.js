@@ -107,13 +107,13 @@ function buildSection(sectionDTOList) {
 
       switch (randomNum) {
         case 1:
-          randomImage = "../../images/logos/bubble-puffer.png";
+          randomImage = "../images/logos/bubble-puffer.png";
           break;
         case 2:
-          randomImage = "../../images/logos/bubble-seal.png";
+          randomImage = "../images/logos/bubble-seal.png";
           break;
         case 3:
-          randomImage = "../../images/logos/bubble-shark.png";
+          randomImage = "../images/logos/bubble-shark.png";
           break;
         default:
 

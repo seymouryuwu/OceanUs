@@ -15,6 +15,21 @@ main {
   position: relative;
 }
 
+main a {
+  font-size: 22px;
+  font-family: COPILME_L;
+  color: #346099;
+  letter-spacing: 2px;
+  font-kerning: none;
+}
+
+main a:hover {
+  display: inline-block;
+  transform: scale(1.1);
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
 /* ----------------------- */
 /* MAP : BACKGROUND STYLES */
 /* ----------------------- */
@@ -66,16 +81,8 @@ main {
 /* MAP : TABLEAU MAP */
 /* ---------------------- */
 
-.map-section {
-  padding-top: 86px;
-}
-
 .map-section p {
   margin-left: 12px;
-}
-
-.map-desc {
-  margin-top: 59px;
 }
 
 #tableauViz_2019 iframe {
@@ -95,6 +102,11 @@ main {
 .waste-section p {
   margin-left: 12px;
 }
+
+.waste-section a {
+  color: #99cc66;
+}
+
 .waste-section h1, .waste-section h2, .waste-section h3 {
   color: #99cc66 !important;
 }
@@ -128,4 +140,13 @@ main {
 
 #tableauViz_reuse iframe {
   height: 400px !important;
+}
+
+
+/* ------------------------- */
+/* MAP : IMAGES */
+/* ------------------------- */
+
+.target155-image {
+  width: inherit;
 }

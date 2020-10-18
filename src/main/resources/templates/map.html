@@ -5,8 +5,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- PAGE TITLE : MAP -->
-  <title>OceanUs Project | Map</title>
+  <!-- PAGE TITLE : EXPLORE -->
+  <title>OceanUs Project | Explore</title>
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -39,20 +39,57 @@
 
       <!-- SECTION : 2018/2019 TABLEAU MAPS -->
       <section class="map-section">
+
+        <div class="row">
+          <div class="col-md-12 full-block">
+            <h2 class="z-index-2">How much water do we use everyday?<h2>
+            </br>
+            <p>Today, when the world is calling for sustainable development, Melbourne, as the second-largest city in Australia with a population of more than 4.8 million (2019), is also concerned about the pressure of urban water use in various aspects. The rapid development of our city also means that the water supply is facing year-on-year challenges. Reasonable water use is especially important. We hope that not only us, but future residents can also enjoy sufficient water resources.</p>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-md-7 left-block">
-            <h2 class="z-index-2">How much water do we use everyday?<h2>
             <!-- 2019 Map -->
             <div id="tableauViz_2019"></div>
           </div>
           <div class="col-md-5 right-block map-desc">
             <h2>Water Consumption in Melbourne<h2>
             </br>
-            <p>How many water do one household need in each day?</p>
+            <p>How much water does one household need in a day?</p>
             <p>The amount of water consumed by each household does not vary much from year to year, but the value varies from region to region. On the one hand, it is because of the difference in population size; on the other hand, it is also because of the different distribution of water enterprises.</p>
             <p>See the plot here to find your suburb water consumption</p>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col-md-6 left-block">
+            <p>At present, the Melbourne government is vigorously promoting "TARGET 155", which means that it hopes that residents will limit water consumption to 155 litres per person per day. Although in 18/19, Melbourne's per capita water consumption was 162, each person can achieve this goal by using 7 litres of water (equivalent to a bucket of water) less per day.</p>
+            <p>Find out more at <a href="https://www.water.vic.gov.au/liveable/using-water-wisely/t155">water.vic.gov.au</a></p>
+
+            <p>You can also check the Smart water advice, find out more on saving water at <a href="https://www.smartwatermark.org/Victoria/">smartwatermark.org</a></p>
+
+
+          </div>
+
+          <div class="col-md-6 right-block">
+            <img src="../images/explore/Target_155.jpg" class="target155-image">
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 full-block">
+            <h2>What happened about the water used? Where did the things go after you flushed?</h2>
+            <p>1 - Disposal: All the stuff runs out of your house through the pipes which connect to your toilet and kitchen. There are more than 320,000 million litres of sewage each year entering Greater Melbourne's sewerage.</p>
+            <p>2 - Transfer: After reaching one of three larger trunk sewers then push them to be processed at the treatment plant, which may take about 12 hours.</p>
+            <p>3 - Treatment: There are two large treatment plants in Melbourne, they help us with the final step dealing with the sewage.</p>
+            <p>To understand more about the importance of sewerage visit <a href="https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/importance-sewerage">melbournewater.com.au</a></p>
+
+          </div>
+        </div>
+
       </section>
 
       <!-- SECTION : TABLEAU WASTE WATER GRAPH -->
@@ -62,38 +99,52 @@
             <h2>How much sewage do people in Melbourne produce every day?</h2>
             </br>
             <!-- Description -->
-            <p>After having a general understanding of our daily water consumption, let’s take a look at the average daily sewage volume in the two major sewage recycling stations(ETP & WTP*) in Melbourne.</p>
+            <p>After having a general understanding of our daily sewage process, let’s take a look at the average daily sewage volume in the two major sewage recycling stations(ETP & WTP*) in Melbourne.</p>
             <p>When the sewage volume is highest, the two stations will collect nearly 900 million liters of sewage per day on average!</p>
-            <p>*ETP: Eastern Treatment Plant</br>WTP: Western Treatment Plant</p>
           </div>
           <div class="col-md-6 right-block">
             <!-- Waste water graph -->
             <div id="tableauViz_waste"></div>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col-md-6 left-block">
+            <img src="../images/explore/Sewerage_system_map.jpg" class="target155-image">
+          </div>
+
+          <div class="col-md-6 right-block">
+            <h2>WTP: Western Treatment Plant:</h2>
+            <p>It is a historic treatment plant in Melbourne and it uses a series of large ponds. The largest one can contain more than 600 million litres sewage. They will become cleaner as bacteria break down the organic material in the water through the work of anaerobic and aerobic lagoons. It nearly takes somewhere around 30 to 35 days for the job to be completed.</p>
+            <p>Learn more about WTP here at <a href="https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/where-your-sewage-goes/sewage-treatment-process">melbournewater.com.au</a></p>
+            <h2>ETP: Eastern Treatment Plant:</h2>
+            <p>Unlike WTP, the ETP is located in southwest Melbourne and it uses innovative technology to change the sewage into class A recycled water. It is only one-tenth the size of the Western Treatment Plant, but it helps release half of the treatment pressure of the WTP, ETP deals with nearly 330 million litres a day.</p>
+          </div>
+        </div>
+
       </section>
 
       <!-- SECTION : TABLEAU REUSE AND RECYCLE GRAPH -->
       <section class="reuse-section">
         <div class="row reuse-row-margin margin-reuse-bottom">
-          <div class="col-md-6 left-block ">
-            <!-- Re-use and recycled water graph -->
-            <div id="tableauViz_reuse"></div>
-          </div>
-          <div class="col-md-6 right-block margin-reuse-top">
+
+          <div class="col-md-6 left-block margin-reuse-top">
             <h2>Know more about reclaimed water</h2>
             </br>
             <!-- Description -->
             <p>Reclaimed water is water resources that can be reused after the sewage has been treated layer by layer. They can be used in garden watering and toilet flushing.</p>
+            <p>Are you keen to know more about how it works? visit <a href="https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/where-your-sewage-goes/eastern-treatment-plant">melbournewater.com.au</a></p>
             <p>There are three places which two major sewage collecting stations transfer the reclaimed water to: Onsite, Southern Rural Water and City West Water.</p>
           </div>
+
+          <div class="col-md-6 right-block">
+            <!-- Re-use and recycled water graph -->
+            <div id="tableauViz_reuse"></div>
+          </div>
+
         </div>
       </section>
-
-      <!-- Background triangles -->
-      <!-- <div class="map-background top-left" style="z-index:1;"></div>
-      <div class="map-background bottom-left"></div>
-      <div class="map-background bottom-right"></div> -->
 
     </main>
 

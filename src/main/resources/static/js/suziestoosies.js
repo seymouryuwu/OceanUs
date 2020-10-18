@@ -269,7 +269,7 @@ function buildPipeGame() {
 
   $('#pipe_game_section').append(`
 
-    <div id="pipe_game" class="pipe-game">
+    <div id="pipe_game">
     </div>
 
     <div id="game_over_modal" >
@@ -620,8 +620,6 @@ function checkSolution() {
       var rotationC = pipeData.pipeMap[i].pipeCorrectRotationC;
       var rotationD = pipeData.pipeMap[i].pipeCorrectRotationD;
 
-      console.log(rotationC);
-      console.log(rotationD);
       var currentDeg = parseInt($('#tile-' + id).attr('data-deg'));
 
       if (currentDeg == rotationA || currentDeg == rotationB || currentDeg == rotationC || currentDeg == rotationD) {
@@ -670,6 +668,10 @@ function pipeEndGame() {
 
   //Hide pipe game section
   $('#pipe_game_section').hide();
+
+  console.log(pipeTimeRemaining);
+
+  $('#user_remaining').text(pipeTimeRemaining + " seconds to spare!");
 
 }
 
