@@ -40,6 +40,7 @@ public class UserService {
         // the rest of the registration operation
         GeneralUser user = new GeneralUser();
         user.setUsername(userDTO.getUsername());
+        user.setNickname("OceanUs User");
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(user);
     }

@@ -42,6 +42,11 @@ public class PageController {
         return "content";
     }
 
+    @GetMapping("/quizinstruction")
+    public String getQuizInstruction(Model model) {
+        return "instruction";
+    }
+
     @GetMapping("/content/{articleid}")
     public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
         //TO DO check article ID in db
