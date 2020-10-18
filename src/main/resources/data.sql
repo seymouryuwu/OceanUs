@@ -192,7 +192,7 @@ values (18,
 "Did you use water today? What did you use it for? \\nWas it for washing the expensive car or bike that your parents own or was it for cooking your favourite food or for doing your dishes from last night or for sweeping the floor or was it for your daily errands such as taking a shower or maybe brushing your teeth? Are you even aware that all the sewage that is generated from your household activities would eventually make its way to our beautiful waterbodies such as oceans, rivers, lakes or maybe even sea?\\nWater gets polluted because of the harmful substances that enter these waterbodies. These toxic substances diffuse in them or remains hanging in them or settles on the waterbeds due to which the quality of water is deteriorated. This is not only harmful for the marine life and aquatic ecosystem but also these substances seep through and make their way to the groundwater which eventually ends up at our households as impure or adulterated water. We then use this impure water for our day to day chores and not to forget we also end up drinking the same impure water.\\n<fun>\"Fresh water on earth is only 2.5% of the total water when 70% of the earth\'s surface is covered by water.\"</fun>",
 7,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/naja-bertolt-jensen-IUBc0cxN7Lc-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -222,7 +222,7 @@ values (21,
 "Most of the issues encountered by sewage treatment plants start with the material that we individuals tip down the drain or flush down the latrine at home. For instance, the sanitary napkins used by the females, wet wipes or the diapers that are used for the kids are flushed down the toilet. Treatment plants are not that intelligent enough and neither are they equipped for treating a significant number of these wastes and some pass through the plants untreated.",
 9,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/taton-moise-3Lm6uUqS2ik-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -232,7 +232,7 @@ values (22,
 "Just like household which is a source of water pollution even business environments are no less. Even these areas are known for carelessly tipping down harmful substances to the drain. The negligent chucking out of harmful substances is a major issue since these substances can cause contamination, regardless of whether they are in little amounts.\\nNumerous businesses are additionally permitted to discard these substances into the sewerage framework. Be that as it may, they should do as such under severe rules constrained by the water specialists answerable for the treatment of sewage.",
 9,
 false,
-null,
+"https://oceanus.me/image/getsectionimage/gabriel-ramos--mkVeQ_6tew-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -252,7 +252,7 @@ values (24,
 "Just like the sewers, even the treatment plant has the possibility of breaking down. Nonetheless, they are commonly planned with enough back-up frameworks to forestall any significant water contamination issues. Current treatment plants treat sewage to a phase where it is protected to deliver once again into the nature and these recycled sewages are utilised at its best.",
 9,
 false,
-null,
+"https://oceanus.me/image/getsectionimage/john-cameron-7h-dJo7HIgc-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -262,7 +262,7 @@ values (25,
 "This kind of activity when the harmful substances are dumped intentionally or due to carelessness straight into the sewers or waste materials are thrown out in the nature. The whole and sole reason of doing such kind of act is to avoid the cost that is involved in treating these wastes in a correct way.",
 9,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/dustan-woodhouse-RUqoVelx59I-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -272,7 +272,7 @@ values (26,
 "Water from rain that falls on our homes and streets is diverted in an arrangement of lines that is independent from the sewerage framework that conveys sewage. These stormwater drains likewise gather any litter or other material, including animal wastes or droppings, that lies around our roads. This junk is commonly conveyed straight into waterways or out to the ocean by the stormwater channels.\\nSince stormwater isn\'t dealt with, this framework is liable for conveying a great part of the trash or waste found along our streams and seashores. Stormwater drains are likewise ordinarily accountable for conveying either intentionally or unintentionally spilled poisonous synthetic compounds, oils and different materials into the waterways.",
 9,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/michael-trimble-WG7jrDV1O44-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -292,7 +292,7 @@ values (28,
 "There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.\\nToxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.\\nPlastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
 10,
 true,
-null,
+"https://oceanus.me/image/getsectionimage/tim-mossholder-qq-8dpdlBsY-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -332,7 +332,7 @@ values (32,
 "In those early days most of waste from homes – including kitchen, washroom and clothing squanders, were discharged into open depletes that streamed into road channels and on to neighbourhood waterways and rivers. Waste from farms and enterprises likewise streamed into these road channels, transforming Melbourne\'s waterways and creeks into open sewers.",
 12,
 false,
-null,
+"https://oceanus.me/image/getsectionimage/marco-bicca-1XWR9oI9AFA-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -372,7 +372,7 @@ values (36,
 "All our treatment plants use measures extraordinarily intended to suit the attributes of the plant and approaching wastewater.",
 14,
 false,
-null,
+"https://oceanus.me/image/getsectionimage/EasternTreatmentPlant.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -428,7 +428,7 @@ values (4, "What could act as a threat to our catchments?", 2);
 insert into quizzes (quiz_id, quiz_question, section_id)
 values (5, "2.8 million tons of sewage and industrial and agricultural waste are discharged into the world\'s water. Is the statement correct?", 2);
 insert into quizzes (quiz_id, quiz_question, section_id)
-values (6, "Coffee grinds mixed with the oil in your pipes is a sure-fire drain destroyer. Is the statement correct?", 10);
+values (6, "Coffee grounds mixed with the oil in your pipes is a sure-fire drain destroyer. Is the statement correct?", 10);
 insert into quizzes (quiz_id, quiz_question, section_id)
 values (7, "Wastewater treatment plants are designed to remove man-made chemicals from the water supply. Is the statement correct?", 16);
 insert into quizzes (quiz_id, quiz_question, section_id)
@@ -734,23 +734,23 @@ values (124, false, "I have no idea", 31);
 
 -- initialize table achievements
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (1, "1 Correct", "Answer 1 quiz correctly", "https://oceanus.me/image/getbadgeimage/quiz-1.png");
+values (1, "Beginner", "Good Start! Got a question right during the adventure journey.", "https://oceanus.me/image/getbadgeimage/quiz-1.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (2, "7 Correct", "Answer 7 quizzes correctly", "https://oceanus.me/image/getbadgeimage/quiz-2.png");
+values (2, "Rookie", "Completed the achievement of answering seven questions correctly", "https://oceanus.me/image/getbadgeimage/quiz-2.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (3, "14 Correct", "Answer 14 quizzes correctly", "https://oceanus.me/image/getbadgeimage/quiz-3.png");
+values (3, "Competent", "Fourteen questions have been answered correctly", "https://oceanus.me/image/getbadgeimage/quiz-3.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (4, "21 Correct", "Answer 21 quizzes correctly", "https://oceanus.me/image/getbadgeimage/quiz-4.png");
+values (4, "Proficient", "You have answered 21 questions correctly, really amazing", "https://oceanus.me/image/getbadgeimage/quiz-4.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (5, "28 Correct", "Answer 28 quizzes correctly", "https://oceanus.me/image/getbadgeimage/quiz-5.png");
+values (5, "Expert", "Congratulations! You got 28 questions right!", "https://oceanus.me/image/getbadgeimage/quiz-5.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (6, "1 Time", "Read all articles 1 time", "https://oceanus.me/image/getbadgeimage/read-1.png");
+values (6, "Freshman", "You have finished reading all articles once!", "https://oceanus.me/image/getbadgeimage/read-1.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (7, "3 Times", "Read all articles 3 times", "https://oceanus.me/image/getbadgeimage/read-2.png");
+values (7, "Sophomore", "Reading all articles three times, achieved the review goal!", "https://oceanus.me/image/getbadgeimage/read-2.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (8, "5 Times", "Read all articles 5 times", "https://oceanus.me/image/getbadgeimage/read-3.png");
+values (8, "Maestro", "Five times reading all the articles to stabilize all the knowledge.", "https://oceanus.me/image/getbadgeimage/read-3.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (9, "10 Times", "Read all articles 10 times", "https://oceanus.me/image/getbadgeimage/read-4.png");
+values (9, "Grand Master", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/read-4.png");
 
 -- create view quiz section article
 create or replace view quiz_section_article as
