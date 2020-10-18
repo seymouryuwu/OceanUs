@@ -51,7 +51,9 @@ if (devmode) {
 /* ------------------------------------ */
 
 function buildHeader() {
+
   var header = `
+
   <div id="nav_container" class="nav-container">
 
     <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo"></a>
