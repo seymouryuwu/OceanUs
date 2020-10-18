@@ -34,8 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // Comment this line when you test on local
         http.requiresChannel().anyRequest().requiresSecure();
 
+        //http.csrf().disable();
         http
-                //.csrf().disable()
                 .authorizeRequests()
                 //.antMatchers("/**").permitAll()
                 .antMatchers("/").permitAll()

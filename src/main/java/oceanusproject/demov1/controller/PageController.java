@@ -137,11 +137,13 @@ public class PageController {
 
     @PostMapping("/profile")
     public String profilePage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "profile";
     }
 
     @GetMapping("/profile")
     public String getProfilePage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "profile";
     }
 }
