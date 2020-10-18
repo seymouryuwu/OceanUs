@@ -44,7 +44,26 @@ $( document ).ready(function() {
   if (devmode) {
     profileData = JSON.parse(
     `{
-      "username":"Seymour",
+      "username":"Malcolm",
+      "nickname":"PlagueRat",
+      "totalCorrect":"5",
+      "totalQuestion":"22",
+
+      "QuizResultDTO":[
+        {
+          "articleId":"1",
+          "articleTitle":"Article Name 1",
+          "correctAnswer":2,
+          "questionNumber":2
+        },
+        {
+          "articleId":"2",
+          "articleTitle":"Article Name 2",
+          "correctAnswer":3,
+          "questionNumber":20
+        }
+      ],
+
       "achievementDTOList":[
         {
           "achievementTitle":"1 Correct",
@@ -79,6 +98,7 @@ $( document ).ready(function() {
 function loadProfileData() {
 
   loadWelcomeMessage();
+  loadQuizResults();
   loadBadges();
 
 }
@@ -90,11 +110,53 @@ function loadProfileData() {
 function loadWelcomeMessage() {
 
   if (profileData.username) {
-    $('.welcome-message').html("Hey, " + profileData.username + "!");
+
+    var username = profileData.username;
+    var nickname = profileData.nickname;
+    var totalCorrect = profileData.totalCorrect;
+    var totalQuestion = profileData.totalQuestion;
+
+    $('.quiz-results-border').html(`
+
+      <h2 class="nickname">` + nickname + `</h2>
+      <p class="username">"` + username + `"</h2>
+      <p>This is where you can check you quiz results, high scores and achievement badges!</p>
+
+    `);
+
+    // $('.welcome-message').html("Hey, " + profileData.username + "!");
   }
 
 }
 
+/* -------------------------------------------- */
+/* PROFILE : LOAD QUIZ RESULTS */
+/* -------------------------------------------- */
+
+function loadQuizResults() {
+
+  if (profileData.QuizResultDTO) {
+
+    for (var i = 0; i < profileData.QuizResultDTO.length; i++) {
+
+      var articleTitle = profileData.QuizResultDTO[i].articleTitle;
+      var correctAnswer = profileData.QuizResultDTO[i].correctAnswer;
+      var questionNumber = profileData.QuizResultDTO[i].questionNumber;
+
+      $('.quiz-border').append(`
+        <div class="col-3 high-score-block">
+          <div class="high-score-border blue-border">
+            <h4>` + articleTitle + `</h4>
+            <p>` + correctAnswer + `/` + questionNumber + `</p>
+          </div>
+        </div>
+      `);
+    }
+
+
+  }
+
+}
 
 /* -------------------------------------------- */
 /* PROFILE : LOAD BADGES */

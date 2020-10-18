@@ -20,7 +20,7 @@ var pipeData = {
       "levelName":"Poppies Puzzle",
       "levelWidth":6,
       "levelheight":4,
-      "levelDuration":60,
+      "levelDuration":120,
 
     }
   ],
@@ -450,6 +450,10 @@ function pipeStartLevel() {
   //Enable tile blocks
   $('.tile-block').css('pointer-events', 'auto').css('filter', 'brightness(100%)');
 
+  //Brighten the girl and the factory
+  $('.girl-image img').css('filter', 'brightness(100%)');
+  $('.factory-image img').css('filter', 'brightness(100%)');
+
   //Hide game over feedback
   $('#pipe_over_section').hide();
 
@@ -632,7 +636,10 @@ function checkSolution() {
         //Highlight Critical path
         for(x = 0; x < criticalTiles.length; x++) {
           console.log(criticalTiles[x]);
-          $('#tile-' + criticalTiles[x]).addClass('green-highlight');
+          $('#tile-' + criticalTiles[x] + ' img').addClass('green-glow');
+
+          $('.girl-image img').addClass('green-glow');
+          $('.factory-image img').addClass('green-glow');
         }
 
         //Stop Timer
@@ -643,7 +650,7 @@ function checkSolution() {
 
         //TODO: Highlight finished critical path with .green-highlight
         setTimeout(function() {
-          pipeEndGame();
+          pipeWinGame();
         }, 5000);
 
       }
@@ -651,6 +658,29 @@ function checkSolution() {
     }
 
   }
+
+}
+
+
+/* -------------------------------------- */
+/* WIN GAME */
+/* -------------------------------------- */
+
+function pipeWinGame() {
+
+  //Stop Timer
+  clearInterval(pipeLevelTimer);
+
+  //Show game over feedback
+  $('#pipe_over_section').show();
+
+  //Hide memory game
+  $('#pipe_game_section').hide();
+
+  $('#pipe_user_message_1').text("You reached the end!");
+  $('#pipe_user_message_2').text("Congratulations you fixed the pipe bofore the time ran out!");
+
+  $('#user_remaining').text(pipeTimeRemaining + " seconds to spare!");
 
 }
 
@@ -669,9 +699,9 @@ function pipeEndGame() {
   //Hide pipe game section
   $('#pipe_game_section').hide();
 
-  console.log(pipeTimeRemaining);
+  $('#pipe_user_message_1').text("Oh no, you ran out of time!");
+  $('#pipe_user_message_2').text("The flushed water never made it to the waste water plant!");
 
-  $('#user_remaining').text(pipeTimeRemaining + " seconds to spare!");
 
 }
 

@@ -19,6 +19,7 @@ var navContentURL   = "/content/1";
 var navAboutURL     = "/about";
 var navProfileURL   = "/profile";
 var navLoginURL     = "/login";
+var navLogoutURL     = "/logout";
 
 
 /********** DEV MODE **********/
@@ -40,8 +41,13 @@ if (devmode) {
   navAboutURL     = "about.html";
   navProfileURL   = "profile.html";
   navLoginURL     = "login.html";
+  navLoginURL     = "index.html";
 
   console.log("DEV MODE : URLs modified for local development!");
+
+  isLoggedIn = true;
+
+  console.log("DEV MODE : user logged in!");
 
 };
 /********** DEV MODE **********/
@@ -51,6 +57,14 @@ if (devmode) {
 /* ------------------------------------ */
 
 function buildHeader() {
+
+  if (isLoggedIn) {
+    logText = "Logout";
+    navLogURL = navLogoutURL
+  } else {
+    logText = "Login";
+    navLogURL = navLoginURL
+  }
 
   var header = `
 
@@ -65,7 +79,7 @@ function buildHeader() {
         <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
         <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
-        <li class="nav-option"><a href="` + navLoginURL + `">Login</a></li>
+        <li class="nav-option"><a href="` + navLogURL + `">` + logText + `</a></li>
       </ul>
       <div class="hamburger-bars-container" onclick="hamburgerToCross(this)" style="display:none;">
         <div class="bar1"></div>

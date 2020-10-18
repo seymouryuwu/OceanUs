@@ -496,12 +496,12 @@ function startTimer(levelDuration) {
     if (timeRemaining > 0) {
 
       //Update timer text
-      $('#memory_timer').text(timeRemaining);
+      $('#memory_timer .span-red').text(timeRemaining);
 
     } else if (timeRemaining == 0) {
 
       //Update timer text
-      $('#memory_timer').text(timeRemaining);
+      $('#memory_timer .span-red').text(timeRemaining);
 
       //Stop Timer
       // clearInterval(levelTimer);
@@ -521,6 +521,11 @@ function startTimer(levelDuration) {
 
 }
 
+
+/* -------------------------------------- */
+/* WIN GAME */
+/* -------------------------------------- */
+
 function winGame() {
 
   //Stop Timer
@@ -535,9 +540,14 @@ function winGame() {
   $('#user_matches').text(userMatches + "/" + maxMatches);
   $('#user_message_1').text("You won!");
   $('#user_remaining').text(timeRemaining + " seconds to spare!");
-  $('#user_attempts').text("You made " + userAttempts + " attempts to find a match");
+  $('#user_attempts').text("You made " + userAttempts + " attempts to find a match!");
 
 }
+
+
+/* -------------------------------------- */
+/* END GAME */
+/* -------------------------------------- */
 
 
 function endGame() {
@@ -554,7 +564,7 @@ function endGame() {
   $('#user_matches').text(userMatches + " / " + maxMatches);
   $('#user_message_1').text("Oh no!");
   $('#user_message_2').text("You ran out of time!");
-  $('#user_attempts').text("You made " + userAttempts + " attempts to find a match");
+  $('#user_attempts').text("You made " + userAttempts + " attempts to find a match!");
 
 }
 

@@ -94,6 +94,21 @@ h3 {
   transform: translateY(-50%);
 }
 
+.span-green {
+  color: #99cc66;
+  font-size: 30px;
+}
+
+.span-red {
+  color: #b63e2e;
+  font-size: 30px;
+}
+
+.span-blue {
+  color: #346099;
+  font-size: 30px;
+}
+
 /* ------------------------------ */
 /* STYLES : CHECKBOX / RADIO BUTTONS */
 /* ------------------------------ */

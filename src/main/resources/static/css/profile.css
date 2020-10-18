@@ -7,6 +7,14 @@
   width: 100%;
 }
 
+.high-score-border {
+  padding: 20px 30px;
+}
+
+.high-score-border p, .high-score-border h4 {
+  margin: 0px;
+}
+
 .quiz-results-section, .badges-section {
   text-align: center;
 }

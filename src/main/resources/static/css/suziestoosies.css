@@ -62,6 +62,11 @@
  drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7))
 }
 
+.green-glow {
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5)) !important;
+  filter: drop-shadow(0px 0px 7px rgba(0, 255, 0, 0.5)) !important;
+}
+
 .green-highlight {
   box-shadow: 0px 0px 20px rgba(0,255,0,0.6);
   transition: box-shadow 0.3s ease-in-out;
@@ -99,13 +104,15 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
+  filter: brightness(20%);
 }
 
 .factory-image img{
-  width: 16vw;
+  width: 17vw;
   position: absolute;
   bottom: 0px;
   right: 0px;
+  filter: brightness(20%);
 }
 
 .game-menu {
@@ -122,22 +129,6 @@
 
 .close-button {
   cursor: pointer;
-}
-
-
-.span-green {
-  color: #99cc66;
-  font-size: 30px;
-}
-
-.span-red {
-  color: #b63e2e;
-  font-size: 30px;
-}
-
-.span-blue {
-  color: #346099;
-  font-size: 30px;
 }
 
 #pipe_timer {

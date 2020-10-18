@@ -95,6 +95,10 @@
   color: #ffffff;
 }
 
+.user-feedback h2 {
+  font-family: COPILME_L;
+}
+
 .start-game {
   cursor: pointer;
 }
@@ -124,17 +128,6 @@
   left: 0;
 }
 
-.span-green {
-  color: #99cc66;
-  font-size: 30px;
-}
-
-.span-red {
-  color: #b63e2e;
-  font-size: 30px;
-}
-
-.span-blue {
-  color: #346099;
-  font-size: 30px;
+.no-sign {
+  font-size: 40px !important;
 }
