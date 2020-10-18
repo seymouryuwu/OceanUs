@@ -234,6 +234,7 @@ header {
   font-size: 18px;
   border: none;
   background-color: unset;
+  padding: 0px;
 }
 
 .logo {
