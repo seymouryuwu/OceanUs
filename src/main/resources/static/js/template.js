@@ -61,18 +61,17 @@ function buildHeader() {
     if (typeof isLoggedIn !== 'undefined') {
 
       if (isLoggedIn) {
-        logText = "Logout";
-        navLogURL = navLogoutURL;
+        logType = "Logout";
+        logElement = '<div onClick="callLogout()" class="logout-button">Logout</div>'
+
       } else {
-        logText = "Login";
-        navLogURL = navLoginURL;
+        logType = "Login";
+        logElement = '<input type="submit" value="login" class="logout-button"/>';
       }
 
     } else {
-
-        logText = "Login";
-        navLogURL = navLoginURL;
-
+        logType = "Login";
+        logElement = '<input type="submit" value="login" class="logout-button"/>';
     }
 
 
@@ -83,18 +82,14 @@ function buildHeader() {
     <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo"></a>
 
     <div class="nav-option-group">
-      <form th:action="@{/` + logText + `}" method="post">
+      <form th:action="@{/` + logType + `}" method="post">
         <ul>
           <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
           <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
           <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
           <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
           <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
-
-          <li class="nav-option">
-              <input type="submit" value="` + logText + `" class="logout-button"/>
-          </li>
-
+          <li class="nav-option">` + logElement + `</li>
         </ul>
       </form>
 
@@ -111,7 +106,7 @@ function buildHeader() {
   <div id="hamburger_container" class="hamburger-container" style="display:none;">
 
     <div class="hamburger-option-group centered">
-      <form th:action="@{/` + logText + `}" method="post">
+      <form th:action="@{/` + logType + `}" method="post">
 
         <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="hamburger-logo"></a>
         <ul>
@@ -120,10 +115,7 @@ function buildHeader() {
           <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
           <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
           <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
-
-          <li class="hamburger-option">
-               <input type="submit" value="` + logText + `" class="logout-button"/>
-          </li>
+          <li class="hamburger-option">` + logElement + `</li>
 
         </ul>
       </form>
@@ -158,4 +150,18 @@ function buildFooter() {
 function hamburgerToCross(x) {
   x.classList.toggle("change");
   $('.hamburger-container').toggle();
+}
+
+function callLogout() {
+  console.log('Logout');
+
+    $.ajax({
+        type: "POST",
+        url: "/logout",
+        success: function (data) {
+        },
+        error: function (e) {
+
+        }
+    });
 }
