@@ -30,7 +30,7 @@ public class ImageController {
     ResourceLoader resourceLoader;
 
     @GetMapping(value = "getsectionimage/{imageid}")
-    public ResponseEntity<byte[]> getImage(@PathVariable("imageid") String imageId) throws IOException {
+    public ResponseEntity<byte[]> getSectionImage(@PathVariable("imageid") String imageId) throws IOException {
         MediaType mediaType;
         if (imageId.substring(imageId.length() - 3).equals("jpg")) {
             mediaType = MediaType.IMAGE_JPEG;
@@ -38,6 +38,21 @@ public class ImageController {
             mediaType = MediaType.IMAGE_PNG;
         }
         Resource resource = resourceLoader.getResource("classpath:static/images/" + imageId);
+        InputStream input = resource.getInputStream();
+
+        byte[] image = IOUtils.toByteArray(input);
+        return ResponseEntity.ok().contentType(mediaType).body(image);
+    }
+
+    @GetMapping(value = "getbadgeimage/{imageid}")
+    public ResponseEntity<byte[]> getBadgeImage(@PathVariable("imageid") String imageId) throws IOException {
+        MediaType mediaType;
+        if (imageId.substring(imageId.length() - 3).equals("jpg")) {
+            mediaType = MediaType.IMAGE_JPEG;
+        } else {
+            mediaType = MediaType.IMAGE_PNG;
+        }
+        Resource resource = resourceLoader.getResource("classpath:static/images/badges/" + imageId);
         InputStream input = resource.getInputStream();
 
         byte[] image = IOUtils.toByteArray(input);

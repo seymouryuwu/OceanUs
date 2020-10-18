@@ -160,6 +160,19 @@ public class AchievementService {
                     achievementRecordRepository.save(achievementRecord);
                 }
             }
+
+            if (minimumOfTimes >= 10) {
+                Achievement achievement = achievementRepository.findByAchievementId(9);
+                AchievementRecord achievementRecord
+                        = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
+                if (achievementRecord == null) {
+                    achievementRecord = new AchievementRecord();
+                    achievementRecord.setGeneralUser(user);
+                    achievementRecord.setAchievement(achievement);
+                    achievementRecord.setUnlockDate(LocalDate.now());
+                    achievementRecordRepository.save(achievementRecord);
+                }
+            }
         }
     }
 
