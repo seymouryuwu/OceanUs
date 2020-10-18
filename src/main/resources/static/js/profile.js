@@ -83,6 +83,15 @@ $( document ).ready(function() {
   }
 
   loadProfileData();
+
+//   https://oceanus.me/profile/setnickname
+//   @PostMapping("/setnickname")
+//       public ResponseEntity setNickname(@RequestBody String nickname) {
+//           userService.setNickname(nickname);
+//           return ResponseEntity.ok(HttpStatus.OK);
+//       }
+
+
   /********** DEV MODE **********/
 
 

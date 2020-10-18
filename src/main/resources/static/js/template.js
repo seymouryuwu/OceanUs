@@ -58,13 +58,23 @@ if (devmode) {
 
 function buildHeader() {
 
-  if (isLoggedIn) {
-    logText = "Logout";
-    navLogURL = navLogoutURL
-  } else {
-    logText = "Login";
-    navLogURL = navLoginURL
-  }
+    if (typeof isLoggedIn !== 'undefined') {
+
+      if (isLoggedIn) {
+        logText = "Logout";
+        navLogURL = navLogoutURL;
+      } else {
+        logText = "Login";
+        navLogURL = navLoginURL;
+      }
+
+    } else {
+
+        logText = "Login";
+        navLogURL = navLoginURL;
+
+    }
+
 
   var header = `
 
@@ -80,6 +90,14 @@ function buildHeader() {
         <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
         <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
         <li class="nav-option"><a href="` + navLogURL + `">` + logText + `</a></li>
+
+        <li class="hamburger-option">
+          <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" class="logout-button"/>
+          </form>
+        </li>
+
+
       </ul>
       <div class="hamburger-bars-container" onclick="hamburgerToCross(this)" style="display:none;">
         <div class="bar1"></div>
@@ -100,7 +118,14 @@ function buildHeader() {
         <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
         <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
         <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
-        <li class="hamburger-option"><a href="` + navLoginURL + `">Login</a></li>
+        <li class="hamburger-option"><a href="` + navLogURL + `">Login</a></li>
+
+        <li class="hamburger-option">
+           <form th:action="@{/logout}" method="post">
+             <input type="submit" value="Logout" class="logout-button"/>
+           </form>
+         </li>
+
       </ul>
     </div>
 
