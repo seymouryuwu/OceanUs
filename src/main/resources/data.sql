@@ -233,7 +233,7 @@ values (22,
 9,
 false,
 "https://oceanus.me/image/getsectionimage/gabriel-ramos--mkVeQ_6tew-unsplash.jpg",
-"left");
+"right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (23,
@@ -263,7 +263,7 @@ values (25,
 9,
 true,
 "https://oceanus.me/image/getsectionimage/dustan-woodhouse-RUqoVelx59I-unsplash.jpg",
-"left");
+"right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (26,
