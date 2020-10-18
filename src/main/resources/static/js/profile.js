@@ -11,7 +11,7 @@
 /* PROFILE : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getachievements = 'https://oceanus.me/achievement/getachievements';
+let API_getachievements = 'https://oceanus.me/profile/getprofiledata';
 
 /* -------------------------- */
 /* PROFILE : GLOBAL VARIABLES */
