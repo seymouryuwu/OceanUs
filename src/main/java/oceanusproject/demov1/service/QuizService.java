@@ -1,9 +1,6 @@
 package oceanusproject.demov1.service;
 
-import oceanusproject.demov1.dto.AnswerDTO;
-import oceanusproject.demov1.dto.QuizDTO;
-import oceanusproject.demov1.dto.QuizOptionDTO;
-import oceanusproject.demov1.dto.SectionQuizDTO;
+import oceanusproject.demov1.dto.*;
 import oceanusproject.demov1.model.*;
 import oceanusproject.demov1.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +27,19 @@ public class QuizService {
     private UserRepository userRepository;
 
     @Autowired
+    private ArticleRepository articleRepository;
+
+    @Autowired
     private UserQuizRecordRepository userQuizRecordRepository;
 
     @Autowired
+    private UserQuizArticleRepository userQuizArticleRepository;
+
+    @Autowired
     private AchievementService achievementService;
+
+    @Autowired
+    private ArticleService articleService;
 
     public SectionQuizDTO getSectionQuiz(long sectionId) {
         SectionQuizDTO sectionQuizDTO = new SectionQuizDTO();
@@ -105,5 +111,23 @@ public class QuizService {
         answerDTO.setCorrectOptionId(correctQuizOption.getQuizOptionId());
         answerDTO.setCorrectOptionText(correctQuizOption.getQuizOptionText());
         return answerDTO;
+    }
+
+    public List<QuizResultDTO> getQuizResults() {
+        List<QuizResultDTO> quizResultDTOList = new ArrayList<>();
+        List<Long> articleIdList = articleService.getArticleIdWhichHasQuizzes();
+        for (long articleId : articleIdList) {
+            QuizResultDTO quizResultDTO = new QuizResultDTO();
+            quizResultDTO.setArticleId(articleId);
+            quizResultDTO.setArticleTitle(articleRepository.findByArticleId(articleId).getArticleTitle());
+            quizResultDTO.setQuestionNumber(articleService.getNumberOfQuizzesForArticle(articleId));
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            quizResultDTO.setCorrectAnswer(userQuizArticleRepository.countByUsernameAndArticleId(authentication.getName(), articleId));
+
+            quizResultDTOList.add(quizResultDTO);
+        }
+
+        return quizResultDTOList;
     }
 }

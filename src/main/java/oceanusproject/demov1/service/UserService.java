@@ -1,6 +1,8 @@
 package oceanusproject.demov1.service;
 
+import oceanusproject.demov1.dto.QuizResultDTO;
 import oceanusproject.demov1.dto.UserDTO;
+import oceanusproject.demov1.dto.UserProfileDTO;
 import oceanusproject.demov1.error.UserAlreadyExistException;
 import oceanusproject.demov1.model.GeneralUser;
 import oceanusproject.demov1.repository.UserRepository;
@@ -12,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -20,6 +23,12 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    AchievementService achievementService;
+
+    @Autowired
+    QuizService quizService;
 
     @Transactional
     public void registerNewUserAccount(UserDTO userDTO) throws UserAlreadyExistException {
@@ -42,5 +51,41 @@ public class UserService {
     public boolean checkIfLoggedIn() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return !(authentication instanceof AnonymousAuthenticationToken);
+    }
+
+    public UserProfileDTO getProfileDTO() {
+        UserProfileDTO userProfileDTO = new UserProfileDTO();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentPrincipalName = authentication.getName();
+            userProfileDTO.setUsername(currentPrincipalName);
+            userProfileDTO.setNickname(userRepository.findByUsername(currentPrincipalName).getNickname());
+
+            List<QuizResultDTO> quizResultDTOList = quizService.getQuizResults();
+            int totalCorrect = 0;
+            int totalQuestion = 0;
+            for (QuizResultDTO quizResultDTO : quizResultDTOList) {
+                totalCorrect += quizResultDTO.getCorrectAnswer();
+                totalQuestion += quizResultDTO.getQuestionNumber();
+            }
+
+            userProfileDTO.setTotalCorrect(totalCorrect);
+            userProfileDTO.setTotalQuestion(totalQuestion);
+            userProfileDTO.setQuizResultDTOList(quizResultDTOList);
+
+            userProfileDTO.setAchievementDTOList(achievementService.getUserAchievements());
+        }
+        return userProfileDTO;
+    }
+
+    public void setNickname(String nickname) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentPrincipalName = authentication.getName();
+            GeneralUser user = userRepository.findByUsername(currentPrincipalName);
+            user.setNickname(nickname);
+
+            userRepository.save(user);
+        }
     }
 }

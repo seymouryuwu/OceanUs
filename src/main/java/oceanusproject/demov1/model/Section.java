@@ -16,6 +16,7 @@ import java.util.List;
 public class Section {
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "section_id")
     private long sectionId;
 
     @Column(name = "section_sequence_number")

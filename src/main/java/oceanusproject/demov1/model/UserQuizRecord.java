@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class UserQuizRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long UserQuizRecordId;
+    @Column(name = "user_quiz_record_id")
+    private long userQuizRecordId;
 
     @Column(name = "answer_result")
     private boolean answerResult;
@@ -21,11 +22,11 @@ public class UserQuizRecord {
     private Quiz quiz;
 
     public long getUserQuizRecordId() {
-        return UserQuizRecordId;
+        return userQuizRecordId;
     }
 
     public void setUserQuizRecordId(long userQuizRecordId) {
-        UserQuizRecordId = userQuizRecordId;
+        this.userQuizRecordId = userQuizRecordId;
     }
 
     public boolean isAnswerResult() {

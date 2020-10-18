@@ -275,8 +275,36 @@ values (36, false, "I have no idea", 9);
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
 values (1, "1 Correct", "Answer 1 quiz correctly", null);
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (2, "5 Correct", "Answer 5 quizzes correctly", null);
+values (2, "7 Correct", "Answer 7 quizzes correctly", null);
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (3, "10 Correct", "Answer 10 quizzes correctly", null);
+values (3, "14 Correct", "Answer 14 quizzes correctly", null);
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (4, "15 Correct", "Answer 15 quizzes correctly", null);
+values (4, "21 Correct", "Answer 21 quizzes correctly", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (5, "28 Correct", "Answer 28 quizzes correctly", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (6, "1 Time", "Read all articles 1 time", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (7, "3 Times", "Read all articles 3 times", null);
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (8, "5 Times", "Read all articles 5 times", null);
+
+-- create view quiz section article
+create or replace view quiz_section_article as
+select q.quiz_id,
+       a.article_id,
+       a.article_title
+from quizzes q
+    join sections s on q.section_id = s.section_id
+    join articles a on s.article_id = a.article_id;
+
+-- create view user quiz article records
+create or replace view user_quiz_article as
+select uqr.user_quiz_record_id,
+       uqr.username,
+       a.article_id
+from user_quiz_records uqr
+    join quizzes q on uqr.quiz_id = q.quiz_id
+    join sections s on q.section_id = s.section_id
+    join articles a on s.article_id = a.article_id
+where uqr.answer_result = true;

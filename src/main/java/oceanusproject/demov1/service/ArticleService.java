@@ -2,13 +2,15 @@ package oceanusproject.demov1.service;
 
 import oceanusproject.demov1.dto.ArticleDTO;
 import oceanusproject.demov1.dto.SectionDTO;
-import oceanusproject.demov1.model.Article;
-import oceanusproject.demov1.model.Section;
-import oceanusproject.demov1.repository.ArticleRepository;
-import oceanusproject.demov1.repository.SectionRepository;
+import oceanusproject.demov1.model.*;
+import oceanusproject.demov1.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,18 @@ public class ArticleService {
 
     @Autowired
     private SectionRepository sectionRepository;
+
+    @Autowired
+    private QuizSectionArticleRepository quizSectionArticleRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private UserArticleRepository userArticleRepository;
+
+    @Autowired
+    private AchievementService achievementService;
 
     // this method is used to get the text content of all the sections of one article
     public ArticleDTO getArticle(long articleId) {
@@ -58,5 +72,33 @@ public class ArticleService {
         sectionDTO.setImageAlignment(section.getImageAlignment());
 
         return sectionDTO;
+    }
+
+    public List<Long> getArticleIdWhichHasQuizzes() {
+        return quizSectionArticleRepository.findDistinctArticleId();
+    }
+
+    public int getNumberOfQuizzesForArticle(long articleId) {
+        return quizSectionArticleRepository.countByArticleId(articleId);
+    }
+
+    public void updateArticleReadingTimes(long articleId) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentPrincipalName = authentication.getName();
+            GeneralUser user = userRepository.findByUsername(currentPrincipalName);
+            Article article = articleRepository.findByArticleId(articleId);
+
+            UserArticle userArticle = userArticleRepository.findByGeneralUserAndArticle(user, article);
+            if (userArticle == null) {
+                userArticle = new UserArticle();
+            }
+            userArticle.setArticle(article);
+            userArticle.setGeneralUser(user);
+            userArticle.setReadTimes(userArticle.getReadTimes() + 1);
+            userArticleRepository.save(userArticle);
+
+            achievementService.updateArticleAchievement();
+        }
     }
 }
