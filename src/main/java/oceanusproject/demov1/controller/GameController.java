@@ -1,5 +1,6 @@
 package oceanusproject.demov1.controller;
 
+import oceanusproject.demov1.dto.ScoreDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class GameController {
     @PostMapping("/postshark")
-    public ResponseEntity postShark(@RequestBody Integer result) {
+    public ResponseEntity postShark(@RequestBody ScoreDTO scoreDTO) {
         //TO DO
+        System.out.println(scoreDTO.getScore());
         return ResponseEntity.ok(HttpStatus.OK);
     }
 

@@ -4,6 +4,8 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="_csrf" th:content="${_csrf.token}"/>
+  <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
   <!-- PAGE TITLE : GAMES -->
   <title>OceanUs Project | Games</title>
@@ -21,6 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="../js/template.js"></script>
+
 
   <script type="text/javascript" src="../js/phaser.min.js"></script>
   <script type="text/javascript" src="../js/SceneBootGame.js"></script>
@@ -56,7 +59,7 @@
     <main>
 
       <!-- SECTION : SHARK GAME -->
-      <section id="shark_section" class="shark-background">
+      <section id="shark_section" class="shark-background"/>
 
     </main>
 

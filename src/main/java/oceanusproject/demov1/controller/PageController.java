@@ -7,6 +7,7 @@ import oceanusproject.demov1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletRequest;
 import javax.validation.Valid;
 
 
@@ -65,7 +67,14 @@ public class PageController {
     }
 
     @GetMapping("/about")
-    public String getAboutUsPage(Model model) {
+    public String getAboutUsPage(Model model, ServletRequest servletRequest) {
+        CsrfToken token = (CsrfToken) servletRequest.getAttribute("_csrf");
+
+
+        System.out.println(token.getHeaderName());
+        System.out.println(token.getParameterName());
+        System.out.println(token.getToken());
+
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "about";
     }

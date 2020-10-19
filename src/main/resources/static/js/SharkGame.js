@@ -6,6 +6,14 @@ $( document ).ready(function() {
     aid = searchParams.get('aid');
 });
 
+
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+
+$(document).ajaxSend(function(e, xhr, options) {
+    xhr.setRequestHeader(header, token);
+});
+
 var gameSettings = {
   sharkSpeed: 200,
   sharkHighSpeed: 400,

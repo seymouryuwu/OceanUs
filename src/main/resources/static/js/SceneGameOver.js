@@ -8,6 +8,22 @@ class SceneGameOver extends Phaser.Scene {
     } 
 
     create() {
+        var result = {score : this.score};
+
+        $.ajax({
+           url: '/game/postshark',
+           type: 'POST',
+           data: JSON.stringify(result),
+           dataType: 'json',
+           contentType : "application/json",
+           success: function(response, textStatus, jqXHR) {
+             alert("Yay!");
+           },
+           error: function(jqXHR, textStatus, errorThrown){
+             alert(textStatus, errorThrown);
+          }
+        });
+
         this.background = this.add.image(0, 0, "background_gameover");
         this.background.setOrigin(0, 0);
         
