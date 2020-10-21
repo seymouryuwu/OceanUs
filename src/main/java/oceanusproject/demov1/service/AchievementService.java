@@ -1,11 +1,7 @@
 package oceanusproject.demov1.service;
 
 import oceanusproject.demov1.dto.AchievementDTO;
-import oceanusproject.demov1.dto.UserProfileDTO;
-import oceanusproject.demov1.model.Achievement;
-import oceanusproject.demov1.model.AchievementRecord;
-import oceanusproject.demov1.model.GeneralUser;
-import oceanusproject.demov1.model.UserArticle;
+import oceanusproject.demov1.model.*;
 import oceanusproject.demov1.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -36,142 +32,102 @@ public class AchievementService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public void updateQuizAchievement() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
-        GeneralUser user = userRepository.findByUsername(currentPrincipalName);
+    @Autowired
+    private UserGameRecordRepository userGameRecordRepository;
+
+    public void updateQuizAchievement(GeneralUser user) {
         long numberOfCorrectAnswer = userQuizRecordRepository.countByGeneralUserAndAnswerResult(user, true);
 
         if (numberOfCorrectAnswer >= 1) {
-            Achievement achievement = achievementRepository.findByAchievementId(1);
-            AchievementRecord achievementRecord
-                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-            if (achievementRecord == null) {
-                achievementRecord = new AchievementRecord();
-                achievementRecord.setGeneralUser(user);
-                achievementRecord.setAchievement(achievement);
-                achievementRecord.setUnlockDate(LocalDate.now());
-                achievementRecordRepository.save(achievementRecord);
-            }
+            updateAchievementById(user, 1);
         }
 
         if (numberOfCorrectAnswer >= 7) {
-            Achievement achievement = achievementRepository.findByAchievementId(2);
-            AchievementRecord achievementRecord
-                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-            if (achievementRecord == null) {
-                achievementRecord = new AchievementRecord();
-                achievementRecord.setGeneralUser(user);
-                achievementRecord.setAchievement(achievement);
-                achievementRecord.setUnlockDate(LocalDate.now());
-                achievementRecordRepository.save(achievementRecord);
-            }
+            updateAchievementById(user, 2);
         }
 
         if (numberOfCorrectAnswer >= 14) {
-            Achievement achievement = achievementRepository.findByAchievementId(3);
-            AchievementRecord achievementRecord
-                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-            if (achievementRecord == null) {
-                achievementRecord = new AchievementRecord();
-                achievementRecord.setGeneralUser(user);
-                achievementRecord.setAchievement(achievement);
-                achievementRecord.setUnlockDate(LocalDate.now());
-                achievementRecordRepository.save(achievementRecord);
-            }
+            updateAchievementById(user, 3);
         }
 
         if (numberOfCorrectAnswer >= 21) {
-            Achievement achievement = achievementRepository.findByAchievementId(4);
-            AchievementRecord achievementRecord
-                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-            if (achievementRecord == null) {
-                achievementRecord = new AchievementRecord();
-                achievementRecord.setGeneralUser(user);
-                achievementRecord.setAchievement(achievement);
-                achievementRecord.setUnlockDate(LocalDate.now());
-                achievementRecordRepository.save(achievementRecord);
-            }
+            updateAchievementById(user, 4);
         }
 
         if (numberOfCorrectAnswer >= 28) {
-            Achievement achievement = achievementRepository.findByAchievementId(5);
-            AchievementRecord achievementRecord
-                    = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-            if (achievementRecord == null) {
-                achievementRecord = new AchievementRecord();
-                achievementRecord.setGeneralUser(user);
-                achievementRecord.setAchievement(achievement);
-                achievementRecord.setUnlockDate(LocalDate.now());
-                achievementRecordRepository.save(achievementRecord);
-            }
+            updateAchievementById(user, 5);
         }
     }
 
-    public void updateArticleAchievement() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentPrincipalName = authentication.getName();
-        GeneralUser user = userRepository.findByUsername(currentPrincipalName);
-
-        List<UserArticle> userArticleList = userArticleRepository.findByGeneralUser(user);
+    public void updateArticleAchievement(GeneralUser user) {
+                List<UserArticleRecord> userArticleList = userArticleRepository.findByGeneralUser(user);
         if (userArticleList.size() == articleRepository.count()) {
-            int minimumOfTimes = 100;
-            for (UserArticle userArticle : userArticleList) {
+            int minimumOfTimes = Integer.MAX_VALUE;
+            for (UserArticleRecord userArticle : userArticleList) {
                 if (userArticle.getReadTimes() < minimumOfTimes) {
                     minimumOfTimes = userArticle.getReadTimes();
                 }
             }
 
             if (minimumOfTimes >= 1) {
-                Achievement achievement = achievementRepository.findByAchievementId(6);
-                AchievementRecord achievementRecord
-                        = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-                if (achievementRecord == null) {
-                    achievementRecord = new AchievementRecord();
-                    achievementRecord.setGeneralUser(user);
-                    achievementRecord.setAchievement(achievement);
-                    achievementRecord.setUnlockDate(LocalDate.now());
-                    achievementRecordRepository.save(achievementRecord);
-                }
+                updateAchievementById(user, 6);
             }
 
             if (minimumOfTimes >= 3) {
-                Achievement achievement = achievementRepository.findByAchievementId(7);
-                AchievementRecord achievementRecord
-                        = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-                if (achievementRecord == null) {
-                    achievementRecord = new AchievementRecord();
-                    achievementRecord.setGeneralUser(user);
-                    achievementRecord.setAchievement(achievement);
-                    achievementRecord.setUnlockDate(LocalDate.now());
-                    achievementRecordRepository.save(achievementRecord);
-                }
+                updateAchievementById(user, 7);
             }
 
             if (minimumOfTimes >= 5) {
-                Achievement achievement = achievementRepository.findByAchievementId(8);
-                AchievementRecord achievementRecord
-                        = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-                if (achievementRecord == null) {
-                    achievementRecord = new AchievementRecord();
-                    achievementRecord.setGeneralUser(user);
-                    achievementRecord.setAchievement(achievement);
-                    achievementRecord.setUnlockDate(LocalDate.now());
-                    achievementRecordRepository.save(achievementRecord);
-                }
+                updateAchievementById(user, 8);
             }
 
             if (minimumOfTimes >= 10) {
-                Achievement achievement = achievementRepository.findByAchievementId(9);
-                AchievementRecord achievementRecord
-                        = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
-                if (achievementRecord == null) {
-                    achievementRecord = new AchievementRecord();
-                    achievementRecord.setGeneralUser(user);
-                    achievementRecord.setAchievement(achievement);
-                    achievementRecord.setUnlockDate(LocalDate.now());
-                    achievementRecordRepository.save(achievementRecord);
-                }
+                updateAchievementById(user, 9);
+            }
+        }
+    }
+
+    public void updateGameAchievement(GeneralUser user, Game game) {
+        UserGameRecord userGameRecord = userGameRecordRepository.findByGeneralUserAndGame(user, game);
+        if (game.getGameId() == 1) {
+            if (userGameRecord.getScore() >= 300) {
+                updateAchievementById(user, 10);
+            }
+
+            if (userGameRecord.getScore() >= 600) {
+                updateAchievementById(user, 11);
+            }
+
+            if (userGameRecord.getScore() >= 900) {
+                updateAchievementById(user, 12);
+            }
+        }
+
+        if (game.getGameId() == 2) {
+            if (userGameRecord.getScore() >= 30) {
+                updateAchievementById(user, 13);
+            }
+
+            if (userGameRecord.getScore() >= 65) {
+                updateAchievementById(user, 14);
+            }
+
+            if (userGameRecord.getScore() >= 100) {
+                updateAchievementById(user, 15);
+            }
+        }
+
+        if (game.getGameId() == 3) {
+            if (userGameRecord.getScore() >= 10) {
+                updateAchievementById(user, 16);
+            }
+
+            if (userGameRecord.getScore() >= 20) {
+                updateAchievementById(user, 17);
+            }
+
+            if (userGameRecord.getScore() >= 30) {
+                updateAchievementById(user, 18);
             }
         }
     }
@@ -194,5 +150,18 @@ public class AchievementService {
         }
 
         return achievementDTOList;
+    }
+
+    private void updateAchievementById(GeneralUser user, int achievementId) {
+        Achievement achievement = achievementRepository.findByAchievementId(achievementId);
+        AchievementRecord achievementRecord
+                = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
+        if (achievementRecord == null) {
+            achievementRecord = new AchievementRecord();
+            achievementRecord.setGeneralUser(user);
+            achievementRecord.setAchievement(achievement);
+            achievementRecord.setUnlockDate(LocalDate.now());
+            achievementRecordRepository.save(achievementRecord);
+        }
     }
 }

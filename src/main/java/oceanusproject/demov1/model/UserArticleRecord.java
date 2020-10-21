@@ -3,8 +3,8 @@ package oceanusproject.demov1.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user_article")
-public class UserArticle {
+@Table(name = "user_article_records")
+public class UserArticleRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_article_id")

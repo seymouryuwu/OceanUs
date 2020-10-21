@@ -25,10 +25,13 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    AchievementService achievementService;
+    private AchievementService achievementService;
 
     @Autowired
-    QuizService quizService;
+    private QuizService quizService;
+
+    @Autowired
+    private GameService gameService;
 
     @Transactional
     public void registerNewUserAccount(UserDTO userDTO) throws UserAlreadyExistException {
@@ -43,6 +46,8 @@ public class UserService {
         user.setNickname("OceanUs User");
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(user);
+
+        gameService.initialGameScore(user);
     }
 
     private boolean usernameExist(String username) {
@@ -73,7 +78,7 @@ public class UserService {
             userProfileDTO.setTotalCorrect(totalCorrect);
             userProfileDTO.setTotalQuestion(totalQuestion);
             userProfileDTO.setQuizResultDTOList(quizResultDTOList);
-
+            userProfileDTO.setGameResultDTOList(gameService.getGameResults());
             userProfileDTO.setAchievementDTOList(achievementService.getUserAchievements());
         }
         return userProfileDTO;

@@ -751,6 +751,33 @@ insert into achievements (achievement_id, achievement_title, achievement_descrip
 values (8, "Maestro", "Five times reading all the articles to stabilize all the knowledge.", "https://oceanus.me/image/getbadgeimage/read-3.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
 values (9, "Grand Master", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/read-4.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (10, "shark 300", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-1.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (11, "shark 600", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-2.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (12, "shark 900", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-3.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (13, "pipe 30", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-1.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (14, "pipe 65", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-2.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (15, "pipe 100", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-3.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (16, "memory 10", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-1.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (17, "memory 20", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-2.png");
+insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
+values (18, "memory 30", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-3.png");
+
+
+-- initialize table games
+insert into games (game_id, game_name)
+values (1, "Shark vs Rubbish");
+insert into games (game_id, game_name)
+values (2, "Suzies Toosies");
+insert into games (game_id, game_name)
+values (3, "Clogged Memory");
 
 -- create view quiz section article
 create or replace view quiz_section_article as

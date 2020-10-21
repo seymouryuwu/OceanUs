@@ -101,7 +101,7 @@ public class QuizService {
             userQuizRecord.setQuiz(quiz);
             userQuizRecordRepository.save(userQuizRecord);
 
-            achievementService.updateQuizAchievement();
+            achievementService.updateQuizAchievement(user);
         }
 
         QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);

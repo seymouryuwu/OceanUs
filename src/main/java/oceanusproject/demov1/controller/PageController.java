@@ -41,6 +41,7 @@ public class PageController {
     public String getContentPageDefault(Model model) {
         //model.addAttribute("articleId", 1);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        model.addAttribute("articleCount", articleService.countArticle());
         return "content";
     }
 
@@ -55,6 +56,7 @@ public class PageController {
 
         model.addAttribute("articleId", articleId);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        model.addAttribute("articleCount", articleService.countArticle());
 
         articleService.updateArticleReadingTimes(articleId);
         return "content";
