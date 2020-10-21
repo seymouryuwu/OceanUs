@@ -6,6 +6,18 @@
 /* DESCRIPTION : JavaScript functions accessable by all pages */
 /* AUTHOR:     : Malcolm Malloy */
 
+
+/* -------------------------------------- */
+/* STORE HEADERS */
+/* -------------------------------------- */
+
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+
+//$(document).ajaxSend(function(e, xhr, options) {
+//    xhr.setRequestHeader(header, token);
+//});
+
 /* -------------------------------------- */
 /* URLS */
 /* -------------------------------------- */
@@ -50,6 +62,7 @@ if (devmode) {
   console.log("DEV MODE : user logged in!");
 
 };
+
 /********** DEV MODE **********/
 
 /* ------------------------------------ */
@@ -158,10 +171,15 @@ function callLogout() {
     $.ajax({
         type: "POST",
         url: "/logout",
+        data: token,
+        beforeSend:function(xhr){
+          xhr.setRequestHeader(header, token);
+        },
         success: function (data) {
+            window.location ="/";
         },
         error: function (e) {
-
+            console.log(data);
         }
     });
 }

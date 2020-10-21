@@ -4,6 +4,8 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="_csrf" th:content="${_csrf.token}"/>
+  <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
   <!-- PAGE TITLE : INDEX -->
   <title>OceanUs Project</title>
@@ -36,15 +38,19 @@
 
     <!-- HEADER -->
     <header class="header">
+
+      <!-- <div>
+        <form th:action="@{/logout}" method="post">
+          <input type="submit" value="Logout" />
+        </form>
+      </div> -->
+
       <script>buildHeader();</script>
+
     </header>
 
     <!-- MAIN -->
     <main>
-
-      <form th:action="@{/logout}" method="post">
-          <input type="submit" value="Logout" />
-      </form>
 
       <!-- SECTION : INTRODUCTION -->
       <section id="introduction">
@@ -90,10 +96,10 @@
             </div>
 
             <div class="cta-adventure-text cta-text">
-              </br>
+              <br>
               <h2>ADVENTURE</h2>
               <h2>QUIZ</h2>
-              </br>
+              <br>
             </div>
 
           </div>

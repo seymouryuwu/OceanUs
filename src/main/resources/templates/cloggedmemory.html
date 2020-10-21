@@ -4,6 +4,8 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="_csrf" th:content="${_csrf.token}"/>
+  <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
   <!-- PAGE TITLE : GAMES -->
   <title>OceanUs Project | Games</title>
@@ -49,7 +51,7 @@
           <h2 id="user_message_2"></h2>
           <p id="user_remaining"></p>
           <p id="user_attempts"></p>
-          </br>
+          <br>
           <div class="close-button" onclick="exitGame()">Close</div>
         </div>
       </section>
@@ -61,17 +63,17 @@
       <div id="user_feedback" class="user-feedback centered">
         <h2>Clogged Memory</h2>
         <p>The table has <span class="span-blue">8 pairs</span> of cards all flipped face down.
-        </br>
+        <br>
         Your job is to match all the pairs in <span class="span-blue">60 Seconds</span>.
-        </br>
+        <br>
         Flip both matching cards in a row to make a pair!
-        </br>
-        </br>
+        <br>
+        <br>
         And remember if it has a red no sign <span class="no-sign span-red">&osol;</span> it can harm our environment
-        </br>
+        <br>
         but if it has the green tick <span class="span-green">✔</span> it's safe to throw down the sink!
         </p>
-        </br>
+        <br>
         <div class="close-button" onclick="showGame()">Go to Game</div>
       </div>
     </section>

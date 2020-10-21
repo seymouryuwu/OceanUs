@@ -4,6 +4,8 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="_csrf" th:content="${_csrf.token}"/>
+  <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
   <!-- PAGE TITLE : GAMES -->
   <title>OceanUs Project | Games</title>
@@ -49,7 +51,7 @@
           <h2 id="pipe_user_message_1"></h2>
           <p id="pipe_user_message_2"></p>
           <p id="user_remaining"></p>
-          </br>
+          <br>
           <div class="close-button" onclick="pipeExitGame()">Close</div>
         </div>
       </section>
@@ -59,15 +61,15 @@
         <div id="pipe_user_feedback" class="pipe-user-feedback centered">
           <h2>Suzie’s Toosies</h2>
           <p>The pipe from Suzie's toilet to the waste water plant is broken and needs to be repaired!
-          </br>
+          <br>
           Try and make one continuous pipe from Suzies house on the top right to the waste water plant on the bottom left.
-          </br>
+          <br>
           Click on the pipes to rotate them to the correct position.
-          </br>
+          <br>
           But remember, there is only <span class="span-blue">120 seconds</span> on the clock before flush time!
           </p>
 
-          </br>
+          <br>
           <div class="close-button" onclick="showPipeGame()">Go to Game</div>
         </div>
       </section>

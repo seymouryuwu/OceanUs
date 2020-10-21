@@ -4,6 +4,8 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta th:name="_csrf" th:content="${_csrf.token}"/>
+  <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
   <!-- PAGE TITLE : EXPLORE -->
   <title>OceanUs Project | Explore</title>
@@ -50,8 +52,8 @@
 
         <div class="row">
           <div class="col-md-12 full-block">
-            <h2 class="z-index-2">How much water do we use everyday?<h2>
-            </br>
+            <h2 class="z-index-2">How much water do we use everyday?</h2>
+            <br>
             <p>Today, when the world is calling for sustainable development, Melbourne, as the second-largest city in Australia with a population of more than 4.8 million (2019), is also concerned about the pressure of urban water use in various aspects. The rapid development of our city also means that the water supply is facing year-on-year challenges. Reasonable water use is especially important. We hope that not only us, but future residents can also enjoy sufficient water resources.</p>
           </div>
         </div>
@@ -62,8 +64,8 @@
             <div id="tableauViz_2019"></div>
           </div>
           <div class="col-md-5 right-block map-desc">
-            <h2>Water Consumption in Melbourne<h2>
-            </br>
+            <h2>Water Consumption in Melbourne</h2>
+            <br>
             <p>How much water does one household need in a day?</p>
             <p>The amount of water consumed by each household does not vary much from year to year, but the value varies from region to region. On the one hand, it is because of the difference in population size; on the other hand, it is also because of the different distribution of water enterprises.</p>
             <p>See the plot here to find your suburb water consumption</p>
@@ -105,7 +107,7 @@
         <div class="row">
           <div class="col-md-6 left-block">
             <h2>How much sewage do people in Melbourne produce every day?</h2>
-            </br>
+            <br>
             <!-- Description -->
             <p>After having a general understanding of our daily sewage process, let’s take a look at the average daily sewage volume in the two major sewage recycling stations(ETP & WTP*) in Melbourne.</p>
             <p>When the sewage volume is highest, the two stations will collect nearly 900 million liters of sewage per day on average!</p>
@@ -139,7 +141,7 @@
 
           <div class="col-md-6 left-block margin-reuse-top">
             <h2>Know more about reclaimed water</h2>
-            </br>
+            <br>
             <!-- Description -->
             <p>Reclaimed water is water resources that can be reused after the sewage has been treated layer by layer. They can be used in garden watering and toilet flushing.</p>
             <p>Are you keen to know more about how it works? visit <a href="https://www.melbournewater.com.au/water-data-and-education/water-facts-and-history/where-your-sewage-goes/eastern-treatment-plant">melbournewater.com.au</a></p>
