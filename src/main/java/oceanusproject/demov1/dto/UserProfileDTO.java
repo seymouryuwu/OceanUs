@@ -8,6 +8,7 @@ public class UserProfileDTO {
     private int totalCorrect;
     private int totalQuestion;
     private List<QuizResultDTO> quizResultDTOList;
+    private List<GameResultDTO> gameResultDTOList;
     private List<AchievementDTO> achievementDTOList;
 
     public String getUsername() {
@@ -48,6 +49,14 @@ public class UserProfileDTO {
 
     public void setQuizResultDTOList(List<QuizResultDTO> quizResultDTOList) {
         this.quizResultDTOList = quizResultDTOList;
+    }
+
+    public List<GameResultDTO> getGameResultDTOList() {
+        return gameResultDTOList;
+    }
+
+    public void setGameResultDTOList(List<GameResultDTO> gameResultDTOList) {
+        this.gameResultDTOList = gameResultDTOList;
     }
 
     public List<AchievementDTO> getAchievementDTOList() {

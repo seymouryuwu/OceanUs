@@ -10,7 +10,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,16 +88,20 @@ public class ArticleService {
             GeneralUser user = userRepository.findByUsername(currentPrincipalName);
             Article article = articleRepository.findByArticleId(articleId);
 
-            UserArticle userArticle = userArticleRepository.findByGeneralUserAndArticle(user, article);
+            UserArticleRecord userArticle = userArticleRepository.findByGeneralUserAndArticle(user, article);
             if (userArticle == null) {
-                userArticle = new UserArticle();
+                userArticle = new UserArticleRecord();
             }
             userArticle.setArticle(article);
             userArticle.setGeneralUser(user);
             userArticle.setReadTimes(userArticle.getReadTimes() + 1);
             userArticleRepository.save(userArticle);
 
-            achievementService.updateArticleAchievement();
+            achievementService.updateArticleAchievement(user);
         }
+    }
+
+    public long countArticle() {
+        return articleRepository.count();
     }
 }

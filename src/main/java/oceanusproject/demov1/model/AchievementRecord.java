@@ -18,7 +18,7 @@ public class AchievementRecord {
     private long achievementRecordId;
 
     @Column(name = "unlockDate")
-    LocalDate unlockDate;
+     private LocalDate unlockDate;
 
     @ManyToOne
     @JoinColumn(name ="username")
