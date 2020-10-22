@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,5 +79,24 @@ public class GameService {
             gameResultDTOList.add(gameResultDTO);
         }
         return gameResultDTOList;
+    }
+
+    public boolean ifEnableToPlay(int gameId, HttpServletRequest httpServletRequest) {
+        Game game = gameRepository.findByGameId(gameId);
+        String previousUrl = (String) httpServletRequest.getSession().getAttribute("previous_url");
+        if (previousUrl != null) {
+            if (previousUrl.startsWith("/content") &&
+                    game.getArticle().getArticleId() == Long.parseLong(previousUrl.substring(9))) {
+                return true;
+            }
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            if (previousUrl.equals("/games") && !(authentication instanceof AnonymousAuthenticationToken)) {
+                String currentPrincipalName = authentication.getName();
+                GeneralUser user = userRepository.findByUsername(currentPrincipalName);
+                return userGameRecordRepository.findByGeneralUserAndGame(user, game).isUnlocked();
+            }
+        }
+        return  false;
     }
 }

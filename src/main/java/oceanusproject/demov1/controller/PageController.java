@@ -3,6 +3,7 @@ package oceanusproject.demov1.controller;
 import oceanusproject.demov1.dto.UserDTO;
 import oceanusproject.demov1.error.UserAlreadyExistException;
 import oceanusproject.demov1.service.ArticleService;
+import oceanusproject.demov1.service.GameService;
 import oceanusproject.demov1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -28,10 +29,13 @@ import java.util.List;
 @CrossOrigin
 public class PageController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
-    ArticleService articleService;
+    private ArticleService articleService;
+
+    @Autowired
+    private GameService gameService;
 
     @GetMapping
     public String getHomePage(Model model) {
@@ -53,7 +57,8 @@ public class PageController {
     }
 
     @GetMapping("/content/{articleid}")
-    public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
+    public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model,
+                                 HttpServletRequest httpServletRequest) {
         //TO DO validation for article ID
 
         model.addAttribute("articleId", articleId);
@@ -61,6 +66,8 @@ public class PageController {
         model.addAttribute("articleCount", articleService.countArticle());
 
         articleService.updateArticleReadingTimes(articleId);
+
+        httpServletRequest.getSession().setAttribute("previous_url", "/content/"+articleId);
         return "content";
     }
 
@@ -72,40 +79,46 @@ public class PageController {
 
     @GetMapping("/about")
     public String getAboutUsPage(Model model, ServletRequest servletRequest) {
-        CsrfToken token = (CsrfToken) servletRequest.getAttribute("_csrf");
-
-
-        System.out.println(token.getHeaderName());
-        System.out.println(token.getParameterName());
-        System.out.println(token.getToken());
-
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "about";
     }
 
     @GetMapping("/games")
-    public String getGamePage(Model model) {
+    public String getGamePage(Model model, HttpServletRequest httpServletRequest) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         //List<Boolean> unlockGameList = //TO DO
         //model.addAttribute("unlockList", unlockGameList);
+
+        httpServletRequest.getSession().setAttribute("previous_url", "/games");
         return "games";
     }
 
     @GetMapping("/sharkvsrubbish")
     public String getSharkGamePage(HttpServletRequest httpServletRequest) {
-        System.out.println(httpServletRequest.getRequestURI());
-        //To do
-        return "sharkvsrubbish";
+        //System.out.println(httpServletRequest.getSession().getAttribute("previous_url"));
+        if (gameService.ifEnableToPlay(1, httpServletRequest)) {
+            return "sharkvsrubbish";
+        } else {
+            return "redirect:/login";
+        }
     }
 
     @GetMapping("/suziestoosies")
-    public String getPipePage() {
-        return "suziestoosies";
+    public String getPipePage(HttpServletRequest httpServletRequest) {
+        if (gameService.ifEnableToPlay(2, httpServletRequest)) {
+            return "suziestoosies";
+        } else {
+            return "redirect:/login";
+        }
     }
 
     @GetMapping("/cloggedmemory")
-    public String getMemoryPage() {
-        return "cloggedmemory";
+    public String getMemoryPage(HttpServletRequest httpServletRequest) {
+        if (gameService.ifEnableToPlay(3, httpServletRequest)) {
+            return "cloggedmemory";
+        } else {
+            return "redirect:/login";
+        }
     }
 
     @GetMapping("/signup")
@@ -152,12 +165,14 @@ public class PageController {
         return "login";
     }
 
+    // post method for redirection after successful login
     @PostMapping("/profile")
     public String profilePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         return "profile";
     }
 
+    // get method for general access of login page
     @GetMapping("/profile")
     public String getProfilePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());

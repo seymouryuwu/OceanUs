@@ -20,7 +20,7 @@ import javax.validation.constraints.Min;
 @CrossOrigin
 public class QuizController {
     @Autowired
-    QuizService quizService;
+    private QuizService quizService;
 
     @GetMapping("/getsectionquiz")
     public SectionQuizDTO getSectionQuiz(@RequestParam(value = "sectionId") @Min(1) @Max(100) long sectionId) {

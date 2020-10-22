@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class ProfileController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @GetMapping("/getprofiledata")
     public UserProfileDTO getUserProfileData() {

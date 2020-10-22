@@ -21,7 +21,7 @@ import javax.validation.constraints.Min;
 @CrossOrigin
 public class ArticleController {
     @Autowired
-    ArticleService articleService;
+    private ArticleService articleService;
 
     /*
     @PostMapping("/postarticle")

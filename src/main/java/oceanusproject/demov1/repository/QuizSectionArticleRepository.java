@@ -11,5 +11,7 @@ public interface QuizSectionArticleRepository extends JpaRepository<QuizSectionA
     @Query("select distinct articleId from QuizSectionArticle")
     List<Long> findDistinctArticleId();
 
+    QuizSectionArticle findByQuizId(long quizId);
+
     int countByArticleId(long articleId);
 }

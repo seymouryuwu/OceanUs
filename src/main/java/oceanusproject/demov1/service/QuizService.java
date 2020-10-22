@@ -36,6 +36,15 @@ public class QuizService {
     private UserQuizArticleRepository userQuizArticleRepository;
 
     @Autowired
+    private QuizSectionArticleRepository quizSectionArticleRepository;
+
+    @Autowired
+    private GameRepository gameRepository;
+
+    @Autowired
+    private UserGameRecordRepository userGameRecordRepository;
+
+    @Autowired
     private AchievementService achievementService;
 
     @Autowired
@@ -103,7 +112,13 @@ public class QuizService {
 
             achievementService.updateQuizAchievement(user);
 
-            // TO DO update game record unlock
+            Article article = articleRepository.findByArticleId(quizSectionArticleRepository.findByQuizId(quiz.getQuizId()).getArticleId());
+            Game game = gameRepository.findByArticle(article);
+            if (game != null) {
+                UserGameRecord userGameRecord = userGameRecordRepository.findByGeneralUserAndGame(user, game);
+                userGameRecord.setUnlocked(true);
+                userGameRecordRepository.save(userGameRecord);
+            }
         }
 
         QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);

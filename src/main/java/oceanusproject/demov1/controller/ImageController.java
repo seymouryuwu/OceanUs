@@ -27,7 +27,7 @@ import java.io.InputStream;
 @RequestMapping("/image")
 public class ImageController {
     @Autowired
-    ResourceLoader resourceLoader;
+    private ResourceLoader resourceLoader;
 
     @GetMapping(value = "getsectionimage/{imageid}")
     public ResponseEntity<byte[]> getSectionImage(@PathVariable("imageid") String imageId) throws IOException {
