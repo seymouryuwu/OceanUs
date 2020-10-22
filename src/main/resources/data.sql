@@ -772,29 +772,29 @@ values (18, "memory 30", "Become a sewage system expert by reading ten times of 
 
 
 -- initialize table games
-insert into games (game_id, game_name)
-values (1, "Shark vs Rubbish");
-insert into games (game_id, game_name)
-values (2, "Suzies Toosies");
-insert into games (game_id, game_name)
-values (3, "Clogged Memory");
+insert into games (game_id, game_name, unlock_by_article)
+values (1, "Shark vs Rubbish", 1);
+insert into games (game_id, game_name, unlock_by_article)
+values (2, "Suzies Toosies", 2);
+insert into games (game_id, game_name, unlock_by_article)
+values (3, "Clogged Memory", 6);
 
 -- create view quiz section article
-create or replace view quiz_section_article as
-select q.quiz_id,
-       a.article_id,
-       a.article_title
-from quizzes q
-    join sections s on q.section_id = s.section_id
-    join articles a on s.article_id = a.article_id;
+--create or replace view quiz_section_article as
+--select q.quiz_id,
+--      a.article_id,
+--      a.article_title
+--from quizzes q
+--    join sections s on q.section_id = s.section_id
+--    join articles a on s.article_id = a.article_id;
 
 -- create view user quiz article records
-create or replace view user_quiz_article as
-select uqr.user_quiz_record_id,
-       uqr.username,
-       a.article_id
-from user_quiz_records uqr
-    join quizzes q on uqr.quiz_id = q.quiz_id
-    join sections s on q.section_id = s.section_id
-    join articles a on s.article_id = a.article_id
-where uqr.answer_result = true;
+--create or replace view user_quiz_article as
+--select uqr.user_quiz_record_id,
+--       uqr.username,
+--       a.article_id
+--from user_quiz_records uqr
+--    join quizzes q on uqr.quiz_id = q.quiz_id
+--    join sections s on q.section_id = s.section_id
+--    join articles a on s.article_id = a.article_id
+--where uqr.answer_result = true;

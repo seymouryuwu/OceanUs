@@ -16,6 +16,9 @@ public class UserGameRecord {
     @Column(name = "achieveDate")
     private LocalDate achieveDate;
 
+    //@Column(name = "is_unlocked")
+    //private boolean isUnlocked;
+
     @ManyToOne
     @JoinColumn(name ="username")
     private GeneralUser generalUser;
@@ -47,7 +50,17 @@ public class UserGameRecord {
     public void setAchieveDate(LocalDate achieveDate) {
         this.achieveDate = achieveDate;
     }
+/*
+    public boolean isUnlocked() {
+        return isUnlocked;
+    }
 
+    public void setUnlocked(boolean unlocked) {
+        isUnlocked = unlocked;
+    }
+
+
+ */
     public GeneralUser getGeneralUser() {
         return generalUser;
     }

@@ -48,7 +48,8 @@ public class GameService {
         }
     }
 
-    public void initialGameScore(GeneralUser user) {
+    public void initialGameScore(String username) {
+        GeneralUser user = userRepository.findByUsername(username);
         List<Game> gameList = gameRepository.findAll();
         for (Game game : gameList) {
             UserGameRecord userGameRecord = new UserGameRecord();

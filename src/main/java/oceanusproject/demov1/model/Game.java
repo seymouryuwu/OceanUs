@@ -1,9 +1,8 @@
 package oceanusproject.demov1.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "games")
@@ -14,6 +13,13 @@ public class Game {
 
     @Column(name = "game_name")
     private String gameName;
+
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+    private List<UserGameRecord> userGameRecordList = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name = "unlock_by_article")
+    private Article article;
 
     public int getGameId() {
         return gameId;
@@ -29,5 +35,13 @@ public class Game {
 
     public void setGameName(String gameName) {
         this.gameName = gameName;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
 }
