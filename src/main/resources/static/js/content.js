@@ -24,6 +24,7 @@ var articleID =  "";
 var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
+var gameAPI = '';
 
 var distance = 0;
 
@@ -33,22 +34,17 @@ var distance = 0;
 
 $( document ).ready(function() {
 
-  //Get current URL
-  this_URL = window.location.pathname;
-
-  //Get last segment of URL
-  articleID =  parseInt(this_URL.split('/').pop());
-
   var devmode = false;
 
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 3;
+    articleID = 2;
+    gameAPI = '/sharkvsrubbish';
   }
   /********** DEV MODE **********/
 
-  if (articleID < 6) {
+  if (articleID < articleCount)  {
     available = true;
   }
 
@@ -59,6 +55,7 @@ $( document ).ready(function() {
     $.ajax({url: (API_getarticle + articleID), success: function(articleData, textStatus) {
         $('.content-section').css('display', 'inherit');
         buildSection(articleData.sectionDTOList);
+        gameAPI = articleData.gameAPI;
       }, error: function(jqXHR, textStatus, errorThrown) {
         //TODO: Redirect to something went wrong page
         console.log("Error loading content!");
@@ -67,7 +64,7 @@ $( document ).ready(function() {
 
   } else {
     //TODO: Redirect to something went wrong page
-    console.log("Last section in URL is not numeric");
+    console.log("THe article ID was not set");
   }
 
 });
@@ -343,19 +340,33 @@ function checkQuizAnswer() {
     //Append next quiz button if another article is available
     if (available) {
 
-      $('.quiz-section').append(`
-      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
-        <image src="` + staticAssetsURL + `images/start.png">
-      </button>
-      `);
+      //If game API is available add start button, else load next article button
+      if (gameAPI) {
+
+        $('.quiz-section').append(`
+           <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+             <image src="` + staticAssetsURL + `images/start.png">
+           </button>
+        `);
+
+      } else {
+
+        $('.quiz-section').append(`
+           <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+             <image src="` + staticAssetsURL + `images/next_page_button.png">
+           </button>
+        `);
+
+      }
+
 
     } else {
-      //TODO: Check if there is a game attached before appending this
-      $('.quiz-section').append(`
-      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
-        <image src="` + staticAssetsURL + `images/start.png">
-      </button>
-      `);
+      //TODO: Add end adventure button
+//      $('.quiz-section').append(`
+//      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+//        <image src="` + staticAssetsURL + `images/start.png">
+//      </button>
+//      `);
 
     }
 
@@ -408,73 +419,33 @@ function checkQuizAnswer() {
 
 function startReward(articleID) {
 
-  var nextArticle = 0;
-  if (available) {
-    nextArticle = (articleID + 1);
+  console.log('Start Reward');
+  console.log(available);
+
+  // LAST ARTICLE IN DB - Navigate to quiz ending page
+  if (articleID >= articleCount)  {
+      //TODO: Navigate to the quiz ending page (CURRENTLY NAVIGATES TO PROFILE)
+      window.open('/profile', '_self');
   }
 
-  switch (articleID) {
-    case 0:
-      console.log("No 0 id article!");
-      break;
-    case 1:
-      var win = window.open('/sharkvsrubbish?aid=' + nextArticle, '_self');
-      if (win) {
-          //Browser has allowed it to be opened
-          win.focus();
-      } else {
-          //Browser has blocked it
-          alert('Please allow popups for this website');
-      }
-      break;
-    case 2:
-      var win = window.open('/suziestoosies?aid=' + nextArticle, '_self');
-      if (win) {
-          //Browser has allowed it to be opened
-          win.focus();
-      } else {
-          //Browser has blocked it
-          alert('Please allow popups for this website');
-      }
-      break;
-    case 3:
-
-      break;
-    case 4:
-
-      break;
-    case 5:
-
-      break;
-    case 6:
-      var win = window.open('/cloggedmemory?aid=' + nextArticle, '_self');
-      if (win) {
-          //Browser has allowed it to be opened
-          win.focus();
-      } else {
-          //Browser has blocked it
-          alert('Please allow popups for this website');
-      }
-      break;
-    default:
-
-  }
-
-  var next = parseInt(articleID + 1);
-
-  console.log(next);
-
-  //Disable Scroll
-  $('body').css('position', 'fixed');
-
-  //TODO: Check if there is an article after this
+  // NEXT ARTICLE EXISTS
   if (available) {
-    //Add next quiz buttons onClick event
-    $('#next_quiz1').on("click", 'nextQuiz(' + next + ')');
-    $('#next_quiz2').on("click", 'nextQuiz(' + next + ')');
-  } else {
-    $('#next_quiz1').attr('href',navGamesURL).text('Games');
-    $('#next_quiz2').attr('href',navGamesURL).text('Games');
+
+    var nextArticleID = (articleID + 1);
+
+    // GAME EXISTS
+    if (gameAPI) {
+
+        console.log('LOAD SPECIFIED GAME');
+        window.open(gameAPI + '?aid=' + nextArticleID, '_self');
+
+    } else {
+
+        console.log('NO GAME! LOAD NEXT QUIZ BUTTON');
+        window.open(nextArticleID, '_self');
+
+    }
+
   }
 
 }
@@ -488,18 +459,9 @@ function nextQuiz(quizId) {
 
   var nextArticle = (contentURL + parseInt(quizId));
 
-  console.log(nextArticle);
-  /********** DEV MODE **********/
-  /* IMPORTANT NOTE : Remove before deployment!!! */
-  if (devmode) {
-    // nextArticle = contentURL;
-    // console.log("DEV MODE : Next Article reloads same page");
-  }
-  /********** DEV MODE **********/
-
-
   //Redirect to next content page
   window.location.replace(nextArticle);
+
 }
 
 

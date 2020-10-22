@@ -3,7 +3,7 @@
 /* --------------- */
 
 /* JAVASCRIPT :  Template */
-/* DESCRIPTION : JavaScript functions accessable by all pages */
+/* DESCRIPTION : JavaScript functions accessible by all pages */
 /* AUTHOR:     : Malcolm Malloy */
 
 
