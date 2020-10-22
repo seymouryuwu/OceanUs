@@ -20,7 +20,7 @@ let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 /* -------------------------- */
 
 var this_URL = "";
-var articleID =  "";
+//var articleId =  "";
 var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
@@ -39,20 +39,20 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
-    articleID = 2;
+    articleId = 2;
     gameAPI = '/sharkvsrubbish';
   }
   /********** DEV MODE **********/
 
-  if (articleID < articleCount)  {
+  if (articleId < articleCount)  {
     available = true;
   }
 
   //Check if last URL segment is numeric
-  if ($.isNumeric(articleID)) {
+  if ($.isNumeric(articleId)) {
 
-    //API Request : Get Article API by articleID
-    $.ajax({url: (API_getarticle + articleID), success: function(articleData, textStatus) {
+    //API Request : Get Article API by articleId
+    $.ajax({url: (API_getarticle + articleId), success: function(articleData, textStatus) {
         $('.content-section').css('display', 'inherit');
         buildSection(articleData.sectionDTOList);
         gameAPI = articleData.gameAPI;
@@ -189,7 +189,7 @@ function buildSection(sectionDTOList) {
       if (available) {
         //Append next quiz button
         $('.content-section').append(`
-        <button type="submit" class="quiz-next" onClick="nextQuiz(` + parseInt(articleID + 1) + `)">
+        <button type="submit" class="quiz-next" onClick="nextQuiz(` + parseInt(articleId + 1) + `)">
           <image src="` + staticAssetsURL + `images/next_page_button.png">
         </button>
         `);
@@ -344,7 +344,7 @@ function checkQuizAnswer() {
       if (gameAPI) {
 
         $('.quiz-section').append(`
-           <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+           <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
              <image src="` + staticAssetsURL + `images/start.png">
            </button>
         `);
@@ -352,7 +352,7 @@ function checkQuizAnswer() {
       } else {
 
         $('.quiz-section').append(`
-           <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+           <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
              <image src="` + staticAssetsURL + `images/next_page_button.png">
            </button>
         `);
@@ -363,7 +363,7 @@ function checkQuizAnswer() {
     } else {
       //TODO: Add end adventure button
 //      $('.quiz-section').append(`
-//      <button type="submit" class="quiz-next" onClick="startReward(` + articleID + `)">
+//      <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
 //        <image src="` + staticAssetsURL + `images/start.png">
 //      </button>
 //      `);
@@ -417,13 +417,13 @@ function checkQuizAnswer() {
 /* CONTENT : START REWARD GAME */
 /* -------------------------- */
 
-function startReward(articleID) {
+function startReward(articleId) {
 
   console.log('Start Reward');
   console.log(available);
 
   // LAST ARTICLE IN DB - Navigate to quiz ending page
-  if (articleID >= articleCount)  {
+  if (articleId >= articleCount)  {
       //TODO: Navigate to the quiz ending page (CURRENTLY NAVIGATES TO PROFILE)
       window.open('/profile', '_self');
   }
@@ -431,7 +431,7 @@ function startReward(articleID) {
   // NEXT ARTICLE EXISTS
   if (available) {
 
-    var nextArticleID = (articleID + 1);
+    var nextArticleID = (articleId + 1);
 
     // GAME EXISTS
     if (gameAPI) {
@@ -471,7 +471,7 @@ function nextQuiz(quizId) {
 
 function closeSharkGame() {
   console.log('next quiz!');
-  nextQuiz(parseInt(articleID) + 1);
+  nextQuiz(parseInt(articleId) + 1);
 }
 
 
