@@ -47,7 +47,7 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(user);
 
-        gameService.initialGameScore(user);
+        gameService.initialGameScore(userDTO.getUsername());
     }
 
     private boolean usernameExist(String username) {

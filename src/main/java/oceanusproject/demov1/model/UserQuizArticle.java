@@ -1,6 +1,7 @@
 package oceanusproject.demov1.model;
 
 import org.hibernate.annotations.Immutable;
+import org.hibernate.annotations.Subselect;
 import org.springframework.cache.annotation.CacheConfig;
 
 import javax.persistence.Column;
@@ -10,7 +11,13 @@ import javax.persistence.Table;
 
 @Entity
 @Immutable
-@Table(name = "user_quiz_article")
+@Subselect(""+
+        "select uqr.user_quiz_record_id, uqr.username, a.article_id " +
+        "from user_quiz_records uqr " +
+        "join quizzes q on uqr.quiz_id = q.quiz_id " +
+        "join sections s on q.section_id = s.section_id " +
+        "join articles a on s.article_id = a.article_id " +
+        "where uqr.answer_result = true")
 public class UserQuizArticle {
     @Id
     @Column(name = "user_quiz_record_id")

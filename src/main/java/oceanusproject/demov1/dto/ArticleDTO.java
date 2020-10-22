@@ -5,6 +5,7 @@ import java.util.List;
 public class ArticleDTO {
     private long articleId;
     private String articleTitle;
+    private String gameAPI;
     private List<SectionDTO> sectionDTOList;
 
     public long getArticleId() {
@@ -21,6 +22,14 @@ public class ArticleDTO {
 
     public void setArticleTitle(String articleTitle) {
         this.articleTitle = articleTitle;
+    }
+
+    public String getGameAPI() {
+        return gameAPI;
+    }
+
+    public void setGameAPI(String gameAPI) {
+        this.gameAPI = gameAPI;
     }
 
     public List<SectionDTO> getSectionDTOList() {

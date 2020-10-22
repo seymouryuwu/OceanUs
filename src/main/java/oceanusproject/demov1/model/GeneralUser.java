@@ -28,6 +28,9 @@ public class GeneralUser {
     @OneToMany(mappedBy = "generalUser", cascade = CascadeType.ALL)
     private List<UserQuizRecord> userQuizRecordList = new ArrayList<>();
 
+    @OneToMany(mappedBy = "generalUser", cascade = CascadeType.ALL)
+    private List<UserGameRecord> userGameRecordList = new ArrayList<>();
+
     public String getUsername() {
         return username;
     }
@@ -50,5 +53,29 @@ public class GeneralUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<AchievementRecord> getAchievementRecordList() {
+        return achievementRecordList;
+    }
+
+    public void setAchievementRecordList(List<AchievementRecord> achievementRecordList) {
+        this.achievementRecordList = achievementRecordList;
+    }
+
+    public List<UserQuizRecord> getUserQuizRecordList() {
+        return userQuizRecordList;
+    }
+
+    public void setUserQuizRecordList(List<UserQuizRecord> userQuizRecordList) {
+        this.userQuizRecordList = userQuizRecordList;
+    }
+
+    public List<UserGameRecord> getUserGameRecordList() {
+        return userGameRecordList;
+    }
+
+    public void setUserGameRecordList(List<UserGameRecord> userGameRecordList) {
+        this.userGameRecordList = userGameRecordList;
     }
 }

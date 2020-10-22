@@ -1,6 +1,7 @@
 package oceanusproject.demov1.model;
 
 import org.hibernate.annotations.Immutable;
+import org.hibernate.annotations.Subselect;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Immutable
-@Table(name = "quiz_section_article")
+@Subselect("select q.quiz_id, a.article_id " +
+        "from quizzes q " +
+        "join sections s on q.section_id = s.section_id " +
+        "join articles a on s.article_id = a.article_id")
 public class QuizSectionArticle {
     @Id
     @Column(name = "quiz_id")
@@ -17,10 +21,6 @@ public class QuizSectionArticle {
 
     @Column(name = "article_id")
     private long articleId;
-
-    // TO DO may delete
-    @Column(name = "article_title")
-    private String articleTitle;
 
     public long getQuizId() {
         return quizId;
@@ -37,13 +37,4 @@ public class QuizSectionArticle {
     public void setArticleId(long articleId) {
         this.articleId = articleId;
     }
-
-    public String getArticleTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String articleTitle) {
-        this.articleTitle = articleTitle;
-    }
-
 }

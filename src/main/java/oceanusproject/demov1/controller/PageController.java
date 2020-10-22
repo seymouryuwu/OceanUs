@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 
 @Controller
@@ -52,7 +54,7 @@ public class PageController {
 
     @GetMapping("/content/{articleid}")
     public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model) {
-        //TO DO check article ID in db
+        //TO DO validation for article ID
 
         model.addAttribute("articleId", articleId);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
@@ -84,11 +86,15 @@ public class PageController {
     @GetMapping("/games")
     public String getGamePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        //List<Boolean> unlockGameList = //TO DO
+        //model.addAttribute("unlockList", unlockGameList);
         return "games";
     }
 
     @GetMapping("/sharkvsrubbish")
-    public String getSharkGamePage() {
+    public String getSharkGamePage(HttpServletRequest httpServletRequest) {
+        System.out.println(httpServletRequest.getRequestURI());
+        //To do
         return "sharkvsrubbish";
     }
 

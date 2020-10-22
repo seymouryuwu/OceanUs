@@ -102,6 +102,8 @@ public class QuizService {
             userQuizRecordRepository.save(userQuizRecord);
 
             achievementService.updateQuizAchievement(user);
+
+            // TO DO update game record unlock
         }
 
         QuizOption correctQuizOption = quizOptionRepository.findByQuizAndIsAnswer(quiz, true);

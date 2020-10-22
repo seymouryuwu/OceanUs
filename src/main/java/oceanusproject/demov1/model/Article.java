@@ -1,13 +1,6 @@
 package oceanusproject.demov1.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +18,9 @@ public class Article {
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<Section> sections = new ArrayList<>();
 
+    @OneToOne(mappedBy = "article", cascade = CascadeType.ALL)
+    private Game game;
+
     public long getArticleId() {
         return articleId;
     }
@@ -41,4 +37,19 @@ public class Article {
         this.articleTitle = articleTitle;
     }
 
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }

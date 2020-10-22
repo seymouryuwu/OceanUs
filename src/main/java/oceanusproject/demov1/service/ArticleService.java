@@ -33,12 +33,26 @@ public class ArticleService {
     @Autowired
     private AchievementService achievementService;
 
+    @Autowired
+    private GameRepository gameRepository;
+
     // this method is used to get the text content of all the sections of one article
     public ArticleDTO getArticle(long articleId) {
         ArticleDTO articleDTO = new ArticleDTO();
         Article article = articleRepository.findByArticleId(articleId);
         articleDTO.setArticleId(articleId);
         articleDTO.setArticleTitle(article.getArticleTitle());
+        Game game = gameRepository.findByArticle(article);
+        if (game != null) {
+            String gameAPI = null;
+            int gameId = game.getGameId();
+            switch (gameId) {
+                case 1 -> gameAPI = "/sharkvsrubbish";
+                case 2 -> gameAPI = "/suziestoosies";
+                case 3 -> gameAPI = "/cloggedmemory";
+            }
+            articleDTO.setGameAPI(gameAPI);
+        }
 
         List<Section> sections = sectionRepository.findByArticle(article);
         List<SectionDTO> sectionDTOList = new ArrayList<>();
