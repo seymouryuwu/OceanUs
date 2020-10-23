@@ -1,6 +1,7 @@
 package oceanusproject.demov1.service;
 
 import oceanusproject.demov1.dto.GameResultDTO;
+import oceanusproject.demov1.dto.GameUnlockStateDTO;
 import oceanusproject.demov1.model.Game;
 import oceanusproject.demov1.model.GeneralUser;
 import oceanusproject.demov1.model.UserGameRecord;
@@ -98,5 +99,21 @@ public class GameService {
             }
         }
         return  false;
+    }
+
+    public List<GameUnlockStateDTO> getGameUnlockState() {
+        List<GameUnlockStateDTO> gameUnlockStateDTOList = new ArrayList<>();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        GeneralUser user = userRepository.findByUsername(authentication.getName());
+
+        List<UserGameRecord> userGameRecordList = userGameRecordRepository.findByGeneralUser(user);
+        for (UserGameRecord userGameRecord : userGameRecordList) {
+            GameUnlockStateDTO gameUnlockStateDTO = new GameUnlockStateDTO();
+            gameUnlockStateDTO.setGameId(userGameRecord.getGame().getGameId());
+            gameUnlockStateDTO.setUnlockState(userGameRecord.isUnlocked());
+            gameUnlockStateDTOList.add(gameUnlockStateDTO);
+        }
+
+        return gameUnlockStateDTOList;
     }
 }
