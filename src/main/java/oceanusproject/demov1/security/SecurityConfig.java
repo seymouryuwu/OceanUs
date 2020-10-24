@@ -56,9 +56,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/images/**").permitAll()
                 .antMatchers("/fonts/**").permitAll()
-
-                .antMatchers("/profile").permitAll()
-
+                //Uncomment to test profile page without logging in
+//                .antMatchers("/profile").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
