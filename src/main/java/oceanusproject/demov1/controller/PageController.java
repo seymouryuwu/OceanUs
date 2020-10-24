@@ -92,7 +92,7 @@ public class PageController {
     @GetMapping("/games")
     public String getGamePage(Model model, HttpServletRequest httpServletRequest) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        //List<Boolean> unlockGameList = //TO DO
+        //List<Boolean> unlockGameList = // this information is provided by restful API
         //model.addAttribute("unlockList", unlockGameList);
 
         httpServletRequest.getSession().setAttribute("previous_url", "/games");
