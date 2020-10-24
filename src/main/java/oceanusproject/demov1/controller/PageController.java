@@ -43,12 +43,12 @@ public class PageController {
         return "index";
     }
 
-    @GetMapping("/content")
-    public String getContentPageDefault(Model model) {
+    @GetMapping("/adventurequiz")
+    public String getAdventurePageDefault(Model model) {
         //model.addAttribute("articleId", 1);
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         model.addAttribute("articleCount", articleService.countArticle());
-        return "content";
+        return "adventurequiz";
     }
 
     @GetMapping("/quizinstruction")
@@ -56,8 +56,8 @@ public class PageController {
         return "instruction";
     }
 
-    @GetMapping("/content/{articleid}")
-    public String getContentPage(@PathVariable(name = "articleid") long articleId, Model model,
+    @GetMapping("/adventurequiz/{articleid}")
+    public String getAdventurePage(@PathVariable(name = "articleid") long articleId, Model model,
                                  HttpServletRequest httpServletRequest) {
         //TO DO validation for article ID
 
@@ -67,20 +67,26 @@ public class PageController {
 
         articleService.updateArticleReadingTimes(articleId);
 
-        httpServletRequest.getSession().setAttribute("previous_url", "/content/"+articleId);
-        return "content";
+        httpServletRequest.getSession().setAttribute("previous_url", "/adventurequiz/"+articleId);
+        return "adventurequiz";
     }
 
-    @GetMapping("/map")
+    @GetMapping("/ending")
+    public String getEndingPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
+        return "ending";
+    }
+
+    @GetMapping("/explore")
     public String getMapPage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "map";
+        return "explore";
     }
 
-    @GetMapping("/about")
+    @GetMapping("/ourstory")
     public String getAboutUsPage(Model model, ServletRequest servletRequest) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "about";
+        return "ourstory";
     }
 
     @GetMapping("/games")

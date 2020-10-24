@@ -11,9 +11,9 @@
 /* CONTENT : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getarticle = 'https://oceanus.me/article/getarticle?articleId=';
-let API_getsectionquiz = 'https://oceanus.me/quiz/getsectionquiz?sectionId=';
-let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
+let API_getarticle = '/article/getarticle?articleId=';
+let API_getsectionquiz = '/quiz/getsectionquiz?sectionId=';
+let API_examanswer = '/quiz/examanswer?optionId=';
 
 /* -------------------------- */
 /* CONTENT : GLOBAL VARIABLES */
@@ -25,6 +25,7 @@ var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
 var gameAPI = '';
+var lastArticle = false;
 
 var distance = 0;
 
@@ -48,6 +49,10 @@ $( document ).ready(function() {
     available = true;
   }
 
+  if (articleId == articleCount)  {
+    lastArticle = true;
+  }
+
   //Check if last URL segment is numeric
   if ($.isNumeric(articleId)) {
 
@@ -57,14 +62,14 @@ $( document ).ready(function() {
         buildSection(articleData.sectionDTOList);
         gameAPI = articleData.gameAPI;
       }, error: function(jqXHR, textStatus, errorThrown) {
-        //TODO: Redirect to something went wrong page
         console.log("Error loading content!");
       }
     });
 
   } else {
-    //TODO: Redirect to something went wrong page
-    console.log("THe article ID was not set");
+    $('.content-section').css('display', 'inherit');
+    $('.welcome_quiz_section').css('display', 'inherit');
+    loadWelcomePage();
   }
 
 });
@@ -76,6 +81,57 @@ $( document ).ready(function() {
 function shuffle(array) {
   //Shuffle array
   array.sort(() => Math.random() - 0.5);
+}
+
+
+/* -------------------------------------------- */
+/* CONTENT : BUILD CONTENT SECTION (HTML BLOCK) */
+/* -------------------------------------------- */
+
+function loadWelcomePage() {
+
+   console.log("loadWelcomePage");
+
+   $('.content-section').append(`
+     <div class="row">
+       <div class="col-md-12 full-block">
+         <h3>Are you excited to start your Adventure Journey and be a part of the change???????</h3>
+         <p>We are sure you will have fun. But to get to the end there are some hurdles that you need to pass.</p>
+         <p>In order to begin your adventure journey there are few things that you need to be aware of.</p>
+         <ul>
+            <li>You will be able to unlock the articles one by one.</li>
+            <li>After you have read the articles there will be a quiz relating to that article.</li>
+            <li>REMEMBER you  CAN NOT scroll back to the article while doing your quizzes. The article will be LOCKED. </li>
+            <li>So, you need to read the article very carefully to do well in your quizzes and to answer them correctly. If you do well in your quizzes you stand a chance to win an achievement badge. How cool is it, right!!!</li>
+            <li>After you do your quizzes there will be some sections where you get to play games too. You can not play the games directly from the games section as Games will be unlocked only when you finish reading the article and the quiz.</li>
+         </ul>
+         <p>Just to make you familiar with the functionality of scroll lock there is a training quiz right after this content where you need to answer INCORRECTLY. If you answer incorrectly you will get an achievement badge.</p>
+         <p>Are you READYYYYYYYYYYYYYYYYYYYY??????</p>
+         <p>We can’t wait to Welcome you Aboard!!!!!!!</p>
+       </div>
+     </div>
+
+   `);
+
+   $('.welcome_quiz_section').append(`
+     <div class="full-block col-md-12">
+
+       <div class="quiz-title">
+         <h3>QUIZ</h3>
+       </div>
+
+       <div class="no-game-next-button col-md-12">
+         <button type="submit" class="start-journey" onClick="nextQuiz(1)">
+           <image src="` + staticAssetsURL + `images/placeholder.png">
+         </button>
+       </div>
+
+     </div>
+
+     <form id="quiz_form" class="quiz-form" action="#">
+     </form>
+   `);
+
 }
 
 /* -------------------------------------------- */
@@ -97,7 +153,7 @@ function buildSection(sectionDTOList) {
       imageUrl = (sectionDTOList[x]['imageUrl']);
       imageAlignment = (sectionDTOList[x]['imageAlignment']);
 
-      //Randomly choose image of animal with speach bubble
+      //Randomly choose image of animal with speech bubble
       var randomNum = (Math.random() * 3);
       var randomImage = "";
       randomNum = Math.ceil(randomNum);
@@ -187,12 +243,18 @@ function buildSection(sectionDTOList) {
       buildQuizQuestion(quizId);
     } else {
       if (available) {
-        //Append next quiz button
+
+        //Display Next Page button when there is no game
         $('.content-section').append(`
-        <button type="submit" class="quiz-next" onClick="nextQuiz(` + parseInt(articleId + 1) + `)">
-          <image src="` + staticAssetsURL + `images/next_page_button.png">
-        </button>
+
+            <div class="no-game-next-button col-md-12">
+               <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
+                  <image src="` + staticAssetsURL + `images/nextpage.png">
+               </button>
+            </div>
+
         `);
+
       }
     }
   }
@@ -340,33 +402,58 @@ function checkQuizAnswer() {
     //Append next quiz button if another article is available
     if (available) {
 
-      //If game API is available add start button, else load next article button
       if (gameAPI) {
 
+        //Display Play Button and Next Page Button when there is a game
         $('.quiz-section').append(`
-           <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
-             <image src="` + staticAssetsURL + `images/start.png">
-           </button>
+
+            <div class="row">
+
+               <div class="play-button-col col-md-6">
+                   <button type="submit" class="play-button" onClick="startReward(` + articleId + `)">
+                     <image src="` + staticAssetsURL + `images/play-button.png">
+                   </button>
+               </div>
+
+               <div class="next-button-col col-md-6">
+                   <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
+                     <image src="` + staticAssetsURL + `images/nextpage.png">
+                   </button>
+               </div>
+
+            </div>
+
         `);
 
       } else {
 
         $('.quiz-section').append(`
-           <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
-             <image src="` + staticAssetsURL + `images/next_page_button.png">
-           </button>
+
+            <div class="no-game-next-button col-md-12">
+               <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
+                 <image src="` + staticAssetsURL + `images/nextpage.png">
+               </button>
+            </div>
+
         `);
 
       }
 
 
     } else {
-      //TODO: Add end adventure button
-//      $('.quiz-section').append(`
-//      <button type="submit" class="quiz-next" onClick="startReward(` + articleId + `)">
-//        <image src="` + staticAssetsURL + `images/start.png">
-//      </button>
-//      `);
+
+      //Display End Journey button at end of last Article page
+      $('.quiz-section').append(`
+
+          <div class="row">
+            <div class="end-journey-button col-md-12">
+              <button type="submit" class="end-journey" onClick="endJourney()">
+                <image src="` + staticAssetsURL + `images/placeholder.png">
+              </button>
+            </div>
+          </div>
+
+      `);
 
     }
 
@@ -423,9 +510,9 @@ function startReward(articleId) {
   console.log(available);
 
   // LAST ARTICLE IN DB - Navigate to quiz ending page
-  if (articleId >= articleCount)  {
+  if (lastArticle)  {
       //TODO: Navigate to the quiz ending page (CURRENTLY NAVIGATES TO PROFILE)
-      window.open('/profile', '_self');
+      window.open('/ending', '_self');
   }
 
   // NEXT ARTICLE EXISTS
@@ -463,7 +550,10 @@ function nextQuiz(quizId) {
   window.location.replace(nextArticle);
 
 }
-
+function endJourney() {
+    //Redirect to end of adventure
+    window.location.replace('/ending');
+}
 
 /* -------------------------- */
 /* CONTENT : FIRES WHEN SHARK GAME CLOSES */

@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta th:name="_csrf" th:content="${_csrf.token}"/>
+    <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!-- PAGE TITLE : ADVENTURE QUIZ ENDING -->
+    <title>OceanUs Project | Adventure Quiz Ending</title>
+
+    <script th:inline="javascript">
+  /*<![CDATA[*/
+
+    var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
+    console.log(isLoggedIn);
+
+  /*]]>*/
+  </script>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../js/template.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ending.css">
+
+</head>
+
+<body>
+<div class="content-div container-fluid">
+
+    <!-- HEADER -->
+    <header class="header">
+        <script>buildHeader();</script>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- SECTION : CONTENT -->
+        <section id="content_section" class="content-section"\>
+            <div class="row">
+                <div class="journey-complete col-md-12 full-block">
+
+                    <h3>Journey Complete</h3>
+                    <p>We are sure that you must have definitely had a great time on this Adventure Journey!!! So, did WE!!!</p>
+                    <p>Always remember to bring in the CHANGE and ensure to keep your surroundings, water bodies and  this world a better place to live in for you and for everyone around!!!</p>
+                    <p>Keep Leaning and Keep Educating!!!</p>
+
+                    <!-- Profile page button -->
+                    <button type="submit" class="profile-page-button" onClick="goToProfile()">
+                        <image src="` + staticAssetsURL + `images/placeholder.png"></image>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <script>buildFooter();</script>
+    </footer>
+
+</div>
+</body>
+
+</html>
