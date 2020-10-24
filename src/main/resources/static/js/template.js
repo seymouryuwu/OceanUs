@@ -23,12 +23,12 @@ var header = $("meta[name='_csrf_header']").attr("content");
 /* -------------------------------------- */
 
 var staticAssetsURL = "../";
-var contentURL      = "/content/";
+var contentURL      = "/adventurequiz/";
 var navHomeURL      = "/";
 var navGamesURL     = "/games";
-var navMapURL       = "/map";
-var navContentURL   = "/content/1";
-var navAboutURL     = "/about";
+var navExploreURL   = "/explore";
+var navContentURL   = "/adventurequiz";
+var navAboutURL     = "/ourstory";
 var navProfileURL   = "/profile";
 var navLoginURL     = "/login";
 var navLogoutURL     = "/logout";
@@ -45,12 +45,12 @@ if (devmode) {
   console.log("!! -------------------------------!!");
 
   staticAssetsURL = "../";
-  contentURL      = "content.html";
+  contentURL      = "adventurequiz.html";
   navHomeURL      = "index.html";
   navGamesURL     = "games.html";
-  navMapURL       = "map.html";
-  navContentURL   = "content.html";
-  navAboutURL     = "about.html";
+  navExploreURL   = "explore.html";
+  navContentURL   = "adventurequiz.html";
+  navAboutURL     = "ourstory.html";
   navProfileURL   = "profile.html";
   navLoginURL     = "login.html";
   navLoginURL     = "index.html";
@@ -97,9 +97,9 @@ function buildHeader() {
     <div class="nav-option-group">
       <form th:action="@{/` + logType + `}" method="post">
         <ul>
-          <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
+          <li class="nav-option"><a href="` + navExploreURL + `">Explore</a></li>
           <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
-          <li class="nav-option"><a href="` + navMapURL + `">Explore</a></li>
+          <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
           <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
           <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
           <li class="nav-option">` + logElement + `</li>
@@ -123,9 +123,9 @@ function buildHeader() {
 
         <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="hamburger-logo"></a>
         <ul>
-          <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
+          <li class="hamburger-option"><a href="` + navExploreURL + `">Explore</a></li>
           <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
-          <li class="hamburger-option"><a href="` + navMapURL + `">Explore</a></li>
+          <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
           <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
           <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
           <li class="hamburger-option">` + logElement + `</li>

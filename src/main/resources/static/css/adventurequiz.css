@@ -111,13 +111,13 @@
 
 .quiz-section {
   background-color: #3f83c2;
-  color: #FFFFFF;
+  color: white;
   position: relative;
   /* padding: 50px 0px; */
 }
 
 .quiz-section p, .quiz-section h1, .quiz-section h2, .quiz-section h3 {
-  color: #FFFFFF;
+  color: white;
 }
 
 .quiz-background {
@@ -147,7 +147,6 @@
 }
 
 .quiz-next {
-    width: 100%;
     border: 0px;
     outline: none !important;
     background: transparent;
@@ -155,6 +154,65 @@
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
     margin: 0px auto 50px auto;
+}
+
+.quiz-next img {
+    width: 200px;
+}
+
+.start-journey {
+    border: 0px;
+    outline: none !important;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    margin: 0px auto 50px auto;
+}
+
+.start-journey img {
+    width: 200px;
+}
+
+.end-journey {
+    border: 0px;
+    outline: none !important;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    margin: 0px auto 50px auto;
+}
+
+.end-journey img {
+    width: 200px;
+}
+
+.play-button {
+    border: 0px;
+    outline: none !important;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    margin: 0px auto 50px auto;
+}
+
+.play-button img {
+    width: 200px;
+}
+
+
+.play-button-col {
+    text-align: right;
+}
+
+.next-button-col {
+    text-align: left;
+}
+
+.no-game-next-button, .end-journey-button {
+    text-align: center;
 }
 
 /* Spans left 50% width of page */

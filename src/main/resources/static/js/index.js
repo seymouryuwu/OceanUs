@@ -4,9 +4,9 @@ function goToGames() {
 };
 
 function goToAdventure() {
-  window.location.href = "content/1";
+  window.location.href = "content";
 };
 
 function goToExplore() {
-  window.location.href = "map";
+  window.location.href = "explore";
 };

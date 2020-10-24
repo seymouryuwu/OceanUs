@@ -32,18 +32,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Comment this line when you test on local
-        http.requiresChannel().anyRequest().requiresSecure();
+        // http.requiresChannel().anyRequest().requiresSecure();
 
         //http.csrf().disable();
         http
                 .authorizeRequests()
-                //.antMatchers("/**").permitAll()
+//              .antMatchers("/**").permitAll()
                 .antMatchers("/").permitAll()
-                .antMatchers("/content").permitAll()
-                .antMatchers("/content/**").permitAll()
-                .antMatchers("/map").permitAll()
+                .antMatchers("/adventurequiz").permitAll()
+                .antMatchers("/adventurequiz/**").permitAll()
+                .antMatchers("/ending").permitAll()
+                .antMatchers("/explore").permitAll()
                 .antMatchers("/games").permitAll()
-                .antMatchers("/about").permitAll()
+                .antMatchers("/ourstory").permitAll()
                 .antMatchers("/article/**").permitAll()
                 .antMatchers("/image/**").permitAll()
                 .antMatchers("/quiz/**").permitAll()
@@ -55,6 +56,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/images/**").permitAll()
                 .antMatchers("/fonts/**").permitAll()
+
+                .antMatchers("/profile").permitAll()
+
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

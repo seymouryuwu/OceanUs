@@ -11,7 +11,7 @@
 /* PROFILE : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getachievements = 'https://oceanus.me/profile/getprofiledata';
+let API_getachievements = '/profile/getprofiledata';
 
 /* -------------------------- */
 /* PROFILE : GLOBAL VARIABLES */
@@ -25,7 +25,7 @@ var profileData = [];
 
 $( document ).ready(function() {
 
-  var devmode = false;
+  var devmode = true;
 
   //API Request : Get achievement data  from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {
@@ -62,6 +62,28 @@ $( document ).ready(function() {
           "correctAnswer":3,
           "questionNumber":20
         }
+      ],
+
+      "gameResultDTOList":[
+        {
+          "gameId":"1",
+          "gameName":"Sharks Vs Rubish",
+          "score":400,
+          "achieveDate":"DATE"
+        },
+        {
+          "gameId":"2",
+          "gameName":"Suzies Toosies",
+          "score":200,
+          "achieveDate":"DATE"
+        },
+        {
+          "gameId":"3",
+          "gameName":"Clogged Memory",
+          "score":600,
+          "achieveDate":"DATE"
+        }
+
       ],
 
       "achievementDTOList":[
@@ -108,6 +130,7 @@ function loadProfileData() {
 
   loadWelcomeMessage();
   loadQuizResults();
+  loadGameResults();
   loadBadges();
 
 }
@@ -168,13 +191,54 @@ function loadQuizResults() {
 }
 
 /* -------------------------------------------- */
+/* PROFILE : LOAD GAME RESULTS */
+/* -------------------------------------------- */
+
+function loadGameResults() {
+
+  if (profileData.gameResultDTOList) {
+
+    for (var i = 0; i < profileData.gameResultDTOList.length; i++) {
+
+      var gameName = profileData.gameResultDTOList[i].gameName;
+      var score = profileData.gameResultDTOList[i].score;
+      var achieveDate = profileData.gameResultDTOList[i].achieveDate;
+
+      console.log(gameName);
+      console.log(score);
+      console.log(achieveDate);
+
+//          <div class="col-4 high-score-block">
+//            <div class="high-score-border green-border">
+//              <h4>Suzies Toosies</h4>
+//            </div>
+//          </div>
+
+      $('.high-scores').append(`
+
+        <div class="col-4 high-score-block">
+          <div class="high-score-border green-border">
+            <h4>` + gameName + `</h4>
+            <p>` + score + `</p>
+            <p>` + achieveDate + `</p>
+          </div>
+        </div>
+
+      `);
+    }
+
+
+  }
+
+}
+
+/* -------------------------------------------- */
 /* PROFILE : LOAD BADGES */
 /* -------------------------------------------- */
 
 function loadBadges() {
 
   if (profileData.achievementDTOList) {
-    console.log(profileData.achievementDTOList);
 
     for (var i = 0; i < profileData.achievementDTOList.length; i++) {
 

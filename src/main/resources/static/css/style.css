@@ -279,6 +279,23 @@ header {
   transform: scale(1.1);
 }
 
+.hamburger-option {
+    text-decoration: none;
+    color: #346099;
+    cursor: pointer;
+    font-family: Be-Honest;
+    font-size: 18px;
+}
+
+.hamburger-option .logout-button {
+    color: #007bff;
+    font-size: 28px;
+}
+
+.hamburger-option .logout-button:hover {
+    color: #0056b3;
+}
+
 .hamburger-container {
   background-color: #ffffff;
   position:fixed;
