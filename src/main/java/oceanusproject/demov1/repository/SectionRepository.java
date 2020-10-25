@@ -7,8 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This repository defines all the operations of Entity Section
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Repository
 public interface SectionRepository extends JpaRepository<Section, Long> {
+
     List<Section> findByArticle(Article article);
 
     Section findBySectionId(long sectionId);
