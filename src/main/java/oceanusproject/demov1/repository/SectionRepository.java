@@ -15,8 +15,17 @@ import java.util.List;
  */
 @Repository
 public interface SectionRepository extends JpaRepository<Section, Long> {
-
+    /**
+     * find a list of sections belong to an article
+     * @param article the article that is used to search
+     * @return the list of sections belong to the article
+     */
     List<Section> findByArticle(Article article);
 
+    /**
+     * find a section by section id
+     * @param sectionId //TO DO
+     * @return
+     */
     Section findBySectionId(long sectionId);
 }
