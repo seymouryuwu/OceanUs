@@ -717,6 +717,8 @@ function pipeEndGame() {
   //Stop Timer
   clearInterval(pipeLevelTimer);
 
+  $('.exit-game').hide();
+
   //Game lost: No score
   var result = {
     score : 0,
@@ -730,6 +732,9 @@ function pipeEndGame() {
     data: JSON.stringify(result),
     dataType: 'json',
     contentType : "application/json",
+    beforeSend:function(xhr){
+       xhr.setRequestHeader(header, token);
+    },
     success: function(response, textStatus, jqXHR) {
       console.log("Results posted!");
     },
@@ -755,6 +760,30 @@ function pipeEndGame() {
 /* -------------------------------------- */
 
 function pipeExitGame() {
+
+    //Game exited: No score
+    var result = {
+      score : 0,
+      gameId : 2
+    };
+
+    //Post game results to API
+    $.ajax({
+      url: '/game/postgameresult',
+      type: 'POST',
+      data: JSON.stringify(result),
+      dataType: 'json',
+      contentType : "application/json",
+      beforeSend:function(xhr){
+         xhr.setRequestHeader(header, token);
+      },
+      success: function(response, textStatus, jqXHR) {
+        console.log("Results posted!");
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
 
   if (aid && aid != 0) {
     window.open('adventurequiz/' + aid, '_self');
