@@ -109,14 +109,17 @@ public class GameService {
      */
     public boolean ifEnableToPlay(int gameId, HttpServletRequest httpServletRequest) {
         Game game = gameRepository.findByGameId(gameId);
-        // get the URL that the user access 
+        // get the URL from that the user access the game.
+        // it will be null if the game is accessed from the URL other than /games or /adventurequiz
         String previousUrl = (String) httpServletRequest.getSession().getAttribute("previous_url");
         if (previousUrl != null) {
+            // it is accessed from the /adventurequiz and the article id is correct
             if (previousUrl.startsWith("/adventurequiz") &&
                     game.getArticle().getArticleId() == Long.parseLong(previousUrl.substring(15))) {
                 return true;
             }
 
+            // it is accessed from the /games and the game is unlocked for the current logged-in user
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             if (previousUrl.equals("/games") && !(authentication instanceof AnonymousAuthenticationToken)) {
                 String currentPrincipalName = authentication.getName();
@@ -127,6 +130,10 @@ public class GameService {
         return  false;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<GameUnlockStateDTO> getGameUnlockState() {
         List<GameUnlockStateDTO> gameUnlockStateDTOList = new ArrayList<>();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
