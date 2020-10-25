@@ -671,6 +671,8 @@ function pipeWinGame() {
   //Stop Timer
   clearInterval(pipeLevelTimer);
 
+  $('.exit-game').hide();
+
   //Game Won
   var result = {
     score : pipeTimeRemaining,
@@ -717,7 +719,7 @@ function pipeEndGame() {
   //Stop Timer
   clearInterval(pipeLevelTimer);
 
-  $('.exit-game').hide();
+//  $('.exit-game').hide();
 
   //Game lost: No score
   var result = {

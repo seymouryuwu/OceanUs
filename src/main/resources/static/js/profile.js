@@ -224,7 +224,7 @@ function postEditName() {
     },
     success: function(response, textStatus, jqXHR) {
       console.log("Results posted!");
-      location.reload();
+      //location.reload();
     },
     error: function(jqXHR, textStatus, errorThrown){
       console.log(textStatus, errorThrown);
