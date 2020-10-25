@@ -2,10 +2,10 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Quiz's & Games (Content) Page */
-/* DESCRIPTION : JavaScript functions only applicable to the content page */
+/* JAVASCRIPT :  Adventure Quiz Page */
+/* DESCRIPTION : JavaScript functions only applicable to the adventure quiz page */
 /* AUTHOR:     : Malcolm Malloy */
-/* TARGET HTML : templates/content.html */
+/* TARGET HTML : templates/adventurequiz.html */
 
 /* -------------------------- */
 /* CONTENT : API DECLARATIONS */
@@ -102,36 +102,76 @@ function loadWelcomePage() {
             <li>You will be able to unlock the articles one by one.</li>
             <li>After you have read the articles there will be a quiz relating to that article.</li>
             <li>REMEMBER you  CAN NOT scroll back to the article while doing your quizzes. The article will be LOCKED. </li>
-            <li>So, you need to read the article very carefully to do well in your quizzes and to answer them correctly. If you do well in your quizzes you stand a chance to win an achievement badge. How cool is it, right!!!</li>
+            <li>So, you need to read the article very carefully to do well in your quizzes and to answer them correctly. If you do well in your quizzes you stand a chance to win an achievement badge. We love badges and so will you. That’s SUPERCOOL!!! </li>
             <li>After you do your quizzes there will be some sections where you get to play games too. You can not play the games directly from the games section as Games will be unlocked only when you finish reading the article and the quiz.</li>
          </ul>
-         <p>Just to make you familiar with the functionality of scroll lock there is a training quiz right after this content where you need to answer INCORRECTLY. If you answer incorrectly you will get an achievement badge.</p>
+         <p>Just to make you familiar with the functionality of scroll lock there is a training quiz right after this content. You will get an achievement badge if you answer correctly.</p>
          <p>Are you READYYYYYYYYYYYYYYYYYYYY??????</p>
-         <p>We can’t wait to Welcome you Aboard!!!!!!!</p>
        </div>
      </div>
 
    `);
 
    $('.welcome_quiz_section').append(`
+
      <div class="full-block col-md-12">
+       <div class="quiz-title"><h3>TRAINING QUIZ</h3></div>
+     </div>
 
-       <div class="quiz-title">
-         <h3>QUIZ</h3>
-       </div>
 
-       <div class="no-game-next-button col-md-12">
-         <button type="submit" class="start-journey" onClick="nextQuiz(1)">
-           <image src="` + staticAssetsURL + `images/placeholder.png">
-         </button>
-       </div>
+        <form id="quiz_form" class="quiz-form" action="#">
+
+          <div class="row quiz-question-1">
+
+            <div class="col-md-6 left-block">
+              <div class="quiz-content"><p>You can scroll back to read the article while doing your quizzes?</p></div>
+            </div>
+
+            <div class="col-md-6 right-block">
+              <div class="quiz-answers-1">
+
+                <div>
+                  <input id="3" type="radio" name="quiz-answer-1" value="3" onClick="answerTrue()">
+                  <label for="1"><span><span></span></span>True</label>
+                </div>
+
+                <div>
+                  <input id="1" type="radio" name="quiz-answer-1" value="1" onClick="answerFalse()">
+                  <label for="1"><span><span></span></span>False</label>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </form>
+
+     <div class="no-game-next-button col-md-12">
+
+       <p id="quiz_feedback_1">Oh No! You need to read/listen to the INSTRUCTIONS again!</p>
+
+       <button type="submit" class="start-journey" onClick="nextQuiz(1)">
+         <image src="` + staticAssetsURL + `images/button/start-1 2.png">
+       </button>
 
      </div>
 
      <form id="quiz_form" class="quiz-form" action="#">
      </form>
+
    `);
 
+}
+
+function answerTrue() {
+    console.log("Oh No! You need to read/listen to the INSTRUCTIONS again!");
+}
+
+function answerFalse() {
+    console.log("Correct, you answered False!");
 }
 
 /* -------------------------------------------- */
@@ -448,7 +488,7 @@ function checkQuizAnswer() {
           <div class="row">
             <div class="end-journey-button col-md-12">
               <button type="submit" class="end-journey" onClick="endJourney()">
-                <image src="` + staticAssetsURL + `images/placeholder.png">
+                <image src="` + staticAssetsURL + `images/button/end-2.png">
               </button>
             </div>
           </div>

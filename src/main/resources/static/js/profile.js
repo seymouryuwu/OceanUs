@@ -25,7 +25,7 @@ var profileData = [];
 
 $( document ).ready(function() {
 
-  var devmode = true;
+  var devmode = false;
 
   //API Request : Get achievement data  from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {

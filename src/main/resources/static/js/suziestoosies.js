@@ -290,7 +290,7 @@ function buildPipeGame() {
     if (x == 3) {
       //Left Spacer with factory
       $('.pipe-row-' + x).append(`
-        <div class="col-3">
+        <div class="col-4">
           <div class="factory-image">
             <img src="../images/pipe-game/Factory.png">
           </div>
@@ -299,7 +299,7 @@ function buildPipeGame() {
     } else {
       //Left Spacer without factory
       $('.pipe-row-' + x).append(`
-        <div class="col-3">
+        <div class="col-4">
         </div>
       `);
     }
@@ -334,7 +334,7 @@ function buildPipeGame() {
 
       //Right Spacer with girl image
       $('.pipe-row-' + x).append(`
-        <div class="col-3">
+        <div class="col-2">
           <div class="girl-image">
             <img src="../images/pipe-game/Girl.png">
           </div>
@@ -345,7 +345,7 @@ function buildPipeGame() {
 
       //Right Spacer without girl image
       $('.pipe-row-' + x).append(`
-        <div class="col-3">
+        <div class="col-2">
         </div>
       `);
 

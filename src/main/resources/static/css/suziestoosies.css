@@ -14,7 +14,7 @@
 }
 
 .tile-block {
-  max-width: 100%;
+  max-width: 14vh;
   pointer-events:none;
   filter: brightness(20%);
 }

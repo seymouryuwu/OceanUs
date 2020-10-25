@@ -2,10 +2,10 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Quiz's & Games (Content) Page */
-/* DESCRIPTION : Styles only applicable to the content page */
+/* STYLESHEET :  Adventure Quiz Page */
+/* DESCRIPTION : Styles only applicable to the adventure quiz page */
 /* AUTHOR:     : Malcolm Malloy */
-/* TARGET HTML : templates/content.html */
+/* TARGET HTML : templates/adventurequiz.html */
 
 /* -------------------------- */
 /* CONTENT : CONTENT SECTIONS */
@@ -106,6 +106,25 @@
 }
 
 /* ----------------------- */
+/* CONTENT : WELCOME QUIZ SECTION */
+/* ----------------------- */
+
+.welcome_quiz_section {
+  background-color: #3f83c2;
+  color: white;
+  position: inherit;
+  height: 100vh;
+  padding: 20vh 0px;
+}
+
+.welcome_quiz_section p,
+.welcome_quiz_section h1,
+.welcome_quiz_section h2,
+.welcome_quiz_section h3 {
+  color: white;
+}
+
+/* ----------------------- */
 /* CONTENT : QUIZ SECTION */
 /* ----------------------- */
 
@@ -116,7 +135,10 @@
   /* padding: 50px 0px; */
 }
 
-.quiz-section p, .quiz-section h1, .quiz-section h2, .quiz-section h3 {
+.quiz-section p,
+.quiz-section h1,
+.quiz-section h2,
+.quiz-section h3 {
   color: white;
 }
 
