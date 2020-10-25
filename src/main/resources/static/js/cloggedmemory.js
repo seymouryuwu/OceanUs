@@ -531,6 +531,27 @@ function winGame() {
   //Stop Timer
   clearInterval(levelTimer);
 
+  //Game Won
+  var result = {
+    score : timeRemaining,
+    gameId : 3
+  };
+
+  //Post game results to API
+  $.ajax({
+    url: '/game/postgameresult',
+    type: 'POST',
+    data: JSON.stringify(result),
+    dataType: 'json',
+    contentType : "application/json",
+    success: function(response, textStatus, jqXHR) {
+      alert("Results posted!");
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      alert(textStatus, errorThrown);
+    }
+  });
+
   //Show game over feedback
   $('#memory_over_section').show();
 
@@ -554,6 +575,27 @@ function endGame() {
 
   //Stop Timer
   clearInterval(levelTimer);
+
+  //Game lost: No score
+  var result = {
+    score : 0,
+    gameId : 3
+  };
+
+  //Post game results to API
+  $.ajax({
+    url: '/game/postgameresult',
+    type: 'POST',
+    data: JSON.stringify(result),
+    dataType: 'json',
+    contentType : "application/json",
+    success: function(response, textStatus, jqXHR) {
+      alert("Results posted!");
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      alert(textStatus, errorThrown);
+    }
+  });
 
   //Show game over feedback
   $('#memory_over_section').show();
