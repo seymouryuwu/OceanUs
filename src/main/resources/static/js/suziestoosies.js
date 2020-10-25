@@ -719,7 +719,7 @@ function pipeEndGame() {
   //Stop Timer
   clearInterval(pipeLevelTimer);
 
-//  $('.exit-game').hide();
+  $('.exit-game').hide();
 
   //Game lost: No score
   var result = {
