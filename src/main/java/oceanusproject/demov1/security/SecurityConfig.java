@@ -32,12 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Comment this line when you test on local
-        // http.requiresChannel().anyRequest().requiresSecure();
+        http.requiresChannel().anyRequest().requiresSecure();
 
         //http.csrf().disable();
         http
                 .authorizeRequests()
-//              .antMatchers("/**").permitAll()
+                //.antMatchers("/**").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/adventurequiz").permitAll()
                 .antMatchers("/adventurequiz/**").permitAll()
@@ -56,8 +56,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/images/**").permitAll()
                 .antMatchers("/fonts/**").permitAll()
-                //Uncomment to test profile page without logging in
-//                .antMatchers("/profile").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

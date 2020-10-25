@@ -86,7 +86,7 @@ public class GameService {
         Game game = gameRepository.findByGameId(gameId);
         String previousUrl = (String) httpServletRequest.getSession().getAttribute("previous_url");
         if (previousUrl != null) {
-            if (previousUrl.startsWith("/content") &&
+            if (previousUrl.startsWith("/adventurequiz") &&
                     game.getArticle().getArticleId() == Long.parseLong(previousUrl.substring(9))) {
                 return true;
             }

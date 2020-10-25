@@ -11,7 +11,7 @@
 /* PROFILE : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getachievements = '/profile/getprofiledata';
+let API_getachievements = 'https://www.oceanus.me/profile/getprofiledata';
 
 /* -------------------------- */
 /* PROFILE : GLOBAL VARIABLES */
@@ -69,19 +69,19 @@ $( document ).ready(function() {
           "gameId":"1",
           "gameName":"Sharks Vs Rubish",
           "score":400,
-          "achieveDate":"DATE"
+          "achieveDate":"2020-10-16"
         },
         {
           "gameId":"2",
           "gameName":"Suzies Toosies",
           "score":200,
-          "achieveDate":"DATE"
+          "achieveDate":"2020-10-17"
         },
         {
           "gameId":"3",
           "gameName":"Clogged Memory",
           "score":600,
-          "achieveDate":"DATE"
+          "achieveDate":"2020-10-18"
         }
 
       ],
@@ -151,7 +151,7 @@ function loadWelcomeMessage() {
     $('.quiz-results-border').html(`
 
       <h2 class="nickname">` + nickname + `</h2>
-      <p class="username">"` + username + `"</h2>
+      <p class="username">Username:` + username + `</h2>
       <p>This is where you can check you quiz results, high scores and achievement badges!</p>
 
     `);
@@ -169,6 +169,20 @@ function loadQuizResults() {
 
   if (profileData.quizResultDTOList) {
 
+     var totalCorrect = profileData.totalCorrect;
+     var totalQuestion = profileData.totalQuestion;
+
+     $('.quiz-results-header').append(`
+
+     <div class="col-12">
+        <div class="high-score-total">
+          <h2>Quiz Results</h2>
+          <h4>Total: ` + totalCorrect + `/` + totalQuestion + `</h4>
+        </div>
+      </div>
+
+    `);
+
     for (var i = 0; i < profileData.quizResultDTOList.length; i++) {
 
       var articleTitle = profileData.quizResultDTOList[i].articleTitle;
@@ -177,14 +191,13 @@ function loadQuizResults() {
 
       $('.quiz-border').append(`
         <div class="col-3 high-score-block">
-          <div class="high-score-border blue-border">
-            <h4>` + articleTitle + `</h4>
-            <p>` + correctAnswer + `/` + questionNumber + `</p>
+          <div class="high-score-border">
+            <h2>` + articleTitle + `</h2>
+            <h4>` + correctAnswer + `/` + questionNumber + `</h4>
           </div>
         </div>
       `);
     }
-
 
   }
 
@@ -218,8 +231,8 @@ function loadGameResults() {
 
         <div class="col-4 high-score-block">
           <div class="high-score-border green-border">
-            <h4>` + gameName + `</h4>
-            <p>` + score + `</p>
+            <h2>` + gameName + `</h2>
+            <h4>` + score + `</h4>
             <p>` + achieveDate + `</p>
           </div>
         </div>

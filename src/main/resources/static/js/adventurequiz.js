@@ -11,9 +11,9 @@
 /* CONTENT : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getarticle = '/article/getarticle?articleId=';
-let API_getsectionquiz = '/quiz/getsectionquiz?sectionId=';
-let API_examanswer = '/quiz/examanswer?optionId=';
+let API_getarticle = 'https://www.oceanus.me/article/getarticle?articleId=';
+let API_getsectionquiz = 'https://www.oceanus.me/quiz/getsectionquiz?sectionId=';
+let API_examanswer = 'https://www.oceanus.me/quiz/examanswer?optionId=';
 
 /* -------------------------- */
 /* CONTENT : GLOBAL VARIABLES */
