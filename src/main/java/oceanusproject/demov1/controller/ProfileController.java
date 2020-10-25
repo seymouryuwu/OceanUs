@@ -1,5 +1,6 @@
 package oceanusproject.demov1.controller;
 
+import oceanusproject.demov1.dto.NicknameDTO;
 import oceanusproject.demov1.dto.UserProfileDTO;
 import oceanusproject.demov1.repository.UserRepository;
 import oceanusproject.demov1.service.AchievementService;
@@ -24,8 +25,8 @@ public class ProfileController {
     }
 
     @PostMapping("/setnickname")
-    public ResponseEntity setNickname(@RequestBody String nickname) {
-        userService.setNickname(nickname);
+    public ResponseEntity setNickname(@RequestBody NicknameDTO nickname) {
+        userService.setNickname(nickname.getNickname());
         return ResponseEntity.ok(HttpStatus.OK);
     }
 }
