@@ -24,8 +24,8 @@ public interface SectionRepository extends JpaRepository<Section, Long> {
 
     /**
      * find a section by section id
-     * @param sectionId //TO DO
-     * @return
+     * @param sectionId the section id that is used to search
+     * @return the section found
      */
     Section findBySectionId(long sectionId);
 }

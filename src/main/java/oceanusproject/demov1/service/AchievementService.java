@@ -12,6 +12,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the service about achievement
+ */
 @Service
 public class AchievementService {
     @Autowired
@@ -35,6 +38,10 @@ public class AchievementService {
     @Autowired
     private UserGameRecordRepository userGameRecordRepository;
 
+    /**
+     *
+     * @param user
+     */
     public void updateQuizAchievement(GeneralUser user) {
         long numberOfCorrectAnswer = userQuizRecordRepository.countByGeneralUserAndAnswerResult(user, true);
 
