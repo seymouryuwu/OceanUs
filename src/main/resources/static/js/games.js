@@ -30,7 +30,7 @@ $( document ).ready(function() {
 
     }, error: function(jqXHR, textStatus, errorThrown) {
       //TODO: LOAD EMPTY PROFILE PAGE
-      console.log("Error loading unlock data!");
+      loadDefault();
 
     }
   });
@@ -52,7 +52,11 @@ $( document ).ready(function() {
 
   });
 
-
+function loadDefault() {
+  displayGameLock(1);
+  displayGameLock(2);
+  displayGameLock(3);
+}
 
 function loadUnlockData() {
 

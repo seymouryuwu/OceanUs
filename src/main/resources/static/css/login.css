@@ -19,3 +19,11 @@
 .login-container h2 {
   margin-top: 25px;
 }
+
+.login-button {
+  margin-top: 5px;
+}
+
+.login-button img {
+  width: 100px;
+}

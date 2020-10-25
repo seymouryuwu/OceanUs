@@ -42,6 +42,9 @@ $( document ).ready(function() {
   /********** DEV MODE **********/
   /* IMPORTANT NOTE : Remove before deployment!!! */
   if (devmode) {
+
+    isLoggedIn = true;
+
     profileData = JSON.parse(
     `{
       "username":"Malcolm",
@@ -102,17 +105,8 @@ $( document ).ready(function() {
       ]
     }`);
 
+    loadProfileData();
   }
-
-  loadProfileData();
-
-//   https://oceanus.me/profile/setnickname
-//   @PostMapping("/setnickname")
-//       public ResponseEntity setNickname(@RequestBody String nickname) {
-//           userService.setNickname(nickname);
-//           return ResponseEntity.ok(HttpStatus.OK);
-//       }
-
 
   /********** DEV MODE **********/
 
@@ -128,11 +122,39 @@ $( document ).ready(function() {
 
 function loadProfileData() {
 
-  loadWelcomeMessage();
-  loadQuizResults();
-  loadGameResults();
-  loadBadges();
+  if (isLoggedIn) {
+    loadWelcomeMessage();
+    loadQuizResults();
+    loadGameResults();
+    loadBadges();
+  } else {
+    loadProfileMessage();
+  }
 
+
+}
+
+
+/* -------------------------------------------- */
+/* PROFILE : LOAD PROFILE MESSAGE */
+/* -------------------------------------------- */
+
+function loadProfileMessage() {
+   $('.quiz-results-section').hide();
+   $('.high-scores-section').hide();
+   $('.badges-section').hide();
+
+   $('main').append(`
+
+   <section class="profile-message-section">
+     <div class="row">
+        <div class="col12 full-block">
+            <h2>Please login or signup to view your adventure quiz results, game scores and achievements!</h2>
+        </div>
+     </div>
+   </section>
+
+   `);
 }
 
 /* -------------------------------------------- */
@@ -150,6 +172,9 @@ function loadWelcomeMessage() {
 
     $('.quiz-results-border').html(`
 
+      <input type="text" id="nickname_textbox" name="nickname" value="` + nickname + `" style="display: none;">
+      <h2 class="update"><div class="save-button" onClick="postEditName();" style="display: none;">&#x270E;</div></h2>
+
       <h2 class="nickname">` + nickname + `<div class="edit-pencil" onClick="showEditName();">&#x270E;</div></h2>
       <p class="username">Username:` + username + `</h2>
       <p>This is where you can check you quiz results, high scores and achievement badges!</p>
@@ -166,6 +191,9 @@ function loadWelcomeMessage() {
 function showEditName() {
 
   console.log('Show edit name textbox!');
+  $('#nickname_textbox').show();
+  $('.save-button').show();
+  $('.nickname').hide();
 
 }
 
@@ -175,10 +203,13 @@ function showEditName() {
 
 function postEditName() {
 
+  $('#nickname_textbox').hide();
+  $('.save-button').hide();
+  $('.nickname').show();
+
   //Game lost: No score
   var result = {
-    score : 0,
-    gameId : 3
+    nickname : $('#nickname_textbox').val()
   };
 
   //Post game results to API
@@ -199,8 +230,9 @@ function postEditName() {
       console.log(textStatus, errorThrown);
     }
 
-
   });
+
+  location.reload();
 
 }
 
@@ -311,5 +343,6 @@ function loadBadges() {
 
 
   }
+
 
 }

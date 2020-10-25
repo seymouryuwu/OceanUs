@@ -154,8 +154,8 @@
 }
 
 iframe {
-  width: 100vw;
-  height: 56.25vw;
+  width: 100%;
+  height: -webkit-fill-available;
   display: block;
 }
 

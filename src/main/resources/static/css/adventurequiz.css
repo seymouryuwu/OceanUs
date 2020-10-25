@@ -11,6 +11,11 @@
 /* CONTENT : CONTENT SECTIONS */
 /* -------------------------- */
 
+iframe {
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
 .content-section {
   min-height: 300px;
   position: relative;
@@ -131,8 +136,9 @@
 .quiz-section {
   background-color: #3f83c2;
   color: white;
-  position: relative;
-  /* padding: 50px 0px; */
+  position: inherit;
+  height: 100vh;
+  padding: 20vh 0px;
 }
 
 .quiz-section p,
@@ -190,6 +196,7 @@
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
     margin: 0px auto 50px auto;
+    cursor: pointer;
 }
 
 .start-journey img {
