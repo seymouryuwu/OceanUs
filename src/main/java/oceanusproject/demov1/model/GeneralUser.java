@@ -9,6 +9,12 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represent a user.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "general_users")
 public class GeneralUser {
@@ -22,12 +28,15 @@ public class GeneralUser {
     @Column(name = "password")
     private String password;
 
+    // to build a foreign key in AchievementRecord
     @OneToMany(mappedBy = "generalUser", cascade = CascadeType.ALL)
     private List<AchievementRecord> achievementRecordList = new ArrayList<>();
 
+    // to build a foreign key in UserQuizRecord
     @OneToMany(mappedBy = "generalUser", cascade = CascadeType.ALL)
     private List<UserQuizRecord> userQuizRecordList = new ArrayList<>();
 
+    // to build a foreign key in UserGameRecord
     @OneToMany(mappedBy = "generalUser", cascade = CascadeType.ALL)
     private List<UserGameRecord> userGameRecordList = new ArrayList<>();
 

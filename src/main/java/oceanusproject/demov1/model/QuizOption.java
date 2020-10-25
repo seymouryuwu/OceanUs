@@ -9,6 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Represent a quiz option.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "quizOptions")
 public class QuizOption {
@@ -22,7 +28,8 @@ public class QuizOption {
     @Column(name = "is_answer", nullable = false)
     private boolean isAnswer;
 
-    @ManyToOne // what is fetch type
+    // foreign key quiz_id to Quiz
+    @ManyToOne
     @JoinColumn(name ="quiz_id", nullable = false)
     private Quiz quiz;
 

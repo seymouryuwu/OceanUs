@@ -34,7 +34,7 @@ public class QuizController {
     }
 
     @GetMapping("/examanswer")
-    public AnswerDTO examAnswer(@RequestParam(value = "optionId") @Min(1) @Max(100) long optionId) {
+    public AnswerDTO examAnswer(@RequestParam(value = "optionId") @Min(1) @Max(1000) long optionId) {
         //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         //String currentPrincipalName = authentication.getName();
         //System.out.println(currentPrincipalName);

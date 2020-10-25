@@ -23,18 +23,13 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    /*
-    @PostMapping("/postarticle")
-    public Article postArticle(@Valid @RequestBody Article article) {
-        return articleRepository.save(article);
-    }
-     */
-
     @GetMapping("/getarticle")
-    public ArticleDTO getArticle(@RequestParam(value = "articleId") @Min(1) @Max(100) long articleId) {
+    public ArticleDTO getArticle(@RequestParam(value = "articleId") @Min(1) @Max(14) long articleId) {
         return articleService.getArticle(articleId);
     }
 
+
+    // TO DO validate after divide long section
     @GetMapping("/getsection")
     public SectionDTO getSection(@RequestParam(value = "sectionId") @Min(1) @Max(100) long sectionId) {
         return articleService.getSection(sectionId);

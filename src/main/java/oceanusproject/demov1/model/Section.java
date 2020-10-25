@@ -11,11 +11,16 @@ import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represent a section.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "sections")
 public class Section {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "section_id")
     private long sectionId;
 
@@ -37,9 +42,11 @@ public class Section {
     @Column(name = "image_alignment")
     private String imageAlignment;
 
+    // to build a foreign key in Quiz
     @OneToMany(mappedBy = "section", cascade = CascadeType.ALL) // need to figure out the function of cascade
     private List<Quiz> quizzes = new ArrayList<>();
 
+    // foreign key article_id to Article
     @ManyToOne // what is fetch type
     @JoinColumn(name ="article_id") // can be null, because something like "fun fact" don't need belong to an article
     private Article article;

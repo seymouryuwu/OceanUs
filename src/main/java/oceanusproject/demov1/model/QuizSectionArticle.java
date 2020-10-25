@@ -6,8 +6,14 @@ import org.hibernate.annotations.Subselect;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
+
+/**
+ * represent a view which join table quizzes, sections and articles
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Immutable
 @Subselect("select q.quiz_id, a.article_id " +

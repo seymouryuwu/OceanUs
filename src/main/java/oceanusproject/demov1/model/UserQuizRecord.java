@@ -2,6 +2,12 @@ package oceanusproject.demov1.model;
 
 import javax.persistence.*;
 
+/**
+ * Represent a user quiz record.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "user_quiz_records")
 public class UserQuizRecord {
@@ -13,10 +19,12 @@ public class UserQuizRecord {
     @Column(name = "answer_result")
     private boolean answerResult;
 
+    // foreign key username to GeneralUser
     @ManyToOne
     @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
+    // foreign key section_id to Quiz
     @ManyToOne
     @JoinColumn(name ="quiz_id")
     private Quiz quiz;

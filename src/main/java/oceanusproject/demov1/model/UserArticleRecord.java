@@ -2,6 +2,12 @@ package oceanusproject.demov1.model;
 
 import javax.persistence.*;
 
+/**
+ * Represent a user article record.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "user_article_records")
 public class UserArticleRecord {
@@ -13,10 +19,12 @@ public class UserArticleRecord {
     @Column(name = "read_times")
     private int readTimes = 0;
 
+    // foreign key username to GeneralUser
     @ManyToOne
     @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
+    // foreign key article_id to Article
     @ManyToOne
     @JoinColumn(name ="article_id")
     private Article article;

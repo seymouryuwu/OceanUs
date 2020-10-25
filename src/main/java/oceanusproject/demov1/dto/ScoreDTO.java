@@ -1,7 +1,12 @@
 package oceanusproject.demov1.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class ScoreDTO {
+    @NotNull(message = "Game ID cannot be null")
     private int gameId;
+
+    @NotNull(message = "Score cannot be null")
     private int score;
 
     public int getGameId() {
