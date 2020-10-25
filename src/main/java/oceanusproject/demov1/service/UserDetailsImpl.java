@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * a class implements UserDetails to be used by spring security
+ */
 public class UserDetailsImpl implements UserDetails {
 
     private GeneralUser generalUser;

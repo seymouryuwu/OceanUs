@@ -19,17 +19,27 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (1,
 "What Is a CATCHMENT?",
 1,
-"It is a region of land from where water from downpour, ice or snow fall makes its way to streams or lakes. The water that is trapped may either hang around the ground as surface water, in streams, pools and different wetlands, or it might pass underground to become groundwater, inside layers of permeable soil or rock called AQUIFER. \\n<fun>\"Nitrate from agriculture is the most common chemical contaminant in the world\'s groundwater aquifers.\"</fun>\\nThe water from these areas for instance from mountains or hills will then flow to a low point which is a dam, or to the mouth of a river where the water enters a bay or the ocean. For example, it\'s just like water in a bathtub flowing to the plughole, or the water from the sinks flowing to the drains.\\n<fun>\"Only around 30% to 50% of the rain that falls on Melbourne Water catchments each year ends up in waterways.\"</fun>\\nSource: Water NSW, The Australian Museum and Georges Riverkeeper",
+"It is a region of land from where water from downpour, ice or snow fall makes its way to streams or lakes. The water that is trapped may either hang around the ground as surface water, in streams, pools and different wetlands, or it might pass underground to become groundwater, inside layers of permeable soil or rock called AQUIFER. \\n<fun>\"Nitrate from agriculture is the most common chemical contaminant in the world\'s groundwater aquifers.\"</fun>\\nThe water from these areas for instance from mountains or hills will then flow to a low point which is a dam, or to the mouth of a river where the water enters a bay or the ocean. For example, it\'s just like water in a bathtub flowing to the plughole, or the water from the sinks flowing to the drains.",
 1,
 true,
 "https://oceanus.me/image/getsectionimage/deleece-cook-JnfFsMBwe2A-unsplash-min.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (45,
+"",
+2,
+"<fun>\"Only around 30% to 50% of the rain that falls on Melbourne Water catchments each year ends up in waterways.\"</fun>\\nSource: Water NSW, The Australian Museum and Georges Riverkeeper",
+1,
+false,
+null,
+"left");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (2,
 "Why Should We Preserve Our Catchments?",
 1,
-"The water from the catchment is used for drinking by the individuals, flora and fauna. It\'s also used for residential and industrial purposes, irrigation as well as for leisure. Wildlife relies upon catchments for breeding sites, food and asylum. Catchments are significant in ecological, financial, and social terms. \\n<fun>\"Every year, more people die from unsafe water than from all forms of violence, including war.\"</fun>",
+"The water from the catchment is used for drinking by the individuals, flora and fauna. It\'s also used for residential and industrial purposes, irrigation as well as for leisure. Wildlife relies upon catchments for breeding sites, food and asylum. Catchments are significant in ecological, financial, and social terms.",
 2,
 true,
 "https://oceanus.me/image/getsectionimage/pexels-ciboulette-574024-min.jpg",
@@ -39,7 +49,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (3,
 "",
 2,
-"We need to limit the effect on the framework because what occurs in some portion of a catchment is probably going to influence the prosperity of the remainder of the catchment territories. For instance, since stormwater channels run straight into our streams, substantial precipitation can wash residue, trash and toxins into the waterways and in the long run into the sea.\\nAny kind of negative changes in the state of a catchment would directly be reflected in neighbourhood streams and lakes, and in the groundwater which might in turn impact the aquatic life, coral reefs and seagrass beds. For instance, contamination by chemicals, soil disintegration because of land clearance, or inordinate water use may bring about a decrease in the soundness of nearby streams and lakes.\\n<fun>\"Possible threats to our catchments are Bushfire and Pollution, Human and Animal contamination and Erosion.\"</fun>\\n<fun>\"Every day, 2 million tons of sewage and industrial and agricultural waste are discharged into the world\'s water (UN WWAP 2003), the equivalent of the weight of the entire human population of 6.8 billion people.\"</fun>\\n<fun>\"Industry dumps an estimated 300-400 MT of polluted waste in waters every year.\"</fun>\\nSource: Environment Care by Queensland Govt, Water Quality Report by United Nations",
+"<fun>\"Every year, more people die from unsafe water than from all forms of violence, including war.\"</fun>\\nWe need to limit the effect on the framework because what occurs in some portion of a catchment is probably going to influence the prosperity of the remainder of the catchment territories. For instance, since stormwater channels run straight into our streams, substantial precipitation can wash residue, trash and toxins into the waterways and in the long run into the sea.\\nAny kind of negative changes in the state of a catchment would directly be reflected in neighbourhood streams and lakes, and in the groundwater which might in turn impact the aquatic life, coral reefs and seagrass beds. For instance, contamination by chemicals, soil disintegration because of land clearance, or inordinate water use may bring about a decrease in the soundness of nearby streams and lakes.\\n<fun>\"Possible threats to our catchments are Bushfire and Pollution, Human and Animal contamination and Erosion.\"</fun>\\n<fun>\"Every day, 2 million tons of sewage and industrial and agricultural waste are discharged into the world\'s water (UN WWAP 2003), the equivalent of the weight of the entire human population of 6.8 billion people.\"</fun>\\n<fun>\"Industry dumps an estimated 300-400 MT of polluted waste in waters every year.\"</fun>\\nSource: Environment Care by Queensland Govt, Water Quality Report by United Nations",
 2,
 true,
 null,
@@ -59,10 +69,20 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (5,
 "Are You Keen to Know as to What Happens to the Waste Materials that You Flush or Throw into the Sink? Where does It Go?",
 1,
-"Firstly, after it\'s disposed nearly 320,000 million litres of sewage from our houses, businesses and factories makes its way and  enters Greater Melbourne\'s sewerage through a network of underground pipes. \\nSecondly, it\'s then transferred where it enters the one of the bigger trunk sewers which slopes downwards so the gravity enables the sewage flow. \\nInevitably, pumping stations push it up to ground level to be handled at a treatment plant or to proceed with its excursion through the sewerage, which can take as long as 12 hours and then finally it\'s treated.\\n<fun>\"The treatment plants process sewage in different ways, removing rubbish, organic matter and chemicals?\"</fun>\\nSource: Melbourne Water",
+"Firstly, after it\'s disposed nearly 320,000 million litres of sewage from our houses, businesses and factories makes its way and  enters Greater Melbourne\'s sewerage through a network of underground pipes. \\nSecondly, it\'s then transferred where it enters the one of the bigger trunk sewers which slopes downwards so the gravity enables the sewage flow. \\nInevitably, pumping stations push it up to ground level to be handled at a treatment plant or to proceed with its excursion through the sewerage, which can take as long as 12 hours and then finally it\'s treated.",
 4,
 false,
 "https://oceanus.me/image/getsectionimage/jacek-dylag-Vve7XkiUq_Y-unsplash-min.jpg",
+"right");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (46,
+"",
+2,
+"<fun>\"The treatment plants process sewage in different ways, removing rubbish, organic matter and chemicals?\"</fun>\\nSource: Melbourne Water",
+4,
+false,
+null,
 "right");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -179,9 +199,19 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (17,
 "Summary",
 10,
-"The table beside summarizes what items can and cannot be poured down the drains.\\nOne rule that can enable you to figure out what\'s alright to dump down the sink is to ask yourself whether you can eat the substance. Most fluids that are ok for human utilization, aside from oils and prescriptions, can be dumped. On the off chance that you wouldn\'t drink it, you most likely don\'t need a concoction hanging out in your sink at any rate. It could interact with food or with the utensils used for cooking and make you wiped out. \\nThings that are hazardous to pour down a sink shouldn\'t be flushed down the latrine, dumped in a tempest channel or covered in your yard, either. On the off chance that they are, the hazardous substances can even now advance into the groundwater.\\nSource: Melbourne Water, Yarra Valley Water and Readers Digest",
+"The table beside summarizes what items can and cannot be poured down the drains.\\nOne rule that can enable you to figure out what\'s alright to dump down the sink is to ask yourself whether you can eat the substance. Most fluids that are ok for human utilization, aside from oils and prescriptions, can be dumped. On the off chance that you wouldn\'t drink it, you most likely don\'t need a concoction hanging out in your sink at any rate. It could interact with food or with the utensils used for cooking and make you wiped out.",
 6,
 true,
+null,
+"right");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (47,
+"",
+11,
+"Things that are hazardous to pour down a sink shouldn\'t be flushed down the latrine, dumped in a tempest channel or covered in your yard, either. On the off chance that they are, the hazardous substances can even now advance into the groundwater.\\nSource: Melbourne Water, Yarra Valley Water and Readers Digest",
+6,
+false,
 "https://oceanus.me/image/getsectionimage/flushchecklist.png",
 "right");
 
@@ -792,23 +822,23 @@ values (8, "Maestro", "Five times reading all the articles to stabilize all the 
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
 values (9, "Grand Master", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/read-4.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (10, "shark 300", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-1.png");
+values (10, "Ninja", "You scored 300 points in Shark vs Rubbish, want to have another round?", "https://oceanus.me/image/getbadgeimage/shark-1.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (11, "shark 600", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-2.png");
+values (11, "Cyan-ara!", "600 points! I think you must have found the trick!", "https://oceanus.me/image/getbadgeimage/shark-2.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (12, "shark 900", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/shark-3.png");
+values (12, "Samurai", "You actually got 900 points, share the cheat code with us too!", "https://oceanus.me/image/getbadgeimage/shark-3.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (13, "pipe 30", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-1.png");
+values (13, "Rising Star", "Well Done! You finished connecting the pipes with 30 seconds more to spare!", "https://oceanus.me/image/getbadgeimage/pipe-1.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (14, "pipe 65", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-2.png");
+values (14, "Shooting Star", "Wow! You still had 65 seconds remaining to spare!", "https://oceanus.me/image/getbadgeimage/pipe-2.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (15, "pipe 100", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/pipe-3.png");
+values (15, "Megastar", "Unbelievable! With 100 seconds left, you must be a genius!", "https://oceanus.me/image/getbadgeimage/pipe-3.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (16, "memory 10", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-1.png");
+values (16, "Smarty Pants", "You finished the game within ten seconds left, awesome!", "https://oceanus.me/image/getbadgeimage/card-1.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (17, "memory 20", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-2.png");
+values (17, "Megamind", "Amazing! There are still 20 seconds left and you finished the game!", "https://oceanus.me/image/getbadgeimage/card-2.png");
 insert into achievements (achievement_id, achievement_title, achievement_description, badge_image_url)
-values (18, "memory 30", "Become a sewage system expert by reading ten times of the articles.", "https://oceanus.me/image/getbadgeimage/card-3.png");
+values (18, "Funes The Memorious", "How did you do that, you must be a memory expert.", "https://oceanus.me/image/getbadgeimage/card-3.png");
 
 
 -- initialize table games

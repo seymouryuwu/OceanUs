@@ -131,8 +131,8 @@ public class GameService {
     }
 
     /**
-     *
-     * @return
+     * generate a list of GameUnlockStateDTO
+     * @return the list of GameUnlockStateDTO
      */
     public List<GameUnlockStateDTO> getGameUnlockState() {
         List<GameUnlockStateDTO> gameUnlockStateDTOList = new ArrayList<>();

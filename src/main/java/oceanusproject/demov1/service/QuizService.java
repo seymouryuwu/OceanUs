@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * services about quiz
+ */
 @Service
 public class QuizService {
     @Autowired
@@ -50,6 +53,11 @@ public class QuizService {
     @Autowired
     private ArticleService articleService;
 
+    /**
+     * generate SectionQuizDTO by section id
+     * @param sectionId the section id that is searched
+     * @return the SectionQuizDTO for section id
+     */
     public SectionQuizDTO getSectionQuiz(long sectionId) {
         SectionQuizDTO sectionQuizDTO = new SectionQuizDTO();
         sectionQuizDTO.setSectionId(sectionId);
@@ -69,6 +77,11 @@ public class QuizService {
         return sectionQuizDTO;
     }
 
+    /**
+     * generate QuizDTO by quiz id
+     * @param quizId the quiz id that is searched
+     * @return the QuizDTO for quiz id
+     */
     public QuizDTO getQuiz(long quizId) {
         QuizDTO newQuizDTO = new QuizDTO();
         Quiz quiz = quizRepository.findByQuizId(quizId);
@@ -78,7 +91,11 @@ public class QuizService {
         return newQuizDTO;
     }
 
-    // this method will get the options of one quiz
+    /**
+     * generate a list of QuizOptionDTO for a quiz
+     * @param quiz the quiz whose options that will be got
+     * @return the list of QuizOptionDTO for a quiz
+     */
     private List<QuizOptionDTO> getOptionDTO(Quiz quiz) {
         List<QuizOptionDTO> quizOptionDTOList = new ArrayList<>();
         List<QuizOption> quizOptionList = quizOptionRepository.findByQuiz(quiz);
@@ -91,11 +108,18 @@ public class QuizService {
         return quizOptionDTOList;
     }
 
+    /**
+     * exam a submitted quiz option
+     * @param submittedQuizOptionId the option id that is submitted
+     * @return an AnswerDTO that contain the correctness
+     */
     public AnswerDTO examAnswer(long submittedQuizOptionId) {
         AnswerDTO answerDTO = new AnswerDTO();
+        //find the quiz of the submitted option
         QuizOption submittedQuizOption =  quizOptionRepository.findByQuizOptionId(submittedQuizOptionId);
         Quiz quiz = submittedQuizOption.getQuiz();
 
+        // if the user is logged in, save the answer of this quiz for this user
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
             String currentPrincipalName = authentication.getName();
@@ -110,8 +134,10 @@ public class QuizService {
             userQuizRecord.setQuiz(quiz);
             userQuizRecordRepository.save(userQuizRecord);
 
+            // check if the user can get an achievement after answer this quiz
             achievementService.updateQuizAchievement(user);
 
+            // check if this quiz can unlock a game, if so, unlock the game for this user
             Article article = articleRepository.findByArticleId(quizSectionArticleRepository.findByQuizId(quiz.getQuizId()).getArticleId());
             Game game = gameRepository.findByArticle(article);
             if (game != null) {
@@ -130,6 +156,10 @@ public class QuizService {
         return answerDTO;
     }
 
+    /**
+     * generate a list of QuizResultDTO which count the number of the quizzes answered correctly
+     * @return
+     */
     public List<QuizResultDTO> getQuizResults() {
         List<QuizResultDTO> quizResultDTOList = new ArrayList<>();
         List<Long> articleIdList = articleService.getArticleIdWhichHasQuizzes();
