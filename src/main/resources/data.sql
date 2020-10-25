@@ -189,7 +189,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (18,
 "What Is Water Pollution?",
 1,
-"Did you use water today? What did you use it for? \\nWas it for washing the expensive car or bike that your parents own or was it for cooking your favourite food or for doing your dishes from last night or for sweeping the floor or was it for your daily errands such as taking a shower or maybe brushing your teeth? Are you even aware that all the sewage that is generated from your household activities would eventually make its way to our beautiful waterbodies such as oceans, rivers, lakes or maybe even sea?\\nWater gets polluted because of the harmful substances that enter these waterbodies. These toxic substances diffuse in them or remains hanging in them or settles on the waterbeds due to which the quality of water is deteriorated. This is not only harmful for the marine life and aquatic ecosystem but also these substances seep through and make their way to the groundwater which eventually ends up at our households as impure or adulterated water. We then use this impure water for our day to day chores and not to forget we also end up drinking the same impure water.\\n<fun>\"Fresh water on earth is only 2.5% of the total water when 70% of the earth\'s surface is covered by water.\"</fun>",
+"Did you use water today? What did you use it for? \\nWas it for washing the expensive car or bike that your parents own or was it for cooking your favourite food or for doing your dishes from last night or for sweeping the floor or was it for your daily errands such as taking a shower or maybe brushing your teeth? Are you even aware that all the sewage that is generated from your household activities would eventually make its way to our beautiful waterbodies such as oceans, rivers, lakes or maybe even sea?",
 7,
 true,
 "https://oceanus.me/image/getsectionimage/naja-bertolt-jensen-IUBc0cxN7Lc-unsplash.jpg",
@@ -269,16 +269,26 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (26,
 "Stormwater Drains",
 7,
-"Water from rain that falls on our homes and streets is diverted in an arrangement of lines that is independent from the sewerage framework that conveys sewage. These stormwater drains likewise gather any litter or other material, including animal wastes or droppings, that lies around our roads. This junk is commonly conveyed straight into waterways or out to the ocean by the stormwater channels.\\nSince stormwater isn\'t dealt with, this framework is liable for conveying a great part of the trash or waste found along our streams and seashores. Stormwater drains are likewise ordinarily accountable for conveying either intentionally or unintentionally spilled poisonous synthetic compounds, oils and different materials into the waterways.",
+"Water from rain that falls on our homes and streets is diverted in an arrangement of lines that is independent from the sewerage framework that conveys sewage. These stormwater drains likewise gather any litter or other material, including animal wastes or droppings, that lies around our roads. This junk is commonly conveyed straight into waterways or out to the ocean by the stormwater channels.",
 9,
 true,
 "https://oceanus.me/image/getsectionimage/michael-trimble-WG7jrDV1O44-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (42,
+"",
+8,
+"Since stormwater isn\'t dealt with, this framework is liable for conveying a great part of the trash or waste found along our streams and seashores. Stormwater drains are likewise ordinarily accountable for conveying either intentionally or unintentionally spilled poisonous synthetic compounds, oils and different materials into the waterways.",
+9,
+false,
+null,
+"left");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (27,
 "Farms",
-8,
+9,
 "Composts or Fertilisers, herbicides, bug sprays and many different kinds of pesticides or chemicals are used by the farmers on their harvests. Researchers are just barely starting to acknowledge the amount of these harmful substances are washed into drains and creek and on into the ocean.\\n<fun>\"The nuclear crisis created by the tsunami of 2011, unleashed 11 million litres of radioactive water into the Pacific Ocean.\"</fun>\\n<fun>\"Almost two million tons of human waste are exposed daily to water.\"</fun>\\nSource: Natural Resource Defense Council, Yarra Valley Water",
 9,
 true,
@@ -289,10 +299,20 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (28,
 "Common Types of Pollutants Causing Water Pollution!!!",
 1,
-"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.\\nToxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.\\nPlastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
+"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.",
 10,
 true,
 "https://oceanus.me/image/getsectionimage/tim-mossholder-qq-8dpdlBsY-unsplash.jpg",
+"left");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (43,
+"",
+2,
+"Toxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.\\nPlastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
+10,
+false,
+null,
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -372,7 +392,7 @@ values (36,
 "All our treatment plants use measures extraordinarily intended to suit the attributes of the plant and approaching wastewater.",
 14,
 false,
-"https://oceanus.me/image/getsectionimage/EasternTreatmentPlant.jpg",
+null,
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
@@ -389,16 +409,26 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (38,
 "",
 3,
-"Sewage entering the plant goes through an intensive three-stage treatment process, which only takes 24 hours. First is the primary treatment where the pollutants are removed from the sewage. Once the pollutants are discarded it then enters secondary treatment which uses different types of bacteria that live in different environments i.e. with oxygen (aerobic), and without oxygen (anoxic). These break down organic material and remove nutrients. The sewage then passes through sedimentation tanks called clarifiers, where more sludge settles to the bottom before being sent to the digesters. This leaves clear, treated water called secondary effluent, which flows on to large holding basins. And finally, it enters tertiary treatment where the water is disinfected and then passed on to the nearby customers as recycled water and the rest is released into the ocean at Boags Rocks under strict conditions set by EPA Victoria to protect the environment. The sludge from the previous treatment stages is dried and stored in large piles or can be reused as biosolids.\\nThe Eastern Treatment Plant utilizes biogas to control a generous piece of its power utilization, and the majority of its heating and cooling. The plant\'s 7 generators can run exclusively on biogas or be enhanced by natural gas as and when needed.",
+"Sewage entering the plant goes through an intensive three-stage treatment process, which only takes 24 hours. First is the primary treatment where the pollutants are removed from the sewage. Once the pollutants are discarded it then enters secondary treatment which uses different types of bacteria that live in different environments i.e. with oxygen (aerobic), and without oxygen (anoxic). These break down organic material and remove nutrients. The sewage then passes through sedimentation tanks called clarifiers, where more sludge settles to the bottom before being sent to the digesters. This leaves clear, treated water called secondary effluent, which flows on to large holding basins. And finally, it enters tertiary treatment where the water is disinfected and then passed on to the nearby customers as recycled water and the rest is released into the ocean at Boags Rocks under strict conditions set by EPA Victoria to protect the environment. The sludge from the previous treatment stages is dried and stored in large piles or can be reused as biosolids.",
 14,
 true,
 null,
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (44,
+"",
+4,
+"The Eastern Treatment Plant utilizes biogas to control a generous piece of its power utilization, and the majority of its heating and cooling. The plant\'s 7 generators can run exclusively on biogas or be enhanced by natural gas as and when needed.",
+14,
+false,
+"https://oceanus.me/image/getsectionimage/EasternTreatmentPlant.jpg",
+"left");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (39,
 "Western Treatment Plant",
-4,
+5,
 "The Western Treatment Plant (WTP) is a position of noteworthy and social importance. It economically treats half of Melbourne\'s sewage, and is a flourishing ecosystem with a universally perceived bird habitat.\\n<fun>\"The Western Treatment Plant, which is roughly the size of Phillip Island, has evolved as Melbourne has grown to become a world leader in environmentally friendly sewage treatment.\"</fun>\\nThis plant was the initial plant in Victoria to create Class A reused water. This cycle utilizes our current tidal pond framework i.e. lagoon system, which produces Class C water in 30 to 35 days. The plant produces 40 billion litres of recycled water.",
 14,
 true,
@@ -408,10 +438,20 @@ null,
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (40,
 "",
-5,
+6,
 "To arrive at Class A norm, UV light and chlorine are utilized to additionally sterilize the water. A portion of this is utilized to water harvests, play areas and gardens, while some is additionally prepared to decrease its salt before it tends to be provided to homes.\\n<fun>\"The Western Treatment Plant is home to some of the rarest frog species in the world and was declared an internationally significant wetland for waterfowl in 1983 under the Ramsar Convention.\"</fun>\\nThe Western Treatment Plant utilizes biogas to meet about the entirety of its power needs. It creates 70,000 megawatt long stretches of inexhaustible power each year. Occasionally the plant delivers more power than the actual use. Overabundance power is traded to the power grid to counterbalance utilization at different locales.\\nSource: Melbourne Water",
 14,
 true,
+null,
+"left");
+
+insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
+values (41,
+"",
+2,
+"Water gets polluted because of the harmful substances that enter these waterbodies. These toxic substances diffuse in them or remains hanging in them or settles on the waterbeds due to which the quality of water is deteriorated. This is not only harmful for the marine life and aquatic ecosystem but also these substances seep through and make their way to the groundwater which eventually ends up at our households as impure or adulterated water. We then use this impure water for our day to day chores and not to forget we also end up drinking the same impure water.\\n<fun>\"Fresh water on earth is only 2.5% of the total water when 70% of the earth\'s surface is covered by water.\"</fun>",
+7,
+false,
 null,
 "left");
 
