@@ -1,21 +1,21 @@
-.login-container {
+.signup-container {
     background-size: 800px !important;
     width: 800px;
     margin: auto;
     text-align: center;
     padding: 10% 0px;
     display: table;
-    background-image: url('../images/loginframe.png');
+    background-image: url('../images/signupframe.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.login-container label {
-  width: 84px;
+.signup-container label {
+  width: 165px;
   text-align: right;
 }
 
-.login-container h2 {
+.signup-container h2 {
   margin-top: 25px;
 }

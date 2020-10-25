@@ -671,6 +671,27 @@ function pipeWinGame() {
   //Stop Timer
   clearInterval(pipeLevelTimer);
 
+  //Game Won
+  var result = {
+    score : pipeTimeRemaining,
+    gameId : 2
+  };
+
+  //Post game results to API
+  $.ajax({
+    url: '/game/postgameresult',
+    type: 'POST',
+    data: JSON.stringify(result),
+    dataType: 'json',
+    contentType : "application/json",
+    success: function(response, textStatus, jqXHR) {
+      alert("Results posted!");
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      alert(textStatus, errorThrown);
+    }
+  });
+
   //Show game over feedback
   $('#pipe_over_section').show();
 
@@ -692,6 +713,27 @@ function pipeEndGame() {
 
   //Stop Timer
   clearInterval(pipeLevelTimer);
+
+  //Game lost: No score
+  var result = {
+    score : 0,
+    gameId : 2
+  };
+
+  //Post game results to API
+  $.ajax({
+    url: '/game/postgameresult',
+    type: 'POST',
+    data: JSON.stringify(result),
+    dataType: 'json',
+    contentType : "application/json",
+    success: function(response, textStatus, jqXHR) {
+      alert("Results posted!");
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      alert(textStatus, errorThrown);
+    }
+  });
 
   //Show game over feedback
   $('#pipe_over_section').show();

@@ -8,17 +8,20 @@ class SceneGameOver extends Phaser.Scene {
     } 
 
     create() {
-        var result = {score : this.score,
-                      gameId : 1};
+
+        var result = {
+           score : this.score,
+           gameId : 1
+        };
 
         $.ajax({
-           url: '/game/postshark',
+           url: '/game/postgameresult',
            type: 'POST',
            data: JSON.stringify(result),
            dataType: 'json',
            contentType : "application/json",
            success: function(response, textStatus, jqXHR) {
-             alert("Yay!");
+             alert("Results posted!");
            },
            error: function(jqXHR, textStatus, errorThrown){
              alert(textStatus, errorThrown);
