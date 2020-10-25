@@ -92,8 +92,6 @@ public class PageController {
     @GetMapping("/games")
     public String getGamePage(Model model, HttpServletRequest httpServletRequest) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        //List<Boolean> unlockGameList = // this information is provided by restful API
-        //model.addAttribute("unlockList", unlockGameList);
 
         httpServletRequest.getSession().setAttribute("previous_url", "/games");
         return "games";
@@ -175,7 +173,7 @@ public class PageController {
     @PostMapping("/profile")
     public String profilePage(Model model) {
         model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
-        return "profile";
+        return "redirect:/profile";
     }
 
     // get method for general access of login page
