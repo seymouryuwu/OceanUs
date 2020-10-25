@@ -24,7 +24,7 @@
 }
 
 .cta .row {
-  padding: 15vh 100px;
+  padding: 15vh 100px 0vh 100px;
   z-index: 20;
 }
 
@@ -33,7 +33,7 @@
   margin-bottom: 40px;
   text-align: center;
   -webkit-filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7));
-   drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7))
+   drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7));
 }
 
 .cta-block:hover {
@@ -122,11 +122,24 @@
   line-height: 15vh;
 }
 
+.cta-description-row {
+  padding: 0px 100px !important;
+  text-align: center;
+}
+
 .world-image {
   background-image: url('../images/logos/logo-explore.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.video {
+  background-color: #3f83c2;
+}
+
+.video p, .video h2 {
+  color: #ffffff;
 }
 
 /* ---------------------------- */
