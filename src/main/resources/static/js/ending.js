@@ -7,7 +7,7 @@ function goToProfile() {
       win.focus();
   } else {
       //Browser has blocked it
-      alert('Please allow popups for this website');
+      console.log('Please allow popups for this website');
   }
 
 }
@@ -21,7 +21,7 @@ function goToHome() {
       win.focus();
   } else {
       //Browser has blocked it
-      alert('Please allow popups for this website');
+      console.log('Please allow popups for this website');
   }
 
 }

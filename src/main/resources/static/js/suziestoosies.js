@@ -684,11 +684,14 @@ function pipeWinGame() {
     data: JSON.stringify(result),
     dataType: 'json',
     contentType : "application/json",
+    beforeSend:function(xhr){
+      xhr.setRequestHeader(header, token);
+    },
     success: function(response, textStatus, jqXHR) {
-      alert("Results posted!");
+      console.log("Results posted!");
     },
     error: function(jqXHR, textStatus, errorThrown){
-      alert(textStatus, errorThrown);
+      console.log(textStatus, errorThrown);
     }
   });
 
@@ -728,10 +731,10 @@ function pipeEndGame() {
     dataType: 'json',
     contentType : "application/json",
     success: function(response, textStatus, jqXHR) {
-      alert("Results posted!");
+      console.log("Results posted!");
     },
     error: function(jqXHR, textStatus, errorThrown){
-      alert(textStatus, errorThrown);
+      console.log(textStatus, errorThrown);
     }
   });
 

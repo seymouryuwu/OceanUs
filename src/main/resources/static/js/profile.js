@@ -11,7 +11,7 @@
 /* PROFILE : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getachievements = 'https://www.oceanus.me/profile/getprofiledata';
+let API_getachievements = 'https://oceanus.me/profile/getprofiledata';
 
 /* -------------------------- */
 /* PROFILE : GLOBAL VARIABLES */
@@ -25,7 +25,7 @@ var profileData = [];
 
 $( document ).ready(function() {
 
-  var devmode = false;
+  var devmode = true;
 
   //API Request : Get achievement data  from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {
@@ -150,14 +150,57 @@ function loadWelcomeMessage() {
 
     $('.quiz-results-border').html(`
 
-      <h2 class="nickname">` + nickname + `</h2>
+      <h2 class="nickname">` + nickname + `<div class="edit-pencil" onClick="showEditName();">&#x270E;</div></h2>
       <p class="username">Username:` + username + `</h2>
       <p>This is where you can check you quiz results, high scores and achievement badges!</p>
 
     `);
-
-    // $('.welcome-message').html("Hey, " + profileData.username + "!");
   }
+
+}
+
+/* -------------------------------------------- */
+/* PROFILE : SHOW EDIT NAME TEXTBOX */
+/* -------------------------------------------- */
+
+function showEditName() {
+
+  console.log('Show edit name textbox!');
+
+}
+
+/* -------------------------------------------- */
+/* PROFILE : SHOW EDIT NAME TEXTBOX */
+/* -------------------------------------------- */
+
+function postEditName() {
+
+  //Game lost: No score
+  var result = {
+    score : 0,
+    gameId : 3
+  };
+
+  //Post game results to API
+  $.ajax({
+    url: '/profile/setnickname',
+    type: 'POST',
+    data: JSON.stringify(result),
+    dataType: 'json',
+    contentType : "application/json",
+    beforeSend:function(xhr){
+      xhr.setRequestHeader(header, token);
+    },
+    success: function(response, textStatus, jqXHR) {
+      console.log("Results posted!");
+      location.reload();
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+      console.log(textStatus, errorThrown);
+    }
+
+
+  });
 
 }
 
@@ -216,16 +259,6 @@ function loadGameResults() {
       var gameName = profileData.gameResultDTOList[i].gameName;
       var score = profileData.gameResultDTOList[i].score;
       var achieveDate = profileData.gameResultDTOList[i].achieveDate;
-
-      console.log(gameName);
-      console.log(score);
-      console.log(achieveDate);
-
-//          <div class="col-4 high-score-block">
-//            <div class="high-score-border green-border">
-//              <h4>Suzies Toosies</h4>
-//            </div>
-//          </div>
 
       $('.high-scores').append(`
 

@@ -21,10 +21,10 @@ class SceneGameOver extends Phaser.Scene {
            dataType: 'json',
            contentType : "application/json",
            success: function(response, textStatus, jqXHR) {
-             alert("Results posted!");
+             console.log("Results posted!");
            },
            error: function(jqXHR, textStatus, errorThrown){
-             alert(textStatus, errorThrown);
+             console.log(textStatus, errorThrown);
           }
         });
 

@@ -11,9 +11,9 @@
 /* CONTENT : API DECLARATIONS */
 /* -------------------------- */
 
-let API_getarticle = 'https://www.oceanus.me/article/getarticle?articleId=';
-let API_getsectionquiz = 'https://www.oceanus.me/quiz/getsectionquiz?sectionId=';
-let API_examanswer = 'https://www.oceanus.me/quiz/examanswer?optionId=';
+let API_getarticle = 'https://oceanus.me/article/getarticle?articleId=';
+let API_getsectionquiz = 'https://oceanus.me/quiz/getsectionquiz?sectionId=';
+let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 
 /* -------------------------- */
 /* CONTENT : GLOBAL VARIABLES */
@@ -26,6 +26,7 @@ var currentQuizIds = [];
 var currentQuizAnswers = [];
 var gameAPI = '';
 var lastArticle = false;
+var welcomeAnswered = false;
 
 var distance = 0;
 
@@ -151,9 +152,9 @@ function loadWelcomePage() {
 
      <div class="no-game-next-button col-md-12">
 
-       <p id="quiz_feedback_1">Oh No! You need to read/listen to the INSTRUCTIONS again!</p>
+       <p id="quiz_feedback_1"></p>
 
-       <button type="submit" class="start-journey" onClick="nextQuiz(1)">
+       <button type="submit" class="start-journey" onClick="nextQuiz(1)" style="display: none;">
          <image src="` + staticAssetsURL + `images/button/start-1 2.png">
        </button>
 
@@ -168,10 +169,26 @@ function loadWelcomePage() {
 
 function answerTrue() {
     console.log("Oh No! You need to read/listen to the INSTRUCTIONS again!");
+
+    welcomeAnswered = true;
+
+    $('#quiz_feedback_1').text('Oh No! You need to read/listen to the INSTRUCTIONS again!');
+    $('.start-journey').hide();
+    $('body').css('position', 'inherit');
+    $('#welcome_quiz_section').removeClass('scrollable');
 }
 
 function answerFalse() {
-    console.log("Correct, you answered False!");
+    welcomeAnswered = true;
+
+
+    $('#quiz_feedback_1').text('False! Well done you answered correctly!');
+
+    $('.start-journey').show();
+    $('body').css('position', 'inherit');
+    $('#welcome_quiz_section').removeClass('scrollable');
+
+    //TODO: post result of answer to the backend via API
 }
 
 /* -------------------------------------------- */
@@ -194,7 +211,7 @@ function buildSection(sectionDTOList) {
       imageAlignment = (sectionDTOList[x]['imageAlignment']);
 
       //Randomly choose image of animal with speech bubble
-      var randomNum = (Math.random() * 3);
+      var randomNum = (Math.random() * 11);
       var randomImage = "";
       randomNum = Math.ceil(randomNum);
 
@@ -207,6 +224,30 @@ function buildSection(sectionDTOList) {
           break;
         case 3:
           randomImage = "../images/logos/bubble-shark.png";
+          break;
+        case 4:
+          randomImage = "../images/animals/beaver.png";
+          break;
+        case 5:
+          randomImage = "../images/animals/cloudy.png";
+          break;
+        case 6:
+          randomImage = "../images/animals/jellyfish.png";
+          break;
+        case 7:
+          randomImage = "../images/animals/octopus.png";
+          break;
+        case 8:
+          randomImage = "../images/animals/penguin.png";
+          break;
+        case 9:
+          randomImage = "../images/animals/ray.png";
+          break;
+        case 10:
+          randomImage = "../images/animals/seal.png";
+          break;
+        case 11:
+          randomImage = "../images/animals/sun.png";
           break;
         default:
 
@@ -615,7 +656,18 @@ $(window).scroll(function() {
   topPadding = -Math.abs(distance);
 
   if ( $(this).scrollTop() >= distance && $('#quiz_section').children().length > 1) {
-      $('body').css('position', 'fixed').css('margin-top', parseInt(topPadding));
+      $('body').css('position', 'fixed');
       $('#quiz_section').addClass('scrollable');
   }
+
+  if (!welcomeAnswered) {
+      distance = $('#welcome_quiz_section').offset().top;
+      topPadding = -Math.abs(distance);
+
+      if ( $(this).scrollTop() >= distance && $('#welcome_quiz_section').children().length > 1) {
+          $('body').css('position', 'fixed');
+          $('#welcome_quiz_section').addClass('scrollable');
+      }
+  }
+
 });

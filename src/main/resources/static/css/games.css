@@ -50,6 +50,30 @@
   cursor: pointer
 }
 
+.shark-logo-locked {
+  background-image: url('../images/logos/placeholder.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pipe-logo-locked {
+  background-image: url('../images/logos/placeholder.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.card-logo-locked {
+  background-image: url('../images/logos/placeholder.png');
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .heading h1 {
   letter-spacing: 3px;
   font-family: Be-Honest;

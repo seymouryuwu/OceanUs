@@ -104,6 +104,11 @@ h4 {
   padding: 0px 100px 50px 100px;
 }
 
+.edit-pencil {
+  display: inline;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .badge-text {
     position: inherit !important;
