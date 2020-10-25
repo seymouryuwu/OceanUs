@@ -51,7 +51,7 @@
 }
 
 .shark-logo-locked {
-  background-image: url('../images/logos/placeholder.png');
+  background-image: url('../images/logos/locked-shark.png');
   height: 45vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -59,7 +59,7 @@
 }
 
 .pipe-logo-locked {
-  background-image: url('../images/logos/placeholder.png');
+  background-image: url('../images/logos/locked-pipe.png');
   height: 45vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -67,7 +67,7 @@
 }
 
 .card-logo-locked {
-  background-image: url('../images/logos/placeholder.png');
+  background-image: url('../images/logos/locked-card.png');
   height: 45vh;
   background-repeat: no-repeat;
   background-position: center;
