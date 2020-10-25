@@ -87,7 +87,7 @@ public class GameService {
         String previousUrl = (String) httpServletRequest.getSession().getAttribute("previous_url");
         if (previousUrl != null) {
             if (previousUrl.startsWith("/adventurequiz") &&
-                    game.getArticle().getArticleId() == Long.parseLong(previousUrl.substring(9))) {
+                    game.getArticle().getArticleId() == Long.parseLong(previousUrl.substring(15))) {
                 return true;
             }
 

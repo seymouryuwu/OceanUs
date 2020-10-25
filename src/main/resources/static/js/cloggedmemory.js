@@ -575,7 +575,7 @@ function endGame() {
 function exitGame() {
   console.log(aid);
   if (aid && aid != 0) {
-    window.open('content/' + aid, '_self');
+    window.open('adventurequiz/' + aid, '_self');
   } else {
     window.history.back();
   }
