@@ -23,34 +23,41 @@ $( document ).ready(function() {
 
   var devmode = false;
 
-  //API Request : Get achievement data  from API
-  $.ajax({url: (API_getachievements), success: function(unlockStateData, textStatus) {
-      unlockData = unlockStateData;
-      loadUnlockData();
+  /********** DEV MODE **********/
+  /* IMPORTANT NOTE : Remove before deployment!!! */
+  if (devmode) {
 
-    }, error: function(jqXHR, textStatus, errorThrown) {
-      //TODO: LOAD EMPTY PROFILE PAGE
-      loadDefault();
+    unlockData = JSON.parse(`
+    [
+       "gameId":1,"unlockState":true},
+       {"gameId":2,"unlockState":false},
+       {"gameId":3,"unlockState":false}
+    ]
+    `);
 
-    }
-  });
+    loadUnlockData();
+  }
 
-    /********** DEV MODE **********/
-    /* IMPORTANT NOTE : Remove before deployment!!! */
-    if (devmode) {
 
-      unlockData = JSON.parse(`
-      [
-        {"gameId":1,"unlockState":true},
-        {"gameId":2,"unlockState":false},
-        {"gameId":3,"unlockState":false}
-      ]
-      `);
+  if(isLoggedIn) {
 
-      loadUnlockData();
-    }
+      //API Request : Get achievement data  from API
+      $.ajax({url: (API_getachievements), success: function(unlockStateData, textStatus) {
+          unlockData = unlockStateData;
+          loadUnlockData();
 
-  });
+        }, error: function(jqXHR, textStatus, errorThrown) {
+
+        }
+      });
+
+  } else {
+
+    loadDefault()
+
+  }
+
+});
 
 function loadDefault() {
   displayGameLock(1);
