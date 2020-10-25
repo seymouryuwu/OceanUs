@@ -531,6 +531,8 @@ function winGame() {
   //Stop Timer
   clearInterval(levelTimer);
 
+  $('.exit-game').hide();
+
   //Game Won
   var result = {
     score : timeRemaining,
@@ -624,7 +626,7 @@ function endGame() {
 
 function exitGame() {
 
-    //Game exited: No score
+    //Game lost: No score
     var result = {
       score : 0,
       gameId : 3
