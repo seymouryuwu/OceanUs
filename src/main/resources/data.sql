@@ -299,20 +299,20 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (28,
 "Common Types of Pollutants Causing Water Pollution!!!",
 1,
-"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.",
+"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.\\nToxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.",
 10,
 true,
-"https://oceanus.me/image/getsectionimage/tim-mossholder-qq-8dpdlBsY-unsplash.jpg",
+null,
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
 values (43,
 "",
 2,
-"Toxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.\\nPlastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
+"Plastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
 10,
 false,
-null,
+"https://oceanus.me/image/getsectionimage/tim-mossholder-qq-8dpdlBsY-unsplash.jpg",
 "left");
 
 insert into sections (section_id, section_header, section_sequence_number, section_text, article_id, has_quiz, image_url, image_alignment)
