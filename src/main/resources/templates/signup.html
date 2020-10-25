@@ -63,7 +63,7 @@
                 <p th:each="error : ${#fields.errors('matchingPassword')}"
                    th:text="${error}">Validation error</p>
             </div>
-            <button type="submit">Signup</button>
+            <button class="signup-button" type="submit"><img src="../images/button/signup.png"></button>
         </form>
         <a th:href="@{/about}" ></a>
         <p th:text="${message}" ></p>

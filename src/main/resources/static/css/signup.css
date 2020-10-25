@@ -19,3 +19,11 @@
 .signup-container h2 {
   margin-top: 25px;
 }
+
+.signup-button {
+  margin-top: 5px;
+}
+
+.signup-button img {
+  width: 100px;
+}

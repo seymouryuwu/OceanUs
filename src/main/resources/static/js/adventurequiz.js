@@ -96,6 +96,9 @@ function loadWelcomePage() {
    $('.content-section').append(`
      <div class="row">
        <div class="col-md-12 full-block">
+
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/CTZNh7-Imd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
          <h3>Are you excited to start your Adventure Journey and be a part of the change???????</h3>
          <p>We are sure you will have fun. But to get to the end there are some hurdles that you need to pass.</p>
          <p>In order to begin your adventure journey there are few things that you need to be aware of.</p>
@@ -155,7 +158,7 @@ function loadWelcomePage() {
        <p id="quiz_feedback_1"></p>
 
        <button type="submit" class="start-journey" onClick="nextQuiz(1)" style="display: none;">
-         <image src="` + staticAssetsURL + `images/button/start-1 2.png">
+         <image src="` + staticAssetsURL + `images/button/yellow-start.png">
        </button>
 
      </div>
@@ -195,7 +198,30 @@ function answerFalse() {
 /* CONTENT : BUILD CONTENT SECTION (HTML BLOCK) */
 /* -------------------------------------------- */
 
+function sortObjectEntries(obj, n){
+
+let sortedList = []
+//Sorting by values asc
+sortedList = Object.entries(obj).sort((a,b)=>{
+      if(b[1] > a[1]) return 1;
+      else if(b[1] < a[1]) return -1;
+//if values are same do edition checking if keys are in the right order
+      else {
+         if(a[0] > b[0]) return 1;
+         else if(a[0] < b[0]) return -1;
+         else return 0
+  }
+ })
+ // return first n values from sortedList
+  return sortedList.map(el=>el[0]).slice(0,n)
+ }
+
 function buildSection(sectionDTOList) {
+
+  //Sort Article sections by sequence number
+  sectionDTOList.sort(function(a, b) {
+      return parseFloat(a.sectionSequenceNumber) - parseFloat(b.sectionSequenceNumber);
+  });
 
   var quizId = [];
 
@@ -217,13 +243,13 @@ function buildSection(sectionDTOList) {
 
       switch (randomNum) {
         case 1:
-          randomImage = "../images/logos/bubble-puffer.png";
+          randomImage = "../images/animals/puffer.png";
           break;
         case 2:
-          randomImage = "../images/logos/bubble-seal.png";
+          randomImage = "../images/animals/sealion.png";
           break;
         case 3:
-          randomImage = "../images/logos/bubble-shark.png";
+          randomImage = "../images/animals/shark.png";
           break;
         case 4:
           randomImage = "../images/animals/beaver.png";
@@ -330,7 +356,7 @@ function buildSection(sectionDTOList) {
 
             <div class="no-game-next-button col-md-12">
                <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                  <image src="` + staticAssetsURL + `images/nextpage.png">
+                  <image src="` + staticAssetsURL + `images/button/Nextpage.png">
                </button>
             </div>
 
@@ -492,13 +518,13 @@ function checkQuizAnswer() {
 
                <div class="play-button-col col-md-6">
                    <button type="submit" class="play-button" onClick="startReward(` + articleId + `)">
-                     <image src="` + staticAssetsURL + `images/play-button.png">
+                     <image src="` + staticAssetsURL + `images/button/Playgame.png">
                    </button>
                </div>
 
                <div class="next-button-col col-md-6">
                    <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                     <image src="` + staticAssetsURL + `images/nextpage.png">
+                     <image src="` + staticAssetsURL + `images/button/Nextpage.png">
                    </button>
                </div>
 
@@ -512,7 +538,7 @@ function checkQuizAnswer() {
 
             <div class="no-game-next-button col-md-12">
                <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                 <image src="` + staticAssetsURL + `images/nextpage.png">
+                 <image src="` + staticAssetsURL + `images/button/Nextpage.png">
                </button>
             </div>
 
@@ -529,7 +555,7 @@ function checkQuizAnswer() {
           <div class="row">
             <div class="end-journey-button col-md-12">
               <button type="submit" class="end-journey" onClick="endJourney()">
-                <image src="` + staticAssetsURL + `images/button/end-2.png">
+                <image src="` + staticAssetsURL + `images/button/end-yellow.png">
               </button>
             </div>
           </div>
