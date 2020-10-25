@@ -3,6 +3,12 @@ package oceanusproject.demov1.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * Represent a user game record.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "user_game_records")
 public class UserGameRecord {
@@ -19,10 +25,12 @@ public class UserGameRecord {
     @Column(name = "is_unlocked")
     private boolean isUnlocked;
 
+    // foreign key username to GeneralUser
     @ManyToOne
     @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
+    // foreign key game_id to Game
     @ManyToOne
     @JoinColumn(name ="game_id")
     private Game game;

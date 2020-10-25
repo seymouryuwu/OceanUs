@@ -10,6 +10,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
+/**
+ * Represent an achievement record.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Table(name = "achievement_records")
 public class AchievementRecord {
@@ -18,12 +24,14 @@ public class AchievementRecord {
     private long achievementRecordId;
 
     @Column(name = "unlockDate")
-     private LocalDate unlockDate;
+    private LocalDate unlockDate;
 
+    // foreign key username to GeneralUser
     @ManyToOne
     @JoinColumn(name ="username")
     private GeneralUser generalUser;
 
+    // foreign key achievement_id to Achievement
     @ManyToOne
     @JoinColumn(name ="achievement_id")
     private Achievement achievement;

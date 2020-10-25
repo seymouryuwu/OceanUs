@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Controller
-@RequestMapping("/.well-known")
+// This API is only used for HTTP-based validation of SSL certificate
+//@Controller
+//@RequestMapping("/.well-known")
 public class DCVFileController {
     @Autowired
     ResourceLoader resourceLoader;

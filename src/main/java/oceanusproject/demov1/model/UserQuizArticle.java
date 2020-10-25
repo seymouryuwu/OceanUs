@@ -2,13 +2,16 @@ package oceanusproject.demov1.model;
 
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
-import org.springframework.cache.annotation.CacheConfig;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
+/**
+ * Represent a view which join table user_quiz_records, quizzes, sections and articles.
+ * @author Seymour Yu Wu
+ * @version 1.0
+ * @since 1.0
+ */
 @Entity
 @Immutable
 @Subselect(""+

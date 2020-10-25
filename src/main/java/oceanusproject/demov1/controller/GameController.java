@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class GameController {
     private GameService gameService;
 
     @PostMapping("/postgameresult")
-    public ResponseEntity postGameResult(@RequestBody ScoreDTO scoreDTO) {
+    public ResponseEntity postGameResult(@Valid @RequestBody ScoreDTO scoreDTO) {
         gameService.saveHighestRecord(scoreDTO.getGameId(), scoreDTO.getScore());
         return ResponseEntity.ok(HttpStatus.OK);
     }
