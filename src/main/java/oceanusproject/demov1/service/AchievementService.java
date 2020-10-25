@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * the service about achievement
+ * the services about achievement
  */
 @Service
 public class AchievementService {
@@ -39,12 +39,14 @@ public class AchievementService {
     private UserGameRecordRepository userGameRecordRepository;
 
     /**
-     *
-     * @param user
+     * update the achievement about quiz for a user when users answer a certain number of quizzes correctly.
+     * @param user the user that will be checked to update quiz achievement
      */
     public void updateQuizAchievement(GeneralUser user) {
         long numberOfCorrectAnswer = userQuizRecordRepository.countByGeneralUserAndAnswerResult(user, true);
 
+        // if the number of correct answers is greater than 1, or 7, or 14, or 21, or 28, the user will get
+        // an achievement
         if (numberOfCorrectAnswer >= 1) {
             updateAchievementById(user, 1);
         }
@@ -66,8 +68,15 @@ public class AchievementService {
         }
     }
 
+    /**
+     * update the achievements about articles when users read all the article a certain times
+     * @param user the user that will be checked to update article achievement
+     */
     public void updateArticleAchievement(GeneralUser user) {
-                List<UserArticleRecord> userArticleList = userArticleRepository.findByGeneralUser(user);
+        // get all the articles that the user read
+        List<UserArticleRecord> userArticleList = userArticleRepository.findByGeneralUser(user);
+
+        // if the user read all the articles more than 1, 3, 5, 10 times, he will get an achievement
         if (userArticleList.size() == articleRepository.count()) {
             int minimumOfTimes = Integer.MAX_VALUE;
             for (UserArticleRecord userArticle : userArticleList) {
@@ -94,8 +103,15 @@ public class AchievementService {
         }
     }
 
+    /**
+     * update all the achievement about game when user reach a certain score of a game
+     * @param user the user that will be checked to update game achievement
+     * @param game the game that will be checked to update game achievement
+     */
     public void updateGameAchievement(GeneralUser user, Game game) {
         UserGameRecord userGameRecord = userGameRecordRepository.findByGeneralUserAndGame(user, game);
+
+        // for shark game, if the user reach 300, 600, 900 scores, he will get an achievement
         if (game.getGameId() == 1) {
             if (userGameRecord.getScore() >= 300) {
                 updateAchievementById(user, 10);
@@ -110,6 +126,8 @@ public class AchievementService {
             }
         }
 
+        // for pipe game, if the user has 30, 65, 100 seconds left before he finish the connection,
+        // he will get an achievement
         if (game.getGameId() == 2) {
             if (userGameRecord.getScore() >= 30) {
                 updateAchievementById(user, 13);
@@ -124,6 +142,8 @@ public class AchievementService {
             }
         }
 
+        // for memory game, if the user has 10, 20, 30 seconds left before he finish flipping all the cards,
+        // he will get an achievement
         if (game.getGameId() == 3) {
             if (userGameRecord.getScore() >= 10) {
                 updateAchievementById(user, 16);
@@ -139,8 +159,14 @@ public class AchievementService {
         }
     }
 
+    /**
+     * generate the list of AchievementDTO for the current logged-in user
+     * @return the list of AchievementDTO for the current logged-in user
+     */
     public List<AchievementDTO> getUserAchievements() {
         List<AchievementDTO> achievementDTOList = new ArrayList<>();
+
+        // find the current logged-in user
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         GeneralUser user = userRepository.findByUsername(currentPrincipalName);
@@ -159,10 +185,17 @@ public class AchievementService {
         return achievementDTOList;
     }
 
+    /**
+     * update an achievement for a user
+     * @param user the user whose achievement will be updated
+     * @param achievementId the achievement that will be updated
+     */
     private void updateAchievementById(GeneralUser user, int achievementId) {
+        // find the achievement record of a certain user and a certain achievement
         Achievement achievement = achievementRepository.findByAchievementId(achievementId);
         AchievementRecord achievementRecord
                 = achievementRecordRepository.findByGeneralUserAndAchievement(user, achievement);
+        // if the achievement the user has not got before, the record will be created for him
         if (achievementRecord == null) {
             achievementRecord = new AchievementRecord();
             achievementRecord.setGeneralUser(user);

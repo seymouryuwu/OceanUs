@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the services about article
+ */
 @Service
 public class ArticleService {
     @Autowired
@@ -36,12 +39,18 @@ public class ArticleService {
     @Autowired
     private GameRepository gameRepository;
 
-    // this method is used to get the text content of all the sections of one article
+    /**
+     * generate an ArticleDTO by article id
+     * @param articleId the article id identify a article
+     * @return an ArticleDTO
+     */
     public ArticleDTO getArticle(long articleId) {
         ArticleDTO articleDTO = new ArticleDTO();
         Article article = articleRepository.findByArticleId(articleId);
         articleDTO.setArticleId(articleId);
         articleDTO.setArticleTitle(article.getArticleTitle());
+
+        // set the game API URL if this article has game
         Game game = gameRepository.findByArticle(article);
         if (game != null) {
             String gameAPI = null;
@@ -72,7 +81,12 @@ public class ArticleService {
         return articleDTO;
     }
 
-    // this method will return a particular section
+
+    /**
+     * generate a SectionDTO by section id
+     * @param sectionId the section id identify a section
+     * @return a SectionDTO
+     */
     public SectionDTO getSection(long sectionId) {
         SectionDTO sectionDTO = new SectionDTO();
         Section section = sectionRepository.findBySectionId(sectionId);
@@ -87,14 +101,27 @@ public class ArticleService {
         return sectionDTO;
     }
 
+    /**
+     * get a list of all the article id which identify the articles that have quizzes
+     * @return the list of all the article id which identify the articles that have quizzes
+     */
     public List<Long> getArticleIdWhichHasQuizzes() {
         return quizSectionArticleRepository.findDistinctArticleId();
     }
 
+    /**
+     * get the number of quizzes of an article
+     * @param articleId the article id that identify an article
+     * @return the number of quizzes of the article
+     */
     public int getNumberOfQuizzesForArticle(long articleId) {
         return quizSectionArticleRepository.countByArticleId(articleId);
     }
 
+    /**
+     * update the reading times of an article by article id
+     * @param articleId the article id that identify an article
+     */
     public void updateArticleReadingTimes(long articleId) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
@@ -102,6 +129,8 @@ public class ArticleService {
             GeneralUser user = userRepository.findByUsername(currentPrincipalName);
             Article article = articleRepository.findByArticleId(articleId);
 
+            // if the current logged-in user has not read this article,
+            // a reading record will be generated
             UserArticleRecord userArticle = userArticleRepository.findByGeneralUserAndArticle(user, article);
             if (userArticle == null) {
                 userArticle = new UserArticleRecord();
@@ -115,6 +144,10 @@ public class ArticleService {
         }
     }
 
+    /**
+     * count the number of articles
+     * @return the number of articles
+     */
     public long countArticle() {
         return articleRepository.count();
     }

@@ -19,6 +19,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * the services about game
+ */
 @Service
 public class GameService {
     @Autowired
@@ -33,6 +36,11 @@ public class GameService {
     @Autowired
     private AchievementService achievementService;
 
+    /**
+     * save the highest score for a game
+     * @param gameId the game id that identify a game
+     * @param score the score that will be checked
+     */
     public void saveHighestRecord(int gameId, int score) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
@@ -40,16 +48,22 @@ public class GameService {
             GeneralUser user = userRepository.findByUsername(currentPrincipalName);
             Game game = gameRepository.findByGameId(gameId);
 
+            // if the score is greater that the existed score, it will be updated
             UserGameRecord userGameRecord = userGameRecordRepository.findByGeneralUserAndGame(user, game);
             if (userGameRecord.getScore() < score) {
                 userGameRecord.setScore(score);
                 userGameRecordRepository.save(userGameRecord);
 
+                // check if the new score reaches an achievement, if so, the achievement will be updated
                 achievementService.updateGameAchievement(user, game);
             }
         }
     }
 
+    /**
+     * generate game records for each game for new user
+     * @param username the new registered user username
+     */
     public void initialGameScore(String username) {
         GeneralUser user = userRepository.findByUsername(username);
         List<Game> gameList = gameRepository.findAll();
@@ -57,6 +71,7 @@ public class GameService {
             UserGameRecord userGameRecord = new UserGameRecord();
             userGameRecord.setGame(game);
             userGameRecord.setGeneralUser(user);
+            // set the score 0 because the new user has not played any game
             userGameRecord.setScore(0);
             userGameRecord.setAchieveDate(LocalDate.now());
 
@@ -64,6 +79,10 @@ public class GameService {
         }
     }
 
+    /**
+     * get a list of GameResultDTO for current user
+     * @return the list of GameResultDTO for current user
+     */
     public List<GameResultDTO> getGameResults() {
         List<GameResultDTO> gameResultDTOList = new ArrayList<>();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -82,8 +101,15 @@ public class GameService {
         return gameResultDTOList;
     }
 
+    /**
+     * check if a game is enable to be played
+     * @param gameId the game id of the game that needs to be checked
+     * @param httpServletRequest the http request contain the path where the user access from
+     * @return the boolean will be true if the user can player
+     */
     public boolean ifEnableToPlay(int gameId, HttpServletRequest httpServletRequest) {
         Game game = gameRepository.findByGameId(gameId);
+        // get the URL that the user access 
         String previousUrl = (String) httpServletRequest.getSession().getAttribute("previous_url");
         if (previousUrl != null) {
             if (previousUrl.startsWith("/adventurequiz") &&
