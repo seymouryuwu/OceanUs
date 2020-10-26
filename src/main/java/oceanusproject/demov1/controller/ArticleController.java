@@ -15,6 +15,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
+/**
+ * Rest API for article
+ */
 @RestController
 @RequestMapping("/article")
 @Validated
@@ -23,15 +26,23 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    /**
+     * get the article content
+     * @param articleId the article id
+     * @return the ArticleDTO
+     */
     @GetMapping("/getarticle")
     public ArticleDTO getArticle(@RequestParam(value = "articleId") @Min(1) @Max(14) long articleId) {
         return articleService.getArticle(articleId);
     }
 
-
-    // TO DO validate after divide long section
+    /**
+     * get the section content
+     * @param sectionId the section id
+     * @return the SectionDTO
+     */
     @GetMapping("/getsection")
-    public SectionDTO getSection(@RequestParam(value = "sectionId") @Min(1) @Max(100) long sectionId) {
+    public SectionDTO getSection(@RequestParam(value = "sectionId") @Min(1) @Max(47) long sectionId) {
         return articleService.getSection(sectionId);
     }
 }
