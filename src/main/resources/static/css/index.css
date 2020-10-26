@@ -12,7 +12,9 @@
 /* ---------------------- */
 
 .header {
-  min-height: 40vh;
+  min-height: 60vh;
+  color: #ffffff;
+  background-position: center;
 }
 
 /* ---------------------------- */
@@ -136,6 +138,7 @@
 
 .video {
   background-color: #3f83c2;
+  text-align: center;
 }
 
 .video p, .video h2 {
@@ -170,6 +173,11 @@ iframe {
   width: 100%;
   height: -webkit-fill-available;
   display: block;
+}
+
+.header-content h2, .header-content p {
+  color: #ffffff;
+  filter: drop-shadow(0px 0px 6px black);
 }
 
 @media (max-width: 768px) {
