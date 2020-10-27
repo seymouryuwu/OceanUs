@@ -42,6 +42,15 @@ body p {
   font-kerning: none;
 }
 
+h1 {
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-family: Be-Honest;
+  color: #b63e2e;
+  margin-bottom: 22px;
+}
+
 h2 {
   font-size: 26px;
   font-weight: 300;
@@ -63,6 +72,16 @@ h3 {
 /* Removes white border */
 .container-fluid {
   padding: 0px !important;
+}
+
+/* Page Title */
+.title-block {
+  padding: 50px 100px 0px 100px;
+  text-align: center;
+}
+
+.title-block h1 {
+  margin: 0px;
 }
 
 /* Spans whole page width */
@@ -94,6 +113,11 @@ h3 {
   transform: translateY(-50%);
 }
 
+.center-text h1{
+  text-align: center;
+  margin: 0px;
+}
+
 .span-green {
   color: #99cc66;
   font-size: 30px;
@@ -107,6 +131,16 @@ h3 {
 .span-blue {
   color: #346099;
   font-size: 30px;
+}
+
+.disabled:hover {
+  transform: scale(1) !important;
+}
+
+.disabled a {
+  cursor: inherit !important;
+  color: #666666 !important;
+  pointer-events: none;
 }
 
 /* ------------------------------ */
@@ -238,10 +272,9 @@ header {
 }
 
 .logo {
-  height: 65px;
+  height: 70px;
   margin-left: -25px;
-  margin-top: -4px;
-  /* padding: 10px 20px; */
+  margin-top: -7px;
   position: absolute;
 }
 

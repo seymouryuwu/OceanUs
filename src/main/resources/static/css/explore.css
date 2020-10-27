@@ -30,6 +30,10 @@ main a:hover {
   padding: 0px 10px;
 }
 
+.number-font {
+  font-family: COPILME_L;
+}
+
 /* ----------------------- */
 /* MAP : BACKGROUND STYLES */
 /* ----------------------- */

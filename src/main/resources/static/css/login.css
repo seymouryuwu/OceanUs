@@ -9,6 +9,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 10vh;
 }
 
 .login-container label {
@@ -27,3 +28,4 @@
 .login-button img {
   width: 100px;
 }
+

@@ -14,7 +14,7 @@
 
 .gameCircles {
   min-height: 45vh;
-  margin: 0px 100px;
+  margin: 60px 100px;
   text-align: center;
 }
 
@@ -74,14 +74,6 @@
   background-size: contain;
 }
 
-.heading h1 {
-  letter-spacing: 3px;
-  font-family: Be-Honest;
-  color: #b63e2e;
-  /* margin-bottom: 22px; */
-  padding: 50px 100px 0px 100px;
-}
-
 .heading h3 {
   line-height: 44px;
 }
@@ -99,4 +91,8 @@
 #shark_section canvas {
   display: block;
   /* margin: 5vh auto; */
+}
+
+section {
+  text-align: center;
 }

@@ -75,15 +75,18 @@ function buildHeader() {
 
       if (isLoggedIn) {
         logType = "Logout";
+        disabledClass = '';
         logElement = '<div onClick="callLogout()" class="logout-button">Logout</div>'
 
       } else {
         logType = "Login";
+        disabledClass = ' disabled';
         logElement = '<input type="submit" value="login" class="logout-button"/>';
       }
 
     } else {
         logType = "Login";
+        disabledClass = ' disabled';
         logElement = '<input type="submit" value="login" class="logout-button"/>';
     }
 
@@ -95,13 +98,14 @@ function buildHeader() {
     <a href="` + navHomeURL + `"><img src="` + staticAssetsURL + `images/oceanusLogo.png" class="logo"></a>
 
     <div class="nav-option-group">
+
       <form th:action="@{/` + logType + `}" method="post">
         <ul>
           <li class="nav-option"><a href="` + navExploreURL + `">Explore</a></li>
           <li class="nav-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
           <li class="nav-option"><a href="` + navGamesURL + `">Games</a></li>
           <li class="nav-option"><a href="` + navAboutURL + `">Our Story</a></li>
-          <li class="nav-option"><a href="` + navProfileURL + `">Profile</a></li>
+          <li class="nav-option` + disabledClass + `"><a href="` + navProfileURL + `" class="profile-button">Profile</a></li>
           <li class="nav-option">` + logElement + `</li>
         </ul>
       </form>
@@ -127,7 +131,7 @@ function buildHeader() {
           <li class="hamburger-option"><a href="` + navContentURL + `">Adventure Quiz</a></li>
           <li class="hamburger-option"><a href="` + navGamesURL + `">Games</a></li>
           <li class="hamburger-option"><a href="` + navAboutURL + `">Our Story</a></li>
-          <li class="hamburger-option"><a href="` + navProfileURL + `">Profile</a></li>
+          <li class="hamburger-option"><a href="` + navProfileURL + `" class="profile-button">Profile</a></li>
           <li class="hamburger-option">` + logElement + `</li>
 
         </ul>

@@ -41,8 +41,18 @@
 
     <!-- MAIN -->
     <main>
+
+      <!-- SECTION : HEADING -->
+      <section class="heading">
+        <div class="row">
+          <div class="col-12 title-block">
+            <h1>Signup</h1>
+          </div>
+        </div>
+      </section>
+
       <div class="signup-container">
-        <h2>Signup</h2>
+        <h2>Create a profile to unlock games and achievements!</h2>
 
         <form th:action="@{/signup}" th:object="${user}" method="post">
             <div>

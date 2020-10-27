@@ -177,7 +177,9 @@ function answerTrue() {
 
     $('#quiz_feedback_1').text('Oh No! You need to read/listen to the INSTRUCTIONS again!');
     $('.start-journey').hide();
-    $('body').css('position', 'inherit');
+    $('html, body')
+
+    $('body').css('overflow', 'unset');
     $('#welcome_quiz_section').removeClass('scrollable');
 }
 
@@ -188,7 +190,7 @@ function answerFalse() {
     $('#quiz_feedback_1').text('False! Well done you answered correctly!');
 
     $('.start-journey').show();
-    $('body').css('position', 'inherit');
+    $('body').css('overflow', 'unset');
     $('#welcome_quiz_section').removeClass('scrollable');
 
     //TODO: post result of answer to the backend via API
@@ -682,7 +684,7 @@ $(window).scroll(function() {
   topPadding = -Math.abs(distance);
 
   if ( $(this).scrollTop() >= distance && $('#quiz_section').children().length > 1) {
-      $('body').css('position', 'fixed');
+      $('body').css('overflow', 'hidden');
       $('#quiz_section').addClass('scrollable');
   }
 
@@ -691,7 +693,7 @@ $(window).scroll(function() {
       topPadding = -Math.abs(distance);
 
       if ( $(this).scrollTop() >= distance && $('#welcome_quiz_section').children().length > 1) {
-          $('body').css('position', 'fixed');
+          $('body').css('overflow', 'hidden').offset('100vh').top;
           $('#welcome_quiz_section').addClass('scrollable');
       }
   }

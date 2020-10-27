@@ -14,12 +14,12 @@
 iframe {
   width: 100%;
   height: -webkit-fill-available;
+  margin-bottom: 60px;
 }
 
 .content-section {
   min-height: 300px;
   position: relative;
-  padding: 50px 0px;
   font-size: 22px;
   font-family: COPILME_L;
   color: #444444;
@@ -58,6 +58,10 @@ iframe {
   width: 100px;
   height: 100px;
 
+}
+
+.adventure-full-block {
+    padding: 0px 100px 50px 100px;
 }
 
 .full-block .content-fun-fact {

@@ -17,23 +17,23 @@
 }
 
 .quiz-border .high-score-block:nth-child(odd) .high-score-border {
-  background-color: #7bb0e1;
+  background-color: rgb(123,176,225, 0.2);
 }
 
 .quiz-border .high-score-block:nth-child(even) .high-score-border {
-  background-color: #75ca63;
+  background-color: rgb(117,202,99, 0.2);
 }
 
 .high-scores .high-score-block:nth-child(1n+0) .high-score-border {
-  background-color: #7bb0e1;
+  background-color: rgb(123,176,225, 0.2);
 }
 
 .high-scores .high-score-block:nth-child(2n+0) .high-score-border {
-  background-color: #75ca63;
+  background-color: rgb(117,202,99, 0.2);
 }
 
 .high-scores .high-score-block:nth-child(3n+0) .high-score-border {
-  background-color: #ca7575;
+  background-color: rgb(202,117,117, 0.2);
 }
 
 .high-score-border, .quiz-results-border, .badges-border {
@@ -102,7 +102,7 @@ h4 {
 }
 
 .welcome-header {
-  padding: 50px 100px 0px 100px;
+  padding: 0px 100px 0px 100px;
 }
 
 .section-header {

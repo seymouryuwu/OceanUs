@@ -25,7 +25,7 @@ var profileData = [];
 
 $( document ).ready(function() {
 
-  var devmode = false;
+  var devmode = true;
 
   //API Request : Get achievement data  from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {
@@ -173,9 +173,9 @@ function loadWelcomeMessage() {
     $('.quiz-results-border').html(`
 
       <input type="text" id="nickname_textbox" name="nickname" value="` + nickname + `" style="display: none;">
-      <h2 class="update"><div class="save-button" onClick="postEditName();" style="display: none;">&#x270E;</div></h2>
+      <h2 class="update"><div class="save-button" onClick="postEditName();" style="display: none;">&#x2713;</div></h2>
 
-      <h2 class="nickname">` + nickname + `<div class="edit-pencil" onClick="showEditName();">&#x270E;</div></h2>
+      <h2 class="nickname"><span class="span-blue">` + nickname + `<div class="edit-pencil" onClick="showEditName();">&#x270E;</div></span></h2>
       <p class="username">Username:` + username + `</h2>
       <p>This is where you can check you quiz results, high scores and achievement badges!</p>
 
