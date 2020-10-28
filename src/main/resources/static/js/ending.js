@@ -32,7 +32,7 @@ function getNavButton() {
 
     $('.journey-complete').append(`
 
-      //IF LOGGED IN - Profile page button
+      
       <div>
         <button type="submit" class="profile-page-button" onClick="goToProfile()">
           <image src="../images/button/viewprofile.png"></image>
