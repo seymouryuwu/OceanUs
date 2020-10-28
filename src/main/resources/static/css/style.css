@@ -118,6 +118,10 @@ h3 {
   margin: 0px;
 }
 
+.header-span-green {
+  color: #99cc66;
+}
+
 .span-green {
   color: #99cc66;
   font-size: 30px;
