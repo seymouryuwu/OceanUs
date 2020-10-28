@@ -648,7 +648,11 @@ function checkSolution() {
         //Enable tile blocks
         $('.tile-block').css('pointer-events', 'none');
 
-        //TODO: Highlight finished critical path with .green-highlight
+        //Hide exit button before time delayed ending
+        $('.exit-game').hide();
+
+        //TODO: Add You won text!
+
         setTimeout(function() {
           pipeWinGame();
         }, 5000);
@@ -718,8 +722,6 @@ function pipeEndGame() {
 
   //Stop Timer
   clearInterval(pipeLevelTimer);
-
-  $('.exit-game').hide();
 
   //Game lost: No score
   var result = {

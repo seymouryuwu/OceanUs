@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/java/oceanusproject/demov1/security/SecurityConfig.java
+src/main/resources/application.properties
+src/main/resources/application.properties

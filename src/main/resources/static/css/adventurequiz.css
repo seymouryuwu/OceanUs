@@ -199,12 +199,12 @@ iframe {
     box-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
-    margin: 0px auto 50px auto;
+    margin: 50px auto 50px auto;
     cursor: pointer;
 }
 
 .start-journey img {
-    width: 200px;
+    width: 300px;
 }
 
 .end-journey {
@@ -214,11 +214,11 @@ iframe {
     box-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
-    margin: 0px auto 50px auto;
+    margin: 50px auto 50px auto;
 }
 
 .end-journey img {
-    width: 200px;
+    width: 300px;
 }
 
 .play-button {

@@ -109,7 +109,7 @@ function loadWelcomePage() {
             <li>So, you need to read the article very carefully to do well in your quizzes and to answer them correctly. If you do well in your quizzes you stand a chance to win an achievement badge. We love badges and so will you. That’s SUPERCOOL!!! </li>
             <li>After you do your quizzes there will be some sections where you get to play games too. You can not play the games directly from the games section as Games will be unlocked only when you finish reading the article and the quiz.</li>
          </ul>
-         <p>Just to make you familiar with the functionality of scroll lock there is a training quiz right after this content. You will get an achievement badge if you answer correctly.</p>
+         <p>Just to make you familiar with the functionality of scroll lock there is a training quiz right after this content.</p>
          <p>Are you READYYYYYYYYYYYYYYYYYYYY??????</p>
        </div>
      </div>
@@ -119,7 +119,7 @@ function loadWelcomePage() {
    $('.welcome_quiz_section').append(`
 
      <div class="full-block col-md-12">
-       <div class="quiz-title"><h3>TRAINING QUIZ</h3></div>
+       <div class="quiz-title"><h2><span class="header-span-green">TRAINING QUIZ</span></h2></div>
      </div>
 
 
@@ -284,6 +284,10 @@ function buildSection(sectionDTOList) {
       //Check for tags in the content and format accordingly
       sectionText = sectionText.replace(/<fun>/g, "<div class='content-fun-fact'>");
       sectionText = sectionText.replace(/<\/fun>/g, "<div class='content-fun-fact-image'><img src='" + randomImage + "'></div></div>");
+
+      sectionText = sectionText.replace(/<highlight>/g, "<span class='span-red'>");
+      sectionText = sectionText.replace(/<\/highlight>/g, "</div>");
+
       sectionText = sectionText.replace(/\\n/g, "</br></br>");
       sectionText = sectionText.replace(/\n/g, "</br></br>");
 
@@ -358,7 +362,7 @@ function buildSection(sectionDTOList) {
 
             <div class="no-game-next-button col-md-12">
                <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                  <image src="` + staticAssetsURL + `images/button/Nextpage.png">
+                  <image src="` + staticAssetsURL + `images/button/Bold-nextpage.png">
                </button>
             </div>
 
@@ -520,13 +524,13 @@ function checkQuizAnswer() {
 
                <div class="play-button-col col-md-6">
                    <button type="submit" class="play-button" onClick="startReward(` + articleId + `)">
-                     <image src="` + staticAssetsURL + `images/button/Playgame.png">
+                     <image src="` + staticAssetsURL + `images/button/Bold-playgame.png">
                    </button>
                </div>
 
                <div class="next-button-col col-md-6">
                    <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                     <image src="` + staticAssetsURL + `images/button/Nextpage.png">
+                     <image src="` + staticAssetsURL + `images/button/Bold-nextpage.png">
                    </button>
                </div>
 
@@ -540,7 +544,7 @@ function checkQuizAnswer() {
 
             <div class="no-game-next-button col-md-12">
                <button type="submit" class="quiz-next" onClick="nextQuiz(` + (articleId + 1) + `)">
-                 <image src="` + staticAssetsURL + `images/button/Nextpage.png">
+                 <image src="` + staticAssetsURL + `images/button/Bold-nextpage.png">
                </button>
             </div>
 
