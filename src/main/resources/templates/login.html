@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
 
-  <!-- PAGE TITLE : LOGIN -->
-  <title>OceanUs Project | Login</title>
+<head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta th:name="_csrf" th:content="${_csrf.token}"/>
   <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+  <!-- PAGE TITLE : LOGIN -->
+  <title>OceanUs Project | Login</title>
+
+  <script th:inline="javascript">
+  /*<![CDATA[*/
+
+    var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
+    console.log(isLoggedIn);
+
+  /*]]>*/
+  </script>
 
   <!-- JAVASCRIPT -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
