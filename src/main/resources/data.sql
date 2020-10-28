@@ -59,7 +59,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (4,
 "How Can You Help Caring for Our Catchments?",
 1,
-"You can do many things such as reducing the contamination of water and safeguarding water to lessen your effect on your catchment. By limiting disintegration around your home and businesses will likewise decrease issues downstream; planting of trees and mulching also forestalls abundance soil and supplements getting into channels and streams.\\nHave you ever thought why does the water you drink taste so great? No, right. The reason behind this is most of the Melbourne water comes from the forest that is high up in the Yarra ranges and the interesting thing is it is naturally filtered. It is for this reason the water that you have from the taps tastes great.\\n<fun>\"Melbourne Water built the underground sewerage system in the 1890s!!!\"</fun>\\nSewerage is a network of over 3,000 km of pipes and pumps that safely transfers sewage from homes and businesses to treatment plans for processing.\\nSource: Environment Care by Queensland Govt and Melbourne Water",
+"You can do many things such as reducing the contamination of water and safeguarding water to lessen your effect on your catchment. By limiting disintegration around your home and businesses will likewise decrease issues downstream; planting of trees and mulching also forestalls abundance soil and supplements getting into channels and streams.\\nHave you ever thought why does the water you drink taste so great? No, right. The reason behind this is most of the Melbourne water comes from the forest that is high up in the Yarra ranges and the interesting thing is it is naturally filtered. It is for this reason the water that you have from the taps tastes great.\\n<fun>\"Melbourne Water built the underground sewerage system in the 1890s!!!\"</fun>\\nSewerage is a network of over <highlight>3,000 km</highlight> of pipes and pumps that safely transfers sewage from homes and businesses to treatment plans for processing.\\nSource: Environment Care by Queensland Govt and Melbourne Water",
 3,
 false,
 null,
@@ -69,7 +69,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (5,
 "Are You Keen to Know as to What Happens to the Waste Materials that You Flush or Throw into the Sink? Where does It Go?",
 1,
-"Firstly, after it\'s disposed nearly 320,000 million litres of sewage from our houses, businesses and factories makes its way and  enters Greater Melbourne\'s sewerage through a network of underground pipes. \\nSecondly, it\'s then transferred where it enters the one of the bigger trunk sewers which slopes downwards so the gravity enables the sewage flow. \\nInevitably, pumping stations push it up to ground level to be handled at a treatment plant or to proceed with its excursion through the sewerage, which can take as long as 12 hours and then finally it\'s treated.",
+"Firstly, after it\'s disposed nearly <highlight>320,000 million litres</highlight> of sewage from our houses, businesses and factories makes its way and  enters Greater Melbourne\'s sewerage through a network of underground pipes. \\nSecondly, it\'s then transferred where it enters the one of the bigger trunk sewers which slopes downwards so the gravity enables the sewage flow. \\nInevitably, pumping stations push it up to ground level to be handled at a treatment plant or to proceed with its excursion through the sewerage, which can take as long as <highlight>12 hours</highlight> and then finally it\'s treated.",
 4,
 false,
 "https://oceanus.me/image/getsectionimage/jacek-dylag-Vve7XkiUq_Y-unsplash-min.jpg",
@@ -179,7 +179,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (15,
 "Wet Wipes/Face Tissues/Paper Towels",
 8,
-"New York Times reports that numerous brands of flushable wipes don\'t break down even after being 10 minutes in water. In examination, it just takes a couple of moments for a bit of bathroom tissue i.e. toilet paper to break apart. Flushable wipes add to the fatbergs that can cause enormous issues in the sewer frameworks. Throw them in the right trash can when you are done.",
+"New York Times reports that numerous brands of flushable <highlight>wipes don\'t break down even after being 10 minutes in water</highlight>. In examination, it just takes a couple of moments for a bit of bathroom tissue i.e. toilet paper to break apart. Flushable wipes add to the fatbergs that can cause enormous issues in the sewer frameworks. Throw them in the right trash can when you are done.",
 6,
 false,
 "https://oceanus.me/image/getsectionimage/paper-towel.jpg",
@@ -329,7 +329,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (28,
 "Common Types of Pollutants Causing Water Pollution!!!",
 1,
-"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\nEscherichia coli (E. coli): E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.\\nToxic chemicals: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\nOil: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.",
+"There are many forms of water pollution. Let\'s take you through the most common ones that you have read or heard about:\\n<highlight>Escherichia coli (E. coli)</highlight>: E. coli is a kind of bacteria or a microorganism that is generated from animal or mainly human wastes and provides a clear-cut evidence of faecal pollution. The extent of E. coli in water is utilized as a manual for the measure of animal or human wastes in the water and may demonstrate the presence of pathogenic microscopic organisms.\\n<highlight>Toxic chemicals</highlight>: Numerous synthetic substances utilized in industry are harmful to humans as well as to our wildlife. Dioxin and hefty metals, for example, mercury, are notable instances of the huge number of harmful synthetics developed by industry. Indeed, even in little amounts, harmful synthetic substances are an intense reason for water contamination.\\n<highlight>Oil</highlight>: A wide range of oil winds up in our streams through coincidental spills or due to illegal dumping. Since oil drifts or hovers on the outside of water, any oil splashed or blurted out can be tragic for marine life.",
 10,
 true,
 null,
@@ -339,7 +339,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (43,
 "",
 2,
-"Plastics: Australians use around 3.9 billion plastic packs a year. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
+"<highlight>Plastics</highlight>: Australians use around <highlight>3.9 billion plastic packs a year</highlight>. Plastic packs and other plastic things are exceptionally valuable around the home however can likewise disastrously affect marine life. A lot of this plastic contamination discovers its way into the ocean through stormwater drains.",
 10,
 false,
 "https://oceanus.me/image/getsectionimage/tim-mossholder-qq-8dpdlBsY-unsplash.jpg",
@@ -349,7 +349,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (29,
 "Who\'s Responsible?",
 1,
-"At whatever point there is an issue with water contamination it is imperative to realize who the dependable authority is.\\nMelbourne Water:\\nMelbourne Water is accountable for enormous stormwater drains and for waterways and springs. They likewise take part in a monitoring program to estimate water quality in waterways and streams.\\nLocal municipal councils:\\nThey are accountable for small stormwater drains and they additionally oversee septic tanks.\\nEnvironment Protection Authority:\\nThe EPA is accountable for setting ecological guidelines and helping organizations and people accomplish these norms. They can do this with motivating individuals or punishments for the individuals who breaks ecological laws.\\nSource: Yarra Valley Water",
+"At whatever point there is an issue with water contamination it is imperative to realize who the dependable authority is.\\n<highlight>Melbourne Water</highlight>:\\nMelbourne Water is accountable for enormous stormwater drains and for waterways and springs. They likewise take part in a monitoring program to estimate water quality in waterways and streams.\\n<highlight>Local municipal councils</highlight>:\\nThey are accountable for small stormwater drains and they additionally oversee septic tanks.\\n<highlight>Environment Protection Authority</highlight>:\\nThe EPA is accountable for setting ecological guidelines and helping organizations and people accomplish these norms. They can do this with motivating individuals or punishments for the individuals who breaks ecological laws.\\nSource: Yarra Valley Water",
 11,
 true,
 null,
@@ -409,7 +409,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (35,
 "Advantages of Sewage Treatment",
 1,
-"Recycled Water: Before sewage is let out into the surroundings or cleaned to provide as reused water, it is treated to Class A, the highest calibre of reused water.\\nEnergy Generation (Biogas): Sewage is significantly more than a waste item. We can create power by combusting biogas, which is caught under spreads that are put over our sewage treatment tidal ponds.\\nBiosolids: Biosolids are the strong natural material left over after sewage treatment. These treated biosolids look and smell like soil, and contain valuable supplements like nitrogen, carbon and phosphorus.\\nSource: Melbourne Water",
+"<highlight>Recycled Water</highlight>: Before sewage is let out into the surroundings or cleaned to provide as reused water, it is <highlight>treated to Class A</highlight>, the highest calibre of reused water.\\n<highlight>Energy Generation (Biogas)</highlight>: Sewage is significantly more than a waste item. We can create power by combusting biogas, which is caught under spreads that are put over our sewage treatment tidal ponds.\\n<highlight>Biosolids</highlight>: Biosolids are the strong natural material left over after sewage treatment. These treated biosolids look and smell like soil, and contain valuable supplements like nitrogen, carbon and phosphorus.\\nSource: Melbourne Water",
 13,
 false,
 null,
@@ -429,7 +429,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (37,
 "Eastern Treatment Plant",
 2,
-"The Eastern Treatment Plant (ETP) is one-tenth the size of the Western Treatment Plant, however, treats about 50% of Melbourne\'s sewage: 330 million litres per day. It uses innovative ways to turn sewage into Class A recycled water.\\nThe Eastern Treatment Plant is one of only a handful of the plants on the planet that can get all approaching wastewater to a standard worthy for reusing, as opposed to just a little rate. \\nIn 2012, it was moved up to incorporate a serious tertiary treatment measure, including filters, ozone, UV light and chlorine.\\n<fun>\"The Eastern Treatment Plant has been generating electricity from sewage gas since it opened in 1975 and can supply 40% of its needs.\"</fun>",
+"The Eastern Treatment Plant (ETP) is one-tenth the size of the Western Treatment Plant, however, <highlight>treats about 50% of Melbourne\'s sewage: 330 million litres per day</highlight>. It uses innovative ways to turn sewage into Class A recycled water.\\nThe Eastern Treatment Plant is one of only a handful of the plants on the planet that can get all approaching wastewater to a standard worthy for reusing, as opposed to just a little rate. \\nIn 2012, it was moved up to incorporate a serious tertiary treatment measure, including filters, ozone, UV light and chlorine.\\n<fun>\"The Eastern Treatment Plant has been generating electricity from sewage gas since it opened in 1975 and can supply 40% of its needs.\"</fun>",
 14,
 true,
 null,
@@ -439,7 +439,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (38,
 "",
 3,
-"Sewage entering the plant goes through an intensive three-stage treatment process, which only takes 24 hours. First is the primary treatment where the pollutants are removed from the sewage. Once the pollutants are discarded it then enters secondary treatment which uses different types of bacteria that live in different environments i.e. with oxygen (aerobic), and without oxygen (anoxic). These break down organic material and remove nutrients. The sewage then passes through sedimentation tanks called clarifiers, where more sludge settles to the bottom before being sent to the digesters. This leaves clear, treated water called secondary effluent, which flows on to large holding basins. And finally, it enters tertiary treatment where the water is disinfected and then passed on to the nearby customers as recycled water and the rest is released into the ocean at Boags Rocks under strict conditions set by EPA Victoria to protect the environment. The sludge from the previous treatment stages is dried and stored in large piles or can be reused as biosolids.",
+"Sewage entering the plant goes through an <highlight>intensive three-stage treatment process</highlight>, which only <highlight>takes 24 hours</highlight>. First is the primary treatment where the pollutants are removed from the sewage. Once the pollutants are discarded it then enters secondary treatment which uses different types of bacteria that live in different environments i.e. with oxygen (aerobic), and without oxygen (anoxic). These break down organic material and remove nutrients. The sewage then passes through sedimentation tanks called clarifiers, where more sludge settles to the bottom before being sent to the digesters. This leaves clear, treated water called secondary effluent, which flows on to large holding basins. And finally, it enters tertiary treatment where the water is disinfected and then passed on to the nearby customers as recycled water and the rest is released into the ocean at Boags Rocks under strict conditions set by EPA Victoria to protect the environment. The sludge from the previous treatment stages is dried and stored in large piles or can be reused as biosolids.",
 14,
 true,
 null,
@@ -449,7 +449,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (44,
 "",
 4,
-"The Eastern Treatment Plant utilizes biogas to control a generous piece of its power utilization, and the majority of its heating and cooling. The plant\'s 7 generators can run exclusively on biogas or be enhanced by natural gas as and when needed.",
+"The Eastern Treatment Plant utilizes biogas to control a generous piece of its power utilization, and the majority of its heating and cooling. The plant\'s <highlight>7 generators</highlight> can run exclusively on <highlight>biogas</highlight> or be enhanced by <highlight>natural gas</highlight> as and when needed.",
 14,
 false,
 "https://oceanus.me/image/getsectionimage/EasternTreatmentPlant.jpg",
@@ -459,7 +459,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (39,
 "Western Treatment Plant",
 5,
-"The Western Treatment Plant (WTP) is a position of noteworthy and social importance. It economically treats half of Melbourne\'s sewage, and is a flourishing ecosystem with a universally perceived bird habitat.\\n<fun>\"The Western Treatment Plant, which is roughly the size of Phillip Island, has evolved as Melbourne has grown to become a world leader in environmentally friendly sewage treatment.\"</fun>\\nThis plant was the initial plant in Victoria to create Class A reused water. This cycle utilizes our current tidal pond framework i.e. lagoon system, which produces Class C water in 30 to 35 days. The plant produces 40 billion litres of recycled water.",
+"The Western Treatment Plant (WTP) is a position of noteworthy and social importance. It economically treats half of Melbourne\'s sewage, and is a flourishing ecosystem with a universally perceived bird habitat.\\n<fun>\"The Western Treatment Plant, which is roughly the size of Phillip Island, has evolved as Melbourne has grown to become a world leader in environmentally friendly sewage treatment.\"</fun>\\nThis plant was the initial plant in Victoria to create Class A reused water. This cycle utilizes our current tidal pond framework i.e. lagoon system, which <highlight>produces Class C water in 30 to 35 days</highlight>. The plant produces <highlight>40 billion litres of recycled water</highlight>.",
 14,
 true,
 null,
@@ -469,7 +469,7 @@ insert into sections (section_id, section_header, section_sequence_number, secti
 values (40,
 "",
 6,
-"To arrive at Class A norm, UV light and chlorine are utilized to additionally sterilize the water. A portion of this is utilized to water harvests, play areas and gardens, while some is additionally prepared to decrease its salt before it tends to be provided to homes.\\n<fun>\"The Western Treatment Plant is home to some of the rarest frog species in the world and was declared an internationally significant wetland for waterfowl in 1983 under the Ramsar Convention.\"</fun>\\nThe Western Treatment Plant utilizes biogas to meet about the entirety of its power needs. It creates 70,000 megawatt long stretches of inexhaustible power each year. Occasionally the plant delivers more power than the actual use. Overabundance power is traded to the power grid to counterbalance utilization at different locales.\\nSource: Melbourne Water",
+"To arrive at Class A norm, UV light and chlorine are utilized to additionally sterilize the water. A portion of this is utilized to water harvests, play areas and gardens, while some is additionally prepared to decrease its salt before it tends to be provided to homes.\\n<fun>\"The Western Treatment Plant is home to some of the rarest frog species in the world and was declared an internationally significant wetland for waterfowl in 1983 under the Ramsar Convention.\"</fun>\\nThe Western Treatment Plant utilizes biogas to meet about the entirety of its power needs. It creates <highlight>70,000 megawatt</highlight> long stretches of <highlight>inexhaustible power each year</highlight>. Occasionally the plant delivers more power than the actual use. Overabundance power is traded to the power grid to counterbalance utilization at different locales.\\nSource: Melbourne Water",
 14,
 true,
 null,
@@ -583,7 +583,7 @@ values (14, false, "Animal Contamination", 4);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (15, false, "Erosion", 4);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
-values (16, true, "All of the above", 4);
+values (16, true, "All of them", 4);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (17, false, "True", 5);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
@@ -701,7 +701,7 @@ values (73, false, "Only B", 19);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (74, false, "Only A and B", 19);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
-values (75, true, "All of the above", 19);
+values (75, true, "All of them", 19);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
 values (76, false, "A and B and C", 19);
 insert into quiz_options (quiz_option_id, is_answer, quiz_option_text, quiz_id)
