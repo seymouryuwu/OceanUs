@@ -28,3 +28,9 @@
 .signup-button img {
   width: 100px;
 }
+
+/* Override default banner image */
+.header {
+  height: 40vh !important;
+  background-image: url('../images/banners/Loginbanner.jpg');
+}
