@@ -268,9 +268,13 @@ iframe {
 }
 
 /* Override default banner image */
-/*
 .header {
   height: 100vh !important;
-  background-image: url('../images/banners/adventurebanner.jpg');
+  background-image: url('../images/banners/Banner2.jpg');
 }
-*/
+
+.header-span-green:hover {
+    color: #99cc66;
+    text-decoration: none;
+    transform: scale(1.1);
+}

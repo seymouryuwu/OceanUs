@@ -50,3 +50,9 @@
   margin: auto;
   display: block;
 }
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/Banner4.jpg');
+}

@@ -156,9 +156,8 @@ main a:hover {
 }
 
 /* Override default banner image */
-/*
 .header {
   height: 100vh !important;
-  background-image: url('../images/banners/alternativebanner.jpg');
+  background-image: url('../images/banners/Banner1.jpg');
 }
-*/
+

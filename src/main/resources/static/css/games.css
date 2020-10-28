@@ -96,3 +96,9 @@
 section {
   text-align: center;
 }
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/Banner3.jpg');
+}

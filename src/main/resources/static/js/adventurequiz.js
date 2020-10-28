@@ -161,6 +161,8 @@ function loadWelcomePage() {
          <image src="` + staticAssetsURL + `images/button/yellow-start.png">
        </button>
 
+       <p class="start-journey-text" style="display: none;">Please <a href="/login" class="header-span-green">login</a> before you start if you wish to record your quiz scores, unlock games and achievements.</p>
+
      </div>
 
      <form id="quiz_form" class="quiz-form" action="#">
@@ -177,6 +179,7 @@ function answerTrue() {
 
     $('#quiz_feedback_1').text('Oh No! You need to read/listen to the INSTRUCTIONS again!');
     $('.start-journey').hide();
+    $('.start-journey-text').hide();
     $('html, body')
 
     $('body').css('overflow', 'unset');
@@ -190,6 +193,7 @@ function answerFalse() {
     $('#quiz_feedback_1').text('False! Well done you answered correctly!');
 
     $('.start-journey').show();
+    $('.start-journey-text').show();
     $('body').css('overflow', 'unset');
     $('#welcome_quiz_section').removeClass('scrollable');
 
