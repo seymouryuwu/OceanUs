@@ -53,7 +53,6 @@ if (devmode) {
   navAboutURL     = "ourstory.html";
   navProfileURL   = "profile.html";
   navLoginURL     = "login.html";
-  navLoginURL     = "index.html";
 
   console.log("DEV MODE : URLs modified for local development!");
 
@@ -81,13 +80,13 @@ function buildHeader() {
       } else {
         logType = "Login";
         disabledClass = ' disabled';
-        logElement = '<input type="submit" value="login" class="logout-button"/>';
+        logElement = '<a href="' + navLoginURL + '">Login</a>';
       }
 
     } else {
         logType = "Login";
         disabledClass = ' disabled';
-        logElement = '<input type="submit" value="login" class="logout-button"/>';
+        logElement = '<a href="' + navLoginURL + '">Login</a>';
     }
 
 

@@ -286,7 +286,7 @@ function buildSection(sectionDTOList) {
       sectionText = sectionText.replace(/<\/fun>/g, "<div class='content-fun-fact-image'><img src='" + randomImage + "'></div></div>");
 
       sectionText = sectionText.replace(/<highlight>/g, "<span class='span-red'>");
-      sectionText = sectionText.replace(/<\/highlight>/g, "</div>");
+      sectionText = sectionText.replace(/<\/highlight>/g, "</span>");
 
       sectionText = sectionText.replace(/\\n/g, "</br></br>");
       sectionText = sectionText.replace(/\n/g, "</br></br>");

@@ -149,6 +149,7 @@ public class PageController {
 
     @GetMapping("/login")
     public String getLoginPage(Model model) {
+        model.addAttribute("isLoggedIn", userService.checkIfLoggedIn());
         if (userService.checkIfLoggedIn()) {
             return "redirect:/profile";
         }

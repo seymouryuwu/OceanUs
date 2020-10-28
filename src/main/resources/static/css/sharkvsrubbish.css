@@ -16,3 +16,29 @@
   margin: auto;
 
 }
+
+
+.pipe-user-feedback {
+  font-size: 18px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.pipe-user-feedback p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.game-over {
+  text-align: center;
+}
+
+.game-over-background {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  background-color: rgb(0,0,0,0.9);
+  color: white;
+}
