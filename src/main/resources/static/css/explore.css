@@ -154,3 +154,11 @@ main a:hover {
 .target155-image {
   width: inherit;
 }
+
+/* Override default banner image */
+/*
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/alternativebanner.jpg');
+}
+*/

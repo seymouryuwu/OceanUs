@@ -63,8 +63,9 @@
             </div>
             <div>
                 <label>password</label>
+
                 <input type="password" th:field="*{password}"/>
-                <p th:each="error : ${#fields.errors('password')}"
+                <p th:each="error : ${#fields.errors('password').split(',')}"
                    th:text="${error}">Validation error</p>
             </div>
             <div>
@@ -75,6 +76,12 @@
             </div>
             <button class="signup-button" type="submit"><img src="../images/button/signup.png"></button>
         </form>
+
+        <br>
+        <p>Username must be between 6 and 30 characters.</p>
+        <br>
+        <p>Password must at least 6 characters long and contain 1 or more uppercase character(s) 1 or more digit(s).</p>
+
         <a th:href="@{/about}" ></a>
         <p th:text="${message}" ></p>
         <p>Already have an account? <a href="login">Login</a></p>
