@@ -175,13 +175,18 @@ iframe {
   display: block;
 }
 
-.header-content h2, .header-content p {
-  color: #ffffff;
-  filter: drop-shadow(0px 0px 6px black);
-}
-
 @media (max-width: 768px) {
   .introduction-text {
     padding-right: 100px !important;
   }
+}
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/homebanner.jpg');
+}
+
+.header-content-block {
+  padding: 40vh 170px 50px 50px;
 }
