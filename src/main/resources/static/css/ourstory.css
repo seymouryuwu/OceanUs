@@ -2,23 +2,33 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  About Us Page */
-/* DESCRIPTION : Styles only applicable to the about page */
-/* AUTHOR:     : Malcolm Malloy */
-/* TARGET HTML : templates/about.html */
+/* STYLESHEET  : Our Story Page */
+/* DESCRIPTION : Styles only applicable to the our story page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/ourstory.html */
 
-/* ------------------------ */
-/* ABOUT : THE STORY SECTION */
-/* ------------------------ */
+/* -------------------------- */
+/* OUR STORY : HEADER SECTION */
+/* -------------------------- */
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/Banner4.jpg');
+}
+
+/* ----------------------------- */
+/* OUR STORY : THE STORY SECTION */
+/* ----------------------------- */
 
 .the-story p{
   padding-left: 12px;
   /* text-align: justify; */
 }
 
-/* ------------------------ */
-/* ABOUT : ABOUT US SECTION */
-/* ------------------------ */
+/* ---------------------------- */
+/* OUR STORY : ABOUT US SECTION */
+/* ---------------------------- */
 
 .about-us-text {
   color: #ffffff;
@@ -49,10 +59,4 @@
   width: inherit;
   margin: auto;
   display: block;
-}
-
-/* Override default banner image */
-.header {
-  height: 100vh !important;
-  background-image: url('../images/banners/Banner4.jpg');
 }

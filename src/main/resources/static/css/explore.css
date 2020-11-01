@@ -2,14 +2,14 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Map Page */
-/* DESCRIPTION : Styles only applicable to the map page */
-/* AUTHOR:     : Malcolm Malloy */
-/* TARGET HTML : templates/map.html */
+/* STYLESHEET  : Explore Page */
+/* DESCRIPTION : Styles only applicable to the explore page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/explore.html */
 
-/* -------------------- */
-/* MAP : GENERAL STYLES */
-/* -------------------- */
+/* ------------------------ */
+/* EXPLORE : GENERAL STYLES */
+/* ------------------------ */
 
 main {
   position: relative;
@@ -34,9 +34,9 @@ main a:hover {
   font-family: COPILME_L;
 }
 
-/* ----------------------- */
-/* MAP : BACKGROUND STYLES */
-/* ----------------------- */
+/* --------------------------- */
+/* EXPLORE : BACKGROUND STYLES */
+/* --------------------------- */
 
 /* DIV : Background triangles common */
 .map-background {
@@ -81,9 +81,9 @@ main a:hover {
   position: relative;
 }
 
-/* ---------------------- */
-/* MAP : TABLEAU MAP */
-/* ---------------------- */
+/* --------------------- */
+/* EXPLORE : TABLEAU MAP */
+/* --------------------- */
 
 .map-section p {
   margin-left: 12px;
@@ -94,9 +94,9 @@ main a:hover {
   z-index:0;
 }
 
-/* ------------------------- */
-/* MAP : TABLEAU WASTE GRAPH */
-/* ------------------------- */
+/* ----------------------------- */
+/* EXPLORE : TABLEAU WASTE GRAPH */
+/* ----------------------------- */
 
 .waste-section {
   background-color: #466fa0;
@@ -147,9 +147,9 @@ main a:hover {
 }
 
 
-/* ------------------------- */
-/* MAP : IMAGES */
-/* ------------------------- */
+/* ---------------- */
+/* EXPLORE : IMAGES */
+/* ---------------- */
 
 .target155-image {
   width: inherit;

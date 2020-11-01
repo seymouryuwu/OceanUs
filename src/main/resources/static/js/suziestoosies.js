@@ -2,13 +2,15 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Test */
-/* DESCRIPTION : Test Javascript */
-/* AUTHOR:     : Malcolm Malloy */
+/* JAVASCRIPT  : Suzies Toosies Page */
+/* DESCRIPTION : JavaScript functions only applicable to the suzies toosies page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/suziestoosies.html */
 
-/* -------------------------------------- */
-/* SIMULATED APIS */
-/* -------------------------------------- */
+/* ------------------------------- */
+/* SUZIES TOOSIES : SIMULATED APIS */
+/* ------------------------------- */
+/* A simulated API that can be set in the backend in future iterations */
 
 var pipeData = {
 
@@ -230,7 +232,7 @@ var pipeData = {
 
 
 /* -------------------------------------- */
-/* GLOBAL VARIABLES */
+/* SUZIES TOOSIES : GLOBAL VARIABLES */
 /* -------------------------------------- */
 
 var pipeBlockXY = [];
@@ -242,7 +244,7 @@ var pipeTimeRemaining = 0;
 var aid = '';
 
 /* -------------------------------------- */
-/* ON PAGE LOAD */
+/* SUZIES TOOSIES : ON PAGE LOAD */
 /* -------------------------------------- */
 
 $( document ).ready(function() {
@@ -255,9 +257,10 @@ $( document ).ready(function() {
 
 });
 
-/* -------------------------------------- */
-/* BUILD PIPE GAME HTML BLOCK */
-/* -------------------------------------- */
+/* -------------------------- */
+/* SUZIES TOOSIES : BUILD PIPE GAME HTML BLOCK */
+/* -------------------------- */
+/* Builds game as a bootstrap based grid of tiles  */
 
 function buildPipeGame() {
 
@@ -324,13 +327,6 @@ function buildPipeGame() {
     //Game information
     if (x == 0) {
 
-      //Display game controls
-      // $('.pipe-row-' + x).append(`
-      //   <div class="col-2">
-      //     <p id="pipe_timer"> ` + pipeLevelDuration + `</p>
-      //     <a class="start-game" onClick="pipeStartLevel();">START</a>
-      //   </div>
-      // `);
 
       //Right Spacer with girl image
       $('.pipe-row-' + x).append(`
@@ -371,9 +367,10 @@ function buildPipeGame() {
 }
 
 
-/* -------------------------------------- */
-/* DISTRIBUTE TILES ACCROSS GRID */
-/* -------------------------------------- */
+/* --------------------------- */
+/* SUZIES TOOSIES : DEAL TILES */
+/* --------------------------- */
+/* Assigns each grid position a pipe tile and rotates it to a random angel (0 / 90 / 180 / 270 degrees) */
 
 function dealtiles() {
 
@@ -438,9 +435,10 @@ function dealtiles() {
 }
 
 
-/* -------------------------------------- */
-/* START LEVEL */
-/* -------------------------------------- */
+/* ---------------------------- */
+/* SUZIES TOOSIES : START LEVEL */
+/* ---------------------------- */
+/* Starts the timer and allows the tiles to be clicked */
 
 function pipeStartLevel() {
 
@@ -466,9 +464,10 @@ function pipeStartLevel() {
 }
 
 
-/* -------------------------------------- */
-/* START TIMER */
-/* -------------------------------------- */
+/* ---------------------------- */
+/* SUZIES TOOSIES : START TIMER */
+/* ---------------------------- */
+/* Starts the timer counting down and ends the game once it reaches zero */
 
 function pipeStartTimer(pipeLevelDuration) {
 
@@ -510,9 +509,10 @@ function pipeStartTimer(pipeLevelDuration) {
 }
 
 
-/* -------------------------------------- */
-/* SELECT TILE */
-/* -------------------------------------- */
+/* ---------------------------- */
+/* SUZIES TOOSIES : SELECT TILE */
+/* ---------------------------- */
+/* Rotates the tile 90 degrees clockwise */
 
 function selectTile(id) {
 
@@ -580,15 +580,13 @@ function selectTile(id) {
       }
     }
   }
-
-
-
 }
 
 
-/* -------------------------------------- */
-/* SELECT TILE */
-/* -------------------------------------- */
+/* ----------------------------------- */
+/* SUZIES TOOSIES : CHECK THE SOLUTION */
+/* ----------------------------------- */
+/* Checks if the games has been solved and ends it accordingly */
 
 function checkSolution() {
 
@@ -602,13 +600,10 @@ function checkSolution() {
     }
   }
 
-
   //Checks if the critical path bricks are rotated to the correct direction to complete the quiz
   for(i = 0; i < pipeData.pipeMap.length; i++) {
 
     var pipeMainPath = pipeData.pipeMap[i].pipeMainPath;
-
-
 
     //Check if tile is critical path
     if(pipeMainPath) {
@@ -616,8 +611,6 @@ function checkSolution() {
       var id = pipeData.pipeMap[i].pipeID;
 
       criticalTiles.push(id);
-      //TESTING: Highlights entire critical path
-      // $('#tile-' + id).css('background-color', 'blue');
 
       var rotationA = pipeData.pipeMap[i].pipeCorrectRotationA;
       var rotationB = pipeData.pipeMap[i].pipeCorrectRotationB;
@@ -666,9 +659,10 @@ function checkSolution() {
 }
 
 
-/* -------------------------------------- */
-/* WIN GAME */
-/* -------------------------------------- */
+/* ------------------------- */
+/* SUZIES TOOSIES : WIN GAME */
+/* ------------------------- */
+/* Posts the results to the controller API and displays the user feedback */
 
 function pipeWinGame() {
 
@@ -714,9 +708,10 @@ function pipeWinGame() {
 
 }
 
-/* -------------------------------------- */
-/* END GAME */
-/* -------------------------------------- */
+/* ------------------------- */
+/* SUZIES TOOSIES : END GAME */
+/* ------------------------- */
+/* Posts a zero score to the controller API and displays the user feedback */
 
 function pipeEndGame() {
 
@@ -759,9 +754,11 @@ function pipeEndGame() {
 
 }
 
-/* -------------------------------------- */
-/* EXIT GAME */
-/* -------------------------------------- */
+/* -------------------------- */
+/* SUZIES TOOSIES : EXIT GAME */
+/* -------------------------- */
+/* Posts a zero score to the controller API and displays the user feedback
+   Navigates to the next article or to the previous page if no aid is set in the URL*/
 
 function pipeExitGame() {
 
@@ -798,16 +795,17 @@ function pipeExitGame() {
 }
 
 
-/* -------------------------------------- */
-/* SHOW GAME */
-/* -------------------------------------- */
+/* -------------------------- */
+/* SUZIES TOOSIES : SHOW GAME */
+/* -------------------------- */
+/* Hide instructions and show pipe game */
 
 function showPipeGame() {
 
-    //Show game over feedback
+    //Show game
     $('#pipe_game_section').show();
 
-    //Hide pipe game section
+    //Hide pipe game instructions
     $('#pipe_instructions_section').hide();
 
 }

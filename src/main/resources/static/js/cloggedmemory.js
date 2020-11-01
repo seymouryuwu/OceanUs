@@ -2,13 +2,15 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Test */
-/* DESCRIPTION : Test Javascript */
-/* AUTHOR:     : Malcolm Malloy */
+/* JAVASCRIPT  : Clogged Memory Page */
+/* DESCRIPTION : JavaScript functions only applicable to the clogged memory page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/cloggedmemory.html */
 
-/* -------------------------------------- */
-/* SIMULATED APIS */
-/* -------------------------------------- */
+/* ------------------------------- */
+/* CLOGGED MEMORY : SIMULATED APIS */
+/* ------------------------------- */
+/* A simulated API that can be set in the backend in future iterations */
 
 var memoryData = {
   "levelPackId":1,
@@ -149,9 +151,9 @@ var deckData = {
   ]
 }
 
-/* -------------------------------------- */
-/* GLOBAL VARIABLES */
-/* -------------------------------------- */
+/* --------------------------------- */
+/* CLOGGED MEMORY : GLOBAL VARIABLES */
+/* --------------------------------- */
 
 var blockXY = [];
 var shuffledDeck = [];
@@ -170,23 +172,24 @@ var flipDelay = 1;
 
 var aid = '';
 
-/* -------------------------------------- */
-/* ON PAGE LOAD */
-/* -------------------------------------- */
+/* ----------------------------- */
+/* CLOGGED MEMORY : ON PAGE LOAD */
+/* ----------------------------- */
 
 $( document ).ready(function() {
 
   let searchParams = new URLSearchParams(window.location.search);
   aid = searchParams.get('aid');
 
+  preloadImages();
   buildMemoryGame();
   dealCards();
-  // startLevel();
+
 });
 
-/* -------------------------------------- */
-/* UTILITIES */
-/* -------------------------------------- */
+/* ------------------------ */
+/* CLOGGED MEMORY : GENERAL */
+/* ------------------------ */
 
 function shuffle(sourceArray) {
     for (var i = 0; i < sourceArray.length - 1; i++) {
@@ -199,9 +202,10 @@ function shuffle(sourceArray) {
     return sourceArray;
 }
 
-/* -------------------------------------- */
-/* BUILD MEMORY GAME HTML BLOCK */
-/* -------------------------------------- */
+/* --------------------------------------------- */
+/* CLOGGED MEMORY : BUILD MEMORY GAME HTML BLOCK */
+/* --------------------------------------------- */
+/* Builds the HTML structure of the board */
 
 function buildMemoryGame() {
 
@@ -233,7 +237,7 @@ function buildMemoryGame() {
     `);
 
     //Spacer
-    //TODO : calculate spacers dynamically based on the width
+    //TODO : Future iteration - calculate spacers dynamically based on the width
     $('.row-' + x).append(`
       <div class="col-1">
       </div>
@@ -255,7 +259,7 @@ function buildMemoryGame() {
     }
 
     //Spacer
-    //TODO : calculate spacers dynamically based on the width
+    //TODO : Future iteration - calculate spacers dynamically based on the width
     if (firstRow == 0) {
       $('.row-' + x).append(`
         <div class="col-2">
@@ -293,6 +297,10 @@ function buildMemoryGame() {
   }
 }
 
+/* --------------------------- */
+/* CLOGGED MEMORY : DEAL CARDS */
+/* --------------------------- */
+/* Distribute the cards across the board */
 
 function dealCards() {
 
@@ -331,6 +339,7 @@ function dealCards() {
     var cardName = shuffledDeck[i].cardName; //NOTE: Currently Unused
     var cardDescription = shuffledDeck[i].cardDescription;
     var cardImageURL = shuffledDeck[i].cardImageURL;
+    var cardImages = new Image();image1.src = "image1.jpg";
 
     $('.col-' + x + '-' + y).append(`
       <div id="card-` + cardID + `" class="memory-card" onClick="selectCard(` + cardID + `)">
@@ -341,6 +350,12 @@ function dealCards() {
   }
 
 }
+
+
+/* ---------------------------- */
+/* CLOGGED MEMORY : START LEVEL */
+/* ---------------------------- */
+/* Begins the timer and enables the cards to be clicked */
 
 function startLevel() {
 
@@ -360,6 +375,12 @@ function startLevel() {
   startTimer(levelDuration);
 
 }
+
+
+/* ---------------------------- */
+/* CLOGGED MEMORY : SELECT CARD */
+/* ---------------------------- */
+/* Sorts the card into first and second selection and flips the card */
 
 function selectCard(id) {
 
@@ -406,15 +427,33 @@ function selectCard(id) {
 
 }
 
+
+/* --------------------------- */
+/* CLOGGED MEMORY : COVER CARD */
+/* --------------------------- */
+/* Flips the card face down */
+
 function coverCard(cardID) {
   var cardBackURL = deckData.cardBackURL;
   $('#card-image-' + cardID).attr('src', cardBackURL);
 }
 
+
+/* ------------------------------------- */
+/* CLOGGED MEMORY : CLEAR USER SELECTION */
+/* ------------------------------------- */
+/* Clears the selected card variable */
+
 function clearUserSelections() {
   selectedCard1 = '';
   selectedCard2 = '';
 }
+
+
+/* -------------------------------- */
+/* CLOGGED MEMORY : CHECK SELECTION */
+/* -------------------------------- */
+/* Checks if the cards are a match and updates the score. Highlights matches green and Highlights mismatches red */
 
 function checkSelection() {
 
@@ -479,6 +518,12 @@ function checkSelection() {
 
 }
 
+
+/* ---------------------------- */
+/* CLOGGED MEMORY : START TIMER */
+/* ---------------------------- */
+/* Start the timer (duration is set in the API). Ends the game when the timer reaches zero */
+
 function startTimer(levelDuration) {
 
   //Get start time
@@ -522,9 +567,10 @@ function startTimer(levelDuration) {
 }
 
 
-/* -------------------------------------- */
-/* WIN GAME */
-/* -------------------------------------- */
+/* ------------------------- */
+/* CLOGGED MEMORY : WIN GAME */
+/* ------------------------- */
+/* Stops the timer, shows feedback modal with a success message and posts the results to the controller */
 
 function winGame() {
 
@@ -571,10 +617,10 @@ function winGame() {
 }
 
 
-/* -------------------------------------- */
-/* END GAME */
-/* -------------------------------------- */
-
+/* ------------------------- */
+/* CLOGGED MEMORY : END GAME */
+/* ------------------------- */
+/* Posts game results to the controller API and displays feedback */
 
 function endGame() {
 
@@ -620,9 +666,12 @@ function endGame() {
 
 }
 
-/* -------------------------------------- */
-/* EXIT GAME */
-/* -------------------------------------- */
+/* -------------------------- */
+/* CLOGGED MEMORY : EXIT GAME */
+/* -------------------------- */
+/* Post a zero score to the controller API and navigates to the appropriate page.
+   Navigates to the next article if the aid variable is set in the URL.
+   Navigates to the previous page if no aid is set */
 
 function exitGame() {
 
@@ -658,9 +707,10 @@ function exitGame() {
 }
 
 
-/* -------------------------------------- */
-/* SHOW GAME */
-/* -------------------------------------- */
+/* -------------------------- */
+/* CLOGGED MEMORY : SHOW GAME */
+/* -------------------------- */
+/* Hides the instructions and displays the game */
 
 function showGame() {
 

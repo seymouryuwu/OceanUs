@@ -1,3 +1,26 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET  : Login Page */
+/* DESCRIPTION : Styles only applicable to the login page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/login.html */
+
+/* ---------------------- */
+/* LOGIN : HEADER SECTION */
+/* ---------------------- */
+
+/* Override default banner image */
+.header {
+  height: 40vh !important;
+  background-image: url('../images/banners/Loginbanner.jpg');
+}
+
+/* ------------------ */
+/* LOGIN : LOGIN FORM */
+/* ------------------ */
+
 .login-container {
     background-size: 800px !important;
     width: 800px;
@@ -29,8 +52,3 @@
   width: 100px;
 }
 
-/* Override default banner image */
-.header {
-  height: 40vh !important;
-  background-image: url('../images/banners/Loginbanner.jpg');
-}

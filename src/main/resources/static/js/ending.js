@@ -1,3 +1,17 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* JAVASCRIPT  : Ending Page */
+/* DESCRIPTION : JavaScript functions only applicable to the ending page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/ending.html */
+
+/* --------------------------- */
+/* ENDING : GO TO PROFILE PAGE */
+/* --------------------------- */
+/* Navigates to the profile page */
+
 function goToProfile() {
 
  var win = window.open('../profile', '_self');
@@ -12,6 +26,11 @@ function goToProfile() {
 
 }
 
+/* ---------------------------- */
+/* ENDING : GO TO THE HOME PAGE */
+/* ---------------------------- */
+/* Navigates to the home page */
+
 function goToHome() {
 
   var win = window.open('../', '_self');
@@ -25,6 +44,13 @@ function goToHome() {
   }
 
 }
+
+/* ----------------------- */
+/* ENDING : GET NAV BUTTON */
+/* ----------------------- */
+/* Chooses which nav button to display
+   Appends a view profile button if the user is logged
+   Appends the end journey button and navigates to the home page if the user is not logged in */
 
 function getNavButton() {
 

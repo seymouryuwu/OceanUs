@@ -1,3 +1,56 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET  : Profile Page */
+/* DESCRIPTION : Styles only applicable to the profile page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/profile.html */
+
+/* ----------------- */
+/* PROFILE : GENERAL */
+/* ----------------- */
+
+h4 {
+  font-size: 30px;
+  font-weight: 900;
+  font-family: COPILME_L;
+}
+
+.profile-message-section, .quiz-results-section, .badges-section {
+  text-align: center;
+}
+
+.blue-border {
+  background-color: #7bb0e1;
+}
+
+.green-border {
+  background-color: #75ca63;
+}
+
+.red-border {
+  background-color: #ca7575;
+}
+
+.section-content {
+  padding: 0px 100px 50px 100px;
+}
+
+
+.welcome-header {
+  padding: 0px 100px 0px 100px;
+}
+
+.section-header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* -------------------------- */
+/* PROFILE : NICKNAME SECTION */
+/* -------------------------- */
+
 .nickname {
   margin-bottom: 5px;
 }
@@ -12,9 +65,20 @@
   display: inline;
 }
 
-.high-score-block {
-  text-align: center;
+.edit-pencil {
+  display: inline;
+  cursor: pointer;
 }
+
+.save-button {
+  display: inline;
+  cursor: pointer;
+}
+
+/* ----------------------------- */
+/* PROFILE : QUIZ SCORES SECTION */
+/* ----------------------------- */
+
 
 .quiz-border .high-score-block:nth-child(odd) .high-score-border {
   background-color: rgb(123,176,225, 0.2);
@@ -22,6 +86,14 @@
 
 .quiz-border .high-score-block:nth-child(even) .high-score-border {
   background-color: rgb(117,202,99, 0.2);
+}
+
+/* ----------------------------- */
+/* PROFILE : HIGH SCORES SECTION */
+/* ----------------------------- */
+
+.high-score-block {
+  text-align: center;
 }
 
 .high-scores .high-score-block:nth-child(1n+0) .high-score-border {
@@ -48,7 +120,6 @@
   display: inline-grid !important;
 }
 
-
 .high-score-border h4 {
   font-size: 50px;
 
@@ -62,21 +133,9 @@
   margin: 0px;
 }
 
-.quiz-results-section, .badges-section {
-  text-align: center;
-}
-
-.blue-border {
-  background-color: #7bb0e1;
-}
-
-.green-border {
-  background-color: #75ca63;
-}
-
-.red-border {
-  background-color: #ca7575;
-}
+/* ------------------------ */
+/* PROFILE : BADGES SECTION */
+/* ------------------------ */
 
 .badge-image img {
   width: 200px;
@@ -91,41 +150,8 @@
   margin-bottom: 0px;
 }
 
-h4 {
-  font-size: 30px;
-  font-weight: 900;
-  font-family: COPILME_L;
-}
-
 .badge-row {
   margin-bottom: 20px;
-}
-
-.welcome-header {
-  padding: 0px 100px 0px 100px;
-}
-
-.section-header {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.section-content {
-  padding: 0px 100px 50px 100px;
-}
-
-.edit-pencil {
-  display: inline;
-  cursor: pointer;
-}
-
-.save-button {
-  display: inline;
-  cursor: pointer;
-}
-
-.profile-message-section {
-    text-align: center;
 }
 
 @media (max-width: 768px) {

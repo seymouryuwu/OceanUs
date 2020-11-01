@@ -1,5 +1,19 @@
-.shark-background {
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
 
+/* STYLESHEET  : Shark vs Rubbish Page */
+/* DESCRIPTION : Styles only applicable to the shark vs rubbish page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/sharkvsrubbish.html */
+/* NOTE        : These styles are only applicable to the web pages html.
+                 To edit the games appearance please edit through the phaser.js framework */
+
+/* -------------------------- */
+/* SHARK VS RUBBISH : GENERAL */
+/* -------------------------- */
+
+.shark-background {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -17,6 +31,9 @@
 
 }
 
+/* --------------------------------- */
+/* SHARK VS RUBBISH : FEEDBACK MODAL */
+/* --------------------------------- */
 
 .pipe-user-feedback {
   font-size: 18px;
@@ -29,6 +46,10 @@
   line-height: 30px;
   color: #ffffff;
 }
+
+/* ---------------------------------- */
+/* SHARK VS RUBBISH : GAME OVER MODAL */
+/* ---------------------------------- */
 
 .game-over {
   text-align: center;

@@ -2,14 +2,62 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Adventure Quiz Page */
+/* STYLESHEET  : Adventure Quiz Page */
 /* DESCRIPTION : Styles only applicable to the adventure quiz page */
-/* AUTHOR:     : Malcolm Malloy */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/adventurequiz.html */
 
-/* -------------------------- */
-/* CONTENT : CONTENT SECTIONS */
-/* -------------------------- */
+/* ------------------------ */
+/* ADVENTURE QUIZ : GENERAL */
+/* ------------------------ */
+
+.scrollable {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* ----------------------- */
+/* ADVENTURE QUIZ : HEADER */
+/* ----------------------- */
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/Banner2.jpg');
+}
+
+.header-span-green:hover {
+    color: #99cc66;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* ------------------------------ */
+/* CONTENT : WELCOME QUIZ SECTION */
+/* ------------------------------ */
+
+.welcome_quiz_section {
+  background-color: #3f83c2;
+  color: white;
+  position: inherit;
+  height: 100vh;
+  padding: 20vh 0px;
+}
+
+.welcome_quiz_section p,
+.welcome_quiz_section h1,
+.welcome_quiz_section h2,
+.welcome_quiz_section h3 {
+  color: white;
+}
+
+/* --------------------------------- */
+/* ADVENTURE QUIZ : CONTENT SECTIONS */
+/* --------------------------------- */
 
 iframe {
   width: 100%;
@@ -114,28 +162,9 @@ iframe {
   font-size: 24px;
 }
 
-/* ----------------------- */
-/* CONTENT : WELCOME QUIZ SECTION */
-/* ----------------------- */
-
-.welcome_quiz_section {
-  background-color: #3f83c2;
-  color: white;
-  position: inherit;
-  height: 100vh;
-  padding: 20vh 0px;
-}
-
-.welcome_quiz_section p,
-.welcome_quiz_section h1,
-.welcome_quiz_section h2,
-.welcome_quiz_section h3 {
-  color: white;
-}
-
-/* ----------------------- */
-/* CONTENT : QUIZ SECTION */
-/* ----------------------- */
+/* ----------------------------- */
+/* ADVENTURE QUIZ : QUIZ SECTION */
+/* ----------------------------- */
 
 .quiz-section {
   background-color: #3f83c2;
@@ -258,23 +287,5 @@ iframe {
   padding: 15px 100px 15px 50px !important;
 }
 
-.scrollable {
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 
-/* Override default banner image */
-.header {
-  height: 100vh !important;
-  background-image: url('../images/banners/Banner2.jpg');
-}
 
-.header-span-green:hover {
-    color: #99cc66;
-    text-decoration: none;
-    transform: scale(1.1);
-}

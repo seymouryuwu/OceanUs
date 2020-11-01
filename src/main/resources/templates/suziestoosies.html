@@ -10,12 +10,10 @@
   <!-- PAGE TITLE : GAMES -->
   <title>OceanUs Project | Games</title>
 
+  <!-- GET THYMELEAF VARIABLES -->
   <script th:inline="javascript">
   /*<![CDATA[*/
-
     var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
-    console.log(isLoggedIn);
-
   /*]]>*/
   </script>
 
@@ -68,7 +66,6 @@
           <br>
           But remember, there is only <span class="span-blue">120 seconds</span> on the clock before flush time!
           </p>
-
           <br>
           <div class="close-button" onclick="showPipeGame()">Go to Game</div>
         </div>

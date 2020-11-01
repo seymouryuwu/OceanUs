@@ -1,3 +1,16 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET :  Ending Page */
+/* DESCRIPTION : Styles only applicable to the ending page */
+/* AUTHOR:     : Malcolm Malloy */
+/* TARGET HTML : templates/ending.html */
+
+/* ---------------- */
+/* ENDING : GENERAL */
+/* ---------------- */
+
 .journey-complete {
     text-align: center;
 }

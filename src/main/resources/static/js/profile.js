@@ -2,9 +2,9 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Profile Page */
+/* JAVASCRIPT  : Profile Page */
 /* DESCRIPTION : JavaScript functions only applicable to the profile page */
-/* AUTHOR:     : Malcolm Malloy */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/profile.html */
 
 /* -------------------------- */
@@ -22,12 +22,11 @@ var profileData = [];
 /* ------------------- */
 /* PROFILE : PAGE LOAD */
 /* ------------------- */
+/* Loads the users profile data via API */
 
 $( document ).ready(function() {
 
-  var devmode = false;
-
-  //API Request : Get achievement data  from API
+  //API Request : Get achievement data from API
   $.ajax({url: (API_getachievements), success: function(achievementData, textStatus) {
       profileData = achievementData;
       loadProfileData();
@@ -38,87 +37,13 @@ $( document ).ready(function() {
     }
   });
 
-
-  /********** DEV MODE **********/
-  /* IMPORTANT NOTE : Remove before deployment!!! */
-  if (devmode) {
-
-    isLoggedIn = true;
-
-    profileData = JSON.parse(
-    `{
-      "username":"Malcolm",
-      "nickname":"PlagueRat",
-      "totalCorrect":"5",
-      "totalQuestion":"22",
-
-      "quizResultDTOList":[
-        {
-          "articleId":"1",
-          "articleTitle":"Article Name 1",
-          "correctAnswer":2,
-          "questionNumber":2
-        },
-        {
-          "articleId":"2",
-          "articleTitle":"Article Name 2",
-          "correctAnswer":3,
-          "questionNumber":20
-        }
-      ],
-
-      "gameResultDTOList":[
-        {
-          "gameId":"1",
-          "gameName":"Sharks Vs Rubish",
-          "score":400,
-          "achieveDate":"2020-10-16"
-        },
-        {
-          "gameId":"2",
-          "gameName":"Suzies Toosies",
-          "score":200,
-          "achieveDate":"2020-10-17"
-        },
-        {
-          "gameId":"3",
-          "gameName":"Clogged Memory",
-          "score":600,
-          "achieveDate":"2020-10-18"
-        }
-
-      ],
-
-      "achievementDTOList":[
-        {
-          "achievementTitle":"1 Correct",
-          "achievementDescription":"Answer 1 quiz correctly",
-          "badgeImageUrl":"../images/badges/quiz-1.png",
-          "unlockDate":"2020-10-16"
-        },
-        {
-          "achievementTitle":"7 Correct",
-          "achievementDescription":"Answer 7 quizzes correctly",
-          "badgeImageUrl":"../images/badges/quiz-2.png",
-          "unlockDate":"2020-10-16"
-        }
-      ]
-    }`);
-
-    loadProfileData();
-  }
-
-  /********** DEV MODE **********/
-
-
-
 });
 
 
-/* -------------------------------------------- */
+/* --------------------------- */
 /* PROFILE : LOAD PROFILE DATA */
-/* -------------------------------------------- */
-
+/* --------------------------- */
+/* Checks if user is logged in and loads data accordingly */
 
 function loadProfileData() {
 
@@ -135,9 +60,10 @@ function loadProfileData() {
 }
 
 
-/* -------------------------------------------- */
+/* ------------------------------ */
 /* PROFILE : LOAD PROFILE MESSAGE */
-/* -------------------------------------------- */
+/* ------------------------------ */
+/* Displays the default message when user is not logged in */
 
 function loadProfileMessage() {
    $('.quiz-results-section').hide();
@@ -157,9 +83,10 @@ function loadProfileMessage() {
    `);
 }
 
-/* -------------------------------------------- */
+/* ------------------------------ */
 /* PROFILE : LOAD WELCOME MESSAGE */
-/* -------------------------------------------- */
+/* ------------------------------ */
+/* Displays personalised welcome message to logged in user */
 
 function loadWelcomeMessage() {
 
@@ -184,22 +111,23 @@ function loadWelcomeMessage() {
 
 }
 
-/* -------------------------------------------- */
+/* -------------------------------- */
 /* PROFILE : SHOW EDIT NAME TEXTBOX */
-/* -------------------------------------------- */
+/* -------------------------------- */
+/* Displays the edit name textbox */
 
 function showEditName() {
 
-  console.log('Show edit name textbox!');
   $('#nickname_textbox').show();
   $('.save-button').show();
   $('.nickname').hide();
 
 }
 
-/* -------------------------------------------- */
+/* -------------------------------- */
 /* PROFILE : SHOW EDIT NAME TEXTBOX */
-/* -------------------------------------------- */
+/* -------------------------------- */
+/* Posts the users new nickname to the controller API */
 
 function postEditName() {
 
@@ -236,9 +164,10 @@ function postEditName() {
 
 }
 
-/* -------------------------------------------- */
+/* --------------------------- */
 /* PROFILE : LOAD QUIZ RESULTS */
-/* -------------------------------------------- */
+/* --------------------------- */
+/* Displays the users quiz results */
 
 function loadQuizResults() {
 
@@ -278,9 +207,10 @@ function loadQuizResults() {
 
 }
 
-/* -------------------------------------------- */
+/* --------------------------- */
 /* PROFILE : LOAD GAME RESULTS */
-/* -------------------------------------------- */
+/* --------------------------- */
+/* Displays the users game scores */
 
 function loadGameResults() {
 
@@ -305,14 +235,14 @@ function loadGameResults() {
       `);
     }
 
-
   }
 
 }
 
-/* -------------------------------------------- */
+/* --------------------- */
 /* PROFILE : LOAD BADGES */
-/* -------------------------------------------- */
+/* --------------------- */
+/* Displays the users achievement badges */
 
 function loadBadges() {
 

@@ -2,13 +2,13 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Global Styles */
-/* DESCRIPTION : A global stylesheet used by all pages */
+/* STYLESHEET  : Global Styles */
+/* DESCRIPTION : Common styles used by all pages */
 /* AUTHOR:     : Malcolm Malloy */
 
-/* ----------- */
+/* -------------- */
 /* STYLES : FONTS */
-/* ----------- */
+/* -------------- */
 
 @font-face {
   font-family: Kiddo_Handwriting;
@@ -25,9 +25,9 @@
   src: url("../fonts/COPILME_L.ttf");
 }
 
-/* -------------------- */
+/* ----------------------- */
 /* STYLES : GENERAL STYLES */
-/* -------------------- */
+/* ----------------------- */
 
 body {
   margin: 0px;
@@ -147,9 +147,9 @@ h3 {
   pointer-events: none;
 }
 
-/* ------------------------------ */
+/* --------------------------------- */
 /* STYLES : CHECKBOX / RADIO BUTTONS */
-/* ------------------------------ */
+/* --------------------------------- */
 
 
 label {
@@ -231,24 +231,9 @@ input[type=radio]:not(old):checked + label > span > span{
   background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
 }
 
-
-/* ---------------------------- */
-/* STYLES : BLUE DIVIDER SECTION */
-/* ---------------------------- */
-
-#green_divider {
-  color: #ffffff;
-  background-color: #4a9d2c;
-  text-align: center;
-}
-
-#green_divider p {
-  color: #ffffff;
-}
-
-/* ------------ */
+/* --------------- */
 /* STYLES : HEADER */
-/* ------------ */
+/* --------------- */
 
 header {
   height: 30vh;
@@ -260,9 +245,9 @@ header {
   display: flow-root;
 }
 
-/* ------------- */
+/* ---------------- */
 /* STYLES : NAV BAR */
-/* ------------- */
+/* ---------------- */
 
 .logout-button {
   text-decoration: none;
@@ -397,25 +382,23 @@ header {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media only screen and (max-width: 930px) {
+/* ------------------------------ */
+/* STYLES : GREEN DIVIDER SECTION */
+/* ------------------------------ */
 
-  .nav-option {
-    display: none !important;
-  }
-
-  .hamburger-bars-container {
-    display: inherit !important;
-    float: right;
-    padding: 8px 20px;
-    z-index: 30 !important;
-    position: relative;
-  }
-
+#green_divider {
+  color: #ffffff;
+  background-color: #4a9d2c;
+  text-align: center;
 }
 
-/* ------------ */
+#green_divider p {
+  color: #ffffff;
+}
+
+/* --------------- */
 /* STYLES : FOOTER */
-/* ------------ */
+/* --------------- */
 
 footer {
   background-color: #3f83c2;
@@ -440,4 +423,21 @@ footer {
 
 .header-content-block {
     padding: 40vh 170px 50px 50px;
+}
+
+
+@media only screen and (max-width: 930px) {
+
+  .nav-option {
+    display: none !important;
+  }
+
+  .hamburger-bars-container {
+    display: inherit !important;
+    float: right;
+    padding: 8px 20px;
+    z-index: 30 !important;
+    position: relative;
+  }
+
 }

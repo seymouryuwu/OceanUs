@@ -8,18 +8,14 @@
 
 
 /* -------------------------------------- */
-/* STORE HEADERS */
+/* TEMPLATE : STORE HEADERS */
 /* -------------------------------------- */
 
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
 
-//$(document).ajaxSend(function(e, xhr, options) {
-//    xhr.setRequestHeader(header, token);
-//});
-
 /* -------------------------------------- */
-/* URLS */
+/* TEMPLATE : URLS */
 /* -------------------------------------- */
 
 var staticAssetsURL = "../";
@@ -33,40 +29,10 @@ var navProfileURL   = "/profile";
 var navLoginURL     = "/login";
 var navLogoutURL     = "/logout";
 
-
-/********** DEV MODE **********/
-/* IMPORTANT NOTE : Remove before deployment!!! */
-var devmode = false;
-;
-
-if (devmode) {
-  console.log("!! ----- DEV MODE ACTIVATED! -----!!");
-  console.log("!! -- Remove before deployment! --!!");
-  console.log("!! -------------------------------!!");
-
-  staticAssetsURL = "../";
-  contentURL      = "adventurequiz.html";
-  navHomeURL      = "index.html";
-  navGamesURL     = "games.html";
-  navExploreURL   = "explore.html";
-  navContentURL   = "adventurequiz.html";
-  navAboutURL     = "ourstory.html";
-  navProfileURL   = "profile.html";
-  navLoginURL     = "login.html";
-
-  console.log("DEV MODE : URLs modified for local development!");
-
-  isLoggedIn = true;
-
-  console.log("DEV MODE : user logged in!");
-
-};
-
-/********** DEV MODE **********/
-
 /* ------------------------------------ */
 /* TEMPLATE : BUILD HEADER (HTML BLOCK) */
 /* ------------------------------------ */
+/* Builds the header HTML and displays the login/logout button based on isLoggedIn variable state */
 
 function buildHeader() {
 
@@ -147,6 +113,7 @@ function buildHeader() {
 /* ------------------------------------ */
 /* TEMPLATE : BUILD FOOTER (HTML BLOCK) */
 /* ------------------------------------ */
+/* Builds the footer HTML */
 
 function buildFooter() {
 
@@ -163,10 +130,21 @@ function buildFooter() {
 }
 
 
+/* ----------------------------- */
+/* TEMPLATE : HAMBURGER TO CROSS */
+/* ----------------------------- */
+/* Transitions the hamburger menu button into a cross shaped close button */
+
 function hamburgerToCross(x) {
   x.classList.toggle("change");
   $('.hamburger-container').toggle();
 }
+
+
+/* ---------------------- */
+/* TEMPLATE : CALL LOGOUT */
+/* ---------------------- */
+/* Logs the user out via controller API */
 
 function callLogout() {
   console.log('Logout');
