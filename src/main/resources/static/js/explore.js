@@ -2,14 +2,15 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Map Page */
-/* DESCRIPTION : JavaScript functions only applicable to the map page */
-/* AUTHOR:     : Malcolm Malloy */
-/* TARGET HTML : templates/map.html */
+/* JAVASCRIPT  : Explore Page */
+/* DESCRIPTION : JavaScript functions only applicable to the explore page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/explore.html */
+/* NOTES       : Modifying the maps and graphs must be done through logging into Tableau */
 
-/* --------------- */
-/* MAP : PAGE LOAD */
-/* --------------- */
+/* ------------------- */
+/* EXPLORE : PAGE LOAD */
+/* ------------------- */
 
 $( document ).ready(function() {
   tableauMap();
@@ -17,9 +18,10 @@ $( document ).ready(function() {
   reuse_viz();
 });
 
-/* ---------------------- */
-/* MAP : TABLEAU MAP */
-/* ---------------------- */
+/* --------------------- */
+/* EXPLORE : TABLEAU MAP */
+/* --------------------- */
+/* Loads and embeds Tableau map iframe */
 
 function tableauMap() {
     var containerDiv = document.getElementById("tableauViz_2019"),
@@ -28,9 +30,10 @@ function tableauMap() {
     var viz = new tableau.Viz(containerDiv, url);
 }
 
-/* ------------------------------- */
-/* MAP : TABLEAU WASTE WATER GRAPH */
-/* ------------------------------- */
+/* ----------------------------------- */
+/* EXPLORE : TABLEAU WASTE WATER GRAPH */
+/* ----------------------------------- */
+/* Loads and embeds Tableau waste water graph  */
 
 function waste_water_mel() {
     var containerDiv = document.getElementById("tableauViz_waste"),
@@ -38,9 +41,10 @@ function waste_water_mel() {
     var viz = new tableau.Viz(containerDiv, url);
 }
 
-/* -------------------------------------- */
-/* MAP : TABLEAU REUSE AND RECYCLE GRAPH  */
-/* -------------------------------------- */
+/* ------------------------------------------ */
+/* EXPLORE : TABLEAU REUSE AND RECYCLE GRAPH  */
+/* ------------------------------------------ */
+/* Loads and embeds Tableau recycle graph iframe */
 
 function reuse_viz() {
     var containerDiv = document.getElementById("tableauViz_reuse"),

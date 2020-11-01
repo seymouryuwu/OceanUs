@@ -10,12 +10,10 @@
   <meta th:name="_csrf" th:content="${_csrf.token}"/>
   <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 
+  <!-- GET THYMELEAF VARIABLES -->
   <script th:inline="javascript">
   /*<![CDATA[*/
-
     var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
-    console.log(isLoggedIn);
-
   /*]]>*/
   </script>
 
@@ -55,15 +53,6 @@
 
     <!-- MAIN -->
     <main>
-
-      <!-- SECTION : HEADING -->
-<!--      <section class="heading">-->
-<!--        <div class="row">-->
-<!--          <div class="col-12 title-block">-->
-<!--            <h1>Games</h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
 
       <!-- SECTION : GAMES CIRCLES -->
       <section class="gameCircles">

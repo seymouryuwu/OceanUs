@@ -2,15 +2,28 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Games Page */
+/* STYLESHEET  : Games Page */
 /* DESCRIPTION : Styles only applicable to the games page */
-/* AUTHOR:     : Malcolm Malloy */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/games.html */
 
-/* ------------------------ */
-/* GAMES :  */
-/* ------------------------ */
+/* --------------- */
+/* GAMES : GENERAL */
+/* --------------- */
 
+section {
+  text-align: center;
+}
+
+/* Override default banner image */
+.header {
+  height: 100vh !important;
+  background-image: url('../images/banners/Banner3.jpg');
+}
+
+/* -------------------- */
+/* GAMES : GAME CIRCLES */
+/* -------------------- */
 
 .gameCircles {
   min-height: 45vh;
@@ -90,15 +103,4 @@
 
 #shark_section canvas {
   display: block;
-  /* margin: 5vh auto; */
-}
-
-section {
-  text-align: center;
-}
-
-/* Override default banner image */
-.header {
-  height: 100vh !important;
-  background-image: url('../images/banners/Banner3.jpg');
 }

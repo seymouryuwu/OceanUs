@@ -2,24 +2,30 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* STYLESHEET :  Index Page */
-/* DESCRIPTION : Styles only applicable to the home page */
-/* AUTHOR:     : Malcolm Malloy */
+/* STYLESHEET  : Index Page */
+/* DESCRIPTION : Styles only applicable to the index page */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/index.html */
 
 /* ---------------------- */
 /* INDEX : HEADER SECTION */
 /* ---------------------- */
 
+/* Override default banner image */
 .header {
-  min-height: 60vh;
   color: #ffffff;
+  height: 100vh !important;
   background-position: center;
+  background-image: url('../images/banners/homebanner.jpg');
 }
 
-/* ---------------------------- */
+.header-content-block {
+  padding: 40vh 170px 50px 50px;
+}
+
+/* ----------- */
 /* INDEX : CTA */
-/* ---------------------------- */
+/* ----------- */
 
 .cta {
   min-height: 75vh;
@@ -136,6 +142,10 @@
   background-position: center;
 }
 
+/* ---------------------------- */
+/* INDEX : INTRODUCTION SECTION */
+/* ---------------------------- */
+
 .video {
   background-color: #3f83c2;
   text-align: center;
@@ -144,10 +154,6 @@
 .video p, .video h2 {
   color: #ffffff;
 }
-
-/* ---------------------------- */
-/* INDEX : INTRODUCTION SECTION */
-/* ---------------------------- */
 
 #introduction p {
   margin-left: 12px;
@@ -181,12 +187,3 @@ iframe {
   }
 }
 
-/* Override default banner image */
-.header {
-  height: 100vh !important;
-  background-image: url('../images/banners/homebanner.jpg');
-}
-
-.header-content-block {
-  padding: 40vh 170px 50px 50px;
-}

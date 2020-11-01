@@ -1,17 +1,16 @@
-.close-button {
-  font-size: 22px;
-  font-family: COPILME_L;
-  color: #346099;
-  letter-spacing: 2px;
-  font-kerning: none;
-  line-height: 50px;
-}
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
 
-.close-button:hover {
-  display: inline-block;
-  transform: scale(1.1);
-  text-decoration: none;
-}
+/* STYLESHEET  : Suzies Toosies Page */
+/* DESCRIPTION : Styles only applicable to the suzies toosies page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/suziestoosies.html */
+/* NOTE        : These styles are applicable to both the web pages html and the game styles. */
+
+/* ------------------------ */
+/* SUZIES TOOSIES : GENERAL */
+/* ------------------------ */
 
 .tile-block {
   max-width: 14vh;
@@ -22,6 +21,40 @@
 .container {
   max-width: 100%;
   padding: inherit;
+}
+
+.close-button {
+  font-size: 22px;
+  font-family: COPILME_L;
+  color: #346099;
+  letter-spacing: 2px;
+  font-kerning: none;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  display: inline-block;
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+
+.game-menu {
+  text-align: center;
+}
+
+.start-game img {
+  width: 10vw;
+}
+
+.exit-game img {
+  width: 10vw;
+}
+
+#pipe_timer {
+    color: #b63e2e;
+    font-size: 30px;
 }
 
 .pipe-background {
@@ -48,15 +81,6 @@
   transform: scale(1.1, 1.1);
 }
 
-.game-over-background {
-  position: fixed;
-  width: 100%;
-  top: 0px;
-  height: 100%;
-  background-color: rgb(0,0,0,0.9);
-  color: white;
-}
-
 .shadowfilter {
 -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
  drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7))
@@ -79,22 +103,6 @@
   transition-property: box-shadow;
 }
 
-.game-over {
-  text-align: center;
-}
-
-.pipe-user-feedback {
-  font-size: 18px;
-  line-height: 40px;
-  color: #ffffff;
-}
-
-.pipe-user-feedback p {
-  font-size: 18px;
-  line-height: 30px;
-  color: #ffffff;
-}
-
 .start-game {
   cursor: pointer;
 }
@@ -115,23 +123,35 @@
   filter: brightness(20%);
 }
 
-.game-menu {
+/* ------------------------------------ */
+/* SUZIES TOOSIES : USER FEEDBACK MODAL */
+/* ------------------------------------ */
+
+.pipe-user-feedback {
+  font-size: 18px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.pipe-user-feedback p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+/* -------------------------------- */
+/* SUZIES TOOSIES : GAME OVER MODAL */
+/* -------------------------------- */
+
+.game-over {
   text-align: center;
 }
 
-.start-game img {
-  width: 10vw;
-}
-
-.exit-game img {
-  width: 10vw;
-}
-
-.close-button {
-  cursor: pointer;
-}
-
-#pipe_timer {
-    color: #b63e2e;
-    font-size: 30px;
+.game-over-background {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  background-color: rgb(0,0,0,0.9);
+  color: white;
 }

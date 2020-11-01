@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // Comment this line when you test on local
-        http.requiresChannel().anyRequest().requiresSecure();
+        //http.requiresChannel().anyRequest().requiresSecure();
 
         //http.csrf().disable();
         http

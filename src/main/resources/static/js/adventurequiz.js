@@ -2,25 +2,24 @@
 /* OCEANUS PROJECT */
 /* --------------- */
 
-/* JAVASCRIPT :  Adventure Quiz Page */
+/* JAVASCRIPT  : Adventure Quiz Page */
 /* DESCRIPTION : JavaScript functions only applicable to the adventure quiz page */
-/* AUTHOR:     : Malcolm Malloy */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/adventurequiz.html */
 
-/* -------------------------- */
-/* CONTENT : API DECLARATIONS */
-/* -------------------------- */
+/* --------------------------------- */
+/* ADVENTURE QUIZ : API DECLARATIONS */
+/* --------------------------------- */
 
 let API_getarticle = 'https://oceanus.me/article/getarticle?articleId=';
 let API_getsectionquiz = 'https://oceanus.me/quiz/getsectionquiz?sectionId=';
 let API_examanswer = 'https://oceanus.me/quiz/examanswer?optionId=';
 
-/* -------------------------- */
-/* CONTENT : GLOBAL VARIABLES */
-/* -------------------------- */
+/* --------------------------------- */
+/* ADVENTURE QUIZ : GLOBAL VARIABLES */
+/* --------------------------------- */
 
 var this_URL = "";
-//var articleId =  "";
 var available = false;
 var currentQuizIds = [];
 var currentQuizAnswers = [];
@@ -30,21 +29,12 @@ var welcomeAnswered = false;
 
 var distance = 0;
 
-/* ------------------- */
-/* CONTENT : PAGE LOAD */
-/* ------------------- */
+/* -------------------------- */
+/* ADVENTURE QUIZ : PAGE LOAD */
+/* -------------------------- */
+/* Loads the article API */
 
 $( document ).ready(function() {
-
-  var devmode = false;
-
-  /********** DEV MODE **********/
-  /* IMPORTANT NOTE : Remove before deployment!!! */
-  if (devmode) {
-    articleId = 2;
-    gameAPI = '/sharkvsrubbish';
-  }
-  /********** DEV MODE **********/
 
   if (articleId < articleCount)  {
     available = true;
@@ -75,19 +65,37 @@ $( document ).ready(function() {
 
 });
 
-/* ----------------- */
-/* CONTENT : GENERAL */
-/* ----------------- */
+/* ------------------------ */
+/* ADVENTURE QUIZ : GENERAL */
+/* ------------------------ */
 
+/* Shuffle an array */
 function shuffle(array) {
   //Shuffle array
   array.sort(() => Math.random() - 0.5);
 }
 
+/* Sort an object by one of its attributes */
+function sortObjectEntries(obj, n){
 
-/* -------------------------------------------- */
-/* CONTENT : BUILD CONTENT SECTION (HTML BLOCK) */
-/* -------------------------------------------- */
+  let sortedList = []
+
+  //Sorting by values asc
+  sortedList = Object.entries(obj).sort((a,b)=>{
+      if(b[1] > a[1]) return 1;
+      else if(b[1] < a[1]) return -1;
+  //if values are same do edition checking if keys are in the right order
+      else {
+         if(a[0] > b[0]) return 1;
+         else if(a[0] < b[0]) return -1;
+         else return 0
+  }
+ })
+
+/* ------------------------------------------------- */
+/* ADVENTURE QUIZ : BUILD WELCOME BLOCK (HTML BLOCK) */
+/* ------------------------------------------------- */
+/* If the URL has no article id parameter then the intro article and test quiz is displayed */
 
 function loadWelcomePage() {
 
@@ -172,6 +180,11 @@ function loadWelcomePage() {
 
 }
 
+/* ------------------------------------------ */
+/* ADVENTURE QUIZ : ANSWER TRAINING QUIZ TRUE */
+/* ------------------------------------------ */
+/* Provides user feedback and re-enables scroll */
+
 function answerTrue() {
     console.log("Oh No! You need to read/listen to the INSTRUCTIONS again!");
 
@@ -186,9 +199,13 @@ function answerTrue() {
     $('#welcome_quiz_section').removeClass('scrollable');
 }
 
+/* ------------------------------------------- */
+/* ADVENTURE QUIZ : ANSWER TRAINING QUIZ FALSE */
+/* ------------------------------------------- */
+/* Provides user feedback, displays navigation button and re-enables scroll */
+
 function answerFalse() {
     welcomeAnswered = true;
-
 
     $('#quiz_feedback_1').text('False! Well done you answered correctly!');
 
@@ -197,30 +214,17 @@ function answerFalse() {
     $('body').css('overflow', 'unset');
     $('#welcome_quiz_section').removeClass('scrollable');
 
-    //TODO: post result of answer to the backend via API
 }
 
-/* -------------------------------------------- */
-/* CONTENT : BUILD CONTENT SECTION (HTML BLOCK) */
-/* -------------------------------------------- */
-
-function sortObjectEntries(obj, n){
-
-let sortedList = []
-//Sorting by values asc
-sortedList = Object.entries(obj).sort((a,b)=>{
-      if(b[1] > a[1]) return 1;
-      else if(b[1] < a[1]) return -1;
-//if values are same do edition checking if keys are in the right order
-      else {
-         if(a[0] > b[0]) return 1;
-         else if(a[0] < b[0]) return -1;
-         else return 0
-  }
- })
  // return first n values from sortedList
   return sortedList.map(el=>el[0]).slice(0,n)
- }
+
+}
+
+/* --------------------------------------------------- */
+/* ADVENTURE QUIZ : BUILD CONTENT SECTION (HTML BLOCK) */
+/* --------------------------------------------------- */
+/* Formats and appends the article text and images to the content section  */
 
 function buildSection(sectionDTOList) {
 
@@ -378,9 +382,10 @@ function buildSection(sectionDTOList) {
 
 }
 
-/* ----------------------------------------- */
-/* CONTENT : BUILD QUIZ SECTION (HTML BLOCK) */
-/* ----------------------------------------- */
+/* ------------------------------------------------ */
+/* ADVENTURE QUIZ : BUILD QUIZ SECTION (HTML BLOCK) */
+/* ------------------------------------------------ */
+/* Appends the quiz question text to the quiz section */
 
 function buildQuizQuestion(quizId) {
 
@@ -435,7 +440,6 @@ function buildQuizQuestion(quizId) {
       }
 
     }, error: function(jqXHR, textStatus, errorThrown) {
-      //TODO: Redirect to something went wrong page
       console.log("Error loading quiz!");
     }
   });
@@ -453,9 +457,10 @@ function buildQuizQuestion(quizId) {
 
 
 
-/* ----------------------------------------- */
-/* CONTENT : BUILD QUIZ ANSWERS (HTML BLOCK) */
-/* ----------------------------------------- */
+/* ------------------------------------------------ */
+/* ADVENTURE QUIZ : BUILD QUIZ ANSWERS (HTML BLOCK) */
+/* ------------------------------------------------ */
+/* Appends the quiz answers as HTML radio buttons */
 
 function buildQuizAnswers(quizId, questionData) {
 
@@ -487,9 +492,10 @@ function buildQuizAnswers(quizId, questionData) {
 
 }
 
-/* ---------------------------- */
-/* CONTENT : CHECK QUIZ ANSWERS */
-/* ---------------------------- */
+/* ----------------------------------- */
+/* ADVENTURE QUIZ : CHECK QUIZ ANSWERS */
+/* ----------------------------------- */
+/* Validates that all questions have been answered, sends the results to the controller and displays the appropriate navigation buttons */
 
 function checkQuizAnswer() {
 
@@ -617,9 +623,10 @@ function checkQuizAnswer() {
 }
 
 
-/* -------------------------- */
-/* CONTENT : START REWARD GAME */
-/* -------------------------- */
+/* ---------------------------------- */
+/* ADVENTURE QUIZ : START REWARD GAME */
+/* ---------------------------------- */
+/* Navigates to an attached game (if available = true) or to the next quiz article */
 
 function startReward(articleId) {
 
@@ -628,7 +635,6 @@ function startReward(articleId) {
 
   // LAST ARTICLE IN DB - Navigate to quiz ending page
   if (lastArticle)  {
-      //TODO: Navigate to the quiz ending page (CURRENTLY NAVIGATES TO PROFILE)
       window.open('/ending', '_self');
   }
 
@@ -637,17 +643,13 @@ function startReward(articleId) {
 
     var nextArticleID = (articleId + 1);
 
-    // GAME EXISTS
+    // Check if there is a game attached to the article
     if (gameAPI) {
-
-        console.log('LOAD SPECIFIED GAME');
+        //Load game if game exists and send article id (aid) of the next article
         window.open(gameAPI + '?aid=' + nextArticleID, '_self');
-
     } else {
-
-        console.log('NO GAME! LOAD NEXT QUIZ BUTTON');
+        //Navigate to next article
         window.open(nextArticleID, '_self');
-
     }
 
   }
@@ -655,9 +657,10 @@ function startReward(articleId) {
 }
 
 
-/* -------------------------- */
-/* CONTENT : NEXT QUIZ BUTTON */
-/* -------------------------- */
+/* --------------------------------- */
+/* ADVENTURE QUIZ : NEXT QUIZ BUTTON */
+/* --------------------------------- */
+/* Navigates to the next quiz article */
 
 function nextQuiz(quizId) {
 
@@ -667,24 +670,32 @@ function nextQuiz(quizId) {
   window.location.replace(nextArticle);
 
 }
+
+/* --------------------------------- */
+/* ADVENTURE QUIZ : END JOURNEY BUTTON */
+/* --------------------------------- */
+/* Navigates to the ending page */
+
 function endJourney() {
     //Redirect to end of adventure
     window.location.replace('/ending');
 }
 
-/* -------------------------- */
-/* CONTENT : FIRES WHEN SHARK GAME CLOSES */
-/* -------------------------- */
+/* --------------------------------- */
+/* ADVENTURE QUIZ : CLOSE SHARK GAME */
+/* --------------------------------- */
+/* Navigates to the next quiz article */
+
 
 function closeSharkGame() {
-  console.log('next quiz!');
   nextQuiz(parseInt(articleId) + 1);
 }
 
 
-/* -------------------------- */
-/* CONTENT : SCROLL LOCK */
-/* -------------------------- */
+/* ---------------------------- */
+/* ADVENTURE QUIZ : SCROLL LOCK */
+/* ---------------------------- */
+/* Checks if the top of the quiz section div has reached the top of the window */
 
 $(window).scroll(function() {
 

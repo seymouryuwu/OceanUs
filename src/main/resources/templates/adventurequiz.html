@@ -10,18 +10,12 @@
   <!-- PAGE TITLE : ADVENTURE QUIZ -->
   <title>OceanUs Project | Adventure Quiz</title>
 
+  <!-- GET THYMELEAF VARIABLES -->
   <script th:inline="javascript">
   /*<![CDATA[*/
-
     var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
-    console.log(isLoggedIn);
-
     var articleCount = /*[[${articleCount}]]*/ 1;
-    console.log(isLoggedIn);
-
     var articleId = /*[[${articleId}]]*/ 1;
-    console.log(articleId);
-
   /*]]>*/
   </script>
 
@@ -61,15 +55,6 @@
     <!-- MAIN -->
     <main>
 
-      <!-- SECTION : HEADING -->
-<!--      <section class="heading">-->
-<!--        <div class="row">-->
-<!--          <div class="col-12 title-block">-->
-<!--            <h1>Adventure Quiz</h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
-
       <!-- SECTION : CONTENT -->
       <section id="content_section" class="content-section" style="display: none;">
         <!-- Background triangle -->
@@ -85,12 +70,6 @@
       </section>
 
     </main>
-
-
-    <!-- FOOTER -->
-<!--    <footer class="footer">-->
-<!--      <script>buildFooter();</script>-->
-<!--    </footer>-->
 
   </div>
 </body>

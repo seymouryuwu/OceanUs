@@ -1,6 +1,10 @@
-/* JAVASCRIPT :  Games Page */
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* JAVASCRIPT  : Games Page */
 /* DESCRIPTION : JavaScript functions only applicable to the games page */
-/* AUTHOR:     : Malcolm Malloy */
+/* AUTHOR      : Malcolm Malloy */
 /* TARGET HTML : templates/games.html */
 
 /* -------------------------- */
@@ -15,29 +19,12 @@ let API_getachievements = 'https://oceanus.me/game/getgameunlockstate';
 
 var unlockData = [];
 
-/* ------------------- */
+/* ----------------- */
 /* GAMES : PAGE LOAD */
-/* ------------------- */
+/* ----------------- */
+/* Checks which games the user has unlocked via API */
 
 $( document ).ready(function() {
-
-  var devmode = false;
-
-  /********** DEV MODE **********/
-  /* IMPORTANT NOTE : Remove before deployment!!! */
-  if (devmode) {
-
-    unlockData = JSON.parse(`
-    [
-       "gameId":1,"unlockState":true},
-       {"gameId":2,"unlockState":false},
-       {"gameId":3,"unlockState":false}
-    ]
-    `);
-
-    loadUnlockData();
-  }
-
 
   if(isLoggedIn) {
 
@@ -59,11 +46,21 @@ $( document ).ready(function() {
 
 });
 
+/* --------------------- */
+/* GAMES : LOAD DEFAULT  */
+/* --------------------- */
+/* Loads the locked game symbols */
+
 function loadDefault() {
   displayGameLock(1);
   displayGameLock(2);
   displayGameLock(3);
 }
+
+/* ------------------------ */
+/* GAMES : LOAD UNLOCK DATA */
+/* ------------------------ */
+/* Chooses function to lock or unlock based on API data */
 
 function loadUnlockData() {
 
@@ -82,6 +79,10 @@ function loadUnlockData() {
 
 }
 
+/* -------------------- */
+/* GAMES : DISPLAY GAME */
+/* -------------------- */
+/* Unlocks game based on unLockId variable */
 
 function displayGame(unLockId) {
 
@@ -139,6 +140,11 @@ function displayGame(unLockId) {
 
 }
 
+/* ------------------------- */
+/* GAMES : DISPLAY GAME LOCK */
+/* ------------------------- */
+/* Locks game based on lockId variable */
+
 function displayGameLock(lockId) {
 
    console.log("Leave game ID = " + lockId + " locked");
@@ -195,6 +201,10 @@ function displayGameLock(lockId) {
 
 }
 
+/* ----------------------------- */
+/* GAMES : OPEN SHARK VS RUBBISH */
+/* ----------------------------- */
+/* Navigates to the shark page */
 
 function openShark() {
   var win = window.open('sharkvsrubbish', '_self');
@@ -207,6 +217,11 @@ function openShark() {
   }
 }
 
+/* ---------------------- */
+/* GAMES : SUZIES TOOSIES */
+/* ---------------------- */
+/* Navigates to the Suzies Toosies page */
+
 function openPipe() {
   var win = window.open('suziestoosies', '_self');
   if (win) {
@@ -218,6 +233,11 @@ function openPipe() {
   }
 }
 
+/* ---------------------- */
+/* GAMES : CLOGGED MEMORY */
+/* ---------------------- */
+/* Navigates to the Clogged Memory page */
+
 function openCard() {
   var win = window.open('cloggedmemory', '_self');
   if (win) {
@@ -228,6 +248,11 @@ function openCard() {
       console.log('Please allow popups for this website');
   }
 }
+
+/* ------------------------ */
+/* GAMES : CLOSE SHARK GAME */
+/* ------------------------ */
+/* Reloads the page */
 
 function closeSharkGame() {
   location.reload();

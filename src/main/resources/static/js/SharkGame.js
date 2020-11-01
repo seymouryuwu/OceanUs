@@ -1,3 +1,16 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* JAVASCRIPT  : Adventure Quiz Page */
+/* DESCRIPTION : JavaScript functions only applicable to the adventure quiz page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/adventurequiz.html */
+
+/* ---------------------------- */
+/* SHARK VS RUBBISH : PAGE LOAD */
+/* ---------------------------- */
+/* Retrieves aid parameter from URL */
 
 var aid = '';
 
@@ -7,12 +20,22 @@ $( document ).ready(function() {
 });
 
 
+/* ------------------------------------ */
+/* SHARK VS RUBBISH : LOAD PAGE HEADERS */
+/* ------------------------------------ */
+/* Loads the headers to attach to AJAX post requests */
+
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
 
 $(document).ajaxSend(function(e, xhr, options) {
     xhr.setRequestHeader(header, token);
 });
+
+
+/* ------------------------------ */
+/* SHARK VS RUBBISH : GAME CONFIG */
+/* ------------------------------ */
 
 var gameSettings = {
   sharkSpeed: 200,
@@ -37,6 +60,13 @@ var config = {
 }
 
 var game = new Phaser.Game(config);
+
+
+/* ----------------------------------- */
+/* SHARK VS RUBBISH : CLOSE SHARK GAME */
+/* ----------------------------------- */
+/* If aid is set navigate to next article
+   Navigates to the previous page if aid is not set*/
 
 function closeSharkGame() {
 

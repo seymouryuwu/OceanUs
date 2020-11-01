@@ -1,3 +1,22 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET  : Signup Page */
+/* DESCRIPTION : Styles only applicable to the signup page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/signup.html */
+
+/* ---------------- */
+/* SIGNUP : GENERAL */
+/* ---------------- */
+
+/* Override default banner image */
+.header {
+  height: 40vh !important;
+  background-image: url('../images/banners/Loginbanner.jpg');
+}
+
 .signup-container {
     background-size: 800px !important;
     width: 800px;
@@ -27,10 +46,4 @@
 
 .signup-button img {
   width: 100px;
-}
-
-/* Override default banner image */
-.header {
-  height: 40vh !important;
-  background-image: url('../images/banners/Loginbanner.jpg');
 }

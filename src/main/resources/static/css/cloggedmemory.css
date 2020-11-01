@@ -1,3 +1,26 @@
+/* --------------- */
+/* OCEANUS PROJECT */
+/* --------------- */
+
+/* STYLESHEET  : Clogged Memory Page */
+/* DESCRIPTION : Styles only applicable to the clogged memory page */
+/* AUTHOR      : Malcolm Malloy */
+/* TARGET HTML : templates/cloggedmemory.html */
+/* NOTE        : These styles are applicable to both the web pages html and the game styles. */
+
+/* ------------------------ */
+/* CLOGGED MEMORY : GENERAL */
+/* ------------------------ */
+
+.scrollable {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .close-button {
   font-size: 22px;
   font-family: COPILME_L;
@@ -54,15 +77,6 @@
   z-index: 40;
 }
 
-.game-over-background {
-  position: fixed;
-  width: 100%;
-  top: 0px;
-  height: 100%;
-  background-color: rgb(0,0,0,0.9);
-  color: white;
-}
-
 .shadowfilter {
 -webkit-filter: drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7));
  drop-shadow(15px 15px 10px rgba(0, 0, 0, 0.7))
@@ -78,25 +92,6 @@
   /* transition: box-shadow 0.3s ease-in-out; */
   transition-duration: 0.2s, 2s;
   transition-property: box-shadow;
-}
-
-.game-over {
-  text-align: center;
-}
-
-.user-feedback {
-  position: relative;
-  margin: auto;
-}
-
-.user-feedback p {
-  font-size: 18px;
-  line-height: 40px;
-  color: #ffffff;
-}
-
-.user-feedback h2 {
-  font-family: COPILME_L;
 }
 
 .start-game {
@@ -119,15 +114,42 @@
   cursor: pointer;
 }
 
-.scrollable {
-  position: fixed;
-  overflow-y: scroll;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .no-sign {
   font-size: 40px !important;
+}
+
+/* ------------------------------- */
+/* CLOGGED MEMORY : FEEDBACK MODAL */
+/* ------------------------------- */
+
+.user-feedback {
+  position: relative;
+  margin: auto;
+}
+
+.user-feedback p {
+  font-size: 18px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.user-feedback h2 {
+  font-family: COPILME_L;
+}
+
+/* -------------------------------- */
+/* CLOGGED MEMORY : GAME OVER MODAL */
+/* -------------------------------- */
+
+.game-over {
+  text-align: center;
+}
+
+.game-over-background {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  background-color: rgb(0,0,0,0.9);
+  color: white;
 }

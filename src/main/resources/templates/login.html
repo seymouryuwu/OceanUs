@@ -10,12 +10,10 @@
   <!-- PAGE TITLE : LOGIN -->
   <title>OceanUs Project | Login</title>
 
+  <!-- GET THYMELEAF VARIABLES -->
   <script th:inline="javascript">
   /*<![CDATA[*/
-
     var isLoggedIn = /*[[${isLoggedIn}]]*/ false;
-    console.log(isLoggedIn);
-
   /*]]>*/
   </script>
 
@@ -43,15 +41,7 @@
     <!-- MAIN -->
     <main>
 
-      <!-- SECTION : HEADING -->
-<!--      <section class="heading">-->
-<!--        <div class="row">-->
-<!--          <div class="col-12 title-block center-text">-->
-<!--            <h1>Login</h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
-
+      <!-- LOGIN FORM -->
       <div class="login-container">
         <h2>Login to your account</h2>
         <form th:action="@{/login}" method="post">
@@ -70,7 +60,6 @@
       </div>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="footer">
