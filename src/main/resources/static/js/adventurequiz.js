@@ -88,9 +88,13 @@ function sortObjectEntries(obj, n){
       else {
          if(a[0] > b[0]) return 1;
          else if(a[0] < b[0]) return -1;
-         else return 0
+         else return 0;
   }
  })
+  // return first n values from sortedList
+   return sortedList.map(el=>el[0]).slice(0,n)
+
+}
 
 /* ------------------------------------------------- */
 /* ADVENTURE QUIZ : BUILD WELCOME BLOCK (HTML BLOCK) */
@@ -105,7 +109,9 @@ function loadWelcomePage() {
      <div class="row">
        <div class="col-md-12 full-block">
 
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/CTZNh7-Imd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CTZNh7-Imd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
 
          <h3>Are you excited to start your Adventure Journey and be a part of the change???????</h3>
          <p>We are sure you will have fun. But to get to the end there are some hurdles that you need to pass.</p>
@@ -216,10 +222,7 @@ function answerFalse() {
 
 }
 
- // return first n values from sortedList
-  return sortedList.map(el=>el[0]).slice(0,n)
 
-}
 
 /* --------------------------------------------------- */
 /* ADVENTURE QUIZ : BUILD CONTENT SECTION (HTML BLOCK) */
